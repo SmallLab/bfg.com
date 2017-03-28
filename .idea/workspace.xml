@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd0ab974-4bdf-4ab6-afdc-2fcc5eef3b8d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bfg/bfg/settings.py" afterPath="$PROJECT_DIR$/bfg/bfg/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bfg/bfg/urls.py" afterPath="$PROJECT_DIR$/bfg/bfg/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bfg/mainbfg/views.py" afterPath="$PROJECT_DIR$/bfg/mainbfg/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -428,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490712134129</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=" Add settings file&#10;">
+      <created>1490712407283</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1490712407283</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -464,7 +468,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MyFirst" />
     <MESSAGE value="Add urls.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add urls.py" />
+    <MESSAGE value=" Add settings file&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Add settings file&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
