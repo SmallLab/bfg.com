@@ -1,4 +1,11 @@
 from django.http import HttpResponse
+from django.contrib import messages
 
 def index(request):
-   return HttpResponse("Hello Alex!!! You future salary is - 4000$!!!It is very cool!!!Be happy!!!")
+   messages.info(request, 'Three credits remain in your account.')
+   content = "Hello Alex!!! You future salary is - 4500$!!!It is very cool!!!Be happy!!!"
+   storage = messages.get_messages(request)
+   d = []
+   for message in storage:
+      d.append(message)
+   return HttpResponse(d)
