@@ -4,7 +4,6 @@
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="rthy">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/views.py" afterPath="$PROJECT_DIR$/mainbfg/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -510,12 +509,19 @@
       <option name="project" value="LOCAL" />
       <updated>1491330817007</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="So-so">
+      <created>1491335520324</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491335520324</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15511727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -545,7 +551,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rthy" />
-    <option name="LAST_COMMIT_MESSAGE" value="rthy" />
+    <MESSAGE value="So-so" />
+    <option name="LAST_COMMIT_MESSAGE" value="So-so" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
