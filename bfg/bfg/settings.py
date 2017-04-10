@@ -125,12 +125,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-
+#For applications files
 STATIC_URL = '/static/'
 
+#For project files
 STATICFILES_DIRS = [
-    ('static', 'E:/WebProjects/bfg.com/bfg/static')
+    ('', 'E:/WebProjects/bfg.com/bfg/static')
 ]
+#For fire server
+#STATIC_ROOT = 'bfg.com/static'
 
 CACHES = {
     'default': {
