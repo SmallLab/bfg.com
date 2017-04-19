@@ -3705,3 +3705,11 @@ h3 + .product-list {
         min-width: 140px;
     }
 }
+
+/*
+My styles
+*/
+.bfg{
+    padding-left: 6px;
+    padding-right: 0px
+}

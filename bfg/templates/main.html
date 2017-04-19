@@ -71,31 +71,31 @@
             <div class="container container-custom">
                 <ul class="list-inline list-fitch text-center row">
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="products/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cutlery"></span>
                             <span class="h3 font-accent reveal-block">Продукты</span>
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="stroy-materialy/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cubes"></span>
                             <span class="h3 font-accent reveal-block">Строй материалы</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="dlya-detey/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-child"></span>
                             <span class="h3 font-accent reveal-block">Для детей</span>
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="odejda/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-female"></span>
                             <span class="h3 font-accent reveal-block">Одежда</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="#">
+                        <a href="parfym/">
                             <span class="icon icon-lg icon-circle icon-img icon-secondary-filled">
                                 <img src="{% static "images/icon-01-49x51.png" %}" width="49" height="51" alt="">
                             </span>
@@ -105,19 +105,19 @@
                 </ul>
                 <ul class="list-inline list-fitch text-center row">
                     <li class="col-md-2 list-fitch-item-absolute">
-                        <a href="index-3.html">
+                        <a href="auto/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-car"></span>
                             <span class="h3 font-accent reveal-block">Автомобили <br class="br-mod"> и запчасти</span>
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="reclama/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-bullhorn"></span>
                             <span class="h3 font-accent reveal-block">Реклама</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="#">
+                        <a href="otdyh/">
                             <span class="icon icon-lg icon-circle icon-img icon-secondary-filled">
                                 <img src="{% static "images/icon-02-48x56.png" %}" width="48" height="56" alt="">
                             </span>
@@ -125,13 +125,13 @@
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="razvlecheniya/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-gamepad"></span>
                             <span class="h3 font-accent reveal-block">Развлечения</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="pitomci/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-paw"></span>
                             <span class="h3 font-accent reveal-block">Питомцы</span>
                         </a>
@@ -139,31 +139,31 @@
                 </ul>
                 <ul class="list-inline list-fitch text-center row">
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="uslugi/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cogs"></span>
                             <span class="h3 font-accent reveal-block">Услуги</span>
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="bytovaya-tehnika/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-television"></span>
                             <span class="h3 font-accent reveal-block">Бытовая техника</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="medecina/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-ambulance"></span>
                             <span class="h3 font-accent reveal-block">Медицина</span>
                         </a>
                     </li>
                     <li class="col-md-3">
-                        <a href="index-3.html">
+                        <a href="mebel/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-archive"></span>
                             <span class="h3 font-accent reveal-block">Мебель</span>
                         </a>
                     </li>
                     <li class="col-md-2">
-                        <a href="index-3.html">
+                        <a href="akcecyary/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-shopping-bag"></span>
                             <span class="h3 font-accent reveal-block">Аксессуары</span>
                         </a>
@@ -176,26 +176,27 @@
         <div class="container container-custom-2">
             <form action="#">
                 <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
-                    <div class="col-xs-7 col-md-3-custom">
+                    <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
-                                <option>Тип предложения</option>
-                                <option>Акция</option>
-                                <option>Скидка</option>
-                                <option>Распродажа</option>
+                                <option value="0">Тип предложения</option>
+                                {% for type in types %}
+                                    <option value="{{ type.link_name }}">{{ type.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-7 col-md-3-custom">
+                    <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
-                                <option>Категория</option>
-                                <option>Категория 2</option>
-                                <option>Категория 3</option>
+                                <option value="0">Категория</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.link_name }}">{{ category.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-7 col-md-3-custom">
+                    <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
                                 <option>Регион</option>
@@ -204,7 +205,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-7 col-md-3-custom">
+                    <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
                                 <option>Все</option>
