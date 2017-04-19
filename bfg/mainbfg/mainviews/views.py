@@ -1,5 +1,3 @@
-#from django.http import HttpResponse
-#from django.template import RequestContext, loader
 from django.views.generic.base import TemplateView
 from mainbfg.models import (TypeSentence, Categories)
 
