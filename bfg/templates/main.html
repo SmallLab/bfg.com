@@ -11,174 +11,12 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-
-
 </head>
 <body>
 {% include 'sections/mainheader.html' %}
 <main class="page-wrapper">
-    <div class="section-cover">
-        <section class="header-page-bottom">
-            <div class="section section-1 bg-image bg-image-1">
-                <div class="container container-custom">
-                    <h1 class="text-white">BFG -С нами выгоднее!!!</h1>
-                </div>
-            </div>
-        </section>
-        <section class="section section-2">
-            <div class="container container-custom">
-                <ul class="list-inline list-fitch text-center row">
-                    <li class="col-md-2">
-                        <a href="products/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cutlery"></span>
-                            <span class="h3 font-accent reveal-block">Продукты</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="stroy-materialy/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cubes"></span>
-                            <span class="h3 font-accent reveal-block">Строй материалы</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="dlya-detey/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-child"></span>
-                            <span class="h3 font-accent reveal-block">Для детей</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="odejda/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-female"></span>
-                            <span class="h3 font-accent reveal-block">Одежда</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="parfym/">
-                            <span class="icon icon-lg icon-circle icon-img icon-secondary-filled">
-                                <img src="{% static "images/icon-01-49x51.png" %}" width="49" height="51" alt="">
-                            </span>
-                            <span class="h3 font-accent reveal-block">Парфюмерия</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list-inline list-fitch text-center row">
-                    <li class="col-md-2 list-fitch-item-absolute">
-                        <a href="auto/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-car"></span>
-                            <span class="h3 font-accent reveal-block">Автомобили <br class="br-mod"> и запчасти</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="reclama/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-bullhorn"></span>
-                            <span class="h3 font-accent reveal-block">Реклама</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="otdyh/">
-                            <span class="icon icon-lg icon-circle icon-img icon-secondary-filled">
-                                <img src="{% static "images/icon-02-48x56.png" %}" width="48" height="56" alt="">
-                            </span>
-                            <span class="h3 font-accent reveal-block">Отдых</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="razvlecheniya/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-gamepad"></span>
-                            <span class="h3 font-accent reveal-block">Развлечения</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pitomci/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-paw"></span>
-                            <span class="h3 font-accent reveal-block">Питомцы</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list-inline list-fitch text-center row">
-                    <li class="col-md-2">
-                        <a href="uslugi/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-cogs"></span>
-                            <span class="h3 font-accent reveal-block">Услуги</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="bytovaya-tehnika/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-television"></span>
-                            <span class="h3 font-accent reveal-block">Бытовая техника</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="medecina/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-ambulance"></span>
-                            <span class="h3 font-accent reveal-block">Медицина</span>
-                        </a>
-                    </li>
-                    <li class="col-md-3">
-                        <a href="mebel/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-archive"></span>
-                            <span class="h3 font-accent reveal-block">Мебель</span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="akcecyary/">
-                            <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-shopping-bag"></span>
-                            <span class="h3 font-accent reveal-block">Аксессуары</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </div>
-    <section class="section section-4 bg-secondary">
-        <div class="container container-custom-2">
-            <form action="#">
-                <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
-                    <div class="col-xs-7 col-md-3-custom bfg">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option value="0">Тип предложения</option>
-                                {% for type in types %}
-                                    <option value="{{ type.link_name }}">{{ type.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom bfg">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option value="0">Категория</option>
-                                {% for category in categories %}
-                                    <option value="{{ category.link_name }}">{{ category.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom bfg">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Регион</option>
-                                <option>Регион 2</option>
-                                <option>Регион 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom bfg">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Все</option>
-                                <option>Только интернет-предложения</option>
-                                <option>Только регионы</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3">
-                        <button type="submit" class="btn btn-primary btn-search">Поиск</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+   {% include 'sections/maincategories.html' %}
+    {% include 'sections/mainfilter.html' %}
     <section class="section section-3 text-center text-sm-left">
         <div class="container container-custom-2">
             <h2 class="text-primary text-sbold">ТОР-Предложения</h2>
@@ -199,11 +37,11 @@
                             <a href="index-1.html">Акция купи авто по выгодной цене</a>
                         </div>
                         <ul class="list-inline nowrap-lg">
-                            <li>цена:  от 140 000 грн</li>
+                            <li></li>
                             <li>
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="#" class="icon fa fa-edge"></a>
+                                        <a href="#" class="icon fa fa-edge" title="Перейти на сайт"></a>
                                     </li>
                                     <li>
                                         <a href="#" class="icon fa fa-star-o"></a>
