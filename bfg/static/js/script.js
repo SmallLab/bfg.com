@@ -4,17 +4,15 @@
 
 window.onload = function() {
 
-	var scrollUp = document.getElementById('scrollup');
-
-	scrollUp.onclick = function() {
-		window.scrollTo(0,0);
-	};
+	$('#scrollup').click(function() {
+         $('body,html').animate({scrollTop:0},800);
+    });
 
 	window.onscroll = function () {
 		if ( window.pageYOffset > 0 ) {
-			scrollUp.style.display = 'block';
+			$('#scrollup').fadeIn("slow");
 		} else {
-			scrollUp.style.display = 'none';
+			$('#scrollup').fadeOut("slow");;
 		}
 	};
 };

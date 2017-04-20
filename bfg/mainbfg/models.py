@@ -11,6 +11,7 @@ class ManadgerTypeSentence(models.Manager):
     def get_active_types(self):
         return self.get_queryset().filter(is_active__exact= True)
 
+
 class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
     link_name = models.CharField(max_length=50, default='')
