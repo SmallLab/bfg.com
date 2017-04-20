@@ -32,7 +32,10 @@ Custom Manadger for model Categories
 class ManadgerCategories(models.Manager):
 #Get active Categories
     def get_active_categories(self):
-        activecategories = self.get_queryset().filter(is_active__exact = True).values_list('name', 'icon_style', 'is_icon_img')
+        return self.get_queryset().filter(is_active__exact = True)
+
+    def get_list_categories(self):
+        activecategories = self.get_queryset().filter(is_active__exact = True)
         return [activecategories[i:i+5] for i in range(0, len(activecategories), 5)]
 
 

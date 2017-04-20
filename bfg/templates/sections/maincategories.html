@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{{ categories_list }}
+{{ categories_list.0.0.get_absolute_url }}
 <div class="section-cover">
         <section class="header-page-bottom">
             <div class="section section-1 bg-image bg-image-1">
@@ -7,6 +9,15 @@
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+
+
         <section class="section section-2">
             <div class="container container-custom">
                 <ul class="list-inline list-fitch text-center row">
@@ -42,9 +53,10 @@
                             <span class="h3 font-accent reveal-block">Парфюмерия</span>
                         </a>
                     </li>
+
                 </ul>
                 <ul class="list-inline list-fitch text-center row">
-                    <li class="col-md-2 list-fitch-item-absolute">
+                    <li class="col-md-2 ">
                         <a href="auto/">
                             <span class="icon icon-lg icon-circle icon-secondary-filled fa fa-car"></span>
                             <span class="h3 font-accent reveal-block">Автомобили <br class="br-mod"> и запчасти</span>
@@ -109,6 +121,7 @@
                         </a>
                     </li>
                 </ul>
+
             </div>
         </section>
     </div>

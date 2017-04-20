@@ -10,5 +10,7 @@ class MainView(TemplateView):
       context = super(MainView, self).get_context_data(**kwargs)
       context['types'] = TypeSentence.object.get_active_types()
       context['categories'] = Categories.object.get_active_categories()
+      context['categories_list'] = Categories.object.get_list_categories()
       context['regions'] = Regions.objects.all()
+
       return context
