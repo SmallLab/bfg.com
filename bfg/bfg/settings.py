@@ -49,7 +49,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'bfg.mainbfg.mainhelpers.trytoclose.CheckUsers',
+    #'bfg.mainbfg.mainhelpers.trytoclose.CheckUsers',
 ]
 
 ROOT_URLCONF = 'bfg.urls'

@@ -1,6 +1,6 @@
 from django.db import models
 
-############################### TypeSentence Model ################################
+#------------------------- TypeSentence Model -----------------------------------------------
 """
 Custom Manadger for model TypeSentence
 """
@@ -24,7 +24,7 @@ class TypeSentence(models.Model):
     def __str__(self):
         return self.name
 
-########################## Categories Model#####################################
+#----------------------------- Categories Model----------------------------------------------------
 """
 Custom Manadger for model Categories
 """
@@ -54,7 +54,7 @@ class Categories(models.Model):
     def __str__(self):
         return self.name
 
-################################# Regions Model ##################################
+#-------------------------------- Regions Model -------------------------------------------
 
 
 class Regions(models.Model):
