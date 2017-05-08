@@ -1,0 +1,115 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BFG Login</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body>
+{% include 'sections/mainheader.html' %}
+<main class="page-wrapper">
+       <section class="header-page-bottom">
+        <div class="section section-1 bg-image bg-image-1">
+            <div class="container container-custom">
+                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
+            </div>
+        </div>
+       </section>
+       <section class="section section-1">
+        <div class="container">
+            <div class="row row-centered row-centered-nav-sign-reg-tabs">
+                <div class="col-sm-10 col-lg-8">
+                    <div class="nav-sign-reg-tabs-wrap">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab">Вход</a></li>
+                            <li role="presentation"><a href="#two" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="one">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
+                                        <span class="icon icon-vk icon-white-filled fa fa-vk"></span>
+                                        <span>Вход через Vkontakte</span>
+                                    </a>
+                                    <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
+                                        <span class="icon icon-facebook fa fa-facebook-square"></span>
+                                        <span>Вход через Facebook</span>
+                                    </a>
+                                </div>
+                                <p class="desc text-center">или</p>
+                                <form action="{% url 'django.contrib.auth.views.login' %}" class="form" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group has-success">
+                                        <input type="text" class="form-control" placeholder="Логин (или e-mail)"  name="username" required>
+                                        <span class="help-block">Пожалуйста, исправьте ошибку</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Пароль"  name="passwords" required>
+                                    </div>
+                                    <div class="row-centered">
+                                        <div class="checkbox checkbox-left">
+                                            <label>
+                                                <input type="checkbox"  name="rememder" checked>Запомнить меня
+                                            </label>
+                                        </div>
+                                        <p class="link-right">
+                                            <a href="#">Не можете войти?</a>
+                                        </p>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-block btn-secondary">Войти</button>
+                                    <p class="nav-terms">Входя в раздел Мой Профиль, Вы принимаете <a href="#">Условия использования</a> сайта</p>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="two">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
+                                        <span class="icon icon-vk icon-white-filled fa fa-vk"></span>
+                                        <span>Вход через Vkontakte</span>
+                                    </a>
+                                    <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
+                                        <span class="icon icon-facebook fa fa-facebook-square"></span>
+                                        <span>Вход через Facebook</span>
+                                    </a>
+                                </div>
+                                <p class="desc text-center">или</p>
+                                <form action="/registrations/" class="form" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Пароль"  name="password1" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Повторите пароль"  name="password2" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-block btn-secondary">Регистрация</button>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="rulles" required> *Я соглашаюсь с правилами <a href="#">использования сервиса</a>,
+                                            а также с передачей и обработкой моих данных BFG.
+                                            Я подтверждаю своё совершеннолетие и ответственность  за размещение объявления
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% include 'sections/mainfooter.html' %}
+<p id="343434434343">{{ errors }}</p>
+<p id="3434344343">{{ info }}</p>
+</body>

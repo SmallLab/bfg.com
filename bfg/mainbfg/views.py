@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render_to_response
+from mainbfg.forms import RegistrationsForm
 
-from django.http import HttpResponse
-import datetime
-
-def index(request):
-    now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
-    #return HttpResponse("Hello Alex!!! You future salary is - 3500$!!!It is very cool!!!Be happy!!!")
+def registrationUser(request):
+    if request.method == 'POST':
+        form = RegistrationsForm(request.POST)
+    if form.is_valid():
+        form.save()  # save user to database if form is valid
+        return redirect('/')
+    else:
+        return render_to_response('registration/login.html', {"errors": form.errors, 'info':request.POST})
