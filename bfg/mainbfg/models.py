@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 #------------------------- TypeSentence Model -----------------------------------------------#
 """
@@ -119,4 +121,3 @@ class Profile(models.Model):
     count_sentence = models.SmallIntegerField(blank=True, default=0)
     is_subscrabtion = models.BooleanField(default=False)
     is_subscriber = models.BooleanField(default=False)
-    payment = models.ForeignKey(Payment, on_delete=models.CASCADE)

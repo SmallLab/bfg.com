@@ -1,11 +1,11 @@
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 
-class RegistrationsForm(UserCreationForm):
-    username = forms.CharField(label='Логин', max_length=50)
-    #password = forms.CharField(label="Пароль", max_length=50)
+class RegistrationsForm(forms.Form):
+    username = forms.CharField(max_length=20, min_length=5, error_messages={'required': 'Введите логин',
+                                                                            'min_length':'Логин должен содержать не менее 5-и символов',
+                                                                            'man_length': 'Логин должен содержать не более 20-и символов'})
 
-    class Meta:
-        model = User
-        fields = ('username', 'password1', 'password2')
+    password = forms.CharField(max_length=20, min_length=8, error_messages={'required':'Введите пароль',
+                                                                            'min_length':'Пароль должен содержать не менее 8-и символов',
+                                                                            'man_length': 'Пароль должен содержать не более 20-и символов'
+                                                                            })

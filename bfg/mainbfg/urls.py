@@ -4,5 +4,5 @@ from . import views as vv
 
 urlpatterns = [
     url(r'^$', views.MainView.as_view(), name='index'),
-    url(r'^registrations/$', vv.registrationUser, name='reristrations')
+    url(r'^registrations/$', vv.RegistrationUser, name='reristrations')
 ]

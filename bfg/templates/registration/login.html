@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>BFG Login</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -29,12 +29,17 @@
                     <div class="nav-sign-reg-tabs-wrap">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab">Вход</a></li>
-                            <li role="presentation"><a href="#two" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                            {% if tab %}
+                                <li role="presentation"><a href="#one" aria-controls="home" role="tab" data-toggle="tab">Вход</a></li>
+                                <li role="presentation" class="active"><a href="#two" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                            {% else %}
+                                <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab">Вход</a></li>
+                                <li role="presentation"><a href="#two" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                            {% endif %}
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="one">
+                            <div role="tabpanel" class="tab-pane {% if not tab %}active{% endif %}" id="one">
                                 <div class="btn-group">
                                     <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
                                         <span class="icon icon-vk icon-white-filled fa fa-vk"></span>
@@ -46,14 +51,25 @@
                                     </a>
                                 </div>
                                 <p class="desc text-center">или</p>
+                                    {% if form.errors %}
+                                        {% for error in form.non_field_errors %}
+                                            <div class="alert alert-danger">
+                                                <strong>{{ error|escape }}</strong>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
                                 <form action="{% url 'django.contrib.auth.views.login' %}" class="form" method="post">
                                     {% csrf_token %}
-                                    <div class="form-group has-success">
-                                        <input type="text" class="form-control" placeholder="Логин (или e-mail)"  name="username" required>
-                                        <span class="help-block">Пожалуйста, исправьте ошибку</span>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required>
+                                        {% if form.username in form  and form.username.errors %}
+                                            <div class="alert alert-danger">
+                                                <strong> {{ form.username.errors|escape }}</strong>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Пароль"  name="passwords" required>
+                                        <input type="password" class="form-control" placeholder="Пароль"  name="password" required>
                                     </div>
                                     <div class="row-centered">
                                         <div class="checkbox checkbox-left">
@@ -69,7 +85,7 @@
                                     <p class="nav-terms">Входя в раздел Мой Профиль, Вы принимаете <a href="#">Условия использования</a> сайта</p>
                                 </form>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="two">
+                            <div role="tabpanel" class="tab-pane {% if tab %}active{% endif %}" id="two">
                                 <div class="btn-group">
                                     <a href="#" class="btn btn-secondary btn-icon btn-icon-left btn-vk">
                                         <span class="icon icon-vk icon-white-filled fa fa-vk"></span>
@@ -83,19 +99,26 @@
                                 <p class="desc text-center">или</p>
                                 <form action="/registrations/" class="form" method="post">
                                     {% csrf_token %}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required>
+                                    <div class="form-group {% if errors.username %}has-warning{% endif %}">
+                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required></br>
+                                        {% if errors.username %}
+                                            <div class="alert alert-danger">
+                                                <strong> {{ errors.username|escape }}</strong>
+                                            </div>
+                                        {% endif %}
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Пароль"  name="password1" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Повторите пароль"  name="password2" required>
+                                    <div class="form-group {% if errors.password %}has-warning{% endif %}">
+                                        <input type="password" class="form-control" placeholder="Пароль"  name="password" required></br>
+                                        {% if errors.password %}
+                                            <div class="alert alert-danger">
+                                                <strong> {{ errors.password|escape }}</strong>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <button type="submit" class="btn btn-lg btn-block btn-secondary">Регистрация</button>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="rulles" required> *Я соглашаюсь с правилами <a href="#">использования сервиса</a>,
+                                            <input type="checkbox" name="rulles" required checked> *Я соглашаюсь с правилами <a href="#">использования сервиса</a>,
                                             а также с передачей и обработкой моих данных BFG.
                                             Я подтверждаю своё совершеннолетие и ответственность  за размещение объявления
                                         </label>
@@ -110,6 +133,6 @@
     </section>
 </main>
 {% include 'sections/mainfooter.html' %}
-<p id="343434434343">{{ errors }}</p>
+<p id="343434434343">{{ form.username.errors }}</p>
 <p id="3434344343">{{ info }}</p>
 </body>
