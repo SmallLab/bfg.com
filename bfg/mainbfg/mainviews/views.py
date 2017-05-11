@@ -1,7 +1,11 @@
 from django.views.generic.base import TemplateView
 from mainbfg.models import (TypeSentence, Categories, Regions)
 
-#Class MainView  - start page
+"""
+    Class MainView  - start page
+"""
+
+
 class MainView(TemplateView):
 
    template_name = 'index.html'
@@ -13,4 +17,5 @@ class MainView(TemplateView):
       context['categories_list'] = Categories.object.get_list_categories()
       context['regions'] = Regions.objects.all()
       context['username'] = self.request.user
+      context['kyka'] = self.request.session
       return context

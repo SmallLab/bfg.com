@@ -3,11 +3,18 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User
 from mainbfg.models import Profile
 
+
+"""
+    Create user profile when user have registration in app
+"""
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
+"""
+    Update user profile when user have registration in app
+"""
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()

@@ -3,6 +3,10 @@ from mainbfg.forms import RegistrationsForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
+"""
+    Registrations new user
+"""
+
 def RegistrationUser(request):
     if request.method == 'POST':
         form = RegistrationsForm(request.POST)

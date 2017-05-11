@@ -50,6 +50,7 @@ class Categories(models.Model):
     is_active = models.BooleanField(default=True)
     icon_style = models.CharField(max_length=50, default='')
     is_icon_img = models.BooleanField(default=False)
+    max_num = models.SmallIntegerField(default=1)
     object = ManadgerCategories()
 
     def get_absolute_url(self):
@@ -111,6 +112,11 @@ class Payment(models.Model):
     pass
 
 
+#----------------------------------Favorites Model ----------------------------------------#
+
+class Favorite(models.Model):
+    pass
+
 #-------------------------------- Profile Model -------------------------------------------#
 
 class Profile(models.Model):
@@ -121,3 +127,7 @@ class Profile(models.Model):
     count_sentence = models.SmallIntegerField(blank=True, default=0)
     is_subscrabtion = models.BooleanField(default=False)
     is_subscriber = models.BooleanField(default=False)
+    fb_id = models.IntegerField(blank=True, default=0)
+    vk_id = models.IntegerField(blank=True, default=0)
+    #payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
+    #favorite = models.ForeignKey(Favorite, on_delete=models.CASCADE)
