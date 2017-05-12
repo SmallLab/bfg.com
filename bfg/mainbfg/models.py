@@ -104,6 +104,7 @@ class Regions(models.Model):
 #     start_time_paid = models.DateTimeField(blank=True)
 #     end_time_paid = models.DateTimeField(blank=True)
 #     on_moderation = models.BooleanField(default=False)
+#     link_name = models.CharField(max_length=250)
 
 
 #-------------------------------- Payments Model -------------------------------------------#
