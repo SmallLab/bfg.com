@@ -51,25 +51,29 @@
                                     </a>
                                 </div>
                                 <p class="desc text-center">или</p>
-                                    {% if form.errors %}
-                                        {% for error in form.non_field_errors %}
+                                    {% if none_user %}
                                             <div class="alert alert-danger">
-                                                <strong>{{ error|escape }}</strong>
+                                                <strong>{{ none_user|escape }}</strong>
                                             </div>
-                                        {% endfor %}
                                     {% endif %}
-                                <form action="{% url 'django.contrib.auth.views.login' %}" class="form" method="post">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required>
-                                        {% if form.username in form  and form.username.errors %}
+
+                                <form action="/login/" class="form" method="post">{% csrf_token %}
+
+                                    <div class="form-group {% if lerrors.username %}has-warning{% endif %}">
+                                        <input type="text" class="form-control" placeholder="Логин"  name="username" required></br>
+                                        {% if lerrors.username %}
                                             <div class="alert alert-danger">
-                                                <strong> {{ form.username.errors|escape }}</strong>
+                                                <strong> {{ lerrors.username|escape }}</strong>
                                             </div>
                                         {% endif %}
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Пароль"  name="password" required>
+                                    <div class="form-group {% if lerrors.password %}has-warning{% endif %}">
+                                        <input type="password" class="form-control" placeholder="Пароль"  name="password" required></br>
+                                        {% if lerrors.password %}
+                                            <div class="alert alert-danger">
+                                                <strong> {{ lerrors.password|escape }}</strong>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="row-centered">
                                         <div class="checkbox checkbox-left">
@@ -99,19 +103,19 @@
                                 <p class="desc text-center">или</p>
                                 <form action="/registrations/" class="form" method="post">
                                     {% csrf_token %}
-                                    <div class="form-group {% if errors.username %}has-warning{% endif %}">
+                                    <div class="form-group {% if rerrors.username %}has-warning{% endif %}">
                                         <input type="text" class="form-control" placeholder="Логин"  name="username" required></br>
-                                        {% if errors.username %}
+                                        {% if rerrors.username %}
                                             <div class="alert alert-danger">
-                                                <strong> {{ errors.username|escape }}</strong>
+                                                <strong> {{ rerrors.username|escape }}</strong>
                                             </div>
                                         {% endif %}
                                     </div>
-                                    <div class="form-group {% if errors.password %}has-warning{% endif %}">
+                                    <div class="form-group {% if rerrors.password %}has-warning{% endif %}">
                                         <input type="password" class="form-control" placeholder="Пароль"  name="password" required></br>
-                                        {% if errors.password %}
+                                        {% if rerrors.password %}
                                             <div class="alert alert-danger">
-                                                <strong> {{ errors.password|escape }}</strong>
+                                                <strong> {{ rerrors.password|escape }}</strong>
                                             </div>
                                         {% endif %}
                                     </div>
@@ -133,6 +137,6 @@
     </section>
 </main>
 {% include 'sections/mainfooter.html' %}
-<p id="343434434343">{{ form.username.errors }}</p>
-<p id="3434344343">{{ info }}</p>
+<p id="343434434343">{{ lerrors }}</p>
+<p id="3434344343">{{ user }}</p>
 </body>
