@@ -125,10 +125,23 @@ class Profile(models.Model):
     phone = models.CharField(blank=True, max_length=100)
     email = models.EmailField(blank=True, max_length=255)
     favorite_num = models.SmallIntegerField(blank=True, default=0)
-    count_sentence = models.SmallIntegerField(blank=True, default=0)
     is_subscrabtion = models.BooleanField(default=False)
     is_subscriber = models.BooleanField(default=False)
-    fb_id = models.IntegerField(blank=True, default=0)
+    facebook_id = models.IntegerField(blank=True, default=0)
     vk_id = models.IntegerField(blank=True, default=0)
+    first_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
+
     #payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     #favorite = models.ForeignKey(Favorite, on_delete=models.CASCADE)
+
+
+#-------------------------------- Subscription Model -------------------------------------------#
+
+class Subscription(models.Model):
+    pass
+
+#-------------------------------- Subscriber Model -------------------------------------------#
+
+class Subscriber(models.Model):
+    pass
