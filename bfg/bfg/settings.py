@@ -151,3 +151,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+#Social auth
+
+#Facebook
+FACEBOOK_APP_ID = 214579749046389
+FACEBOOK_REDIRECT_URL = 'http://127.0.0.1/authcocial/lfacebook/'
+FACEBOOK_SECRET = '9ca00ab6530e97258381bc734d3cebed'
