@@ -16,5 +16,6 @@ class MainView(TemplateView):
       context['categories'] = Categories.object.get_active_categories()
       context['categories_list'] = Categories.object.get_list_categories()
       context['regions'] = Regions.objects.all()
-      context['username'] = self.request.user
+      if self.request.user.is_authenticated():
+         context['user_favorite_num'] = self.request.user.profile.favorite_num
       return context

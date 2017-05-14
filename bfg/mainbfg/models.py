@@ -40,7 +40,7 @@ class ManadgerCategories(models.Manager):
 
 #Get categories on 5 ps.
     def get_list_categories(self):
-        activecategories = self.get_queryset().filter(is_active__exact = True)
+        activecategories = self.get_active_categories()
         return [activecategories[i:i+5] for i in range(0, len(activecategories), 5)]
 
 

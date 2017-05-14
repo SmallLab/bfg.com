@@ -19,10 +19,10 @@
                     <div class="icon-collapse">
                         <a href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="collapse" class="icon icon-collapse icon-primary fa fa-search"></a>
                     </div>
-                    {% if user.is_authenticated and user.profile.favorite_num != 0 %}
+                    {% if user.is_authenticated and user_favorite_num != 0 %}
                         <div class="icon-favorites-wrap">
-                            <a href="#" class="icon icon-favorites fa fa-star-o">
-                                <sup class="icon-favorites-count">{{ user.profile.favorite_num }}</sup>
+                            <a href="#" class="icon icon-favorites fa fa-star-o" data-toggle="tooltip" title="Избранное" data-placement="bottom">
+                                <sup class="icon-favorites-count">{{ user_favorite_num }}</sup>
                             </a>
                         </div>
                     {% endif %}
