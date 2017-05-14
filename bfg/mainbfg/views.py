@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render_to_response
-from mainbfg.forms import RegistrationsForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.template.context_processors import csrf
+from mainbfg.forms import RegistrationsForm, LoginForm
 
 """
     Registrations new user

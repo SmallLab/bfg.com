@@ -153,9 +153,9 @@ LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
 #Social auth
-
+AUTH_FAILED_MESSAGESS = 'Извините!Во время авторизации произошла ошибка попробуйте позже!'
 #Facebook
-FACEBOOK_USERDATA_URL = "https://graph.facebook.com/me"
+FACEBOOK_USERDATA_URL = "https://graph.facebook.com/me?fields=id,name,first_name,email"
 FACEBOOK_GRAF_URL = "https://graph.facebook.com/oauth/access_token"
 FACEBOOK_APP_ID = 214579749046389
 FACEBOOK_REDIRECT_URL = 'http://localhost:8000/authcocial/lfacebook/'

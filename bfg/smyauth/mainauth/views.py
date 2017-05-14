@@ -1,25 +1,42 @@
 import requests
 from django.shortcuts import redirect, render_to_response
 from django.conf import settings
-from django.views.generic import View
-from django.contrib import messages
+from django.views.generic import RedirectView
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.template.context_processors import csrf
+from mainbfg.models import Profile
 
 """
     Facebook Autentification
 """
 
-class FacebookAuth(View):
+class FacebookAuth(RedirectView):
 
     def get(self, request):
         access_token = self.get_access_token()
         if access_token['status']:
             facebook_data = self.get_facebook_data(access_token['access_token'])
             if facebook_data['status']:
-                return render_to_response('registration/login.html', {'userf':facebook_data})
+                try:
+                    profile = Profile.objects.get(facebook_id=facebook_data['user_data']['id'])
+                except Profile.DoesNotExist:
+                    user = self.create_new_user(facebook_data['user_data'])
+                else:
+                    user = profile.user
+                user.backend = 'django.contrib.auth.backends.ModelBackend'
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                        return redirect(self.get_redirect_url())
+                    else:
+                        return self.bad_status(request)
+                else:
+                    return self.bad_status(request)
             else:
-                return render_to_response('registration/login.html', {'failauth': True})
+                return self.bad_status(request)
         else:
-            return render_to_response('registration/login.html', {'failauth': True})
+            return self.bad_status(request)
 
     def get_access_token(self):
         code = self.request.GET.get('code', '')
@@ -46,4 +63,26 @@ class FacebookAuth(View):
             return {'status':False}
 
     def create_new_user(self, facebook_data):
-        pass
+        username = facebook_data.get('first_name', 'Anonim')
+        password = User.objects.make_random_password()
+        user = User(
+            username=username,
+            email=facebook_data.get('email', ''),
+            is_staff=False,
+            is_active=True,
+            is_superuser=False,
+       )
+        user.set_password(password)
+        user.save()
+
+        profile = user.profile
+        profile.facebook_id = facebook_data['id']
+        profile.first_name = facebook_data.get('first_name', 'Anonim')
+        profile.email=facebook_data.get('email', '')
+        profile.save()
+        return user
+
+    def bad_status(self, request):
+        c = {'failauth': True, 'message_auth': settings.AUTH_FAILED_MESSAGESS}
+        c.update(csrf(request))
+        return render_to_response('registration/login.html', c)

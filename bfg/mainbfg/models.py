@@ -127,7 +127,7 @@ class Profile(models.Model):
     favorite_num = models.SmallIntegerField(blank=True, default=0)
     is_subscrabtion = models.BooleanField(default=False)
     is_subscriber = models.BooleanField(default=False)
-    facebook_id = models.IntegerField(blank=True, default=0)
+    facebook_id = models.BigIntegerField(blank=True, default=0)
     vk_id = models.IntegerField(blank=True, default=0)
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
