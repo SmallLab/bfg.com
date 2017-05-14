@@ -3714,8 +3714,8 @@ My styles
     padding-right: 0px
 }
 
-#hellopreloader>p{display:block;}
-#hellopreloader_preload{display: none;
+.hellopreloader>p{display:block;}
+.hellopreloader_preload{display: none;
         position: fixed;
         z-index: 99999;
         top: 0;
@@ -3725,5 +3725,5 @@ My styles
         min-width: 1000px;
         background: #406884 url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
         background-size:41px;
-        opacity: 0;
+        opacity: 1;
     }

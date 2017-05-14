@@ -17,5 +17,4 @@ class MainView(TemplateView):
       context['categories_list'] = Categories.object.get_list_categories()
       context['regions'] = Regions.objects.all()
       context['username'] = self.request.user
-      context['kyka'] = self.request.session
       return context

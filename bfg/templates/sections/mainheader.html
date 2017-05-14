@@ -19,22 +19,56 @@
                     <div class="icon-collapse">
                         <a href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="collapse" class="icon icon-collapse icon-primary fa fa-search"></a>
                     </div>
-
-                    <div class="icon-favorites-wrap">
-                        <a href="#" class="icon icon-favorites fa fa-star-o">
-                            <sup class="icon-favorites-count">1</sup>
-                        </a>
-                    </div>
+                    {% if user.is_authenticated and user.profile.favorite_num != 0 %}
+                        <div class="icon-favorites-wrap">
+                            <a href="#" class="icon icon-favorites fa fa-star-o">
+                                <sup class="icon-favorites-count">{{ user.profile.favorite_num }}</sup>
+                            </a>
+                        </div>
+                    {% endif %}
 
                     <a href="index-5.html" class="btn btn-offer btn-icon btn-primary">
                         <span>Добавить предложение</span>
                         <span class="icon icon-offer fa fa-plus-circle"></span>
                     </a>
-
-                    <a href="/login/" class="btn btn-sign-in btn-icon btn-transparent">
-                        <span class="icon icon-sign-in icon-circle icon-secondary fa fa-user-o"></span>
-                        <span><span class="text-secondary">Вход </span>/ Регистрация</span>
-                    </a>
+                    {% if user.is_authenticated %}
+                        <div class="collapse-select-wrap">
+                        <a class="btn btn-sign-in btn-icon btn-transparent btn-collapse-select" data-toggle="collapse" href="#selectCollapseCustom" aria-expanded="false" aria-controls="selectCollapseCustom">
+                            <span class="icon icon-sign-in icon-circle icon-secondary fa fa-user-o"></span>
+                            <span class="text-secondary">{{ user.username }}</span>
+                        </a>
+                        <div class="collapse collapse-select-container" id="selectCollapseCustom">
+                            <ul class="list">
+                                <li>
+                                    <a href="#">Мои предложения</a>
+                                </li>
+                                <li>
+                                    <a href="#">Платежи</a>
+                                </li>
+                                <li>
+                                    <a href="#">Настройки</a>
+                                </li>
+                                <li>
+                                    <a href="#">Подписки</a>
+                                </li>
+                                <li>
+                                    <a href="#">Избранное</a>
+                                </li>
+                            </ul>
+                            <div class="link-wrap">
+                                <a href="/logout/">
+                                    <span class="icon fa fa-power-off"></span>
+                                    <span>Выйти</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                        <a href="/login/" class="btn btn-sign-in btn-icon btn-transparent">
+                            <span class="icon icon-sign-in icon-circle icon-secondary fa fa-user-o"></span>
+                            <span><span class="text-secondary">Вход </span>/ Регистрация</span>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
