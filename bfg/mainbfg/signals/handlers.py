@@ -3,7 +3,7 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User
 from mainbfg.models import Profile
 
-
+#Listening Signals  is included in mainbfg/apps.py(def ready() )
 """
     Create user profile when user have registration in app
 """

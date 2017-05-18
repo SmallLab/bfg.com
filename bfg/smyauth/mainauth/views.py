@@ -62,6 +62,9 @@ class FacebookAuth(RedirectView):
         except (requests.RequestException, requests.ConnectionError, requests.HTTPError):
             return {'status':False}
 
+
+#When created a new user automatically created a record in Profile table for user(look signals/handlers)
+
     def create_new_user(self, facebook_data):
         username = facebook_data.get('first_name', 'Anonim')
         password = User.objects.make_random_password()
