@@ -27,11 +27,17 @@
                         </div>
                     {% endif %}
                     {% if user.is_authenticated %}
-                    <a href="addsentens" class="btn btn-offer btn-icon btn-primary">
+                        <a href="{% url 'addsentense' %}" class="btn btn-offer btn-icon btn-primary">
+                            <span>Добавить предложение</span>
+                            <span class="icon icon-offer fa fa-plus-circle"></span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-offer btn-icon btn-primary">
                         <span>Добавить предложение</span>
                         <span class="icon icon-offer fa fa-plus-circle"></span>
                     </a>
                     {% endif %}
+
                     {% if user.is_authenticated %}
                         <div class="collapse-select-wrap">
                         <a class="btn btn-sign-in btn-icon btn-transparent btn-collapse-select" data-toggle="collapse" href="#selectCollapseCustom" aria-expanded="false" aria-controls="selectCollapseCustom">
@@ -67,7 +73,7 @@
                     {% else %}
                         <a href="/login/" class="btn btn-sign-in btn-icon btn-transparent">
                             <span class="icon icon-sign-in icon-circle icon-secondary fa fa-user-o"></span>
-                            <span><span class="text-secondary">Вход </span>/ Регистрация</span>
+                            <span><span class="text-secondary">Вход/Регистрация</span>
                         </a>
                     {% endif %}
                 </div>

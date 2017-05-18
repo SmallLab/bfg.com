@@ -22,8 +22,8 @@ from mainbfg.views import LoginUser
 urlpatterns = [
     url(r'^', include('mainbfg.urls')),
     url(r'^authcocial/', include('smyauth.urls')),
+    url(r'^user/', include('userswork.urls')),
     url(r'^admin/', admin.site.urls),
-    #url(r'^login/$', auth_views.login, name='login'),
     url(r'^login/$', LoginUser, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 ]
