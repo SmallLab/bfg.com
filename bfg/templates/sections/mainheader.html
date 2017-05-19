@@ -22,7 +22,7 @@
                     {% if user.is_authenticated and user_favorite_num != 0 %}
                         <div class="icon-favorites-wrap">
                             <a href="#" class="icon icon-favorites fa fa-star-o" data-toggle="tooltip" title="Избранное" data-placement="bottom">
-                                <sup class="icon-favorites-count">{{ user_favorite_num }}</sup>
+                                <sup class="icon-favorites-count">{{ user.profile.favorite_num }}</sup>
                             </a>
                         </div>
                     {% endif %}

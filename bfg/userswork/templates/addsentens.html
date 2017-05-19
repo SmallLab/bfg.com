@@ -1,2 +1,165 @@
-{% extends "main.html" %}
-{% block title %}BFG Add{% endblock %}
+{% extends "mainuser.html" %}
+{% load staticfiles %}
+{% block title %}BFG Добавить предложение{% endblock %}
+{% block content %}
+    <section class="header-page-bottom">
+        <div class="section section-1 bg-image bg-image-1">
+            <div class="container container-custom">
+                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section section-2">
+        <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
+            <h2 class="text-primary text-36 text-sbold">Подать бесплатное предложение на BFG</h2>
+
+            <form class="form form-offer" method="post" name="add_new_s" action="/">{% csrf_token %}
+                <div class="form-offer-inner">
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="author">Автор<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <input id="author" type="text" class="form-control" name="autor" required>
+                                <span>Не более 50 символов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="head">Заголовок<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <input id="head" type="text" class="form-control" name="caption" required>
+                                <span>Не более 50 символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Введите наименование товара, обьекта или услуги</span>
+                            </span>
+                            <div class="desc-cust">Чем точнее вы подбираете  слова, тем коректнее система подскажет вам категорию в которой вы разместите товар</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="type_id">Тип предложения<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="type_id" required>
+                                    <option value="all">Тип</option>
+                                    {% for type in types %}
+                                        <option value="{{ type.link_name }}">{{ type.name }}</option>
+                                    {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="category_id">Категория<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="category_id" required>
+                                    <option value="all">Категория</option>
+                                    {% for category in categories %}
+                                        <option value="{{ category.link_name }}">{{ category.name }}</option>
+                                    {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="region_id">Регион<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="region_id" required>
+                                    <option value="all">Регион</option>
+                                    {% for region in regions %}
+                                        <option value="{{ region.link_name }}">{{ region.name }}</option>
+                                    {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="telephone">Телефон</label>
+                            <div class="form-control-wrap">
+                                <input id="telephone" type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="website">Web-сайт</label>
+                            <div class="form-control-wrap">
+                                <input id="website" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <div class="form-group-inner form-checkbox">
+                            <label>
+                                <input type="checkbox">Показывать как интернет магазин
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="comment">Описание<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <textarea class="form-control" id="comment"></textarea>
+                                <span>999 символов введено</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-photos">
+                        <div class="form-group-inner">
+                            <div class="form-photos-left">
+                                <div class="form-photos-title">Фотографии</div>
+                                <div class="form-photos-desc">Объявление с фото <br> повышают продажи <br> в 2-6 раз</div>
+                            </div>
+
+                            <div class="form-photos-right">
+                                <div class="form-photos-row">
+                                    <a href="#" class="form-photos-column form-photos-main-photo">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                        <span class="form-photos-main-title">Главное изображение</span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                </div>
+                                <div class="form-photos-row">
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <a href="#" class="form-photos-column">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btns form-group-inner">
+                        <button type="submit" class="btn btn-secondary">Предпросмотр</button>
+                        <button type="submit" class="btn btn-primary">Опубликовать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
