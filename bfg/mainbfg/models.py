@@ -65,6 +65,7 @@ class Categories(models.Model):
 class Regions(models.Model):
     name = models.CharField(max_length=100)
     link_name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
 
     def get_absolute_url(self):
         return "/%s/" % self.link_name

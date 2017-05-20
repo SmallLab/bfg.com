@@ -8,7 +8,7 @@
         </section>
         <section class="section section-2">
             <div class="container container-custom">
-                {% for category_list in categories_list %}
+                {% for category_list in data.categories_list %}
                 <ul class="list-inline list-fitch text-center row">
                     {% for cl in category_list %}
                         {% if forloop.counter0|divisibleby:"2"  %}

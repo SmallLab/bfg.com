@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load cache %}
+{% cache 31536000 login %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
@@ -167,3 +169,4 @@
 {% include 'sections/mainfooter.html' %}
 <script type="text/javascript" src="{% static "js/socialauth.js" %}"></script>
 </body>
+{% endcache %}

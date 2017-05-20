@@ -7,7 +7,7 @@
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
                                 <option value="all">Тип предложения</option>
-                                {% for type in types %}
+                                {% for type in data.types %}
                                     <option value="{{ type.link_name }}">{{ type.name }}</option>
                                 {% endfor %}
                             </select>
@@ -17,7 +17,7 @@
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
                                 <option value="all">Категория</option>
-                                {% for category in categories %}
+                                {% for category in data.categories %}
                                     <option value="{{ category.link_name }}">{{ category.name }}</option>
                                 {% endfor %}
                             </select>
@@ -27,7 +27,7 @@
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select">
                                 <option value="all">Регион</option>
-                                {% for region in regions %}
+                                {% for region in data.regions %}
                                     <option value="{{ region.link_name }}">{{ region.name }}</option>
                                 {% endfor %}
                             </select>
