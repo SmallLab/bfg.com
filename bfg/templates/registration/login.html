@@ -111,6 +111,7 @@
                                             <a href="#">Не можете войти?</a>
                                         </p>
                                     </div>
+                                    <input type="hidden"  name="next_url" value="{{ next_url }}">
                                     <button type="submit" class="btn btn-lg btn-block btn-secondary">Войти</button>
                                     <p class="nav-terms">Входя в раздел Мой Профиль, Вы принимаете <a href="#">Условия использования</a> сайта</p>
                                 </form>
@@ -145,6 +146,7 @@
                                             </div>
                                         {% endif %}
                                     </div>
+                                    <input type="hidden"  name="next_url" value="{{ next_url }}">
                                     <button type="submit" class="btn btn-lg btn-block btn-secondary">Регистрация</button>
                                     <div class="checkbox">
                                         <label>

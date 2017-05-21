@@ -19,7 +19,7 @@ def RegistrationUser(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('/')
+                    return redirect(request.POST['next_url'])
                 else:
                     return redirect('/login/')
             else:
@@ -27,14 +27,20 @@ def RegistrationUser(request):
         elif form.is_valid() and isset_user_login:
             form.errors.username = 'Пользователь с таким логином уже существует, выберите другой логин'
             c = {"rerrors": form.errors, 'tab': True, }
+            c['next_url'] = request.POST['next_url']
             c.update(csrf(request))
             return render_to_response('registration/login.html', c)
         else:
             c = {"rerrors": form.errors, 'tab': True,}
+            c['next_url'] = request.POST['next_url']
             c.update(csrf(request))
             return render_to_response('registration/login.html', c)
     else:
         c = {'tab': True}
+        if request.GET:
+            c['next_url'] = request.GET['next']
+        else:
+            c['next_url'] = '/'
         c.update(csrf(request))
         return render_to_response('registration/login.html', c)
 
@@ -50,19 +56,25 @@ def LoginUser(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('/')
+                    return redirect(request.POST['next_url'])
                 else:
                     return redirect('/login/')
             else:
                 none_user = 'Пользователя с таким логином и паролем не существует!!!'
                 c = {"none_user": none_user, 'tab': False}
+                c['next_url'] = request.POST['next_url']
                 c.update(csrf(request))
                 return render_to_response('registration/login.html', c)
         else:
             c = {"lerrors": login_form.errors, 'tab': False,}
+            c['next_url'] = request.POST['next_url']
             c.update(csrf(request))
             return render_to_response('registration/login.html', c)
     else:
         c = {'tab':False}
         c.update(csrf(request))
+        if request.GET:
+            c['next_url'] = request.GET['next']
+        else:
+            c['next_url'] = '/'
         return render_to_response('registration/login.html', c)

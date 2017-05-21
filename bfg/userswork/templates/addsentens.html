@@ -15,13 +15,20 @@
 
             <form class="form form-offer" method="post" name="add_new_s" action="/">{% csrf_token %}
                 <div class="form-offer-inner">
-                    <div class="form-group">
+                    <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
                             <label for="author">Автор<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <input id="author" type="text" class="form-control" name="autor" required>
-                                <span>Не более 50 символов</span>
+                                <span data-num="50">Не более 50 символов</span>
                             </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Введите Автора</span>
+                            </span>
+                            <div class="desc-cust">Например наименование магазина, бутика, салона</div>
                         </div>
                     </div>
                     <div class="form-group form-group-info-wrap">
@@ -32,12 +39,12 @@
                                 <span>Не более 50 символов</span>
                             </div>
                         </div>
-                        <div class="form-group-info">
+                        <div class="form-group-info" style="display: none">
                             <span class="top-wrap">
                                 <span class="icon fa fa-info-circle"></span>
-                                <span class="title-cust">Введите наименование товара, обьекта или услуги</span>
+                                <span class="title-cust">Введите заголовок предложения</span>
                             </span>
-                            <div class="desc-cust">Чем точнее вы подбираете  слова, тем коректнее система подскажет вам категорию в которой вы разместите товар</div>
+                            <div class="desc-cust">Например - Распродажа обуви, Скидка 50%...</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -79,30 +86,83 @@
                              </div>
                           </div>
                      </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="full_adress">Полный адрес</label>
+                            <div class="form-control-wrap">
+                                <input id="full_adress" type="text" class="form-control" name="full_adress" required>
+                                <span>Не более 50 символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Вы можете указать более полный адрес для отображения Вашего расположения на карте</span>
+                            </span>
+                            <div class="desc-cust">Например Киев, ул.Мира, 125 или Киев, ул.Мира, д.125</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
                             <label for="telephone">Телефон</label>
                             <div class="form-control-wrap">
-                                <input id="telephone" type="number" class="form-control">
+                                <input id="telephone" type="text" class="form-control" name="phone">
                             </div>
                         </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Укажите телефон для связи</span>
+                            </span>
+                            <div class="desc-cust"></div>
+                        </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
                             <label for="website">Web-сайт</label>
                             <div class="form-control-wrap">
-                                <input id="website" type="text" class="form-control">
+                                <input id="web_site" type="text" class="form-control" name="web_site">
                             </div>
                         </div>
-                    </div>
-                    <div class="checkbox">
-                        <div class="form-group-inner form-checkbox">
-                            <label>
-                                <input type="checkbox">Показывать как интернет магазин
-                            </label>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Добавьте адрес Вашего сайта</span>
+                            </span>
+                            <div class="desc-cust"></div>
                         </div>
                     </div>
-
+                    <div class="checkbox form-group-info-wrap">
+                        <div class="form-group-inner form-checkbox">
+                            <label>
+                                <input type="checkbox" name="is_webstore">Показывать как интернет магазин
+                            </label>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust"></span>
+                            </span>
+                            <div class="desc-cust"></div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="full_adress">Meta информация</label>
+                            <div class="form-control-wrap">
+                                <input id="meta_info" type="text" class="form-control" name="meta_info">
+                                <span>Не более 100 символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Для увеличения вероятности отображения Вашего предложения в результатах поисковых систем,
+                                    добавте meta информацию</span>
+                            </span>
+                            <div class="desc-cust">Например:Магазин Гвозди, распродажа, Киев, низкая цена ...</div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="form-group-inner">
                             <label for="comment">Описание<sup>*</sup></label>
@@ -162,4 +222,5 @@
             </form>
         </div>
     </section>
+<script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
 {% endblock %}

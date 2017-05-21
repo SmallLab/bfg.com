@@ -77,35 +77,53 @@ class Regions(models.Model):
 
 #-------------------------------- Sentence Model -------------------------------------------#
 
-# class Sentence(models.Model):
-#
-#     type_id = models.SmallIntegerField()
-#     category_id = models.SmallIntegerField()
-#     sub_id = models.SmallIntegerField(default=0)
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     autor = models.CharField(max_length=100)
-#     caption = models.CharField(max_length=200)
-#     region_id = models.SmallIntegerField()
-#     full_adress = models.CharField(max_length=250, blank=True)
-#     phone = models.CharField(max_length=100, blank=True)
-#     web = models.CharField(max_length=250, blank=True)
-#     is_webstore = models.BooleanField(default=False)
-#     description = models.TextField()
-#     main_img = models.CharField(max_length=250, blank=True)
-#     create_time = models.DateTimeField(auto_now_add=True)
-#     stop_time = models.DateTimeField(blank=True)
-#     status = models.SmallIntegerField(default=0)
-#     type_s = models.SmallIntegerField(default=0)
-#     type_img_s = models.CharField(max_length=300)
-#     meta_info = models.CharField(max_length=1000, blank=True)
-#     views = models.IntegerField(default=0)
-#     phone_views = models.IntegerField(default=0)
-#     text_message = models.CharField(max_length=1000, blank=True)
-#     is_paid = models.BooleanField(default=False)
-#     start_time_paid = models.DateTimeField(blank=True)
-#     end_time_paid = models.DateTimeField(blank=True)
-#     on_moderation = models.BooleanField(default=False)
-#     link_name = models.CharField(max_length=550)
+class Sentence(models.Model):
+
+    type_id = models.SmallIntegerField()
+    category_id = models.SmallIntegerField()
+    sub_id = models.SmallIntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    autor = models.CharField(max_length=100)
+    caption = models.CharField(max_length=200)
+    region_id = models.SmallIntegerField()
+    full_adress = models.CharField(max_length=350, blank=True)
+    phone = models.CharField(max_length=100, blank=True)
+    web_site = models.CharField(max_length=250, blank=True)
+    is_webstore = models.BooleanField(default=False)
+    description = models.TextField()
+    meta_info = models.CharField(max_length=1000, blank=True)
+    main_img = models.ImageField(upload_to='images/', blank=True)
+    create_time = models.DateTimeField(auto_now_add=True)
+    stop_time = models.DateTimeField(blank=True)
+    status = models.SmallIntegerField(default=0) #0 - on moderations, 1 - published, 2 - on editing
+    type_s = models.SmallIntegerField(default=0) #0 - usual, 1 - TOP, 2 - VIP
+    type_img_s = models.CharField(max_length=300)#path to img (Stock, Discount, Sale)
+    views = models.IntegerField(default=0)
+    phone_views = models.IntegerField(default=0)
+    text_message = models.CharField(max_length=1000, blank=True)
+    is_paid = models.BooleanField(default=False)
+    start_time_paid = models.DateTimeField(blank=True)
+    end_time_paid = models.DateTimeField(blank=True)
+    on_moderation = models.BooleanField(default=False)
+    link_name = models.CharField(max_length=550)
+    identifier = models.CharField(max_length=20)
+
+
+    def get_absolute_url(self):
+        return "sentence/%s/%s/" % self.link_name, self.identifier
+
+
+    def __str__(self):
+        return self.link_name
+
+
+#---------------------------------Images Model----------------------------------------------#
+
+class ImagesSentences(models.Model):
+
+    sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE)
+    img_path = models.CharField(max_length=250 ,blank=True)
+
 
 
 #-------------------------------- Payments Model -------------------------------------------#
