@@ -13,7 +13,7 @@
         <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
             <h2 class="text-primary text-36 text-sbold">Подать бесплатное предложение на BFG</h2>
 
-            <form class="form form-offer" method="post" name="add_new_s" action="/">{% csrf_token %}
+            <form class="form form-offer" method="post" name="add_new_s" action="/" id="add_new_s">{% csrf_token %}
                 <div class="form-offer-inner">
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
@@ -51,8 +51,8 @@
                         <div class="form-group-inner">
                             <label for="type_id">Тип предложения<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <select class="form-control form-control-select" name="type_id" required>
-                                    <option value="all">Тип</option>
+                                <select class="form-control form-control-select" name="type_id" >
+
                                     {% for type in types %}
                                         <option value="{{ type.link_name }}">{{ type.name }}</option>
                                     {% endfor %}
@@ -64,8 +64,8 @@
                         <div class="form-group-inner">
                             <label for="category_id">Категория<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <select class="form-control form-control-select" name="category_id" required>
-                                    <option value="all">Категория</option>
+                                <select class="form-control form-control-select" name="category_id">
+
                                     {% for category in categories %}
                                         <option value="{{ category.link_name }}">{{ category.name }}</option>
                                     {% endfor %}
@@ -77,8 +77,8 @@
                         <div class="form-group-inner">
                             <label for="region_id">Регион<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <select class="form-control form-control-select" name="region_id" required>
-                                    <option value="all">Регион</option>
+                                <select class="form-control form-control-select" name="region_id">
+
                                     {% for region in regions %}
                                         <option value="{{ region.link_name }}">{{ region.name }}</option>
                                     {% endfor %}
@@ -90,7 +90,7 @@
                         <div class="form-group-inner">
                             <label for="full_adress">Полный адрес</label>
                             <div class="form-control-wrap">
-                                <input id="full_adress" type="text" class="form-control" name="full_adress" required>
+                                <input id="full_adress" type="text" class="form-control" name="full_adress" >
                                 <span>Не более 50 символов</span>
                             </div>
                         </div>
@@ -167,13 +167,13 @@
                         <div class="form-group-inner">
                             <label for="comment">Описание<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <textarea class="form-control" id="comment"></textarea>
+                                <textarea class="form-control" id="description" name="description" required></textarea>
                                 <span>999 символов введено</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-photos">
+                    <div class="form-photos form-group-info-wrap" id="fotos_div">
                         <div class="form-group-inner">
                             <div class="form-photos-left">
                                 <div class="form-photos-title">Фотографии</div>
@@ -212,6 +212,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group-info" style="display: none" id="fotos_info">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Для увеличения вероятности отображения Вашего предложения в результатах поисковых систем,
+                                    добавте meta информацию</span>
+                            </span>
+                            <div class="desc-cust">Например:Магазин Гвозди, распродажа, Киев, низкая цена ...</div>
+                        </div>
                     </div>
 
                     <div class="btns form-group-inner">
@@ -222,5 +230,6 @@
             </form>
         </div>
     </section>
+<script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
 {% endblock %}

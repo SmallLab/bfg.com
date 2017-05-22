@@ -1,3 +1,12 @@
+var is_validate_js = true;
+$.validator.setDefaults( {
+			submitHandler: function () {
+			    if (is_validate_js){
+                    $( "#add_new_s" ).submit();
+                }
+                alert( "submitted!" );
+			}
+		} );
 $(document).ready(function () {
 
     $('input').on('click', function () {
@@ -7,4 +16,92 @@ $(document).ready(function () {
     $('input').blur(function(){
         $(this).parent().parent().next().hide()
     });
+
+    $('#fotos_div').mousemove(function(){
+      $('#fotos_info').show();
+    });
+
+    $('#fotos_div').mouseleave(function(){
+      $('#fotos_info').hide();
+    });
+
+    $( "#add_new_s" ).validate( {
+				rules: {
+					autor: {
+						required: true,
+						maxlength: 30
+					},
+					caption: {
+						required: true,
+						maxlength: 50
+					},
+					description: {
+						required: true,
+						maxlength: 1000
+					},
+					full_adress: {
+					    required: false,
+						maxlength: 100
+					},
+					meta_info: {
+					    required: false,
+						maxlength: 100
+					},
+
+				},
+				messages: {
+					autor: {
+						required: "Пожалуйста введите автора",
+						maxlength: "Не более 30 символов"
+					},
+					caption: {
+						required: "Пожалуйста введите заголовок",
+						maxlength: "Не более 50 символов"
+					},
+					description: {
+						required: "Пожалуйста введите описание",
+						maxlength: "Не более 1000 символов"
+					},
+                    full_adress: {
+					   maxlength: "Не более 100 символов"
+					},
+					meta_info: {
+					    maxlength: "Не более 100 символов"
+					},
+				},
+				errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					// Add the `help-block` class to the error element
+					error.addClass( "help-block" );
+
+					// Add `has-feedback` class to the parent div.form-group
+					// in order to add icons to inputs
+					element.parents( ".form-control-wrap" ).addClass( "has-feedback" );
+
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !element.next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+					}
+				},
+				success: function ( label, element ) {
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !$( element ).next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".form-control-wrap" ).addClass( "has-error" ).removeClass( "has-success" );
+					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+				},
+				unhighlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".form-control-wrap" ).addClass( "has-success" ).removeClass( "has-error" );
+					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+				}
+			} );
 })

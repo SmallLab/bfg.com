@@ -2344,7 +2344,7 @@ h3 + .product-list {
     min-width: 100%;
     box-shadow: none;
     color: #000000;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
 }
 
@@ -2356,7 +2356,7 @@ h3 + .product-list {
 
 .form-offer .form-group-inner span {
     font-size: 12px;
-    color: #a19e9e;
+    /*color: #a19e9e;*/
     font-weight: 300;
     margin-top: 5px;
 }
