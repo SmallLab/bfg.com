@@ -20,7 +20,7 @@
                             <label for="author">Автор<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <input id="author" type="text" class="form-control" name="autor" required>
-                                <span data-num="50">Не более 50 символов</span>
+                                <span data-num="count_simbols" data-count="30">Не более 30 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -36,7 +36,7 @@
                             <label for="head">Заголовок<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <input id="head" type="text" class="form-control" name="caption" required>
-                                <span>Не более 50 символов</span>
+                                <span data-num="count_simbols" data-count="50">Не более 50 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -91,7 +91,7 @@
                             <label for="full_adress">Полный адрес</label>
                             <div class="form-control-wrap">
                                 <input id="full_adress" type="text" class="form-control" name="full_adress" >
-                                <span>Не более 50 символов</span>
+                                <span data-num="count_simbols" data-count="100">Не более 100 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -127,7 +127,7 @@
                         <div class="form-group-info" style="display: none">
                             <span class="top-wrap">
                                 <span class="icon fa fa-info-circle"></span>
-                                <span class="title-cust">Добавьте адрес Вашего сайта</span>
+                                <span class="title-cust">Добавьте адрес Вашего сайта в формате http://mysite.com.ua</span>
                             </span>
                             <div class="desc-cust"></div>
                         </div>
@@ -151,7 +151,7 @@
                             <label for="full_adress">Meta информация</label>
                             <div class="form-control-wrap">
                                 <input id="meta_info" type="text" class="form-control" name="meta_info">
-                                <span>Не более 100 символов</span>
+                                <span data-num="count_simbols" data-count="100">Не более 100 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -168,7 +168,7 @@
                             <label for="comment">Описание<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <textarea class="form-control" id="description" name="description" required></textarea>
-                                <span>999 символов введено</span>
+                                <span data-num="count_simbols" data-count="1000">Не более 1000 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
                     </div>
@@ -215,10 +215,9 @@
                         <div class="form-group-info" style="display: none" id="fotos_info">
                             <span class="top-wrap">
                                 <span class="icon fa fa-info-circle"></span>
-                                <span class="title-cust">Для увеличения вероятности отображения Вашего предложения в результатах поисковых систем,
-                                    добавте meta информацию</span>
+                                <span class="title-cust">Добавте фото к Вашему предложению</span>
                             </span>
-                            <div class="desc-cust">Например:Магазин Гвозди, распродажа, Киев, низкая цена ...</div>
+                            <div class="desc-cust">Максимальный размер файла 5 МБ, формат .jpg, .jpeg, .png, .gif.</div>
                         </div>
                     </div>
 

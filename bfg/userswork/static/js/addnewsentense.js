@@ -1,4 +1,4 @@
-var is_validate_js = true;
+var is_validate_js = false;
 $.validator.setDefaults( {
 			submitHandler: function () {
 			    if (is_validate_js){
@@ -15,6 +15,33 @@ $(document).ready(function () {
 
     $('input').blur(function(){
         $(this).parent().parent().next().hide()
+    });
+
+    $("input").keyup(function() {
+        $(this).next('[data-num = count_simbols]').next('span').css('display', 'block').children('em').text(this.value.length);
+        if (this.value.length > parseInt($(this).next('[data-num = count_simbols]').data( "count" ))){
+            $(this).next('[data-num = count_simbols]').next('span').css('color', 'red').children('em').text(this.value.length);
+        }
+        else{
+            $(this).next('[data-num = count_simbols]').next('span').css('color', 'green').children('em').text(this.value.length);
+        }
+        if(this.value.length == 0){
+            $(this).next('[data-num = count_simbols]').next('span').css('display', 'none');
+        }
+    });
+
+    $("textarea").keyup(function() {
+        $(this).next('[data-num = count_simbols]').next('span').css('display', 'block').children('em').text(this.value.length);
+        if (this.value.length > parseInt($(this).next('[data-num = count_simbols]').data( "count" ))){
+            $(this).next('[data-num = count_simbols]').next('span').css('color', 'red').children('em').text(this.value.length);
+        }
+        else{
+            $(this).next('[data-num = count_simbols]').next('span').css('color', 'green').children('em').text(this.value.length);
+        }
+
+        if(this.value.length == 0){
+            $(this).next('[data-num = count_simbols]').next('span').css('display', 'none');
+        }
     });
 
     $('#fotos_div').mousemove(function(){
@@ -79,20 +106,20 @@ $(document).ready(function () {
 					element.parents( ".form-control-wrap" ).addClass( "has-feedback" );
 
 					if ( element.prop( "type" ) === "checkbox" ) {
-						error.insertAfter( element.parent( "label" ) );
+						error.insertBefore( element.parent( "label" ) );
 					} else {
-						error.insertAfter( element );
+						error.insertBefore( element );
 					}
 
 					// Add the span element, if doesn't exists, and apply the icon classes to it.
 					if ( !element.next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertBefore( element );
 					}
 				},
 				success: function ( label, element ) {
 					// Add the span element, if doesn't exists, and apply the icon classes to it.
 					if ( !$( element ).next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertBefore( $( element ) );
 					}
 				},
 				highlight: function ( element, errorClass, validClass ) {
