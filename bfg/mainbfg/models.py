@@ -97,13 +97,13 @@ class Sentence(models.Model):
     stop_time = models.DateTimeField(blank=True)
     status = models.SmallIntegerField(default=0) #0 - on moderations, 1 - published, 2 - on editing
     type_s = models.SmallIntegerField(default=0) #0 - usual, 1 - TOP, 2 - VIP
-    type_img_s = models.CharField(max_length=300)#path to img (Stock, Discount, Sale)
+    type_img_s = models.CharField(max_length=300, blank=True)#path to img (Stock, Discount, Sale)
     views = models.IntegerField(default=0)
     phone_views = models.IntegerField(default=0)
     text_message = models.CharField(max_length=1000, blank=True)
     is_paid = models.BooleanField(default=False)
-    start_time_paid = models.DateTimeField(blank=True)
-    end_time_paid = models.DateTimeField(blank=True)
+    start_time_paid = models.DateTimeField(auto_now_add=True)
+    end_time_paid = models.DateTimeField(auto_now_add=True)
     on_moderation = models.BooleanField(default=False)
     link_name = models.CharField(max_length=550)
     identifier = models.CharField(max_length=20)

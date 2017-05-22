@@ -12,14 +12,13 @@
     <section class="section section-2">
         <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
             <h2 class="text-primary text-36 text-sbold">Подать бесплатное предложение на BFG</h2>
-
-            <form class="form form-offer" method="post" name="add_new_s" action="/" id="add_new_s">{% csrf_token %}
+            <form class="form form-offer" method="post" name="add_new_s" action="{% url 'createsentence' %}" id="add_new_s">{% csrf_token %}
                 <div class="form-offer-inner">
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
                             <label for="author">Автор<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <input id="author" type="text" class="form-control" name="autor" required>
+                                <input id="author" type="text" class="form-control" name="autor" value="{{ data.autor }}">
                                 <span data-num="count_simbols" data-count="30">Не более 30 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
@@ -35,7 +34,7 @@
                         <div class="form-group-inner">
                             <label for="head">Заголовок<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <input id="head" type="text" class="form-control" name="caption" required>
+                                <input id="head" type="text" class="form-control" name="caption" value="{{ data.caption }}">
                                 <span data-num="count_simbols" data-count="50">Не более 50 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
@@ -52,9 +51,12 @@
                             <label for="type_id">Тип предложения<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <select class="form-control form-control-select" name="type_id" >
-
                                     {% for type in types %}
-                                        <option value="{{ type.link_name }}">{{ type.name }}</option>
+                                        {% if data.type_id == type.id|stringformat:"i" %}
+                                            <option value="{{ type.id }}" selected>{{ type.name }}</option>
+                                        {% else %}
+                                            <option value="{{ type.id }}">{{ type.name }}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                              </div>
@@ -65,10 +67,13 @@
                             <label for="category_id">Категория<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <select class="form-control form-control-select" name="category_id">
-
                                     {% for category in categories %}
-                                        <option value="{{ category.link_name }}">{{ category.name }}</option>
-                                    {% endfor %}
+                                        {% if data.category_id == category.id|stringformat:"i" %}
+                                            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+                                        {% else %}
+                                            <option value="{{ category.id }}">{{ category.name }}</option>
+                                        {% endif %}
+                                   {% endfor %}
                                 </select>
                              </div>
                           </div>
@@ -78,9 +83,12 @@
                             <label for="region_id">Регион<sup>*</sup></label>
                             <div class="form-control-wrap">
                                 <select class="form-control form-control-select" name="region_id">
-
                                     {% for region in regions %}
-                                        <option value="{{ region.link_name }}">{{ region.name }}</option>
+                                        {% if data.region_id == region.id|stringformat:"i" %}
+                                            <option value="{{ region.id }}" selected>{{ region.name }}</option>
+                                        {% else %}
+                                            <option value="{{ region.id }}">{{ region.name }}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                              </div>
@@ -90,7 +98,7 @@
                         <div class="form-group-inner">
                             <label for="full_adress">Полный адрес</label>
                             <div class="form-control-wrap">
-                                <input id="full_adress" type="text" class="form-control" name="full_adress" >
+                                <input id="full_adress" type="text" class="form-control" name="full_adress" value="{{ data.full_adress }}">
                                 <span data-num="count_simbols" data-count="100">Не более 100 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
@@ -106,7 +114,7 @@
                         <div class="form-group-inner">
                             <label for="telephone">Телефон</label>
                             <div class="form-control-wrap">
-                                <input id="telephone" type="text" class="form-control" name="phone">
+                                <input id="telephone" type="text" class="form-control" name="phone" value="{{ data.phone }}">
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -121,7 +129,7 @@
                         <div class="form-group-inner">
                             <label for="website">Web-сайт</label>
                             <div class="form-control-wrap">
-                                <input id="web_site" type="text" class="form-control" name="web_site">
+                                <input id="web_site" type="text" class="form-control" name="web_site" value="{{ data.web_site }}">
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none">
@@ -150,7 +158,7 @@
                         <div class="form-group-inner">
                             <label for="full_adress">Meta информация</label>
                             <div class="form-control-wrap">
-                                <input id="meta_info" type="text" class="form-control" name="meta_info">
+                                <input id="meta_info" type="text" class="form-control" name="meta_info" value="{{ data.meta_info }}">
                                 <span data-num="count_simbols" data-count="100">Не более 100 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
@@ -167,7 +175,7 @@
                         <div class="form-group-inner">
                             <label for="comment">Описание<sup>*</sup></label>
                             <div class="form-control-wrap">
-                                <textarea class="form-control" id="description" name="description" required></textarea>
+                                <textarea class="form-control" id="description" name="description">{{ data.description }}</textarea>
                                 <span data-num="count_simbols" data-count="1000">Не более 1000 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
                             </div>
                         </div>
@@ -231,4 +239,6 @@
     </section>
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
+    {{ form.errors }}
+    {{ data }}
 {% endblock %}
