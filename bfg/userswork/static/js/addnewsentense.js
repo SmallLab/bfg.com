@@ -1,3 +1,6 @@
+/*
+* Identifier for debug mode(if true - form submited on server)
+* */
 var is_validate_js = false;
 $.validator.setDefaults( {
 			submitHandler: function () {
@@ -8,7 +11,7 @@ $.validator.setDefaults( {
 			}
 		} );
 $(document).ready(function () {
-
+//Show/hide help block for input tags
     $('input').on('click', function () {
         $(this).parent().parent().next().show()
     });
@@ -16,7 +19,7 @@ $(document).ready(function () {
     $('input').blur(function(){
         $(this).parent().parent().next().hide()
     });
-
+//Show count entered simbols for input tags
     $("input").keyup(function() {
         $(this).next('[data-num = count_simbols]').next('span').css('display', 'block').children('em').text(this.value.length);
         if (this.value.length > parseInt($(this).next('[data-num = count_simbols]').data( "count" ))){
@@ -29,7 +32,7 @@ $(document).ready(function () {
             $(this).next('[data-num = count_simbols]').next('span').css('display', 'none');
         }
     });
-
+//Show count entered simbols for textarea tag
     $("textarea").keyup(function() {
         $(this).next('[data-num = count_simbols]').next('span').css('display', 'block').children('em').text(this.value.length);
         if (this.value.length > parseInt($(this).next('[data-num = count_simbols]').data( "count" ))){
@@ -44,6 +47,7 @@ $(document).ready(function () {
         }
     });
 
+//Show count entered simbols for fotos block
     $('#fotos_div').mousemove(function(){
       $('#fotos_info').show();
     });
@@ -51,6 +55,8 @@ $(document).ready(function () {
     $('#fotos_div').mouseleave(function(){
       $('#fotos_info').hide();
     });
+
+//Validations form
 
     $( "#add_new_s" ).validate( {
 				rules: {

@@ -119,7 +119,7 @@ class Sentence(models.Model):
 
 #---------------------------------Images Model----------------------------------------------#
 
-class ImagesSentences(models.Model):
+class Image(models.Model):
 
     sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE)
     img_path = models.CharField(max_length=250 ,blank=True)
