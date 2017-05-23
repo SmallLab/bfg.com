@@ -1,4 +1,17 @@
 {% extends "mainuser.html" %}
+<style>
+    .fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+</style>
 {% load staticfiles %}
 {% block title %}BFG Добавить предложение{% endblock %}
 {% block content %}
@@ -190,10 +203,18 @@
 
                             <div class="form-photos-right">
                                 <div class="form-photos-row">
-                                    <a href="#" class="form-photos-column form-photos-main-photo">
-                                        <span class="icon fa fa-plus-circle"></span>
+                                    <a href="#" class="form-photos-column form-photos-main-photo" id="main_file_select">
+{#                                        <img src="{% static 'images/product-01-257x205.jpg' %}">#}
+                                        <span class="icon fa fa-plus-circle" id="before_img"></span>
                                         <span class="form-photos-main-title">Главное изображение</span>
                                     </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif" style="display:none"
+                                           onchange="handleMainFile(this.files)"
+                                           id="main_file_img"
+                                           name="main_file_img"
+                                    >
+
+
                                     <a href="#" class="form-photos-column">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
@@ -239,6 +260,7 @@
     </section>
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/fileupload.js' %}"></script>
     {{ form.errors }}
     {{ data }}
 {% endblock %}
