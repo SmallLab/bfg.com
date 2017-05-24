@@ -32,12 +32,17 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
     form_class = SentenceForm
     template_name = 'addsentens.html'
     succes_url = '/'
+    type_img_s = {1:'/static/images/label-01-102x75.png', 2:'/static/images/label-02-105x95.png',
+                  3:'/static/images/label-03-98-71.png'}
 
     def form_valid(self, form):
 
         instance = form.save(commit=False)
         instance.user = self.request.user
-        instance.stop_time = datetime.now() +  timedelta(days=30)
+        instance.stop_time = datetime.now() + timedelta(days=30)
+        instance.type_img_s = self.type_img_s[form.cleaned_data['type_id']]
+        instance.identifier = self.uuid_sentece()
+        instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
         instance.save()
 
         return super(CreateNewSentence, self).form_valid(form)
@@ -58,3 +63,12 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return self.succes_url
 
+
+    def slugify(swlf, str):
+        import re
+        import unidecode
+        return re.sub(r'\s+', '-', unidecode.unidecode(str).lower().strip())
+
+    def uuid_sentece(self):
+        import uuid
+        return str(uuid.uuid4())[:8]

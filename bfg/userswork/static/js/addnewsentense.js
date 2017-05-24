@@ -58,7 +58,7 @@ $(document).ready(function () {
 
 //Validations form
 
-    $( "#add_new_ss" ).validate( {
+    $( "#add_new_s" ).validate( {
 				rules: {
 					autor: {
 						required: true,

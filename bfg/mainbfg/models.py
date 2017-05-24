@@ -114,6 +114,7 @@ class Sentence(models.Model):
     def __str__(self):
         return self.link_name
 
+
 class SentenceForm(ModelForm):
     class Meta:
         model = Sentence
@@ -125,13 +126,13 @@ class SentenceForm(ModelForm):
                                        'max_length':"Не более 30 символов"
                               },
                              'caption': {'required': "Пожалуйста введите заголовок",
-                                         'maxlength': "Не более 50 символов"
+                                         'max_length': "Не более 50 символов"
                               },
                              'description': {'required': "Пожалуйста введите описание",
-                                             'maxlength': "Не более 1000 символов"
+                                             'max_length': "Не более 1000 символов"
                              },
-                             'full_adress': {'maxlength': "Не более 100 символов"},
-                             'meta_info': {'maxlength': "Не более 500 символов"},
+                             'full_adress': {'max_length': "Не более 100 символов"},
+                             'meta_info': {'max_length': "Не более 500 символов"},
                         }
 
 #---------------------------------Images Model----------------------------------------------#
