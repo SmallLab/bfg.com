@@ -1,5 +1,4 @@
 from django import forms
-from mainbfg.models import Sentence
 
 class RegistrationsForm(forms.Form):
     username = forms.CharField(max_length=20, min_length=5, error_messages={'required': 'Введите логин',

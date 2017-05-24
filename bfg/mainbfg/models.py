@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
+from django.forms import ModelForm
 #------------------------- TypeSentence Model -----------------------------------------------#
 """
 Custom Manadger for model TypeSentence
@@ -83,15 +81,15 @@ class Sentence(models.Model):
     category_id = models.SmallIntegerField()
     sub_id = models.SmallIntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    autor = models.CharField(max_length=100)
-    caption = models.CharField(max_length=200)
+    autor = models.CharField(max_length=30, error_messages={'max_length' : 'Required error'})
+    caption = models.CharField(max_length=50)
     region_id = models.SmallIntegerField()
-    full_adress = models.CharField(max_length=350, blank=True)
+    full_adress = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=100, blank=True)
     web_site = models.CharField(max_length=250, blank=True)
     is_webstore = models.BooleanField(default=False)
-    description = models.TextField()
-    meta_info = models.CharField(max_length=1000, blank=True)
+    description = models.TextField(max_length=1000)
+    meta_info = models.CharField(max_length=500, blank=True)
     main_img = models.ImageField(upload_to='images/', blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     stop_time = models.DateTimeField(blank=True)
@@ -116,6 +114,25 @@ class Sentence(models.Model):
     def __str__(self):
         return self.link_name
 
+class SentenceForm(ModelForm):
+    class Meta:
+        model = Sentence
+        fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description']
+
+        error_messages = {
+                             'autor': {'required': "Пожалуйста введите автора",
+                                       'max_length':"Не более 30 символов"
+                              },
+                             'caption': {'required': "Пожалуйста введите заголовок",
+                                         'maxlength': "Не более 50 символов"
+                              },
+                             'description': {'required': "Пожалуйста введите описание",
+                                             'maxlength': "Не более 1000 символов"
+                             },
+                             'full_adress': {'maxlength': "Не более 100 символов"},
+                             'meta_info': {'maxlength': "Не более 500 символов"},
+                        }
 
 #---------------------------------Images Model----------------------------------------------#
 

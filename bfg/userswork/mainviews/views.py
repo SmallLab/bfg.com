@@ -2,7 +2,8 @@ from datetime import datetime, timedelta
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
-from mainbfg.models import (Categories, TypeSentence, Regions, Sentence)
+
+from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm)
 
 
 """
@@ -28,9 +29,7 @@ class ShowFormSentenseView(LoginRequiredMixin, TemplateView):
 
 class CreateNewSentence(LoginRequiredMixin, CreateView):
     login_url = 'login'
-    model = Sentence
-    fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-              'phone', 'web_site', 'is_webstore', 'meta_info', 'description']
+    form_class = SentenceForm
     template_name = 'addsentens.html'
     succes_url = '/'
 
@@ -58,3 +57,4 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return self.succes_url
+

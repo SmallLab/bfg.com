@@ -78,7 +78,7 @@ $(document).ready(function () {
 					},
 					meta_info: {
 					    required: false,
-						maxlength: 100
+						maxlength: 500
 					},
 
 				},
@@ -99,7 +99,7 @@ $(document).ready(function () {
 					   maxlength: "Не более 100 символов"
 					},
 					meta_info: {
-					    maxlength: "Не более 100 символов"
+					    maxlength: "Не более 500 символов"
 					},
 				},
 				errorElement: "em",
