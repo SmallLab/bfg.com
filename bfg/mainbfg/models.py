@@ -119,7 +119,7 @@ class SentenceForm(ModelForm):
     class Meta:
         model = Sentence
         fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description']
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img']
 
         error_messages = {
                              'autor': {'required': "Пожалуйста введите автора",

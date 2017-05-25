@@ -25,7 +25,8 @@
     <section class="section section-2">
         <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
             <h2 class="text-primary text-36 text-sbold">Подать бесплатное предложение на BFG</h2>
-            <form class="form form-offer" method="post" name="add_new_s" action="{% url 'createsentence' %}" id="add_new_s">{% csrf_token %}
+            <form class="form form-offer" method="post" name="add_new_s" action="{% url 'createsentence' %}"
+                  id="add_new_s" enctype="multipart/form-data">{% csrf_token %}
                 <div class="form-offer-inner">
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
@@ -209,40 +210,65 @@
                             <div class="form-photos-right">
                                 <div class="form-photos-row">
                                     <a href="#" class="form-photos-column form-photos-main-photo" id="main_file_select">
-{#                                        <img src="{% static 'images/product-01-257x205.jpg' %}">#}
-                                        <span class="icon fa fa-plus-circle" id="before_img"></span>
+                                        <span class="icon fa fa-plus-circle" id="before_img" title="Добавить фото"></span>
                                         <span class="form-photos-main-title">Главное изображение</span>
                                     </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif" style="display:none"
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
                                            onchange="handleMainFile(this.files)"
                                            id="main_file_img"
-                                           name="main_file_img"
+                                           name="main_img"
                                     >
-
-
-                                    <a href="#" class="form-photos-column">
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
-                                    <a href="#" class="form-photos-column">
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
-                                    <a href="#" class="form-photos-column">
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
                                 </div>
                                 <div class="form-photos-row">
-                                    <a href="#" class="form-photos-column">
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
-                                    <a href="#" class="form-photos-column">
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
-                                    <a href="#" class="form-photos-column">
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
-                                    <a href="#" class="form-photos-column">
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -266,4 +292,5 @@
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/fileupload.js' %}"></script>
+    {{ data }}
 {% endblock %}

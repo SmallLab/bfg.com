@@ -7,8 +7,7 @@ $.validator.setDefaults( {
 			    if (is_validate_js){
                     $( "#add_new_s" ).submit();
                 }
-                alert( "submitted!" );
-			}
+     		}
 		} );
 $(document).ready(function () {
 //Show/hide help block for input tags
@@ -58,7 +57,7 @@ $(document).ready(function () {
 
 //Validations form
 
-    $( "#add_new_s" ).validate( {
+    $( "#add_new_ss" ).validate( {
 				rules: {
 					autor: {
 						required: true,

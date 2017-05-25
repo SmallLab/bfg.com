@@ -36,7 +36,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                   3:'/static/images/label-03-98-71.png'}
 
     def form_valid(self, form):
-
+        #new_form = form(self.request.POST, self.request.FILES)
         instance = form.save(commit=False)
         instance.user = self.request.user
         instance.stop_time = datetime.now() + timedelta(days=30)
@@ -49,7 +49,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
     def form_invalid(self, form):
         context = self.get_context_data()
-        context['data'] = self.request.POST
+        context['data'] = self.request.FILES
         return self.render_to_response(context)
 
 
@@ -71,4 +71,4 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
     def uuid_sentece(self):
         import uuid
-        return str(uuid.uuid4())[:8]
+        return str(uuid.uuid4())[:10]
