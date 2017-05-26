@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
@@ -47,14 +48,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.dirname_img = self.uuid_sentece_user()
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
         instance.save()
-        #https://docs.djangoproject.com/ja/1.11/_modules/django/utils/datastructures/ - look for MultiValueDict(getlist)
-        for ifile in self.request.FILES.getlist('other_img[]'):
-            fs = FileSystemStorage(location=settings.MEDIA_URL+'images/'+instance.dirname_img +'/',
-                                   base_url=settings.MEDIA_URL+'images/'+instance.dirname_img +'/')
-            filename = fs.save(ifile.name, ifile)
-            i = Image(sentence=instance,
-                      img_path=fs.url(filename))
-            i.save()
+        self.save_oter_files(instance)
         return super(CreateNewSentence, self).form_valid(form)
 
     def form_invalid(self, form):
@@ -88,3 +82,15 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
     def uuid_sentece(self):
         import uuid
         return str(uuid.uuid4())[:10]
+
+    def save_oter_files(self, instance):
+        if not os.path.isdir(settings.TEST_MEDIA_IMAGES+instance.dirname_img) and self.request.FILES.getlist('other_img[]'):
+            os.mkdir(settings.TEST_MEDIA_IMAGES+instance.dirname_img, mode=0o777)
+        #https://docs.djangoproject.com/ja/1.11/_modules/django/utils/datastructures/ - look for MultiValueDict(getlist)
+            for ifile in self.request.FILES.getlist('other_img[]'):
+                fs = FileSystemStorage(location=settings.TEST_MEDIA_IMAGES+instance.dirname_img,
+                                       base_url=settings.TEST_MEDIA_IMAGES+instance.dirname_img)
+                filename = fs.save(ifile.name, ifile)
+                i = Image(sentence=instance,
+                          img_path=fs.url(filename))
+                i.save()

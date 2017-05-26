@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +14,13 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 </head>
-<body>
+<body data-media-url="{% get_media_prefix %}">
 {% include 'sections/mainheader.html' %}
 <main class="page-wrapper">
    {% include 'sections/maincategories.html' %}
    {% include 'sections/mainfilter.html' %}
     {% block content %}
+        <img src="media/{{ sentences.main_img }}" width="102" height="75" alt="">
         <section class="section section-3 text-center text-sm-left">
         <div class="container container-custom-2">
             <h2 class="text-primary text-sbold">ТОР-Предложения</h2>

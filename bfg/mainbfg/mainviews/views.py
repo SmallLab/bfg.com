@@ -14,7 +14,7 @@ class MainView(TemplateView):
    def get_context_data(self, **kwargs):
        context = super(MainView, self).get_context_data(**kwargs)
        context['data'] = self.get_data_ctr()
-       context['sentences'] = Sentence.objects.get(id=25)
+       context['sentences'] = Sentence.objects.get(id=65)
        return context
 
 
