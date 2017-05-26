@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
@@ -37,7 +38,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                   3:'/static/images/label-03-98-71.png'}
 
     def form_valid(self, form):
-        #new_form = form(self.request.POST, self.request.FILES)
+
         instance = form.save(commit=False)
         instance.user = self.request.user
         instance.stop_time = datetime.now() + timedelta(days=30)
@@ -46,9 +47,10 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.dirname_img = self.uuid_sentece_user()
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
         instance.save()
+        #https://docs.djangoproject.com/ja/1.11/_modules/django/utils/datastructures/ - look for MultiValueDict(getlist)
         for ifile in self.request.FILES.getlist('other_img[]'):
-            fs = FileSystemStorage(location='media/images/'+instance.dirname_img +'/'+ifile.name,
-                                   base_url='media/images/'+instance.dirname_img +'/'+ifile.name)
+            fs = FileSystemStorage(location=settings.MEDIA_URL+'images/'+instance.dirname_img +'/',
+                                   base_url=settings.MEDIA_URL+'images/'+instance.dirname_img +'/')
             filename = fs.save(ifile.name, ifile)
             i = Image(sentence=instance,
                       img_path=fs.url(filename))

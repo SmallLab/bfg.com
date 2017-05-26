@@ -142,9 +142,12 @@ class SentenceForm(ModelForm):
 
 class Image(models.Model):
 
-    sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE)
+    sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE, related_name='image')
     img_path = models.CharField(max_length=250, blank=True)
 
+
+    def get_absolute_url(self):
+        return self.img_path
 
 #-------------------------------- Payments Model -------------------------------------------#
 
