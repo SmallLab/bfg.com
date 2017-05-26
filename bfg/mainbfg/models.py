@@ -75,6 +75,15 @@ class Regions(models.Model):
 
 
 #-------------------------------- Sentence Model -------------------------------------------#
+# class ModelClass(models.Model):
+#     <поле> = models.ImageField(upload_to=rename_image, blank=True, verbose_name='...')
+#
+# def rename_image(instance, filename):
+#     image_name = md5(str(time.time()).encode()).hexdigest()
+#     image_type = filename.split('.')[-1]
+#     return 'imgs/{}.{}'.format(image_name, image_type)
+
+
 def custom_directory_path(instance, filename):
     return 'images/{0}/{1}'.format(instance.dirname_img, filename)
 

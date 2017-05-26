@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -35,11 +36,10 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
     form_class = SentenceForm
     template_name = 'addsentens.html'
     succes_url = '/'
-    type_img_s = {1:'/static/images/label-01-102x75.png', 2:'/static/images/label-02-105x95.png',
-                  3:'/static/images/label-03-98-71.png'}
+    type_img_s = {1:'images/label-01-102x75.png', 2:'images/label-02-105x95.png',
+                  3:'images/label-03-98-71.png'}
 
     def form_valid(self, form):
-
         instance = form.save(commit=False)
         instance.user = self.request.user
         instance.stop_time = datetime.now() + timedelta(days=30)
@@ -94,3 +94,5 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                 i = Image(sentence=instance,
                           img_path=fs.url(filename))
                 i.save()
+
+
