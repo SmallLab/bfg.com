@@ -74,6 +74,8 @@ class Regions(models.Model):
 
 
 #-------------------------------- Sentence Model -------------------------------------------#
+def custom_directory_path(instance, filename):
+    return 'images/{0}/{1}'.format(instance.dirname_img, filename)
 
 class Sentence(models.Model):
 
@@ -90,7 +92,8 @@ class Sentence(models.Model):
     is_webstore = models.BooleanField(default=False)
     description = models.TextField(max_length=1000)
     meta_info = models.CharField(max_length=500, blank=True)
-    main_img = models.ImageField(upload_to='images/', blank=True)
+    main_img = models.ImageField(upload_to=custom_directory_path, blank=True)
+    dirname_img = models.CharField(max_length=15, default='', blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     stop_time = models.DateTimeField(blank=True)
     status = models.SmallIntegerField(default=0) #0 - on moderations, 1 - published, 2 - on editing
@@ -108,7 +111,7 @@ class Sentence(models.Model):
 
 
     def get_absolute_url(self):
-        return "sentence/%s/%s/" % self.link_name, self.identifier
+        return "sentence/%s" % self.link_name
 
 
     def __str__(self):
@@ -140,8 +143,7 @@ class SentenceForm(ModelForm):
 class Image(models.Model):
 
     sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE)
-    img_path = models.CharField(max_length=250 ,blank=True)
-
+    img_path = models.CharField(max_length=250, blank=True)
 
 
 #-------------------------------- Payments Model -------------------------------------------#

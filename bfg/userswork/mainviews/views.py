@@ -1,9 +1,10 @@
 from datetime import datetime, timedelta
+from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
 
-from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm)
+from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image)
 
 
 """
@@ -42,14 +43,23 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.stop_time = datetime.now() + timedelta(days=30)
         instance.type_img_s = self.type_img_s[form.cleaned_data['type_id']]
         instance.identifier = self.uuid_sentece()
+        instance.dirname_img = self.uuid_sentece_user()
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
         instance.save()
-
+        for ifile in self.request.FILES.getlist('other_img[]'):
+            fs = FileSystemStorage(location='media/images/'+instance.dirname_img +'/'+ifile.name,
+                                   base_url='media/images/'+instance.dirname_img +'/'+ifile.name)
+            filename = fs.save(ifile.name, ifile)
+            i = Image(sentence=instance,
+                      img_path=fs.url(filename))
+            i.save()
         return super(CreateNewSentence, self).form_valid(form)
 
     def form_invalid(self, form):
         context = self.get_context_data()
-        context['data'] = self.request.FILES
+        context['data'] = self.request.POST
+        context['post'] = self.request.FILES
+        context['post1'] = self.request.FILES.getlist('other_img[]')
         return self.render_to_response(context)
 
 
@@ -68,6 +78,10 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         import re
         import unidecode
         return re.sub(r'\s+', '-', unidecode.unidecode(str).lower().strip())
+
+    def uuid_sentece_user(self):
+        import uuid
+        return 'user_'+str(uuid.uuid4())[:10]
 
     def uuid_sentece(self):
         import uuid
