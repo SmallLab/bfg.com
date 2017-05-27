@@ -6,6 +6,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
+from django.contrib import messages
 
 from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image)
 
@@ -47,15 +48,10 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.identifier = self.uuid_sentece()
         instance.dirname_img = self.uuid_sentece_user()
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
-        if self.save_oter_files(instance, form):
-            instance.save()
-            return super(CreateNewSentence, self).form_valid(form)
-        else:
-            context = self.get_context_data()
-            context['data'] = self.request.POST
-            context['error_other_img'] = True
-            context['error_other_img_message'] = 'Ошибка при загрузке файлов.Максимальный размер файла 5 МБ, формат .jpg, .jpeg, .png, .gif.'
-            return self.render_to_response(context)
+        instance.save()
+        self.save_oter_files(instance, form)
+
+        return super(CreateNewSentence, self).form_valid(form)
 
     def form_invalid(self, form):
         context = self.get_context_data()
@@ -102,6 +98,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                               img_path=fs.url(filename))
                     i.save()
                 else:
-                    return False
+                    messages.info(self.request, 'Three credits remain in your account.')
+                    continue
         return True
 
