@@ -1,7 +1,8 @@
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.forms import ModelForm
+
+from mainbfg.mainhelpers import MainImgTypeField as MI
 #------------------------- TypeSentence Model -----------------------------------------------#
 """
 Custom Manadger for model TypeSentence
@@ -102,7 +103,9 @@ class Sentence(models.Model):
     is_webstore = models.BooleanField(default=False)
     description = models.TextField(max_length=1000)
     meta_info = models.CharField(max_length=500, blank=True)
-    main_img = models.ImageField(upload_to=custom_directory_path, blank=True, default='nophoto.png')
+    main_img = MI.MainImgTypeField(upload_to=custom_directory_path,
+                                   content_types=['image/jpeg', 'image/jpg', 'image/png', 'image/jpeg'],
+                                   max_upload_size=5000000, blank=True, default='nophoto.png')
     dirname_img = models.CharField(max_length=15, default='', blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     stop_time = models.DateTimeField(blank=True)

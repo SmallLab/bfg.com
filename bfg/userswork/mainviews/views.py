@@ -47,15 +47,20 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.identifier = self.uuid_sentece()
         instance.dirname_img = self.uuid_sentece_user()
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
-        instance.save()
-        self.save_oter_files(instance)
-        return super(CreateNewSentence, self).form_valid(form)
+        if self.save_oter_files(instance, form):
+            instance.save()
+            return super(CreateNewSentence, self).form_valid(form)
+        else:
+            context = self.get_context_data()
+            context['data'] = self.request.POST
+            context['error_other_img'] = True
+            context['error_other_img_message'] = 'Ошибка при загрузке файлов.Максимальный размер файла 5 МБ, формат .jpg, .jpeg, .png, .gif.'
+            return self.render_to_response(context)
 
     def form_invalid(self, form):
         context = self.get_context_data()
         context['data'] = self.request.POST
-        context['post'] = self.request.FILES
-        context['post1'] = self.request.FILES.getlist('other_img[]')
+
         return self.render_to_response(context)
 
 
@@ -83,16 +88,20 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         import uuid
         return str(uuid.uuid4())[:10]
 
-    def save_oter_files(self, instance):
+    def save_oter_files(self, instance, form):
         if not os.path.isdir(settings.TEST_MEDIA_IMAGES+instance.dirname_img) and self.request.FILES.getlist('other_img[]'):
             os.mkdir(settings.TEST_MEDIA_IMAGES+instance.dirname_img, mode=0o777)
         #https://docs.djangoproject.com/ja/1.11/_modules/django/utils/datastructures/ - look for MultiValueDict(getlist)
+        if self.request.FILES.getlist('other_img[]'):
             for ifile in self.request.FILES.getlist('other_img[]'):
-                fs = FileSystemStorage(location=settings.TEST_MEDIA_IMAGES+instance.dirname_img,
-                                       base_url=settings.TEST_MEDIA_IMAGES+instance.dirname_img)
-                filename = fs.save(ifile.name, ifile)
-                i = Image(sentence=instance,
-                          img_path=fs.url(filename))
-                i.save()
-
+                if ifile.size < settings.MAX_SIZE_UPLOAD and ifile.content_type in settings.CONTENT_TYPES_FILE:
+                    fs = FileSystemStorage(location=settings.TEST_MEDIA_IMAGES+instance.dirname_img,
+                                           base_url=settings.TEST_MEDIA_IMAGES+instance.dirname_img)
+                    filename = fs.save(ifile.name, ifile)
+                    i = Image(sentence=instance,
+                              img_path=fs.url(filename))
+                    i.save()
+                else:
+                    return False
+        return True
 

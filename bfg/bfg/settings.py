@@ -163,3 +163,8 @@ FACEBOOK_GRAF_URL = "https://graph.facebook.com/oauth/access_token"
 FACEBOOK_APP_ID = 214579749046389
 FACEBOOK_REDIRECT_URL = 'http://localhost:8000/authcocial/lfacebook/'
 FACEBOOK_SECRET = '9ca00ab6530e97258381bc734d3cebed'
+
+#Type for upload files
+CONTENT_TYPES_FILE = ['image/jpeg', 'image/jpg', 'image/png', 'image/jpeg']
+#Max size for upload files
+MAX_SIZE_UPLOAD = 5000000

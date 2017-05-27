@@ -213,6 +213,7 @@
                                         <span class="icon fa fa-plus-circle" id="before_img" title="Добавить фото"></span>
                                         <span class="form-photos-main-title">Главное изображение</span>
                                     </a>
+                                {% if form.errors.main_img %}<em id="meta_info-error" class="error help-block">{{ form.errors.main_img }}</em>{% endif %}
                                     <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
                                            onchange="handleMainFile(this.files)"
                                            id="main_file_img"
@@ -298,6 +299,28 @@
             </form>
         </div>
     </section>
+{% if error_other_img %}
+<div class="btn-modal-wrap btn-modal-wrap-1" id="modal_fail">
+<span id="error_other_img" style="display: none">1</span>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_fail_img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
+                    </span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="color: #ff0012">Ошибка Загрузки файла!!!</h4>
+                </div>
+                 <div class="modal-body">
+                     <h3>{{ error_other_img_message }}</h3>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/fileupload.js' %}"></script>
