@@ -5,6 +5,7 @@ var is_validate_js = true;
 $.validator.setDefaults( {
 			submitHandler: function () {
 			    if (is_validate_js){
+			    	$('#hellopreloader_preload').css({'display':'block', 'opacity': '0.5'});
                     $( "#add_new_s" ).submit();
                 }
      		}
