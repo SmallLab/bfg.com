@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userswork/templates/privateoffice.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" afterPath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sections/mainheader.html" afterPath="$PROJECT_DIR$/templates/sections/mainheader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/addsentens.html" afterPath="$PROJECT_DIR$/userswork/templates/addsentens.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/urls.py" afterPath="$PROJECT_DIR$/userswork/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,41 +69,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userswork/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="6" column="73" lean-forward="false" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-              <folding />
+            <state relative-caret-position="740">
+              <caret line="111" column="27" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
+      <file leaf-file-name="privateoffice.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/userswork/templates/privateoffice.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="166" column="6" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="166" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="518" column="89" lean-forward="false" selection-start-line="518" selection-start-column="89" selection-end-line="518" selection-end-column="89" />
+              <folding>
+                <element signature="e#1560#18287#0#HTML" expanded="false" />
+                <element signature="e#18308#22347#0#HTML" expanded="false" />
+                <element signature="e#22368#35103#0#HTML" expanded="false" />
+                <element signature="e#35124#55294#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bfg/urls.py">
+      <file leaf-file-name="mainheader.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/sections/mainheader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addsentens.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+            <state relative-caret-position="583">
+              <caret line="58" column="80" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -109,21 +119,11 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
+            <state relative-caret-position="20">
               <caret line="163" column="28" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="163" selection-end-column="28" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addnewsentense.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,9 +133,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -145,6 +145,7 @@
       <find>padding-left:</find>
       <find>col-xs-7</find>
       <find>or .radio-</find>
+      <find>fileinput-button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,10 +185,8 @@
         <option value="$PROJECT_DIR$/templates/sections/mainfilter.html" />
         <option value="$PROJECT_DIR$/templates/sections/maincategories.html" />
         <option value="$PROJECT_DIR$/userswork/templates/formadd.html" />
-        <option value="$PROJECT_DIR$/templates/sections/mainheader.html" />
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
         <option value="$PROJECT_DIR$/userswork/templates/mainuser.html" />
-        <option value="$PROJECT_DIR$/userswork/urls.py" />
         <option value="dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/mainbfg/views.py" />
@@ -200,10 +199,13 @@
         <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileupload.js" />
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
-        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/bfg/urls.py" />
-        <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
         <option value="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
+        <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
+        <option value="$PROJECT_DIR$/templates/sections/mainheader.html" />
+        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
+        <option value="$PROJECT_DIR$/userswork/urls.py" />
+        <option value="$PROJECT_DIR$/userswork/templates/privateoffice.html" />
       </list>
     </option>
   </component>
@@ -257,7 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="userswork" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,15 +273,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="userswork" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="sections" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -673,13 +671,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00006" summary="Add directories in app">
-      <created>1491814867194</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1491814867194</updated>
-    </task>
     <task id="LOCAL-00007" summary="Add add static">
       <created>1491846796887</created>
       <option name="number" value="00007" />
@@ -1016,7 +1007,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495910626247</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Add new sentence">
+      <created>1496167238781</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1496167238781</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1032,11 +1030,11 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114072494" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116204694" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.280837" sideWeight="0.50959486" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25110132" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17290749" sideWeight="0.4904051" order="7" side_tool="false" content_ui="tabs" />
@@ -1048,7 +1046,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1064,10 +1062,10 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17290749" sideWeight="0.4904051" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12686567" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116204694" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16471216" sideWeight="0.5123153" order="2" side_tool="true" content_ui="tabs" />
@@ -1122,20 +1120,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/mainuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -1150,19 +1134,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="86" lean-forward="false" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/product-01-257x205.jpg" />
     <entry file="file://D:/Python3/Lib/site-packages/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="1101" column="33" lean-forward="true" selection-start-line="1101" selection-start-column="33" selection-end-line="1101" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,7 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="243" column="2" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1353,10 +1328,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/mainheader.html">
+    <entry file="file://$PROJECT_DIR$/static/js/socialauth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="24" column="103" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="103" />
+        <state relative-caret-position="200">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/fileupload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smyauth/mainauth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1103">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3960">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="166" column="6" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="166" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,41 +1372,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="166" column="6" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="166" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/socialauth.js">
+    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
+          <caret line="10" column="14" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#403#19899#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/mainuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/static/js/fileupload.js">
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state relative-caret-position="-2037">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
+        <state relative-caret-position="20">
           <caret line="163" column="28" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="163" selection-end-column="28" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -1410,35 +1408,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smyauth/mainauth/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/sections/mainheader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1103">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="583">
+          <caret line="58" column="80" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3960">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
+    <entry file="file://$PROJECT_DIR$/userswork/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+          <caret line="6" column="73" lean-forward="false" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="111" column="27" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/privateoffice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="518" column="89" lean-forward="false" selection-start-line="518" selection-start-column="89" selection-end-line="518" selection-end-column="89" />
+          <folding>
+            <element signature="e#1560#18287#0#HTML" expanded="false" />
+            <element signature="e#18308#22347#0#HTML" expanded="false" />
+            <element signature="e#22368#35103#0#HTML" expanded="false" />
+            <element signature="e#35124#55294#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

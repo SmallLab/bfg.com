@@ -102,3 +102,12 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                     continue
         return True
 
+class PrivateOffice(LoginRequiredMixin, TemplateView):
+
+    login_url = 'login'
+    template_name = 'privateoffice.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PrivateOffice, self).get_context_data()
+        context['active_tab'] = kwargs['tab']
+        return context

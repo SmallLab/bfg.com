@@ -47,16 +47,16 @@
                         <div class="collapse collapse-select-container" id="selectCollapseCustom">
                             <ul class="list">
                                 <li>
-                                    <a href="#">Мои предложения</a>
+                                    <a href="{% url 'privateoffice' 'sent' %}">Мои предложения</a>
                                 </li>
                                 <li>
-                                    <a href="#">Платежи</a>
+                                    <a href="{% url 'privateoffice' 'payment' %}">Платежи</a>
                                 </li>
                                 <li>
-                                    <a href="#">Настройки</a>
+                                    <a href="{% url 'privateoffice' 'settings' %}">Настройки</a>
                                 </li>
                                 <li>
-                                    <a href="#">Подписки</a>
+                                    <a href="{% url 'privateoffice' 'subscribers' %}">Подписки</a>
                                 </li>
                                 <li>
                                     <a href="#">Избранное</a>
