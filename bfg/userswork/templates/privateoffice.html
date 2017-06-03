@@ -25,7 +25,7 @@
                     <div role="tabpanel" class="tab-pane {% if active_tab == 'sent' %} active {% endif %}" id="home">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs nav-tabs-sub" role="tablist">
-                            <li role="presentation" class="active"><a href="#home-sub" aria-controls="home" role="tab" data-toggle="tab">Опубликованные</a></li>
+                            <li role="presentation" class="active"><a href="#home-sub" aria-controls="home" role="tab" data-toggle="tab">Активные</a></li>
                             <li role="presentation"><a href="#profile-sub" aria-controls="profile" role="tab" data-toggle="tab">Неактивные</a></li>
                         </ul>
                         <div class="tab-content tab-content-sub">
@@ -36,13 +36,13 @@
                                 <table class="table table-responsive table-products">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
+{#                                        <th>#}
+{#                                            <div class="checkbox checkbox-left">#}
+{#                                                <label>#}
+{#                                                    <input type="checkbox">#}
+{#                                                </label>#}
+{#                                            </div>#}
+{#                                        </th>#}
                                         <th></th>
                                         <th>
                                             <a href="#" class="text-regular">
@@ -87,116 +87,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <a href="#">
-                                                <img src="images/produt-small-01.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="table-products-title">Распродажа зимней одежды</a>
-                                            <ul class="list-inline list-inline-products">
-                                                <li><a href="#" class="view">
-                                                    <span class="icon fa fa-sign-out"></span>
-                                                    <span>Просмотр</span>
-                                                </a></li>
-                                                <li><a href="#" class="edit">
-                                                    <span class="icon fa fa-edit"></span>
-                                                    <span>Редактировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="deactivate">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Деактивировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="delete">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Удалить</span>
-                                                </a></li>
-                                            </ul>
-                                        </td>
-                                        <td>Обычное</td>
-                                        <td>Опубликовано</td>
-                                        <td>25000</td>
-                                        <td>900</td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p>20</p>
-                                                <a href="#" class="btn btn-xxs btn-primary">Добавить в ТОР</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p>29.12.16</p>
-                                                <a href="#" class="btn btn-xxs btn-primary">Добавить в ТОР</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <a href="#">
-                                                <img src="images/produt-small-02.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="table-products-title">Акция купи одежду, получи скидку</a>
-                                            <ul class="list-inline list-inline-products">
-                                                <li><a href="#" class="view">
-                                                    <span class="icon fa fa-sign-out"></span>
-                                                    <span>Просмотр</span>
-                                                </a></li>
-                                                <li><a href="#" class="edit">
-                                                    <span class="icon fa fa-edit"></span>
-                                                    <span>Редактировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="deactivate">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Деактивировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="delete">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Удалить</span>
-                                                </a></li>
-                                            </ul>
-                                        </td>
-                                        <td>VIP</td>
-                                        <td>Опубликовано</td>
-                                        <td>25000</td>
-                                        <td>900</td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p>3</p>
-                                                <a href="#" class="btn btn-xxs btn-gray">Добавить в ТОР</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p>29.12.16</p>
-                                                <a href="#" class="btn btn-xxs btn-gray">Добавить в ТОР</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
+                                       <tr>
+{#                                        <th scope="row">#}
+{#                                            <div class="checkbox checkbox-left">#}
+{#                                                <label>#}
+{#                                                    <input type="checkbox">#}
+{#                                                </label>#}
+{#                                            </div>#}
+{#                                        </th>#}
                                         <td>
                                             <a href="#">
                                                 <img src="images/produt-small-03.jpg" alt="">
@@ -223,7 +121,7 @@
                                                 </a></li>
                                             </ul>
                                         </td>
-                                        <td>TOP</td>
+                                        <td>Обычное</td>
                                         <td>Опубликовано</td>
                                         <td>25000</td>
                                         <td>900</td>
@@ -236,7 +134,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <p>29.12.16</p>
-                                                <a href="#" class="btn btn-xxs btn-primary">Добавить в ТОР</a>
+                                                <a href="#" class="btn btn-xxs btn-primary">Добавить в VIP</a>
                                             </div>
                                         </td>
                                     </tr>

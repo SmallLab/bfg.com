@@ -110,7 +110,7 @@ class Sentence(models.Model):
     dirname_img = models.CharField(max_length=15, default='', blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     stop_time = models.DateTimeField(blank=True)
-    status = models.SmallIntegerField(default=0) #0 - on moderations, 1 - published, 2 - on editing
+    status = models.SmallIntegerField(default=0) #0 - on moderations, 1 - published, 2 - on editing, 3- deactive
     type_s = models.SmallIntegerField(default=0) #0 - usual, 1 - TOP, 2 - VIP
     type_img_s = models.CharField(max_length=300, blank=True)#path to img (Stock, Discount, Sale)
     views = models.IntegerField(default=0)
