@@ -1,5 +1,6 @@
 {% extends "mainuser.html" %}
 {% load staticfiles %}
+{% load customfilters %}
 {% block title %}BFG Личный кабинет{% endblock %}
 {% block content %}
     <section class="header-page-bottom">
@@ -33,6 +34,17 @@
                                 <div class="tab-content-sub-1-title">
                                     Активные предложения:
                                 </div>
+                                {% if not active_sentences %}
+                                    <div class="pin-custom">
+                                        <div class="pin-custom-caption">
+                                            <div class="pin-title">Сейчас у вас нет активных предложений</div>
+                                            <a href="index-5.html" class="btn btn-offer btn-icon btn-primary">
+                                                <span>Добавить предложение</span>
+                                                <span class="icon icon-offer fa fa-plus-circle"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% else %}
                                 <table class="table table-responsive table-products">
                                     <thead>
                                     <tr>
@@ -87,21 +99,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {% with sentences=active_sentences %}
+                                        {% for sentence in sentences %}
                                        <tr>
-{#                                        <th scope="row">#}
-{#                                            <div class="checkbox checkbox-left">#}
-{#                                                <label>#}
-{#                                                    <input type="checkbox">#}
-{#                                                </label>#}
-{#                                            </div>#}
-{#                                        </th>#}
                                         <td>
                                             <a href="#">
-                                                <img src="images/produt-small-03.jpg" alt="">
+                                                <img src="/media/{{ sentence.main_img }}" width="57px;" height="65px;" alt="">
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#" class="table-products-title">Сезонная скидка</a>
+                                            <a href="#" class="table-products-title">{{ sentence.caption }}</a>
                                             <ul class="list-inline list-inline-products">
                                                 <li><a href="#" class="view">
                                                     <span class="icon fa fa-sign-out"></span>
@@ -121,8 +128,15 @@
                                                 </a></li>
                                             </ul>
                                         </td>
-                                        <td>Обычное</td>
-                                        <td>Опубликовано</td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            {% with i=sentence.status|strint %}
+                                                {{ i }}
+                                              {{ status_ss.i }}
+                                            {% endwith %}
+                                        </td>
                                         <td>25000</td>
                                         <td>900</td>
                                         <td>
@@ -138,8 +152,11 @@
                                             </div>
                                         </td>
                                     </tr>
+                                        {% endfor %}
+                                    {% endwith %}
                                     </tbody>
                                 </table>
+                                {% endif %}
                                 <ul class="list-inline pagination-product">
                                     <li class="pagination-product-prev">
                                         <a href="#">

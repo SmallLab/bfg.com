@@ -29,8 +29,9 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
             context['active_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
                                                            filter(user_id=self.request.user.id).\
                                                            filter(status=1)
+            context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
         except Sentence.DoesNotExist:
-            context['active_sentences'] = None
+            pass
 
         return context
 
