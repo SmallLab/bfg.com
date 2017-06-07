@@ -3,12 +3,36 @@ from datetime import datetime, timedelta
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 
-from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image)
+from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence)
+
+"""
+    Main page user office
+"""
+
+
+class PrivateOfficeView(LoginRequiredMixin, TemplateView):
+
+    login_url = 'login'
+    template_name = 'privateoffice.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PrivateOfficeView, self).get_context_data()
+        context['active_tab'] = kwargs['tab'] if kwargs['tab'] else 'sent'
+        try:
+            context['active_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
+                                                           filter(user_id=self.request.user.id).\
+                                                           filter(status=1)
+        except Sentence.DoesNotExist:
+            context['active_sentences'] = None
+
+        return context
 
 
 """
@@ -36,7 +60,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
     login_url = 'login'
     form_class = SentenceForm
     template_name = 'addsentens.html'
-    succes_url = '/'
+    succes_url = '/user/privateoffice/'
     type_img_s = {1:'images/label-01-102x75.png', 2:'images/label-02-105x95.png',
                   3:'images/label-03-98-71.png'}
 
@@ -98,16 +122,6 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                               img_path=fs.url(filename))
                     i.save()
                 else:
-                    messages.info(self.request, 'Three credits remain in your account.')
+                    #messages.info(self.request, 'Three credits remain in your account.')
                     continue
         return True
-
-class PrivateOffice(LoginRequiredMixin, TemplateView):
-
-    login_url = 'login'
-    template_name = 'privateoffice.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(PrivateOffice, self).get_context_data()
-        context['active_tab'] = kwargs['tab']
-        return context

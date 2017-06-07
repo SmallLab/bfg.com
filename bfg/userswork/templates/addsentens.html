@@ -286,28 +286,6 @@
             </form>
         </div>
     </section>
-{% if error_other_img %}
-<div class="btn-modal-wrap btn-modal-wrap-1" id="modal_fail">
-<span id="error_other_img" style="display: none">1</span>
-    <!-- Modal -->
-    <div class="modal fade" id="modal_fail_img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
-                    </span></button>
-                    <h4 class="modal-title" id="myModalLabel" style="color: #ff0012">Ошибка Загрузки файла!!!</h4>
-                </div>
-                 <div class="modal-body">
-                     <h3>{{ error_other_img_message }}</h3>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
 <div class="hellopreloader">
     <div class="hellopreloader_preload" id="hellopreloader_preload"></div>
 </div>

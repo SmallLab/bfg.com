@@ -94,7 +94,7 @@ class Sentence(models.Model):
     type_id = models.SmallIntegerField()
     category_id = models.SmallIntegerField()
     sub_id = models.SmallIntegerField(default=0)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sentences')
     autor = models.CharField(max_length=30, error_messages={'max_length' : 'Required error'})
     caption = models.CharField(max_length=50)
     region_id = models.SmallIntegerField()

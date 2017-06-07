@@ -40,7 +40,7 @@ def RegistrationUser(request):
         if request.GET:
             c['next_url'] = request.GET['next']
         else:
-            c['next_url'] = '/'
+            c['next_url'] = '/user/privateoffice/'
         c.update(csrf(request))
         return render_to_response('registration/login.html', c)
 
@@ -76,5 +76,5 @@ def LoginUser(request):
         if request.GET:
             c['next_url'] = request.GET['next']
         else:
-            c['next_url'] = '/'
+            c['next_url'] = '/user/privateoffice/'
         return render_to_response('registration/login.html', c)

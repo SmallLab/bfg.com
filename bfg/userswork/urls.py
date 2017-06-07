@@ -4,5 +4,5 @@ from . mainviews import views
 urlpatterns = [
    url(r'^addsentense/$', views.ShowFormSentenseView.as_view(), name='showform'),
    url(r'^createsentence/$', views.CreateNewSentence.as_view(), name='createsentence'),
-   url(r'^privateoffice/(?P<tab>[\w]*)?$', views.PrivateOffice.as_view(), name='privateoffice')
+   url(r'^privateoffice/(?P<tab>[\w]*)/?$', views.PrivateOfficeView.as_view(), name='privateoffice')
 ]
