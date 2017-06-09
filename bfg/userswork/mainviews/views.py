@@ -3,12 +3,9 @@ from datetime import datetime, timedelta
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
-from django.contrib import messages
 
 from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence)
 
@@ -28,8 +25,9 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
         try:
             context['active_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
                                                            filter(user_id=self.request.user.id).\
-                                                           filter(status=1)
+                                                           filter(status__in=[0, 1, 2])
             context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
+            context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
         except Sentence.DoesNotExist:
             pass
 

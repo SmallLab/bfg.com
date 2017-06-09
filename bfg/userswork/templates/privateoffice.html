@@ -129,26 +129,27 @@
                                             </ul>
                                         </td>
                                         <td>
-
+                                            {{ type_ss|strint:sentence.type_s }}
                                         </td>
                                         <td>
-                                            {% with i=sentence.status|strint %}
-                                                {{ i }}
-                                              {{ status_ss.i }}
-                                            {% endwith %}
+                                            {{ status_ss|strint:sentence.status }}
                                         </td>
-                                        <td>25000</td>
-                                        <td>900</td>
+                                        <td>{{ sentence.views }}</td>
+                                        <td>{{ sentence.phone_views }}</td>
                                         <td>
                                             <div class="text-center">
                                                 <p>20</p>
-                                                <a href="#" class="btn btn-xxs btn-gray">Добавить в ТОР</a>
+                                                {% if sentence.type_s == 0 %}
+                                                    <a href="#" class="btn btn-xxs btn-gray">Добавить в ТОР</a>
+                                                {% endif %}
                                             </div>
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <p>29.12.16</p>
-                                                <a href="#" class="btn btn-xxs btn-primary">Добавить в VIP</a>
+                                                <p>{{ sentence.create_time|date:"d m Y" }}</p>
+                                                {% if sentence.type_s == 0 or sentence.type_s == 1 %}
+                                                    <a href="#" class="btn btn-xxs btn-primary">Добавить в VIP</a>
+                                                {% endif %}
                                             </div>
                                         </td>
                                     </tr>
