@@ -1,11 +1,13 @@
 import os
+import shutil
 from datetime import datetime, timedelta
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, RedirectView
+from django.core.urlresolvers import reverse
 
 from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence)
 
@@ -38,14 +40,19 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
 """
 
 
-class PODeleteSentenceView(LoginRequiredMixin, TemplateView):
+class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
-    template_name = 'privateoffice.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(PrivateOfficeView, self).get_context_data()
+    def get(self, request, *args, **kwargs):
+        del_sent_data = Sentence.objects.get(pk=kwargs['pk'])
+        shutil.rmtree(settings.TEST_MEDIA_IMAGES + del_sent_data.dirname_img)
+        del_sent_data.delete()
 
-        return context
+        return super(PODeleteSentenceView, self).get(self, request, *args, **kwargs)
+
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('privateoffice', kwargs={'tab': 'sent'})
 
 """
     Show form for add new sentense

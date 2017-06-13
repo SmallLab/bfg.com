@@ -38,7 +38,7 @@
                                     <div class="pin-custom">
                                         <div class="pin-custom-caption">
                                             <div class="pin-title">Сейчас у вас нет активных предложений</div>
-                                            <a href="index-5.html" class="btn btn-offer btn-icon btn-primary">
+                                            <a href="{% url 'showform' %}" class="btn btn-offer btn-icon btn-primary">
                                                 <span>Добавить предложение</span>
                                                 <span class="icon icon-offer fa fa-plus-circle"></span>
                                             </a>
@@ -191,7 +191,7 @@
                                 <div class="pin-custom">
                                     <div class="pin-custom-caption">
                                         <div class="pin-title">Сейчас у вас нет активных предложений</div>
-                                        <a href="index-5.html" class="btn btn-offer btn-icon btn-primary">
+                                        <a href="{% url 'showform' %}" class="btn btn-offer btn-icon btn-primary">
                                             <span>Добавить предложение</span>
                                             <span class="icon icon-offer fa fa-plus-circle"></span>
                                         </a>
@@ -751,7 +751,7 @@
                 <h4>Вы действительно хотите удалить предложение?</h4>
             </div>
             <div class="modal-footer">
-                 <button type="button" class="btn btn-danger" id="deletedSentence">Удалить</button>
+                 <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
                  <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
 
             </div>
