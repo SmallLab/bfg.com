@@ -50,9 +50,17 @@ class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
 
         return super(PODeleteSentenceView, self).get(self, request, *args, **kwargs)
 
-
     def get_redirect_url(self, *args, **kwargs):
         return reverse('privateoffice', kwargs={'tab': 'sent'})
+
+
+"""
+    Deactivate sentence
+"""
+
+
+class PODeactiveSentenceView(LoginRequiredMixin, RedirectView):
+    pass
 
 """
     Show form for add new sentense
