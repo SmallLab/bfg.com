@@ -33,6 +33,19 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
 
         return context
 
+"""
+    Delete sentence
+"""
+
+
+class PODeleteSentenceView(LoginRequiredMixin, TemplateView):
+    login_url = 'login'
+    template_name = 'privateoffice.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PrivateOfficeView, self).get_context_data()
+
+        return context
 
 """
     Show form for add new sentense
