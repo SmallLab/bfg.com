@@ -33,6 +33,14 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
         except Sentence.DoesNotExist:
             pass
 
+        try:
+            context['deactive_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
+                                                                'views', 'phone_views', 'create_time'). \
+                filter(user_id=self.request.user.id). \
+                filter(status=3)
+        except Sentence.DoesNotExist:
+            pass
+
         return context
 
 """
@@ -60,7 +68,42 @@ class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
 
 
 class PODeactiveSentenceView(LoginRequiredMixin, RedirectView):
-    pass
+    login_url = 'login'
+
+    def get(self, request, *args, **kwargs):
+        edit_data = Sentence.objects.get(pk=kwargs['pk'])
+        edit_data.status = 3
+        edit_data.save()
+        return super(PODeactiveSentenceView, self).get(self, request, *args, **kwargs)
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('privateoffice', kwargs={'tab': 'sent'})
+
+
+"""
+    Activate sentence
+"""
+
+
+class POActiveSentenceView(LoginRequiredMixin, RedirectView):
+    login_url = 'login'
+
+    def get(self, request, *args, **kwargs):
+        edit_data = Sentence.objects.get(pk=kwargs['pk'])
+        edit_data.status = 1
+        edit_data.save()
+        return super(POActiveSentenceView, self).get(self, request, *args, **kwargs)
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('privateoffice', kwargs={'tab': 'sent'})
+
+"""
+    Edit sentence
+"""
+
+
+class POEditSentenceView(LoginRequiredMixin, RedirectView):
+    login_url = 'login'
 
 """
     Show form for add new sentense

@@ -158,45 +158,127 @@
                                     </tbody>
                                 </table>
                                 {% endif %}
-                                <ul class="list-inline pagination-product">
-                                    <li class="pagination-product-prev">
-                                        <a href="#">
-                                            <span class="icon fa fa-angle-double-left"></span>
-                                            <span>Назад</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                    <li><a href="#">7</a></li>
-                                    <li><a href="#">8</a></li>
-                                    <li><a href="#">9</a></li>
-                                    <li><a href="#">10</a></li>
-                                    <li><a href="#">11</a></li>
-                                    <li><a href="#">12</a></li>
-                                    <li><a href="#">......</a></li>
-                                    <li><a href="#">200</a></li>
-                                    <li class="pagination-product-next">
-                                        <a href="#">
-                                            <span>Вперед</span>
-                                            <span class="icon fa fa-angle-double-right"></span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile-sub">
-                                <div class="pin-custom">
-                                    <div class="pin-custom-caption">
-                                        <div class="pin-title">Сейчас у вас нет активных предложений</div>
-                                        <a href="{% url 'showform' %}" class="btn btn-offer btn-icon btn-primary">
-                                            <span>Добавить предложение</span>
-                                            <span class="icon icon-offer fa fa-plus-circle"></span>
-                                        </a>
-                                    </div>
+                                 <div class="tab-content-sub-1-title">
+                                    Не активные предложения:
                                 </div>
+                                {% if not deactive_sentences %}
+                                    <div class="pin-custom">
+                                        <div class="pin-custom-caption">
+                                            <div class="pin-title">Сейчас у вас нет не активных предложений</div>
+                                            <a href="{% url 'showform' %}" class="btn btn-offer btn-icon btn-primary">
+                                                <span>Добавить предложение</span>
+                                                <span class="icon icon-offer fa fa-plus-circle"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                <table class="table table-responsive table-products">
+                                    <thead>
+                                    <tr>
+{#                                        <th>#}
+{#                                            <div class="checkbox checkbox-left">#}
+{#                                                <label>#}
+{#                                                    <input type="checkbox">#}
+{#                                                </label>#}
+{#                                            </div>#}
+{#                                        </th>#}
+                                        <th></th>
+                                        <th>
+                                            <a href="#" class="text-regular">
+                                                Заголовок
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                               Тип
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                                <span class="icon fa fa-chevron-down"></span>
+                                                <span>Статус</span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                                <span class="icon fa fa-eye"></span>
+                                                <span>Смотрели</span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                                <span class="icon fa fa-phone"></span>
+                                                <span>Тел.</span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                                <span class="icon fa fa-star-o"></span>
+                                                <span>В избранном</span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="#">
+                                                <span>Дата</span>
+                                                <span class="icon fa fa-chevron-down"></span>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% with sentences=deactive_sentences %}
+                                        {% for sentence in sentences %}
+                                       <tr>
+                                        <td>
+                                            <a href="#">
+                                                <img src="/media/{{ sentence.main_img }}" width="57px;" height="65px;" alt="">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="table-products-title">{{ sentence.caption }}</a>
+                                            <ul class="list-inline list-inline-products">
+                                                <li><a href="{% url 'activatesent' pk=sentence.id %}" class="deactivate">
+                                                    <span class="icon fa fa-remove"></span>
+                                                    <span>Активировать</span>
+                                                </a></li>
+                                                <li><a href="{% url 'deletesent' pk=sentence.id %}" class="delete">
+                                                    <span class="icon fa fa-remove"></span>
+                                                    <span>Удалить</span>
+                                                </a></li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            {{ type_ss|strint:sentence.type_s }}
+                                        </td>
+                                        <td>
+                                            {{ status_ss|strint:sentence.status }}
+                                        </td>
+                                        <td>{{ sentence.views }}</td>
+                                        <td>{{ sentence.phone_views }}</td>
+                                        <td>
+                                            <div class="text-center">
+                                                <p>20</p>
+                                                {% if sentence.type_s == 0 %}
+                                                    <a href="#" class="btn btn-xxs btn-gray">Добавить в ТОР</a>
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <p>{{ sentence.create_time|date:"d m Y" }}</p>
+                                                {% if sentence.type_s == 0 or sentence.type_s == 1 %}
+                                                    <a href="#" class="btn btn-xxs btn-primary">Добавить в VIP</a>
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                        {% endfor %}
+                                    {% endwith %}
+                                    </tbody>
+                                </table>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
