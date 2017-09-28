@@ -660,13 +660,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00019" summary="Add some templates">
-      <created>1493836884576</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1493836884576</updated>
-    </task>
     <task id="LOCAL-00020" summary="Add some models">
       <created>1493978308263</created>
       <option name="number" value="00020" />
@@ -1003,7 +996,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503423174205</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="User office">
+      <created>1506617879315</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1506617879315</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView">
