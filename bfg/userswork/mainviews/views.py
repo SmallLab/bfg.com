@@ -15,7 +15,6 @@ from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Ima
     Main page user office
 """
 
-
 class PrivateOfficeView(LoginRequiredMixin, TemplateView):
 
     login_url = 'login'
@@ -47,7 +46,6 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
     Delete sentence
 """
 
-
 class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
@@ -61,11 +59,9 @@ class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('privateoffice', kwargs={'tab': 'sent'})
 
-
 """
     Deactivate sentence
 """
-
 
 class PODeactiveSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
@@ -79,11 +75,9 @@ class PODeactiveSentenceView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('privateoffice', kwargs={'tab': 'sent'})
 
-
 """
     Activate sentence
 """
-
 
 class POActiveSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
@@ -100,7 +94,6 @@ class POActiveSentenceView(LoginRequiredMixin, RedirectView):
 """
     Edit sentence
 """
-
 
 class POEditSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
@@ -120,7 +113,6 @@ class ShowFormSentenseView(LoginRequiredMixin, TemplateView):
         context['categories'] = Categories.object.get_active_categories()
         context['regions'] = Regions.objects.all()
         return context
-
 
 """
     Create new sentence
