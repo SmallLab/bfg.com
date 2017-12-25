@@ -24,19 +24,14 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
         context = super(PrivateOfficeView, self).get_context_data()
         context['active_tab'] = kwargs['tab'] if kwargs['tab'] else 'sent'
         try:
-            context['active_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
-                                                           filter(user_id=self.request.user.id).\
-                                                           filter(status__in=[0, 1, 2])
+            context['active_sentences'] = Sentence.objects.get_active_sentences(self.request.user.id)
             context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
             context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
         except Sentence.DoesNotExist:
             pass
 
         try:
-            context['deactive_sentences'] = Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
-                                                                'views', 'phone_views', 'create_time'). \
-                filter(user_id=self.request.user.id). \
-                filter(status=3)
+            context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
         except Sentence.DoesNotExist:
             pass
 

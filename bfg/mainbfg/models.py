@@ -89,6 +89,19 @@ class Regions(models.Model):
 def custom_directory_path(instance, filename):
     return 'images/{0}/{1}'.format(instance.dirname_img, filename)
 
+class ManagerSentences(models.Manager):
+
+    def get_active_sentences(self, user_id, status_list = [0, 1, 2]):
+        return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
+                                filter(user_id=user_id).\
+                                filter(status__in=status_list)
+
+    def get_deactive_sentences(self, user_id, status=3):
+        return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
+                                     'views', 'phone_views', 'create_time'). \
+                                filter(user_id=user_id). \
+                                filter(status=status)
+
 class Sentence(models.Model):
 
     type_id = models.SmallIntegerField()
@@ -122,6 +135,7 @@ class Sentence(models.Model):
     on_moderation = models.BooleanField(default=False)
     link_name = models.CharField(max_length=550)
     identifier = models.CharField(max_length=20)
+    objects = ManagerSentences()
 
 
     def get_absolute_url(self):
