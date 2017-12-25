@@ -29,7 +29,6 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
             context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
         except Sentence.DoesNotExist:
             pass
-
         try:
             context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
         except Sentence.DoesNotExist:
@@ -45,7 +44,7 @@ class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
     def get(self, request, *args, **kwargs):
-        del_sent_data = Sentence.objects.get(pk=kwargs['pk'])
+        del_sent_data = Sentence.objects.delete_sentence(kwargs['pk'])
         shutil.rmtree(settings.TEST_MEDIA_IMAGES + del_sent_data.dirname_img)
         del_sent_data.delete()
 
@@ -62,9 +61,7 @@ class PODeactiveSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
     def get(self, request, *args, **kwargs):
-        edit_data = Sentence.objects.get(pk=kwargs['pk'])
-        edit_data.status = 3
-        edit_data.save()
+        Sentence.objects.deactive_sentence(kwargs['pk'])
         return super(PODeactiveSentenceView, self).get(self, request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):
@@ -78,9 +75,7 @@ class POActiveSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
     def get(self, request, *args, **kwargs):
-        edit_data = Sentence.objects.get(pk=kwargs['pk'])
-        edit_data.status = 1
-        edit_data.save()
+        Sentence.objects.active_sentence(kwargs['pk'])
         return super(POActiveSentenceView, self).get(self, request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):

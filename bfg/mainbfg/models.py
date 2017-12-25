@@ -102,6 +102,21 @@ class ManagerSentences(models.Manager):
                                 filter(user_id=user_id). \
                                 filter(status=status)
 
+    def delete_sentence(self, pk):
+        return Sentence.objects.get(pk=pk)
+
+    def deactive_sentence(self, pk):
+        edit_data = Sentence.objects.get(pk=pk)
+        edit_data.status = 3
+        edit_data.save()
+        return None
+
+    def active_sentence(self, pk):
+        edit_data = Sentence.objects.get(pk=pk)
+        edit_data.status = 1
+        edit_data.save()
+        return None
+
 class Sentence(models.Model):
 
     type_id = models.SmallIntegerField()
