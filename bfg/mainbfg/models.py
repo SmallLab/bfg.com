@@ -168,13 +168,13 @@ class SentenceForm(ModelForm):
                   'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img']
 
         error_messages = {
-                             'autor': {'required': "Пожалуйста введите автора",
+                             'autor': {'required': "Пожалуйста введите автора!!!",
                                        'max_length':"Не более 30 символов"
                               },
-                             'caption': {'required': "Пожалуйста введите заголовок",
+                             'caption': {'required': "Пожалуйста введите заголовок!!!",
                                          'max_length': "Не более 50 символов"
                               },
-                             'description': {'required': "Пожалуйста введите описание",
+                             'description': {'required': "Пожалуйста введите описание!!!",
                                              'max_length': "Не более 1000 символов"
                              },
                              'full_adress': {'max_length': "Не более 100 символов"},

@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.base import TemplateView, RedirectView
 from django.core.urlresolvers import reverse
 
@@ -28,11 +28,11 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
             context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
             context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
         except Sentence.DoesNotExist:
-            pass
+            context['active_sentences'] = False
         try:
             context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
         except Sentence.DoesNotExist:
-            pass
+            context['deactive_sentences'] =False
 
         return context
 
@@ -87,22 +87,6 @@ class POActiveSentenceView(LoginRequiredMixin, RedirectView):
 
 class POEditSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
-
-"""
-    Show form for add new sentense
-"""
-
-class ShowFormSentenseView(LoginRequiredMixin, TemplateView):
-
-    login_url = 'login'
-    template_name = 'addsentens.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ShowFormSentenseView, self).get_context_data(**kwargs)
-        context['types'] = TypeSentence.object.get_active_types()
-        context['categories'] = Categories.object.get_active_categories()
-        context['regions'] = Regions.objects.all()
-        return context
 
 """
     Create new sentence

@@ -84,7 +84,7 @@ $(document).ready(function () {
 				},
 				messages: {
 					autor: {
-						required: "Пожалуйста введите автора",
+						required: "Пожалуйста введите автора!",
 						maxlength: "Не более 30 символов"
 					},
 					caption: {
