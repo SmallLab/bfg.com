@@ -52,6 +52,11 @@ $('#main_file_select').on("click", function (e) {
 
 $('[data-anothe=anothe_img]').on("click", function (e) {
    $(this).children('img').remove();
+   $(this).children('span').css({'font-size':'41px', 'top':'50px', 'left':'50px', 'color':'#0e76bd'})
+                            .removeClass('fa-minus-circle')
+                            .addClass('fa-plus-circle')
+                            .attr('title', 'Добавить фото');
+
    var data_json_img = $.parseJSON($('#othe_img_isset').val());
    var num_img = parseInt($(this).next().attr('data-num-img'));
    data_json_img[num_img] = 0;
@@ -70,7 +75,11 @@ $('input[data-anothe=other_img]').change(function () {
         var img = document.createElement("img");
         img.style.width="106px";
         img.style.height = "90px";
-        $(this).prev('a').removeAttr("data-anothe").children('span').removeClass('fa-plus-circle');
+        $(this).prev('a').removeAttr("data-anothe").children('span')
+                        .css({'font-size':'23px', 'top':'22px', 'left':'12px', 'color':'red'})
+                        .removeClass('fa-plus-circle')
+                        .addClass('fa-minus-circle')
+                        .attr('title', 'Удалить фото');;
         $(this).prev('a').prepend(img);
         //$(this).unbind();
         var reader = new FileReader();
@@ -78,6 +87,7 @@ $('input[data-anothe=other_img]').change(function () {
         reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
     //read file in string base64
         reader.readAsDataURL($(this)[0].files[0]);
+
         var data_json_img = $.parseJSON($('#othe_img_isset').val());
         var num_img = parseInt($(this).attr('data-num-img'));
         data_json_img[num_img] = 1;
