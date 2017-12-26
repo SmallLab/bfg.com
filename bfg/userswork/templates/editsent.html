@@ -1,10 +1,295 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "mainuser.html" %}
+{% load staticfiles %}
+{% block title %}BFG Добавить предложение{% endblock %}
+{% block content %}
+    <section class="header-page-bottom">
+        <div class="section section-1 bg-image bg-image-1">
+            <div class="container container-custom">
+                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section section-2">
+        <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
+            <h2 class="text-primary text-36 text-sbold">Редактирование предложения.</h2>
+            <form class="form form-offer" method="post" name="edit_sent" action="{% url 'editsent' data.id %}"
+                  id="edit_sent" enctype="multipart/form-data">{% csrf_token %}
+                <div class="form-offer-inner">
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="author">Автор<sup>*</sup></label>
+                            <div class="form-control-wrap {% if form.errors.autor %}has-error has-feedback{% endif %}">
+                            {% if form.errors.autor %}<em id="author-error" class="error help-block">{{ form.errors.autor.0 }}</em>{% endif %}
+                                <input id="author" type="text" class="form-control" name="autor" value="{{ data.autor }}" {% if form.errors.autor %} aria-describedby="author-error"{% endif %}>
+                                <span data-num="count_simbols" data-count="30">Не более 30 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Введите Автора</span>
+                            </span>
+                            <div class="desc-cust">Например наименование магазина, бутика, салона</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="head">Заголовок<sup>*</sup></label>
+                            <div class="form-control-wrap {% if form.errors.caption %}has-error has-feedback{% endif %}">
+                            {% if form.errors.caption %}<em id="caption-error" class="error help-block">{{ form.errors.caption.0 }}</em>{% endif %}
+                                <input id="head" type="text" class="form-control" name="caption" value="{{ data.caption }}" {% if form.errors.caption %} aria-describedby="author-error"{% endif %}>
+                                <span data-num="count_simbols" data-count="50">Не более 50 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Введите заголовок предложения</span>
+                            </span>
+                            <div class="desc-cust">Например - Распродажа обуви, Скидка 50%...</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="type_id">Тип предложения<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="type_id" >
+                                    {% for type in types %}
+                                        {% if data.type_id == type.id %}
+                                            <option value="{{ type.id }}" selected>{{ type.name }}</option>
+                                        {% else %}
+                                            <option value="{{ type.id }}">{{ type.name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="category_id">Категория<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="category_id">
+                                    {% for category in categories %}
+                                        {% if data.category_id == category.id %}
+                                            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+                                        {% else %}
+                                            <option value="{{ category.id }}">{{ category.name }}</option>
+                                        {% endif %}
+                                   {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="region_id">Регион<sup>*</sup></label>
+                            <div class="form-control-wrap">
+                                <select class="form-control form-control-select" name="region_id">
+                                    {% for region in regions %}
+                                        {% if data.region_id == region.id %}
+                                            <option value="{{ region.id }}" selected>{{ region.name }}</option>
+                                        {% else %}
+                                            <option value="{{ region.id }}">{{ region.name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                             </div>
+                          </div>
+                     </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="full_adress">Полный адрес</label>
+                            <div class="form-control-wrap {% if form.errors.full_adress %}has-error has-feedback{% endif %}">
+                            {% if form.errors.full_adress %}<em id="full_adress-error" class="error help-block">{{ form.errors.full_adress.0 }}</em>{% endif %}
+                                <input id="full_adress" type="text" class="form-control" name="full_adress" value="{{ data.full_adress }}">
+                                <span data-num="count_simbols" data-count="100">Не более 100 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Вы можете указать более полный адрес для отображения Вашего расположения на карте</span>
+                            </span>
+                            <div class="desc-cust">Например Киев, ул.Мира, 125 или Киев, ул.Мира, д.125</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="telephone">Телефон</label>
+                            <div class="form-control-wrap">
+                                <input id="telephone" type="text" class="form-control" name="phone" value="{{ data.phone }}">
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Укажите телефон для связи</span>
+                            </span>
+                            <div class="desc-cust"></div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="website">Web-сайт</label>
+                            <div class="form-control-wrap">
+                                <input id="web_site" type="text" class="form-control" name="web_site" value="{{ data.web_site }}">
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Добавьте адрес Вашего сайта в формате http://mysite.com.ua</span>
+                            </span>
+                            <div class="desc-cust"></div>
+                        </div>
+                    </div>
+                    <div class="checkbox form-group-info-wrap">
+                        <div class="form-group-inner form-checkbox">
+                            <label>
+                                <input type="checkbox" name="is_webstore" {% if data.is_webstore %} checked {% endif %}>Показывать как интернет магазин
+                            </label>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust"></span>
+                            </span>
+                            <div class="desc-cust"></div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="full_adress">Meta информация</label>
+                            <div class="form-control-wrap {% if form.errors.meta_info %}has-error has-feedback{% endif %}">
+                            {% if form.errors.meta_info %}<em id="meta_info-error" class="error help-block">{{ form.errors.meta_info.0 }}</em>{% endif %}
+                                <input id="meta_info" type="text" class="form-control" name="meta_info" value="{{ data.meta_info }}">
+                                <span data-num="count_simbols" data-count="500">Не более 500 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Для увеличения вероятности отображения Вашего предложения в результатах поисковых систем,
+                                    добавте meta информацию</span>
+                            </span>
+                            <div class="desc-cust">Например:Магазин Гвозди, распродажа, Киев, низкая цена ...</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <label for="comment">Описание<sup>*</sup></label>
+                            <div class="form-control-wrap {% if form.errors.description %}has-error has-feedback{% endif %}">
+                            {% if form.errors.description %}<em id="description-error" class="error help-block">{{ form.errors.description.0 }}</em>{% endif %}
+                                <textarea class="form-control" id="description" name="description">{{ data.description }}</textarea>
+                                <span data-num="count_simbols" data-count="1000">Не более 1000 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                    </div>
 
-</body>
-</html>
+                    <div class="form-photos form-group-info-wrap" id="fotos_div">
+                        <div class="form-group-inner">
+                            <div class="form-photos-left">
+                                <div class="form-photos-title">Фотографии</div>
+                                <div class="form-photos-desc">Объявление с фото <br> повышают продажи <br> в 2-6 раз</div>
+                            </div>
+
+                            <div class="form-photos-right">
+                                <div class="form-photos-row">
+                                    <a href="#" class="form-photos-column form-photos-main-photo" id="main_file_select">
+                                        <span class="icon fa fa-plus-circle" id="before_img" title="Добавить фото"></span>
+                                        <span class="form-photos-main-title">Главное изображение</span>
+                                    </a>
+                                {% if form.errors.main_img %}<em id="meta_info-error" class="error help-block">{{ form.errors.main_img }}</em>{% endif %}
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           onchange="handleMainFile(this.files)"
+                                           id="main_file_img"
+                                           name="main_img"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="1"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="2"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="3"
+                                    >
+                                </div>
+                                <div class="form-photos-row">
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="4"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="5"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="6"
+                                    >
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                        <span class="icon fa fa-plus-circle"></span>
+                                    </a>
+                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                           data-anothe="other_img"
+                                           name="other_img[]"
+                                           data-num-img="7"
+                                    >
+                                    <input type="hidden" name="main_img_isset" value="0" id="main_img_isset">
+                                    <input type="hidden" name="othe_img_isset" value='{"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0}' id="othe_img_isset">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none" id="fotos_info">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Добавте фото к Вашему предложению</span>
+                            </span>
+                            <div class="desc-cust">Максимальный размер файла 5 МБ, формат .jpg, .jpeg, .png, .gif.</div>
+                        </div>
+                    </div>
+
+                    <div class="btns form-group-inner">
+                        <button type="submit" class="btn btn-secondary">Предпросмотр</button>
+                        <button type="submit" class="btn btn-primary">Опубликовать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+<div class="hellopreloader">
+    <div class="hellopreloader_preload" id="hellopreloader_preload"></div>
+</div>
+<script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/fileupload.js' %}"></script>
+{% endblock %}

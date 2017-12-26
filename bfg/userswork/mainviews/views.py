@@ -9,7 +9,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.base import TemplateView, RedirectView
 from django.core.urlresolvers import reverse
 
-from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence)
+from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence, SentenceEditForm)
 
 """
     Main page user office
@@ -23,16 +23,10 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(PrivateOfficeView, self).get_context_data()
         context['active_tab'] = kwargs['tab'] if kwargs['tab'] else 'sent'
-        try:
-            context['active_sentences'] = Sentence.objects.get_active_sentences(self.request.user.id)
-            context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
-            context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
-        except Sentence.DoesNotExist:
-            context['active_sentences'] = False
-        try:
-            context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
-        except Sentence.DoesNotExist:
-            context['deactive_sentences'] =False
+        context['active_sentences'] = Sentence.objects.get_active_sentences(self.request.user.id)
+        context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
+        context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
+        context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
 
         return context
 
@@ -44,8 +38,8 @@ class PODeleteSentenceView(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
     def get(self, request, *args, **kwargs):
-        del_sent_data = Sentence.objects.delete_sentence(kwargs['pk'])
-        shutil.rmtree(settings.TEST_MEDIA_IMAGES + del_sent_data.dirname_img)
+        del_sent_data = Sentence.objects.get_single_sentence(kwargs['pk'])
+        shutil.rmtree(settings.TEST_MEDIA_IMAGES + del_sent_data.dirname_img, ignore_errors=True)
         del_sent_data.delete()
 
         return super(PODeleteSentenceView, self).get(self, request, *args, **kwargs)
@@ -85,8 +79,21 @@ class POActiveSentenceView(LoginRequiredMixin, RedirectView):
     Edit sentence
 """
 
-class POEditSentenceView(LoginRequiredMixin, RedirectView):
+class POEditSentenceView(LoginRequiredMixin, UpdateView):
     login_url = 'login'
+    model = Sentence
+    form_class = SentenceEditForm
+    context_object_name = 'data'
+    template_name = 'editsent.html'
+    success_url = '/user/privateoffice/'
+
+    def get_context_data(self, **kwargs):
+        context = super(POEditSentenceView, self).get_context_data(**kwargs)
+        context['types'] = TypeSentence.object.get_active_types()
+        context['categories'] = Categories.object.get_active_categories()
+        context['regions'] = Regions.objects.all()
+
+        return context
 
 """
     Create new sentence

@@ -92,18 +92,27 @@ def custom_directory_path(instance, filename):
 class ManagerSentences(models.Manager):
 
     def get_active_sentences(self, user_id, status_list = [0, 1, 2]):
-        return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
-                                filter(user_id=user_id).\
-                                filter(status__in=status_list)
+        try:
+            return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
+                                    filter(user_id=user_id).\
+                                    filter(status__in=status_list)
+        except Sentence.DoesNotExist:
+            return False
 
     def get_deactive_sentences(self, user_id, status=3):
-        return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
+        try:
+            return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
                                      'views', 'phone_views', 'create_time'). \
-                                filter(user_id=user_id). \
-                                filter(status=status)
+                                    filter(user_id=user_id). \
+                                    filter(status=status)
+        except Sentence.DoesNotExist:
+            return False
 
-    def delete_sentence(self, pk):
-        return Sentence.objects.get(pk=pk)
+    def get_single_sentence(self, pk):
+        try:
+            return Sentence.objects.get(pk=pk)
+        except Sentence.DoesNotExist:
+            return False
 
     def deactive_sentence(self, pk):
         edit_data = Sentence.objects.get(pk=pk)
@@ -180,6 +189,29 @@ class SentenceForm(ModelForm):
                              'full_adress': {'max_length': "Не более 100 символов"},
                              'meta_info': {'max_length': "Не более 500 символов"},
                         }
+
+class SentenceEditForm(ModelForm):
+    class Meta:
+        model = Sentence
+        fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img']
+
+        error_messages = {
+            'autor': {'required': "Пожалуйста введите автора!!!",
+                      'max_length': "Не более 30 символов"
+                      },
+            'caption': {'required': "Пожалуйста введите заголовок!!!",
+                        'max_length': "Не более 50 символов"
+                        },
+            'description': {'required': "Пожалуйста введите описание!!!",
+                            'max_length': "Не более 1000 символов"
+                            },
+            'full_adress': {'max_length': "Не более 100 символов"},
+            'meta_info': {'max_length': "Не более 500 символов"},
+        }
+
+
+
 
 #---------------------------------Images Model----------------------------------------------#
 
