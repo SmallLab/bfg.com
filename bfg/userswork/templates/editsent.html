@@ -197,7 +197,8 @@
                             <div class="form-photos-right">
                                 <div class="form-photos-row">
                                     <a href="#" class="form-photos-column form-photos-main-photo" id="main_file_select">
-                                        <span class="icon fa fa-plus-circle" id="before_img" title="Добавить фото"></span>
+                                        <img src="{{ MEDIA_URL }}{{ data.main_img }}">
+                                        <span class="icon fa fa-minus-circle" id="before_img" title="Добавить фото"></span>
                                         <span class="form-photos-main-title">Главное изображение</span>
                                     </a>
                                 {% if form.errors.main_img %}<em id="meta_info-error" class="error help-block">{{ form.errors.main_img }}</em>{% endif %}
@@ -279,8 +280,8 @@
                     </div>
 
                     <div class="btns form-group-inner">
-                        <button type="submit" class="btn btn-secondary">Предпросмотр</button>
-                        <button type="submit" class="btn btn-primary">Опубликовать</button>
+                        <a type="button" class="btn btn-secondary" href="{% url 'privateoffice' sent %}">Отмена</a>
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
                     </div>
                 </div>
             </form>
@@ -291,5 +292,5 @@
 </div>
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/fileupload.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/fileuploadedit.js' %}"></script>
 {% endblock %}
