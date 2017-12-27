@@ -38,6 +38,7 @@ $('#main_file_select').on("click", function (e) {
                         .attr('title', 'Добавить фото')
                         .prev('img').remove();
         $('#main_img_isset').val(0);
+        $('#is_del_mainphoto').val(0);
         //Clear FileList for main img
         var $el = $('#main_file_img')
         $el.wrap('<form>').closest('form').get(0).reset();
@@ -65,11 +66,13 @@ $('[data-anothe=anothe_img]').on("click", function (e) {
         var $el = $(this).next();
         $el.wrap('<form>').closest('form').get(0).reset();
         $el.unwrap();
-        var data_json_img = $.parseJSON($('#othe_img_isset').val());
-        var num_img = parseInt($(this).next().attr('data-num-img'));
-        data_json_img[num_img] = 0;
-        $('#othe_img_isset').val(JSON.stringify(data_json_img));
-        console.log(data_json_img);
+
+        // var data_json_img = $.parseJSON($('#othe_img_isset').val());
+        // var num_img = parseInt($(this).next().attr('data-num-img'));
+        // data_json_img[num_img] = 0;
+        // $('#othe_img_isset').val(JSON.stringify(data_json_img));
+        // console.log(data_json_img);
+
         return false;
     }
     else{
@@ -100,11 +103,11 @@ $('input[data-anothe=other_img]').change(function () {
     //read file in string base64
         reader.readAsDataURL($(this)[0].files[0]);
 
-        var data_json_img = $.parseJSON($('#othe_img_isset').val());
-        var num_img = parseInt($(this).attr('data-num-img'));
-        data_json_img[num_img] = 1;
-        $('#othe_img_isset').val(JSON.stringify(data_json_img));
-        console.log(data_json_img);
+        // var data_json_img = $.parseJSON($('#othe_img_isset').val());
+        // var num_img = parseInt($(this).attr('data-num-img'));
+        // data_json_img[num_img] = 1;
+        // $('#othe_img_isset').val(JSON.stringify(data_json_img));
+        // console.log(data_json_img);
     }
     else{
         alert('Неправильное расширение файла');

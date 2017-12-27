@@ -1,6 +1,7 @@
 {% extends "mainuser.html" %}
 {% load staticfiles %}
-{% block title %}BFG Добавить предложение{% endblock %}
+{% load customfilters %}
+{% block title %}BFG Редактировать предложение{% endblock %}
 {% block content %}
     <section class="header-page-bottom">
         <div class="section section-1 bg-image bg-image-1">
@@ -14,6 +15,12 @@
             <h2 class="text-primary text-36 text-sbold">Редактирование предложения.</h2>
             <form class="form form-offer" method="post" name="edit_sent" action="{% url 'editsent' data.id %}"
                   id="edit_sent" enctype="multipart/form-data">{% csrf_token %}
+                <input type="hidden" id="is_del_mainphoto" {% if data.main_img %} value="1" {% else %} value="0" {% endif %} name="is_del_mainphoto"/>
+                <input type="hidden" name="is_del_other_photo" value="0" id="is_del_other_photo"/>
+                <input type="hidden" name="list_del_other_photo" value="{}" id="list_del_other_photo"/>
+
+                <input type="hidden" name="main_img_isset" value="0" id="main_img_isset">
+                <input type="hidden" name="othe_img_isset" value='{"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0}' id="othe_img_isset">
                 <div class="form-offer-inner">
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
@@ -198,7 +205,7 @@
                                 <div class="form-photos-row">
                                     <a href="#" class="form-photos-column form-photos-main-photo" id="main_file_select">
                                         <img src="{{ MEDIA_URL }}{{ data.main_img }}">
-                                        <span class="icon fa fa-minus-circle" id="before_img" title="Добавить фото"></span>
+                                        <span class="icon fa fa-minus-circle" id="before_img" title="Удалить фото" style="font-size:23px;top:22px;left:12px;color:red;"></span>
                                         <span class="form-photos-main-title">Главное изображение</span>
                                     </a>
                                 {% if form.errors.main_img %}<em id="meta_info-error" class="error help-block">{{ form.errors.main_img }}</em>{% endif %}
@@ -207,6 +214,7 @@
                                            id="main_file_img"
                                            name="main_img"
                                     >
+
                                     <a href="#" class="form-photos-column" data-anothe="anothe_img">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
@@ -265,9 +273,7 @@
                                            name="other_img[]"
                                            data-num-img="7"
                                     >
-                                    <input type="hidden" name="main_img_isset" value="0" id="main_img_isset">
-                                    <input type="hidden" name="othe_img_isset" value='{"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0}' id="othe_img_isset">
-                                </div>
+                                 </div>
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none" id="fotos_info">
@@ -291,6 +297,7 @@
     <div class="hellopreloader_preload" id="hellopreloader_preload"></div>
 </div>
 <script type="text/javascript" src="{% static 'js/validator/jquery.validate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phonemask/inputplagin.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/addnewsentense.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/fileuploadedit.js' %}"></script>
 {% endblock %}
