@@ -32,13 +32,17 @@ function handleMainFile(files){
 //Show window for download file/Delete selected image
 $('#main_file_select').on("click", function (e) {
     if ($('#before_img').hasClass('fa-minus-circle')){
-            $('#before_img').css({'font-size':'41px', 'top':'50px', 'left':'50px', 'color':'#0e76bd'})
-                            .removeClass('fa-minus-circle')
-                            .addClass('fa-plus-circle')
-                            .attr('title', 'Добавить фото')
-                            .prev('img').remove();
-            $('#main_img_isset').val(0);
-            return false;
+        $('#before_img').css({'font-size':'41px', 'top':'50px', 'left':'50px', 'color':'#0e76bd'})
+                        .removeClass('fa-minus-circle')
+                        .addClass('fa-plus-circle')
+                        .attr('title', 'Добавить фото')
+                        .prev('img').remove();
+        $('#main_img_isset').val(0);
+        //Clear FileList for main img
+        var $el = $('#main_file_img')
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+        return false;
     }
     else{
         $('#main_file_img').click();
@@ -51,19 +55,27 @@ $('#main_file_select').on("click", function (e) {
 * */
 
 $('[data-anothe=anothe_img]').on("click", function (e) {
-   $(this).children('img').remove();
-   $(this).children('span').css({'font-size':'41px', 'top':'50px', 'left':'50px', 'color':'#0e76bd'})
-                            .removeClass('fa-minus-circle')
-                            .addClass('fa-plus-circle')
-                            .attr('title', 'Добавить фото');
-
-   var data_json_img = $.parseJSON($('#othe_img_isset').val());
-   var num_img = parseInt($(this).next().attr('data-num-img'));
-   data_json_img[num_img] = 0;
-   $('#othe_img_isset').val(JSON.stringify(data_json_img));
-   console.log(data_json_img);
-   $(this).next().click();
-   e.preventDefault(); // prevent navigation to "#"
+    if($(this).children('span').hasClass('fa-minus-circle')){
+        $(this).children('img').remove();
+        $(this).children('span').css({'font-size':'41px', 'top':'50px', 'left':'50px', 'color':'#0e76bd'})
+                                .removeClass('fa-minus-circle')
+                                .addClass('fa-plus-circle')
+                                .attr('title', 'Добавить фото');
+        //Clear FileList for other img
+        var $el = $(this).next();
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+        var data_json_img = $.parseJSON($('#othe_img_isset').val());
+        var num_img = parseInt($(this).next().attr('data-num-img'));
+        data_json_img[num_img] = 0;
+        $('#othe_img_isset').val(JSON.stringify(data_json_img));
+        console.log(data_json_img);
+        return false;
+    }
+    else{
+       $(this).next().click();
+       e.preventDefault(); // prevent navigation to "#"
+    }
 });
 
 $('input[data-anothe=other_img]').change(function () {
