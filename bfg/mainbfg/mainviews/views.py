@@ -23,10 +23,10 @@ class MainView(TemplateView):
           return cache.get('data_ctr')
       else:
           data = {}
-          data['types'] = TypeSentence.object.get_active_types()
-          data['categories'] = Categories.object.get_active_categories()
-          data['categories_list'] = Categories.object.get_list_categories()
-          data['regions'] = Regions.objects.all()
+          data['types'] = TypeSentence.objects.get_active_types()
+          data['categories'] = Categories.objects.get_active_categories()
+          data['categories_list'] = Categories.objects.get_list_categories()
+          data['regions'] = Regions.objects.get_all_regions()
           cache.set('data_ctr', data)
 
           return data

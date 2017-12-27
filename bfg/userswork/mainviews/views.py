@@ -9,6 +9,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.base import TemplateView, RedirectView
 from django.core.urlresolvers import reverse
 
+from userswork.mainhelpers import modelshelper
 from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence, SentenceEditForm)
 
 """
@@ -89,9 +90,7 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(POEditSentenceView, self).get_context_data(**kwargs)
-        context['types'] = TypeSentence.object.get_active_types()
-        context['categories'] = Categories.object.get_active_categories()
-        context['regions'] = Regions.objects.all()
+        context['types'], context['categories'], context['regions'] = modelshelper.get_tcr_data()
 
         return context
 
@@ -129,9 +128,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(CreateNewSentence, self).get_context_data(**kwargs)
-        context['types'] = TypeSentence.object.get_active_types()
-        context['categories'] = Categories.object.get_active_categories()
-        context['regions'] = Regions.objects.all()
+        context['types'], context['categories'], context['regions'] = modelshelper.get_tcr_data()
         return context
 
     def get_success_url(self):

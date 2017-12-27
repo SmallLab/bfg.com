@@ -8,7 +8,6 @@ from mainbfg.mainhelpers import MainImgTypeField as MI
 Custom Manadger for model TypeSentence
 """
 
-
 class ManadgerTypeSentence(models.Manager):
 #Get active Types
     def get_active_types(self):
@@ -19,7 +18,7 @@ class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
     link_name = models.CharField(max_length=50, default='')
     is_active = models.BooleanField(default=True)
-    object = ManadgerTypeSentence()
+    objects = ManadgerTypeSentence()
 
     def get_absolute_url(self):
         return "/%s/" % self.link_name
@@ -31,7 +30,6 @@ class TypeSentence(models.Model):
 """
 Custom Manadger for model Categories
 """
-
 
 class ManadgerCategories(models.Manager):
 #Get active Categories
@@ -52,7 +50,7 @@ class Categories(models.Model):
     is_icon_img = models.BooleanField(default=False)
     max_num = models.SmallIntegerField(default=1)
     paid_num = models.SmallIntegerField(default=5)
-    object = ManadgerCategories()
+    objects = ManadgerCategories()
 
     def get_absolute_url(self):
         return "/categories/%s/" % self.link_name
@@ -61,12 +59,16 @@ class Categories(models.Model):
         return self.name
 
 #-------------------------------- Regions Model -------------------------------------------
+class ManageRegions(models.Manager):
 
+    def get_all_regions(self):
+        return Regions.objects.all()
 
 class Regions(models.Model):
     name = models.CharField(max_length=100)
     link_name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
+    objects = ManageRegions()
 
     def get_absolute_url(self):
         return "/%s/" % self.link_name
