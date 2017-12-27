@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/fileupload.js" afterPath="$PROJECT_DIR$/userswork/static/js/fileupload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" afterPath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/addsentens.html" afterPath="$PROJECT_DIR$/userswork/templates/addsentens.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,7 +82,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-700">
+            <state relative-caret-position="720">
               <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="60" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -104,7 +106,7 @@
       <file leaf-file-name="fileuploadedit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2280">
+            <state relative-caret-position="2640">
               <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
               <folding />
             </state>
@@ -114,31 +116,29 @@
       <file leaf-file-name="addsentens.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="266" column="77" lean-forward="false" selection-start-line="266" selection-start-column="63" selection-end-line="266" selection-end-column="77" />
+            <state relative-caret-position="320">
+              <caret line="120" column="52" lean-forward="false" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileupload.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addnewsentense.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileupload.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/static/js/fileupload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="648">
               <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3740">
-              <caret line="192" column="18" lean-forward="false" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
-              <folding>
-                <element signature="e#2754#2816#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/879479a4-1a9d-4623-92d0-797d3635c699/console.sql" />
         <option value="$PROJECT_DIR$/mainbfg/templates/mainbfg/index.html" />
         <option value="$PROJECT_DIR$/mainbfg/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/400.html" />
@@ -219,14 +218,15 @@
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/bfg/settings.py" />
         <option value="$PROJECT_DIR$/userswork/urls.py" />
-        <option value="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
         <option value="$PROJECT_DIR$/userswork/templates/privateoffice.html" />
         <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
-        <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileupload.js" />
+        <option value="$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js" />
+        <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
+        <option value="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
       </list>
     </option>
   </component>
@@ -242,7 +242,9 @@
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -300,6 +302,56 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userswork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userswork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches">
         <subPane>
           <PATH>
@@ -314,20 +366,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="com.intellij.database" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -659,13 +697,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Add smyuauth">
-      <created>1494709364611</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1494709364611</updated>
     </task>
     <task id="LOCAL-00029" summary="Add smyuauth">
       <created>1494773463453</created>
@@ -1003,7 +1034,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514318820116</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="User office">
+      <created>1514359501378</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1514359501378</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1017,9 +1055,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11673774" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.117803834" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17290749" sideWeight="0.5138593" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1110,13 +1148,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1460">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bfg/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1366,14 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="116" column="78" lean-forward="false" selection-start-line="116" selection-start-column="78" selection-end-line="116" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1427,7 +1450,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
+        <state relative-caret-position="2640">
           <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
           <folding />
         </state>
@@ -1435,21 +1458,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
+        <state relative-caret-position="720">
           <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="60" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#1904#2227#0" expanded="false" />
             <element signature="e#2326#2645#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="266" column="77" lean-forward="false" selection-start-line="266" selection-start-column="63" selection-end-line="266" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,8 +1490,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/fileupload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="648">
           <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="120" column="52" lean-forward="false" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/addnewsentense.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding />
         </state>
       </provider>

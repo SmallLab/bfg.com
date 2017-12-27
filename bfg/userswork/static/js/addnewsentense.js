@@ -137,4 +137,8 @@ $(document).ready(function () {
 					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 				}
 			} );
+
+    jQuery(function($){
+       $("#telephone").mask("(999) 999-99-99");
+    });
 })
