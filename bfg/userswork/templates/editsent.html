@@ -18,9 +18,6 @@
                 <input type="hidden" id="is_del_mainphoto" {% if data.main_img %} value="1" {% else %} value="0" {% endif %} name="is_del_mainphoto"/>
                 <input type="hidden" name="is_del_other_photo" value="0" id="is_del_other_photo"/>
                 <input type="hidden" name="list_del_other_photo" value="{}" id="list_del_other_photo"/>
-
-                <input type="hidden" name="main_img_isset" value="0" id="main_img_isset">
-                <input type="hidden" name="othe_img_isset" value='{"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0}' id="othe_img_isset">
                 <div class="form-offer-inner">
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
@@ -88,7 +85,7 @@
                              </div>
                           </div>
                      </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <div class="form-group-inner">
                             <label for="region_id">Регион<sup>*</sup></label>
                             <div class="form-control-wrap">
@@ -193,7 +190,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-photos form-group-info-wrap" id="fotos_div">
                         <div class="form-group-inner">
                             <div class="form-photos-left">
@@ -215,63 +211,25 @@
                                            name="main_img"
                                     >
 
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img" data-photo-id="">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
                                     <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
                                            data-anothe="other_img"
                                            name="other_img[]"
-                                           data-num-img="1"
+
                                     >
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-                                           data-num-img="2"
-                                    >
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-                                           data-num-img="3"
-                                    >
+
                                 </div>
                                 <div class="form-photos-row">
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
+
+                                    <a href="#" class="form-photos-column" data-anothe="anothe_img"  data-photo-id="">
                                         <span class="icon fa fa-plus-circle"></span>
                                     </a>
                                     <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
                                            data-anothe="other_img"
                                            name="other_img[]"
-                                           data-num-img="4"
-                                    >
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-                                           data-num-img="5"
-                                    >
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-                                           data-num-img="6"
-                                    >
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-                                           data-num-img="7"
+
                                     >
                                  </div>
                             </div>

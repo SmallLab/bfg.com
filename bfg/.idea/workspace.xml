@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" afterPath="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" afterPath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/editsent.html" afterPath="$PROJECT_DIR$/userswork/templates/editsent.html" />
     </list>
@@ -96,7 +94,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="-381">
               <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -112,22 +110,25 @@
       <file leaf-file-name="editsent.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+            <state relative-caret-position="-101">
+              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
               <folding>
-                <element signature="e#14496#14548#0#HTML" expanded="true" />
-                <element signature="e#14962#14982#0#HTML" expanded="true" />
+                <element signature="e#1281#2633#0#HTML" expanded="false" />
+                <element signature="e#2654#4030#0#HTML" expanded="false" />
+                <element signature="e#3562#4003#0#HTML" expanded="false" />
+                <element signature="e#4051#5004#0#HTML" expanded="false" />
+                <element signature="e#5025#6011#0#HTML" expanded="false" />
+                <element signature="e#6032#6995#0#HTML" expanded="false" />
+                <element signature="e#7016#8413#0#HTML" expanded="false" />
+                <element signature="e#8434#9300#0#HTML" expanded="false" />
+                <element signature="e#9321#10224#0#HTML" expanded="false" />
+                <element signature="e#10245#11035#0#HTML" expanded="false" />
+                <element signature="e#11056#12516#0#HTML" expanded="false" />
+                <element signature="e#12537#13384#0#HTML" expanded="false" />
+                <element signature="e#14265#14317#0#HTML" expanded="true" />
+                <element signature="e#14731#14751#0#HTML" expanded="true" />
+                <element signature="e#16305#16787#0#HTML" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customfilters.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -135,8 +136,8 @@
       <file leaf-file-name="fileuploadedit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="109" column="38" lean-forward="false" selection-start-line="105" selection-start-column="11" selection-end-line="109" selection-end-column="38" />
+            <state relative-caret-position="1060">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -224,8 +225,8 @@
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
         <option value="$PROJECT_DIR$/userswork/mainhelpers/modelshelper.py" />
         <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
-        <option value="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
         <option value="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
+        <option value="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
       </list>
     </option>
@@ -694,13 +695,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00033" summary="Add smyuauth">
-      <created>1494790427101</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1494790427101</updated>
-    </task>
     <task id="LOCAL-00034" summary="Users work">
       <created>1495121305639</created>
       <option name="number" value="00034" />
@@ -1037,7 +1031,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514399591169</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="User office">
+      <created>1514405133096</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1514405133096</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1477,28 +1478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="109" column="38" lean-forward="false" selection-start-line="105" selection-start-column="11" selection-end-line="109" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#644#1282#0" expanded="false" />
-            <element signature="e#1379#1848#0" expanded="false" />
-            <element signature="e#1951#2274#0" expanded="false" />
-            <element signature="e#2373#2692#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -1518,13 +1497,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1060">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#644#1282#0" expanded="false" />
+            <element signature="e#1379#1848#0" expanded="false" />
+            <element signature="e#1951#2274#0" expanded="false" />
+            <element signature="e#2373#2692#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        <state relative-caret-position="-101">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
-            <element signature="e#14496#14548#0#HTML" expanded="true" />
-            <element signature="e#14962#14982#0#HTML" expanded="true" />
+            <element signature="e#1281#2633#0#HTML" expanded="false" />
+            <element signature="e#2654#4030#0#HTML" expanded="false" />
+            <element signature="e#3562#4003#0#HTML" expanded="false" />
+            <element signature="e#4051#5004#0#HTML" expanded="false" />
+            <element signature="e#5025#6011#0#HTML" expanded="false" />
+            <element signature="e#6032#6995#0#HTML" expanded="false" />
+            <element signature="e#7016#8413#0#HTML" expanded="false" />
+            <element signature="e#8434#9300#0#HTML" expanded="false" />
+            <element signature="e#9321#10224#0#HTML" expanded="false" />
+            <element signature="e#10245#11035#0#HTML" expanded="false" />
+            <element signature="e#11056#12516#0#HTML" expanded="false" />
+            <element signature="e#12537#13384#0#HTML" expanded="false" />
+            <element signature="e#14265#14317#0#HTML" expanded="true" />
+            <element signature="e#14731#14751#0#HTML" expanded="true" />
+            <element signature="e#16305#16787#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
