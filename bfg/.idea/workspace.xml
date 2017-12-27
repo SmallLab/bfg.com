@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" afterPath="$PROJECT_DIR$/userswork/static/js/addnewsentense.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/addsentens.html" afterPath="$PROJECT_DIR$/userswork/templates/addsentens.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -698,13 +695,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00029" summary="Add smyuauth">
-      <created>1494773463453</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1494773463453</updated>
-    </task>
     <task id="LOCAL-00030" summary="Add smyuauth">
       <created>1494784965984</created>
       <option name="number" value="00030" />
@@ -1041,7 +1031,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514359501378</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="User office">
+      <created>1514368856420</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1514368856420</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TodoView">
