@@ -54,7 +54,7 @@ $('#main_file_select').on("click", function (e) {
 /*
 * Download another images
 * */
-
+//Add/delete isset/new one of another photo
 $('[data-anothe=anothe_img]').on("click", function (e) {
     if($(this).children('span').hasClass('fa-minus-circle')){
         $(this).children('img').remove();
@@ -66,9 +66,18 @@ $('[data-anothe=anothe_img]').on("click", function (e) {
         var $el = $(this).next();
         $el.wrap('<form>').closest('form').get(0).reset();
         $el.unwrap();
-
-
-
+        if ($(this).attr('data-photo-id') == 0){
+            return false;
+        }
+        else{
+            $('#is_del_other_photo').val(1);
+            var data_json_img = $.parseJSON($('#list_del_other_photo').val());
+            var num_img = parseInt($(this).attr('data-photo-id'));
+            data_json_img[num_img] = num_img;
+            $('#list_del_other_photo').val(JSON.stringify(data_json_img));
+            $(this).attr('data-photo-id', 0);
+            console.log(data_json_img);
+        }
         return false;
     }
     else{
@@ -76,7 +85,7 @@ $('[data-anothe=anothe_img]').on("click", function (e) {
        e.preventDefault(); // prevent navigation to "#"
     }
 });
-
+//Download and show one of another photo
 $('input[data-anothe=other_img]').change(function () {
     if ($(this)[0].files[0].size > 5000000){
         alert('Максимальный размер файла 5 МБ');
@@ -98,8 +107,6 @@ $('input[data-anothe=other_img]').change(function () {
         reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
     //read file in string base64
         reader.readAsDataURL($(this)[0].files[0]);
-
-
     }
     else{
         alert('Неправильное расширение файла');
