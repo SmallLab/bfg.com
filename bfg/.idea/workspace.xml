@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" afterPath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/editsent.html" afterPath="$PROJECT_DIR$/userswork/templates/editsent.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,8 +81,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4340">
-              <caret line="221" column="88" lean-forward="false" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
+            <state relative-caret-position="-277">
+              <caret line="145" column="12" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="12" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#2889#2951#0" expanded="false" />
@@ -93,24 +94,25 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-157">
-              <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+            <state relative-caret-position="783">
+              <caret line="170" column="56" lean-forward="false" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#644#1282#0" expanded="false" />
                 <element signature="e#1379#1848#0" expanded="false" />
                 <element signature="e#1951#2274#0" expanded="false" />
                 <element signature="e#2373#2692#0" expanded="false" />
+                <element signature="e#6288#9123#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editsent.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editsent.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4504">
-              <caret line="236" column="44" lean-forward="false" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
+            <state relative-caret-position="264">
+              <caret line="225" column="129" lean-forward="false" selection-start-line="225" selection-start-column="129" selection-end-line="225" selection-end-column="129" />
               <folding>
                 <element signature="e#15466#15501#0#HTML" expanded="true" />
                 <element signature="e#15639#15698#0#HTML" expanded="true" />
@@ -119,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileuploadedit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fileuploadedit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="420">
               <caret line="87" column="40" lean-forward="false" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
               <folding />
             </state>
@@ -211,9 +213,9 @@
         <option value="$PROJECT_DIR$/userswork/mainhelpers/modelshelper.py" />
         <option value="$PROJECT_DIR$/templates/sections/maincategories.html" />
         <option value="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
-        <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
-        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
+        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
+        <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
       </list>
     </option>
   </component>
@@ -287,7 +289,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mainbfg" />
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -663,13 +665,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00036" summary="Users work">
-      <created>1495132544620</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1495132544620</updated>
-    </task>
     <task id="LOCAL-00037" summary="Users work">
       <created>1495222057695</created>
       <option name="number" value="00037" />
@@ -1006,7 +1001,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514450966924</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="User office">
+      <created>1514451634182</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1514451634182</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1113,20 +1115,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-537">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/migrations/0003_auto_20170419_2030.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/migrations/0004_auto_20170420_1129.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1354,29 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4340">
-          <caret line="221" column="88" lean-forward="false" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#2889#2951#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1437,6 +1402,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/label-03-98-71.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="145" column="12" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#2889#2951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python3/Lib/site-packages/django/views/generic/edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_image">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1452,42 +1462,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state relative-caret-position="783">
+          <caret line="170" column="56" lean-forward="false" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#644#1282#0" expanded="false" />
             <element signature="e#1379#1848#0" expanded="false" />
             <element signature="e#1951#2274#0" expanded="false" />
             <element signature="e#2373#2692#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4504">
-          <caret line="236" column="44" lean-forward="false" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
-          <folding>
-            <element signature="e#15466#15501#0#HTML" expanded="true" />
-            <element signature="e#15639#15698#0#HTML" expanded="true" />
+            <element signature="e#6288#9123#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="420">
           <caret line="87" column="40" lean-forward="false" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="225" column="129" lean-forward="false" selection-start-line="225" selection-start-column="129" selection-end-line="225" selection-end-column="129" />
+          <folding>
+            <element signature="e#15466#15501#0#HTML" expanded="true" />
+            <element signature="e#15639#15698#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
