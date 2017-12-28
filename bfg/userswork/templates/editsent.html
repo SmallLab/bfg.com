@@ -210,28 +210,35 @@
                                            id="main_file_img"
                                            name="main_img"
                                     >
-
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img" data-photo-id="">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-
-                                    >
-
-                                </div>
-                                <div class="form-photos-row">
-
-                                    <a href="#" class="form-photos-column" data-anothe="anothe_img"  data-photo-id="">
-                                        <span class="icon fa fa-plus-circle"></span>
-                                    </a>
-                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
-                                           data-anothe="other_img"
-                                           name="other_img[]"
-
-                                    >
-                                 </div>
+                                {% with reletad_images=data.image.all %}
+                                    {% for num in range_img %}
+                                        {% with df=reletad_images|strintlist:num %}
+                                            {% if df %}
+                                                <a href="#" class="form-photos-column" data-anothe="anothe_img" data-photo-id="{{ df.id }}">
+                                                    <img style="width: 106px; height: 90px;" src="/{{ df.img_path }}">
+                                                    <span class="icon fa fa-minus-circle" title="Удалить фото" style="font-size: 23px; top: 22px; left: 12px; color: red;"></span>
+                                                </a>
+                                                <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                                       data-anothe="other_img"
+                                                       name="other_img[]"
+                                                >
+                                            {% else %}
+                                                <a href="#" class="form-photos-column" data-anothe="anothe_img"  data-photo-id="{{ num }}">
+                                                        <span class="icon fa fa-plus-circle"></span>
+                                                    </a>
+                                                    <input type="file" accept="image/jpeg,image/png,image/gif, image/jpg" style="display:none"
+                                                           data-anothe="other_img"
+                                                           name="other_img[]"
+                                                    >
+                                            {% endif %}
+                                            {% if num|strtoint == 2 %}
+                                                </div>
+                                                <div class="form-photos-row">
+                                            {% endif %}
+                                        {% endwith %}
+                                    {% endfor %}
+                                     </div>
+                                {% endwith %}
                             </div>
                         </div>
                         <div class="form-group-info" style="display: none" id="fotos_info">

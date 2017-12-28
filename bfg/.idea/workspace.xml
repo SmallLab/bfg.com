@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" afterPath="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" afterPath="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/editsent.html" afterPath="$PROJECT_DIR$/userswork/templates/editsent.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +60,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bfg/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="0">
               <caret line="158" column="43" lean-forward="false" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
               <folding />
             </state>
@@ -69,7 +70,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="100">
               <caret line="6" column="98" lean-forward="false" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="98" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -81,8 +82,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="221" column="88" lean-forward="true" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
+            <state relative-caret-position="4340">
+              <caret line="221" column="88" lean-forward="false" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#2889#2951#0" expanded="false" />
@@ -91,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-381">
-              <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+            <state relative-caret-position="20">
+              <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#644#1282#0" expanded="false" />
@@ -107,28 +108,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editsent.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editsent.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-101">
-              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+            <state relative-caret-position="477">
+              <caret line="236" column="44" lean-forward="false" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
               <folding>
-                <element signature="e#1281#2633#0#HTML" expanded="false" />
-                <element signature="e#2654#4030#0#HTML" expanded="false" />
-                <element signature="e#3562#4003#0#HTML" expanded="false" />
-                <element signature="e#4051#5004#0#HTML" expanded="false" />
-                <element signature="e#5025#6011#0#HTML" expanded="false" />
-                <element signature="e#6032#6995#0#HTML" expanded="false" />
-                <element signature="e#7016#8413#0#HTML" expanded="false" />
-                <element signature="e#8434#9300#0#HTML" expanded="false" />
-                <element signature="e#9321#10224#0#HTML" expanded="false" />
-                <element signature="e#10245#11035#0#HTML" expanded="false" />
-                <element signature="e#11056#12516#0#HTML" expanded="false" />
-                <element signature="e#12537#13384#0#HTML" expanded="false" />
-                <element signature="e#14265#14317#0#HTML" expanded="true" />
-                <element signature="e#14731#14751#0#HTML" expanded="true" />
-                <element signature="e#16305#16787#0#HTML" expanded="false" />
+                <element signature="e#15466#15501#0#HTML" expanded="true" />
+                <element signature="e#15639#15698#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customfilters.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +134,7 @@
       <file leaf-file-name="fileuploadedit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1060">
+            <state relative-caret-position="683">
               <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
@@ -195,7 +193,6 @@
         <option value="$PROJECT_DIR$/userswork/mainviews/__init__.py" />
         <option value="$PROJECT_DIR$/mainbfg/urls.py" />
         <option value="$PROJECT_DIR$/templates/sections/mainfilter.html" />
-        <option value="$PROJECT_DIR$/templates/sections/maincategories.html" />
         <option value="$PROJECT_DIR$/userswork/templates/formadd.html" />
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
         <option value="$PROJECT_DIR$/userswork/templates/mainuser.html" />
@@ -224,10 +221,11 @@
         <option value="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
         <option value="$PROJECT_DIR$/userswork/mainhelpers/modelshelper.py" />
-        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
-        <option value="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileuploadedit.js" />
+        <option value="$PROJECT_DIR$/templates/sections/maincategories.html" />
+        <option value="$PROJECT_DIR$/mainbfg/templatetags/customfilters.py" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
+        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
       </list>
     </option>
   </component>
@@ -261,6 +259,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Extensions" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.intellij.database" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,24 +319,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="templatetags" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Extensions" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.intellij.database" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -695,13 +693,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00034" summary="Users work">
-      <created>1495121305639</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1495121305639</updated>
-    </task>
     <task id="LOCAL-00035" summary="Users work">
       <created>1495121320081</created>
       <option name="number" value="00035" />
@@ -1038,7 +1029,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514405133096</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="User office">
+      <created>1514406995325</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1514406995325</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1052,16 +1050,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11886994" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119936034" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17290749" sideWeight="0.51599145" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21145375" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21145375" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25110132" sideWeight="0.4936034" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17290749" sideWeight="0.48400852" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17290749" sideWeight="0.48400852" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16471216" sideWeight="0.5123153" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1145,44 +1143,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mainbfg/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/images/user_aa5c7a16-6/6-45.jpg" />
-    <entry file="file://$PROJECT_DIR$/media/images/user_be760661-7/3-70.jpg" />
-    <entry file="file://D:/Python3/Lib/site-packages/django/db/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python3/Lib/site-packages/django/core/files/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python3/Lib/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="347" column="6" lean-forward="false" selection-start-line="347" selection-start-column="6" selection-end-line="347" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python3/Lib/site-packages/django/db/models/fields/files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1183">
-          <caret line="326" column="19" lean-forward="false" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-537">
@@ -1275,18 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_image">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1331,26 +1279,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/images/user_817521f0-d/25353900_165135214236223_1987014650984013277_n.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/images/user_817521f0-d/66.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/images/user_fcbf570f-7/11.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/images/user_fcbf570f-7/1-37.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/images/user_817521f0-d/25353900_165135214236223_1987014650984013277_n.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/images/user_817521f0-d/66.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/images/user_fcbf570f-7/11.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/images/user_fcbf570f-7/1-37.jpg" />
     <entry file="file://$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1415,7 +1347,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="100">
           <caret line="6" column="98" lean-forward="false" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="98" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1425,7 +1357,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bfg/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="0">
           <caret line="158" column="43" lean-forward="false" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
           <folding />
         </state>
@@ -1435,7 +1367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1443,9 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1453,35 +1381,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="53" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="89" />
-          <folding />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="221" column="88" lean-forward="true" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
+        <state relative-caret-position="4340">
+          <caret line="221" column="88" lean-forward="false" selection-start-line="221" selection-start-column="88" selection-end-line="221" selection-end-column="88" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#2889#2951#0" expanded="false" />
@@ -1489,56 +1407,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
+    <entry file="file://$PROJECT_DIR$/mainbfg/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/12928425_153611375032405_3692056097371635778_n.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/author-01-128x31.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/icon-01-49x51.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_categories">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/maincategories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/addsentens.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2069">
+          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/fileuploadedit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
+        <state relative-caret-position="683">
           <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_image">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/templatetags/customfilters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="236" column="44" lean-forward="false" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
+          <folding>
+            <element signature="e#15466#15501#0#HTML" expanded="true" />
+            <element signature="e#15639#15698#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+        <state relative-caret-position="20">
+          <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#644#1282#0" expanded="false" />
             <element signature="e#1379#1848#0" expanded="false" />
             <element signature="e#1951#2274#0" expanded="false" />
             <element signature="e#2373#2692#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/editsent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding>
-            <element signature="e#1281#2633#0#HTML" expanded="false" />
-            <element signature="e#2654#4030#0#HTML" expanded="false" />
-            <element signature="e#3562#4003#0#HTML" expanded="false" />
-            <element signature="e#4051#5004#0#HTML" expanded="false" />
-            <element signature="e#5025#6011#0#HTML" expanded="false" />
-            <element signature="e#6032#6995#0#HTML" expanded="false" />
-            <element signature="e#7016#8413#0#HTML" expanded="false" />
-            <element signature="e#8434#9300#0#HTML" expanded="false" />
-            <element signature="e#9321#10224#0#HTML" expanded="false" />
-            <element signature="e#10245#11035#0#HTML" expanded="false" />
-            <element signature="e#11056#12516#0#HTML" expanded="false" />
-            <element signature="e#12537#13384#0#HTML" expanded="false" />
-            <element signature="e#14265#14317#0#HTML" expanded="true" />
-            <element signature="e#14731#14751#0#HTML" expanded="true" />
-            <element signature="e#16305#16787#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

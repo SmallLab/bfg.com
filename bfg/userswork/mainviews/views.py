@@ -91,7 +91,7 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         context = super(POEditSentenceView, self).get_context_data(**kwargs)
         context['types'], context['categories'], context['regions'] = modelshelper.get_tcr_data()
-        context['range_img'] = range(6)
+        context['range_img'] = range(7)
 
         return context
 
