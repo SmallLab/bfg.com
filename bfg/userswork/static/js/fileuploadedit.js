@@ -24,6 +24,7 @@ function handleMainFile(files){
                         .addClass('fa-minus-circle')
                         .attr('title', 'Удалить фото');
         $('#main_img_isset').val(1);
+        $('#is_del_mainphoto').val(1);
     }
     else{
         alert('Неправильное расширение файла');
