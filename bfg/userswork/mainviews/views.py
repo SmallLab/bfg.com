@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView, RedirectView
 from django.core.urlresolvers import reverse
 
 from userswork.mainhelpers import modelshelper
-from mainbfg.models import (Categories, TypeSentence, Regions, SentenceForm, Image, Sentence, SentenceEditForm)
+from mainbfg.models import (SentenceForm, Image, Sentence, SentenceEditForm, Profile)
 
 """
     Main page user office
@@ -186,7 +186,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
         instance.save()
         self.save_oter_files(instance, form)
-
+        Profile.objects.set_autor_field(self.request.user.profile, form.cleaned_data['autor'])
         return super(CreateNewSentence, self).form_valid(form)
 
     def form_invalid(self, form):

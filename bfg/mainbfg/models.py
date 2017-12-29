@@ -238,6 +238,16 @@ class Favorite(models.Model):
     pass
 
 #-------------------------------- Profile Model -------------------------------------------#
+class ManageProfile(models.Manager):
+
+    def set_autor_field(self, profile, autor):
+        if profile.autor:
+            return False
+        else:
+            profile.autor = autor
+            profile.save()
+            return True
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -250,6 +260,8 @@ class Profile(models.Model):
     vk_id = models.IntegerField(blank=True, default=0)
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
+    autor = models.CharField(max_length=100, blank=True, default='')
+    objects = ManageProfile()
 
     #payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     #favorite = models.ForeignKey(Favorite, on_delete=models.CASCADE)

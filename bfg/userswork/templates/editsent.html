@@ -23,11 +23,21 @@
                         <div class="form-group-inner">
                             <label for="author">Автор<sup>*</sup></label>
                             <div class="form-control-wrap {% if form.errors.autor %}has-error has-feedback{% endif %}">
-                            {% if form.errors.autor %}<em id="author-error" class="error help-block">{{ form.errors.autor.0 }}</em>{% endif %}
-                                <input id="author" type="text" class="form-control" name="autor" value="{{ data.autor }}" {% if form.errors.autor %} aria-describedby="author-error"{% endif %}>
-                                <span data-num="count_simbols" data-count="30">Не более 30 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                             {% if user.profile.autor %}
+                                <input id="author" type="text" class="form-control" name="autor" value="{{ user.profile.autor }}" readonly/>
+                                 <span data-num="count_simbols" data-count="30">
+                                    Вы не можете изменить Автора
+                                </span>
+                            {% else %}
+                                <input id="author" type="text" class="form-control" name="autor" value="{{ data.autor }}"
+                                        {% if form.errors.autor %} aria-describedby="author-error"{% endif %}>
+                                 <span data-num="count_simbols" data-count="30">
+                                    Не более 30 символов
+                                </span><span style="display: none">  - Введено <em></em> символов</span>
+                            {% endif %}
                             </div>
                         </div>
+                        {% if not user.profile.autor %}
                         <div class="form-group-info" style="display: none">
                             <span class="top-wrap">
                                 <span class="icon fa fa-info-circle"></span>
@@ -35,6 +45,15 @@
                             </span>
                             <div class="desc-cust">Например наименование магазина, бутика, салона</div>
                         </div>
+                        {% else %}
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Вы не можете изменить Автора</span>
+                            </span>
+{#                            <div class="desc-cust">Например наименование магазина, бутика, салона</div>#}
+                        </div>
+                    {% endif %}
                     </div>
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
