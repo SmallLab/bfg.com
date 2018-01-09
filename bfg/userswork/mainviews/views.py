@@ -107,6 +107,8 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
             instance.main_img = 'nophoto.png'
         if int(self.request.POST['is_del_other_photo']) == 1:
             self.delete_related_photo(instance, self.request.POST['list_del_other_photo'])
+        instance.on_moderation = False
+        instance.status = False
         instance.save()
         self.save_oter_files(instance, form)
 
