@@ -18,3 +18,6 @@ class ModelHelpers():
             cache.set('data_ctr', data)
 
             return data
+
+    def get_top_sentences():
+        return Sentence.objects.get_top_sentences_start_page()

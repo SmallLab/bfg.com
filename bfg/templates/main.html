@@ -19,31 +19,33 @@
    {% include 'sections/maincategories.html' %}
    {% include 'sections/mainfilter.html' %}
     {% block content %}
+        {{ sentences_list }}
         <img src="media/{{ sentences.main_img }}" width="102" height="75" alt="">
         <section class="section section-3 text-center text-sm-left">
         <div class="container container-custom-2">
             <h2 class="text-primary text-sbold">ТОР-Предложения</h2>
-
+        {% for sentences in sentences_list %}
             <div class="row row-sm-center products">
+            {% for sentence in sentences %}
                 <div class="col-xs-7 col-sm-3">
                     <article class="product">
                         <span class="author">
-                                    Автор:Детский мир
+                                    Автор:{{ sentence.autor }}
                         </span>
                         <a href="index-1.html" class="product-img-wrap">
                                 <span class="label">
-                                    <img src="{% static "images/label-01-102x75.png" %}" width="102" height="75" alt="">
+                                    <img src="{% static sentence.type_img_s %}" width="102" height="75" alt="{{ sentence.autor }}">
                                 </span>
-                            <img src="{% static "images/product-01-257x205.jpg" %}" width="257" height="205" alt="">
+                            <img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width: 257px; height: 205px" alt="">
                                 <span class="author">
                                     Автор:Детский мир
                                 </span>
                         </a>
                         <div class="product-title">
-                            <a href="index-1.html">Акция купи авто по выгодной цене</a>
+                            <a href="index-1.html">{{ sentence.caption }}</a>
                         </div>
                         <ul class="list-inline nowrap-lg">
-                            <li></li>
+                            <li>цена:  от 140 000 грн</li>
                             <li>
                                 <ul class="list-inline">
                                     <li>
@@ -60,345 +62,9 @@
                         </ul>
                     </article>
                 </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-02-105x95.png" width="105" height="95" alt="">
-                                </span>
-                            <img src="images/product-02-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-01-128x31.jpg" width="128" height="31" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Распродажа великов</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 1000 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-edge"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-01-102x75.png" width="102" height="75" alt="">
-                                </span>
-                            <img src="images/product-03-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-03-92x24.png" width="92" height="24" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Ноутбуки по акциионной цене</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 4400 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-edge"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product product-fz-23">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-02-105x95.png" width="105" height="95" alt="">
-                                </span>
-                            <img src="images/product-04-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-04-57x31.jpg" width="57" height="31" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Распродажа в связи с закрытием магазина</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 500 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
+            {% endfor %}
             </div>
-
-            <div class="row row-sm-center products">
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-03-98-71.png" width="98" height="71" alt="">
-                                </span>
-                            <img src="images/product-05-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Продам телевизор со скидкой</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: 800 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product product-author-7">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-02-105x95.png" width="105" height="95" alt="">
-                                </span>
-                            <img src="images/product-06-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-06-127x25.jpg" width="127" height="25" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Распродажа зимних вещей</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 900 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-edge"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-03-98-71.png" width="98" height="71" alt="">
-                                </span>
-                            <img src="images/product-07-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Продам коляску детскую со скидкой</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: 1400 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-01-102x75.png" width="102" height="75" alt="">
-                                </span>
-                            <img src="images/product-08-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Продам тренажер по акционной цене</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: 1100 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-
-            <div class="row row-sm-center products">
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product product-fz-23">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-03-98-71.png" width="98" height="71" alt="">
-                                </span>
-                            <img src="images/product-09-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Скидка в связи с закрытием магазина</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 100 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-edge"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product product-author-5">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-02-105x95.png" width="105" height="95" alt="">
-                                </span>
-                            <img src="images/product-10-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-07-53x42.png" width="53" height="42" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Распродажа косметики</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: от 900 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-01-102x75.png" width="102" height="75" alt="">
-                                </span>
-                            <img src="images/product-11-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Купи мебель и выиграй ремонт</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: 1400 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-xs-7 col-sm-3">
-                    <article class="product">
-                        <a href="index-1.html" class="product-img-wrap">
-                                <span class="label">
-                                    <img src="images/label-03-98-71.png" width="98" height="71" alt="">
-                                </span>
-                            <img src="images/product-12-255x205.jpg" width="255" height="205" alt="">
-                                <span class="author">
-                                    <img src="images/author-05-125x33.jpg" width="125" height="33" alt="">
-                                </span>
-                        </a>
-                        <div class="product-title">
-                            <a href="index-1.html">Скидка на всю мебель</a>
-                        </div>
-                        <ul class="list-inline">
-                            <li>цена: 1100 грн</li>
-                            <li>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-
+        {% endfor %}
             <div class="offset-top-30 text-md-right">
                 <a href="#" class="link-all">Посмотреть все</a>
             </div>

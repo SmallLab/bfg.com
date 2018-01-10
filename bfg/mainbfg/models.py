@@ -13,7 +13,6 @@ class ManadgerTypeSentence(models.Manager):
     def get_active_types(self):
         return self.get_queryset().filter(is_active__exact= True)
 
-
 class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
     link_name = models.CharField(max_length=50, default='')
@@ -40,7 +39,6 @@ class ManadgerCategories(models.Manager):
     def get_list_categories(self):
         activecategories = self.get_active_categories()
         return [activecategories[i:i+5] for i in range(0, len(activecategories), 5)]
-
 
 class Categories(models.Model):
     name = models.CharField(max_length=50)
@@ -76,8 +74,6 @@ class Regions(models.Model):
     def __str__(self):
         return self.name
 
-
-
 #-------------------------------- Sentence Model -------------------------------------------#
 # class ModelClass(models.Model):
 #     <поле> = models.ImageField(upload_to=rename_image, blank=True, verbose_name='...')
@@ -87,12 +83,26 @@ class Regions(models.Model):
 #     image_type = filename.split('.')[-1]
 #     return 'imgs/{}.{}'.format(image_name, image_type)
 
-
 def custom_directory_path(instance, filename):
     return 'images/{0}/{1}'.format(instance.dirname_img, filename)
 
 class ManagerSentences(models.Manager):
 
+    """
+    Work with site sentences
+    """
+    def get_top_sentences_start_page(self):
+        index = 0
+        try:
+            all_top = Sentence.objects.filter(type_s=1)[index:index+13]
+            top_sentences = [all_top[i:i+4] for i in range(0, len(all_top), 4)]
+            return top_sentences
+        except Sentence.DoesNotExist:
+            return False
+
+    """
+    Work with users office sentences
+    """
     def get_active_sentences(self, user_id, status_list = [0, 1, 2]):
         try:
             return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
