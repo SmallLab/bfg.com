@@ -1304,7 +1304,7 @@ a.icon-primary:focus{
 
 @media (min-width: 992px) {
     .product .product-title {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .product.product-fz-23 .product-title {
@@ -1313,7 +1313,7 @@ a.icon-primary:focus{
 }
 
 .product * + .product-title {
-    margin-top: 32px;
+    margin-top: 10px;
 }
 
 @media (max-width: 767px) {

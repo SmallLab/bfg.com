@@ -3,6 +3,9 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Бесплатные уроки по веб программированию" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="Андрей Штольц" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
@@ -19,7 +22,6 @@
    {% include 'sections/maincategories.html' %}
    {% include 'sections/mainfilter.html' %}
     {% block content %}
-        {{ sentences_list }}
         <img src="media/{{ sentences.main_img }}" width="102" height="75" alt="">
         <section class="section section-3 text-center text-sm-left">
         <div class="container container-custom-2">
@@ -29,33 +31,37 @@
             {% for sentence in sentences %}
                 <div class="col-xs-7 col-sm-3">
                     <article class="product">
-                        <span class="author">
-                                    Автор:{{ sentence.autor }}
-                        </span>
-                        <a href="index-1.html" class="product-img-wrap">
+                        <a href="{{ sentence.get_absolute_url }}" class="product-img-wrap">
                                 <span class="label">
                                     <img src="{% static sentence.type_img_s %}" width="102" height="75" alt="{{ sentence.autor }}">
                                 </span>
                             <img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width: 257px; height: 205px" alt="">
+                            <span class="author">
+                                    <img src="{% static 'images/author-05-125x33.jpg' %}" width="107" height="33" alt="">
+                                </span>
                                 <span class="author">
-                                    Автор:Детский мир
+                                    {{ sentence.autor }}
                                 </span>
                         </a>
                         <div class="product-title">
-                            <a href="index-1.html">{{ sentence.caption }}</a>
+                            <a href="{{ sentence.get_absolute_url }}">{{ sentence.caption }}</a>
                         </div>
                         <ul class="list-inline nowrap-lg">
-                            <li>цена:  от 140 000 грн</li>
+                            <li></li>
                             <li>
                                 <ul class="list-inline">
+                                    {% if sentence.web_site %}
+                                        <li>
+                                            <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" title="Перейти на сайт" target="_blank">
+
+                                            </a>
+                                        </li>
+                                    {% endif %}
                                     <li>
-                                        <a href="#" class="icon fa fa-edge" title="Перейти на сайт"></a>
+                                        <a href="#" class="icon fa fa-star-o" title="В избранное"></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="icon fa fa-star-o"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="icon fa fa-envelope-o"></a>
+                                        <a href="#" class="icon fa fa-envelope-o" title="Подписаться"></a>
                                     </li>
                                 </ul>
                             </li>
