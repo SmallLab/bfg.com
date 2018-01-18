@@ -19,5 +19,8 @@ class ModelHelpers():
 
             return data
 
+    """
+        Get data for top sentences - staticmethod
+    """
     def get_top_sentences():
         return Sentence.objects.get_top_sentences_start_page()

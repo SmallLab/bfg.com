@@ -18,7 +18,7 @@ class MainView(TemplateView):
        return context
 
 """
-class ViewSentence - view single sentence
+    Class ViewSentence - view single sentence
 """
 
 class ViewSentence(DetailView):
