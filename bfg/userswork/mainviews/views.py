@@ -185,7 +185,7 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
         instance.type_img_s = self.type_img_s[form.cleaned_data['type_id']]
         instance.identifier = self.uuid_sentece()
         instance.dirname_img = self.uuid_sentece_user()
-        instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
+        instance.link_name = self.slugify(form.cleaned_data['caption']) + '_' + instance.identifier
         instance.save()
         self.save_oter_files(instance, form)
         Profile.objects.set_autor_field(self.request.user.profile, form.cleaned_data['autor'])

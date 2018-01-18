@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/sentences/viewsentence.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/mainviews/views.py" afterPath="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/models.py" afterPath="$PROJECT_DIR$/mainbfg/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/urls.py" afterPath="$PROJECT_DIR$/mainbfg/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,8 +62,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -71,8 +74,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="163" column="14" lean-forward="false" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="14" />
+            <state relative-caret-position="618">
+              <caret line="172" column="14" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="14" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#351#466#0" expanded="false" />
@@ -81,11 +84,11 @@
                 <element signature="e#2022#2085#0" expanded="false" />
                 <element signature="e#2120#2411#0" expanded="false" />
                 <element signature="e#2884#2946#0" expanded="false" />
-                <element signature="e#3489#3816#0" expanded="false" />
-                <element signature="e#3883#4240#0" expanded="false" />
-                <element signature="e#4289#4403#0" expanded="false" />
-                <element signature="e#4450#4563#0" expanded="false" />
-                <element signature="e#4608#4721#0" expanded="false" />
+                <element signature="e#3546#3873#0" expanded="false" />
+                <element signature="e#3940#4297#0" expanded="false" />
+                <element signature="e#4346#4460#0" expanded="false" />
+                <element signature="e#4507#4620#0" expanded="false" />
+                <element signature="e#4665#4778#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -101,26 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="djbfg.mainbfg_sentence" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="400">
+              <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -128,33 +116,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="59" column="40" lean-forward="true" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#article#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="1306" column="21" lean-forward="false" selection-start-line="1306" selection-start-column="21" selection-end-line="1306" selection-end-column="21" />
+            <state relative-caret-position="378">
+              <caret line="54" column="75" lean-forward="false" selection-start-line="54" selection-start-column="67" selection-end-line="54" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Шаблоны BFG/Templates/site/index.html">
+      <file leaf-file-name="viewsentence.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/sentences/viewsentence.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="236" column="39" lean-forward="true" selection-start-line="234" selection-start-column="32" selection-end-line="236" selection-end-column="39" />
+            <state relative-caret-position="140">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -165,9 +141,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -194,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mainbfg/mainhelpers/__init__.py" />
         <option value="$PROJECT_DIR$/mainbfg/admin.py" />
         <option value="$PROJECT_DIR$/mainbfg/templates/index.html" />
         <option value="$PROJECT_DIR$/mainbfg/signals/__init__.py" />
@@ -207,7 +182,6 @@
         <option value="$PROJECT_DIR$/static/js/script.js" />
         <option value="$PROJECT_DIR$/mainbfg/signals/handlers.py" />
         <option value="$PROJECT_DIR$/userswork/mainviews/__init__.py" />
-        <option value="$PROJECT_DIR$/mainbfg/urls.py" />
         <option value="$PROJECT_DIR$/userswork/templates/formadd.html" />
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
         <option value="$PROJECT_DIR$/userswork/templates/mainuser.html" />
@@ -238,13 +212,15 @@
         <option value="$PROJECT_DIR$/templates/sections/mainheader.html" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
         <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
-        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/mainbfg/mainhelpers/modelhelpers.py" />
-        <option value="$PROJECT_DIR$/mainbfg/models.py" />
-        <option value="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
         <option value="$PROJECT_DIR$/../../Шаблоны BFG/Templates/site/index.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/mainbfg/models.py" />
+        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
+        <option value="$PROJECT_DIR$/mainbfg/urls.py" />
+        <option value="$PROJECT_DIR$/templates/sentences/viewsentence.html" />
+        <option value="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
       </list>
     </option>
   </component>
@@ -278,20 +254,48 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Extensions" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="com.intellij.database" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userswork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userswork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -338,62 +342,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="Scratches">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" value="Extensions" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainbfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="com.intellij.database" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -725,13 +687,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Add new sentence">
-      <created>1495655920045</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1495655920045</updated>
     </task>
     <task id="LOCAL-00047" summary="Add new sentence">
       <created>1495739064058</created>
@@ -1069,7 +1024,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515578027886</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="User office">
+      <created>1515611240009</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1515611240009</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1083,16 +1045,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12846482" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12953092" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26431718" sideWeight="0.5181237" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21145375" sideWeight="0.51119405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122068234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21145375" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21145375" sideWeight="0.48880598" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25110132" sideWeight="0.4936034" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19162996" sideWeight="0.48187634" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19162996" sideWeight="0.48187634" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16471216" sideWeight="0.5123153" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1176,13 +1138,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/userswork/templates/mainuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/userwork.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1262,14 +1217,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_categories">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1293,14 +1248,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_image">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1382,14 +1337,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_profile">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1422,35 +1377,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/984f1828/879479a4-1a9d-4623-92d0-797d3635c699/djbfg.auth_user">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="110" column="31" lean-forward="false" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
-          <folding>
-            <element signature="e#6333#9262#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1466,7 +1400,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/author-05-125x33.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1306" column="21" lean-forward="false" selection-start-line="1306" selection-start-column="21" selection-end-line="1306" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Шаблоны BFG/Templates/site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="236" column="39" lean-forward="false" selection-start-line="234" selection-start-column="32" selection-end-line="236" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="54" column="75" lean-forward="false" selection-start-line="54" selection-start-column="67" selection-end-line="54" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="187" column="76" lean-forward="false" selection-start-line="187" selection-start-column="76" selection-end-line="187" selection-end-column="76" />
+          <folding>
+            <element signature="e#2757#6237#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1478,20 +1450,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/sentences/viewsentence.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="140">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="163" column="14" lean-forward="false" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="14" />
+        <state relative-caret-position="618">
+          <caret line="172" column="14" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="14" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#351#466#0" expanded="false" />
@@ -1500,55 +1483,31 @@
             <element signature="e#2022#2085#0" expanded="false" />
             <element signature="e#2120#2411#0" expanded="false" />
             <element signature="e#2884#2946#0" expanded="false" />
-            <element signature="e#3489#3816#0" expanded="false" />
-            <element signature="e#3883#4240#0" expanded="false" />
-            <element signature="e#4289#4403#0" expanded="false" />
-            <element signature="e#4450#4563#0" expanded="false" />
-            <element signature="e#4608#4721#0" expanded="false" />
+            <element signature="e#3546#3873#0" expanded="false" />
+            <element signature="e#3940#4297#0" expanded="false" />
+            <element signature="e#4346#4460#0" expanded="false" />
+            <element signature="e#4507#4620#0" expanded="false" />
+            <element signature="e#4665#4778#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Шаблоны BFG/Templates/site/index.html">
+    <entry file="file://$PROJECT_DIR$/mainbfg/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="236" column="39" lean-forward="true" selection-start-line="234" selection-start-column="32" selection-end-line="236" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/author-05-125x33.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="1306" column="21" lean-forward="false" selection-start-line="1306" selection-start-column="21" selection-end-line="1306" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="59" column="40" lean-forward="true" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#article#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
