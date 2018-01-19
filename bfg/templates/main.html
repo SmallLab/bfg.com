@@ -55,7 +55,9 @@
                             <a href="{{ sentence.get_absolute_url }}">{{ sentence.caption }}</a>
                         </div>
                         <ul class="list-inline nowrap-lg">
-                            <li></li>
+                        {% if sentence.price %}
+                            <li>цена:  от {{ sentence.price }} грн</li>
+                        {% endif %}
                             <li>
                                 <ul class="list-inline">
                                     {% if sentence.web_site %}

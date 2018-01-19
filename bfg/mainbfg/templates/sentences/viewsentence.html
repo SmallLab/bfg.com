@@ -41,7 +41,8 @@
                             <div class="thumbnail-title">Посмотреть все фото</div>
                         </div>
                     </div>
-                    <p class="thumbnail-desc"><span class="text-bold">Добавлено:</span> в 21:40, 10 ноября 2016 <span class="text-bold">Регион:</span> Николаев <span class="text-bold">Автор :</span> Магазин “Детский мир”</p>
+                    <p class="thumbnail-desc"><span class="text-bold">Добавлено:</span> {{ sentence.create_time|date:"j-m-Y" }}
+                        <span class="text-bold">Регион:</span> {{ sentence.get_region }} <span class="text-bold">Автор :</span> Магазин “Детский мир”</p>
                 </div>
                 <div class="col-sm-6 col-md-5 text-center">
                     <div class="column-wrap">

@@ -62,6 +62,9 @@ class ManageRegions(models.Manager):
     def get_all_regions(self):
         return Regions.objects.all()
 
+    def get_single_region_name(self, pk):
+        return Regions.objects.only('name').get(pk=pk)
+
 class Regions(models.Model):
     name = models.CharField(max_length=100)
     link_name = models.CharField(max_length=100)
@@ -174,6 +177,8 @@ class Sentence(models.Model):
     price = models.IntegerField(max_length=5, default=0)
     objects = ManagerSentences()
 
+    def get_region(self):
+        return Regions.objects.get_single_region_name(self.region_id)
 
     def get_absolute_url(self):
         return "sentence/%s" % self.link_name
