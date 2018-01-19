@@ -42,34 +42,44 @@
                         </div>
                     </div>
                     <p class="thumbnail-desc"><span class="text-bold">Добавлено:</span> {{ sentence.create_time|date:"j-m-Y" }}
-                        <span class="text-bold">Регион:</span> {{ sentence.get_region }} <span class="text-bold">Автор :</span> Магазин “Детский мир”</p>
+                        <span class="text-bold">Регион:</span> {{ sentence.get_region }} <span class="text-bold">Автор :</span> {{ sentence.autor }}</p>
                 </div>
                 <div class="col-sm-6 col-md-5 text-center">
                     <div class="column-wrap">
+                        {% if sentence.price %}
                         <div class="price-box">
                             <span class="price-box-small">от</span>
-                            <span class="price-box-big">1000</span>
+                            <span class="price-box-big">{{ sentence.price }}</span>
                             <span class="price-box-small">грн</span>
                         </div>
+                        {% else %}
+                        <div class="price-box">
+                            <span class="price-box-small">Цена</span>
+                            <span class="price-box-big">не</span>
+                            <span class="price-box-small">Указана</span>
+                        </div>
+                        {% endif %}
                         <div class="column-wrap-map">
                             <div class="column-wrap-map-author">
                                 <span class="icon fa fa-user"></span>
-                                <span class="column-wrap-map-author-name">Елена Дёмина</span>
+                                <span class="column-wrap-map-author-name">{{ sentence.autor }}</span>
                             </div>
-                            <img src="images/map.jpg" width="378" height="167" alt="">
+                            <img src="{% static 'images/map.jpg' %}" width="378" height="167" alt="">
                             <div class="column-wrap-map-bottom">
                                 <span class="icon icon-secondary fa fa-map-marker"></span>
                                 <div class="column-wrap-map-bottom-right">
-                                    <div>Николаев, Николаевская область, Ингульский</div>
+                                    <div>{{ sentence.full_adress }}</div>
                                     <a href="#">Показать на карте</a>
                                 </div>
                             </div>
                         </div>
+                    {% if sentence.phone %}
                         <div class="view-phone">
                             <span class="icon icon-md icon-circle icon-secondary-filled fa fa-phone"></span>
-                            <a href="callto:#" class="view-phone-number">+38X XXX XXX</a>
+                            <a href="callto:#" class="view-phone-number">{{ sentence.phone }}</a>
                             <a href="#">Показать</a>
                         </div>
+                    {% endif %}
                         <div class="btn-wrap btn-wrap-visible-md">
                             <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-primary">
                                 <span class="icon icon-offer fa fa-star-o"></span>
@@ -82,47 +92,46 @@
                                 <span>Оформить подписку</span>
                             </a>
                         </div>
+                    {% if sentence.web_site %}
                         <div class="btn-wrap btn-wrap-visible-md">
-                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                            <a href="//{{ sentence.web_site }}" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary" target="_blank">
                                 <span class="icon icon-offer fa fa-edge"></span>
                                 <span>Перейти на сайт</span>
                             </a>
                         </div>
+                    {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="btn-wrap-hidden">
-                <div class="btn-wrap-hidden-md">
-                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-primary">
-                        <span class="icon icon-offer fa fa-star-o"></span>
-                        <span>Добавить в избранное</span>
-                    </a>
-                </div>
-                <div class="btn-wrap-hidden-md">
-                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
-                        <span class="icon icon-offer fa fa-toggle-right"></span>
-                        <span>Оформить подписку</span>
-                    </a>
-                </div>
-            </div>
-            <div class="btn-wrap-hidden">
-                <div class="btn-wrap-hidden-md btn-block">
-                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
-                        <span class="icon icon-offer fa fa-edge"></span>
-                        <span>Перейти на сайт</span>
-                    </a>
-                </div>
-            </div>
-            <h4 class="text-gray-1">Магазин “Детский мир” объявляет распродажу  колясок в связи
-                с обновлением товара. У нас вы найдете множество колясок и зимних
-                и летних, а так же  для мальчиков  и для девочек по низким ценам.</h4>
-            <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55" data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-14-295x283.jpg" width="295" height="283" alt=""></a></div>
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-15-295x283.jpg" width="295" height="283" alt=""></a></div>
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-16-295x283.jpg" width="295" height="283" alt=""></a></div>
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-14-295x283.jpg" width="295" height="283" alt=""></a></div>
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-15-295x283.jpg" width="295" height="283" alt=""></a></div>
-                <div class="owl-item"><a href="index-1.html"><img src="images/product-16-295x283.jpg" width="295" height="283" alt=""></a></div>
+{#            <div class="btn-wrap-hidden">#}
+{#                <div class="btn-wrap-hidden-md">#}
+{#                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-primary">#}
+{#                        <span class="icon icon-offer fa fa-star-o"></span>#}
+{#                        <span>Добавить в избранное</span>#}
+{#                    </a>#}
+{#                </div>#}
+{#                <div class="btn-wrap-hidden-md">#}
+{#                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">#}
+{#                        <span class="icon icon-offer fa fa-toggle-right"></span>#}
+{#                        <span>Оформить подписку</span>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="btn-wrap-hidden">#}
+{#                <div class="btn-wrap-hidden-md btn-block">#}
+{#                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">#}
+{#                        <span class="icon icon-offer fa fa-edge"></span>#}
+{#                        <span>Перейти на сайт</span>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+            <h4 class="text-gray-1">{{ sentence.description }}</h4>
+            <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55"
+                 data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
+                {% for image in sentence.image.all %}
+                    <div class="owl-item"><a href="#"><img src="/{{ image.img_path }}" style="width:295px; height: 283px;" alt=""></a></div>
+                {% endfor %}
+
             </div>
             <div class="section-product-bottom">
                 <div class="section-product-bottom-left">
@@ -135,10 +144,8 @@
         </div>
     </section>
 </main>
-{% include 'sections/mainfooter.html' %}
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/owl.carousel.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/owl.carousel.min.js" %}"></script>
+{% include 'sections/mainfooter.html' %}
 </body>
 </html>

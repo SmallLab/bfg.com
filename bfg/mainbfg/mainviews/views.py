@@ -26,3 +26,12 @@ class ViewSentence(DetailView):
     slug_field = 'identifier'
     model = Sentence
     context_object_name = 'sentence'
+
+    def get(self, request, *args, **kwargs):
+        """
+        Increase offer count
+        """
+        obj = self.get_object()
+        obj.views += 1
+        obj.save()
+        return DetailView.get(self, request, *args, **kwargs)

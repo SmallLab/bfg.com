@@ -100,7 +100,7 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         instance = form.save(commit=False)
         instance.type_img_s = self.type_img_s[form.cleaned_data['type_id']]
-        instance.link_name = self.slugify(form.cleaned_data['caption']) + '#' + instance.identifier
+        instance.link_name = self.slugify(form.cleaned_data['caption']) + '_' + instance.identifier
         # delete main file photo
         if int(self.request.POST['is_del_mainphoto']) == 0:
             instance.main_img.delete()
