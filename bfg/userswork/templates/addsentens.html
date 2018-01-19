@@ -101,7 +101,7 @@
                              </div>
                           </div>
                      </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <div class="form-group-inner">
                             <label for="region_id">Регион<sup>*</sup></label>
                             <div class="form-control-wrap">
@@ -117,6 +117,24 @@
                              </div>
                           </div>
                      </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                                <label for="head">Цена</label>
+                                <div class="form-control-wrap {% if form.errors.price %}has-error has-feedback{% endif %}">
+                                {% if form.errors.price %}<em id="price-error" class="error help-block">{{ form.errors.price.0 }}</em>{% endif %}
+                                    <input id="price" type="number" class="form-control" name="price"
+                                           value="{{ data.price }}" {% if form.errors.price %} aria-describedby="price-error"{% endif %} maxlength="5">
+                                </div>
+                         </div>
+                                <div class="form-group-info" style="display: none">
+                                    <span class="top-wrap">
+                                        <span class="icon fa fa-info-circle"></span>
+                                        <span class="title-cust">Введите цену</span>
+                                    </span>
+                                <div class="desc-cust">Отображается на сайте в виде "цена от 1000 грн"</div>
+                                </div>
+
+                    </div>
                     <div class="form-group form-group-info-wrap">
                         <div class="form-group-inner">
                             <label for="full_adress">Полный адрес</label>

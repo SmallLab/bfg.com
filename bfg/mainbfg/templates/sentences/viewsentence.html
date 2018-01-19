@@ -11,21 +11,133 @@
     <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/owl-carousel.css" %}">
 </head>
 <body>
 {% include 'sections/mainheader.html' %}
 <main class="page-wrapper">
-   {% include 'sections/maincategories.html' %}
+    <section class="header-page-bottom">
+        <div class="section section-1 bg-image bg-image-1">
+            <div class="container container-custom">
+                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section section-2">
 
-    {% block content %}
-        <img src="{{MEDIA_URL}}{{ sentence.main_img }}" width="102" height="75" alt="">
-
-    {% endblock %}
+        <div class="container container-custom section-border">
+            <h2 class="text-primary text-bold">{{ sentence.caption }}</h2>
+            <div class="row products">
+                <div class="col-sm-6 col-md-7 col-md-inset-right-0 text-center">
+                    <div class="thumbnail-wrap">
+                        <a href="#" class="thumbnail">
+                            <img src="{{MEDIA_URL}}{{ sentence.main_img }}" width="607" height="635" alt="">
+                        </a>
+                        <div class="thumbnail-caption">
+                            <span class="icon fa fa-search-plus"></span>
+                            <div class="thumbnail-title">Посмотреть все фото</div>
+                        </div>
+                    </div>
+                    <p class="thumbnail-desc"><span class="text-bold">Добавлено:</span> в 21:40, 10 ноября 2016 <span class="text-bold">Регион:</span> Николаев <span class="text-bold">Автор :</span> Магазин “Детский мир”</p>
+                </div>
+                <div class="col-sm-6 col-md-5 text-center">
+                    <div class="column-wrap">
+                        <div class="price-box">
+                            <span class="price-box-small">от</span>
+                            <span class="price-box-big">1000</span>
+                            <span class="price-box-small">грн</span>
+                        </div>
+                        <div class="column-wrap-map">
+                            <div class="column-wrap-map-author">
+                                <span class="icon fa fa-user"></span>
+                                <span class="column-wrap-map-author-name">Елена Дёмина</span>
+                            </div>
+                            <img src="images/map.jpg" width="378" height="167" alt="">
+                            <div class="column-wrap-map-bottom">
+                                <span class="icon icon-secondary fa fa-map-marker"></span>
+                                <div class="column-wrap-map-bottom-right">
+                                    <div>Николаев, Николаевская область, Ингульский</div>
+                                    <a href="#">Показать на карте</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-phone">
+                            <span class="icon icon-md icon-circle icon-secondary-filled fa fa-phone"></span>
+                            <a href="callto:#" class="view-phone-number">+38X XXX XXX</a>
+                            <a href="#">Показать</a>
+                        </div>
+                        <div class="btn-wrap btn-wrap-visible-md">
+                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-primary">
+                                <span class="icon icon-offer fa fa-star-o"></span>
+                                <span>Добавить в избранное</span>
+                            </a>
+                        </div>
+                        <div class="btn-wrap btn-wrap-visible-md">
+                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                                <span class="icon icon-offer fa fa-toggle-right"></span>
+                                <span>Оформить подписку</span>
+                            </a>
+                        </div>
+                        <div class="btn-wrap btn-wrap-visible-md">
+                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                                <span class="icon icon-offer fa fa-edge"></span>
+                                <span>Перейти на сайт</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap-hidden">
+                <div class="btn-wrap-hidden-md">
+                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-primary">
+                        <span class="icon icon-offer fa fa-star-o"></span>
+                        <span>Добавить в избранное</span>
+                    </a>
+                </div>
+                <div class="btn-wrap-hidden-md">
+                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                        <span class="icon icon-offer fa fa-toggle-right"></span>
+                        <span>Оформить подписку</span>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-wrap-hidden">
+                <div class="btn-wrap-hidden-md btn-block">
+                    <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                        <span class="icon icon-offer fa fa-edge"></span>
+                        <span>Перейти на сайт</span>
+                    </a>
+                </div>
+            </div>
+            <h4 class="text-gray-1">Магазин “Детский мир” объявляет распродажу  колясок в связи
+                с обновлением товара. У нас вы найдете множество колясок и зимних
+                и летних, а так же  для мальчиков  и для девочек по низким ценам.</h4>
+            <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55" data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-14-295x283.jpg" width="295" height="283" alt=""></a></div>
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-15-295x283.jpg" width="295" height="283" alt=""></a></div>
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-16-295x283.jpg" width="295" height="283" alt=""></a></div>
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-14-295x283.jpg" width="295" height="283" alt=""></a></div>
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-15-295x283.jpg" width="295" height="283" alt=""></a></div>
+                <div class="owl-item"><a href="index-1.html"><img src="images/product-16-295x283.jpg" width="295" height="283" alt=""></a></div>
+            </div>
+            <div class="section-product-bottom">
+                <div class="section-product-bottom-left">
+                    <a href="index.html">Назад</a>
+                </div>
+                <div class="section-product-bottom-right">
+                    <a href="#">Следующее предложение</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 {% include 'sections/mainfooter.html' %}
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/owl.carousel.min.js" %}"></script>
 </body>
 </html>

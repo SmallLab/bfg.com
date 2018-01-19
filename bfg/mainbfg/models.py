@@ -171,6 +171,7 @@ class Sentence(models.Model):
     on_moderation = models.BooleanField(default=False)
     link_name = models.CharField(max_length=550)
     identifier = models.CharField(max_length=20)
+    price = models.IntegerField(max_length=5, default=0)
     objects = ManagerSentences()
 
 
@@ -186,7 +187,7 @@ class SentenceForm(ModelForm):
     class Meta:
         model = Sentence
         fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img']
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price']
 
         error_messages = {
                              'autor': {'required': "Пожалуйста введите автора!!!",
@@ -200,13 +201,14 @@ class SentenceForm(ModelForm):
                              },
                              'full_adress': {'max_length': "Не более 100 символов"},
                              'meta_info': {'max_length': "Не более 500 символов"},
+                             'price': {'max_length': "Не более 5 символов"},
                         }
 
 class SentenceEditForm(ModelForm):
     class Meta:
         model = Sentence
         fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img']
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price']
 
         error_messages = {
             'autor': {'required': "Пожалуйста введите автора!!!",
@@ -220,6 +222,7 @@ class SentenceEditForm(ModelForm):
                             },
             'full_adress': {'max_length': "Не более 100 символов"},
             'meta_info': {'max_length': "Не более 500 символов"},
+            'price': {'max_length': "Не более 5 символов"},
         }
 
 

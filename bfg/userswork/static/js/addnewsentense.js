@@ -80,6 +80,10 @@ $(document).ready(function () {
 					    required: false,
 						maxlength: 500
 					},
+					price: {
+					    required: false,
+						maxlength: 5
+					},
 
 				},
 				messages: {
@@ -100,6 +104,9 @@ $(document).ready(function () {
 					},
 					meta_info: {
 					    maxlength: "Не более 500 символов"
+					},
+                    price: {
+					    maxlength: "Не более 5 символов"
 					},
 				},
 				errorElement: "em",
