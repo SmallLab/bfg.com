@@ -103,6 +103,15 @@ class ManagerSentences(models.Manager):
         except Sentence.DoesNotExist:
             return False
 
+    def get_phone(self, pk):
+        obj = Sentence.objects.only('phone').get(pk=pk)
+        if obj.phone:
+            obj.phone_views += 1
+            obj.save()
+            return {'status':True, 'phone':obj.phone}
+        else:
+            return {'status':False}
+
     """
     Work with users office sentences
     """

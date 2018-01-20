@@ -75,8 +75,8 @@
                     {% if sentence.phone %}
                         <div class="view-phone">
                             <span class="icon icon-md icon-circle icon-secondary-filled fa fa-phone"></span>
-                            <a href="callto:#" class="view-phone-number">{{ sentence.phone }}</a>
-                            <a href="#">Показать</a>
+                            <a href="callto:#" class="view-phone-number" id="phone_show">+38X XXX XXX</a>
+                            <a href="#" id="phone_views">Показать</a>
                         </div>
                     {% endif %}
                         <div class="btn-wrap btn-wrap-visible-md">
@@ -145,6 +145,12 @@
 </main>
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 <script type="text/javascript" src="{% static "js/owl.carousel.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/viewsentence.js" %}"></script>
+<script>
+    var data_sentence = {
+        'id_sentence':{{ sentence.id }},
+    }
+</script>
 {% include 'sections/mainfooter.html' %}
 </body>
 </html>

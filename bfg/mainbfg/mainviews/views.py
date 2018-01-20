@@ -1,5 +1,7 @@
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic import DetailView
+from django.http import JsonResponse
+
 from mainbfg.mainhelpers.modelhelpers import ModelHelpers
 from mainbfg.models import Sentence
 
@@ -35,3 +37,13 @@ class ViewSentence(DetailView):
         obj.views += 1
         obj.save()
         return DetailView.get(self, request, *args, **kwargs)
+
+"""
+    Class ShowPhone - view phone for sentence
+"""
+
+class ShowPhone(View):
+    def get(self, request, *args, **kwargs):
+        if request.is_ajax():
+            data = Sentence.objects.get_phone(self.request.GET['id_sentence'])
+        return JsonResponse(data)
