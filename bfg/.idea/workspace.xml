@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -662,13 +660,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00054" summary="Add new sentence">
-      <created>1495910626247</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1495910626247</updated>
-    </task>
     <task id="LOCAL-00055" summary="Add new sentence">
       <created>1496167238781</created>
       <option name="number" value="00055" />
@@ -1005,7 +996,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516437950619</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="View sentence">
+      <created>1516462269280</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1516462269280</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1103,7 +1101,8 @@
     <MESSAGE value="Users work" />
     <MESSAGE value="Add new sentence" />
     <MESSAGE value="User office" />
-    <option name="LAST_COMMIT_MESSAGE" value="User office" />
+    <MESSAGE value="View sentence" />
+    <option name="LAST_COMMIT_MESSAGE" value="View sentence" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
