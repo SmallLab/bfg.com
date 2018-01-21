@@ -67,8 +67,8 @@
                             <div class="column-wrap-map-bottom">
                                 <span class="icon icon-secondary fa fa-map-marker"></span>
                                 <div class="column-wrap-map-bottom-right">
-                                    <div>{{ sentence.full_adress }}</div>
-                                    <a href="#">Показать на карте</a>
+                                    <div>{{ sentence.get_region }} {{ sentence.full_adress }}</div>
+                                    <a href="#" onclick="initMap();">Показать на карте</a>
                                 </div>
                             </div>
                         </div>
@@ -148,10 +148,61 @@
 <script type="text/javascript" src="{% static "js/viewsentence.js" %}"></script>
 <script>
     var data_sentence = {
-        'id_sentence':{{ sentence.id }},
+        'id_sentence': {{ sentence.id }},
         'region': '{{ sentence.get_region }}',
+        'adress': '{{ sentence.full_adress }}',
+        'api_key': 'AIzaSyCFw0Qut9fvRqa7rScFxyInlhiDptvmEek'
     }
 </script>
+<style>
+       #map_div {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+<div class="modal fade" id="myModalMap" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMap">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="alert(1000);"><span class="fa fa-times" aria-hidden="true">
+                </span></button>
+
+            </div>
+            <div class="modal-body" id="map_div"></div>
+            <div class="modal-footer">
+                 <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
+                 <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 {% include 'sections/mainfooter.html' %}
+<style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+<h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map_div'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      $('#myModalMap').modal('show');
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFw0Qut9fvRqa7rScFxyInlhiDptvmEek">
+    </script>
 </body>
 </html>
