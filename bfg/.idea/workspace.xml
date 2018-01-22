@@ -4,7 +4,6 @@
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/viewsentence.js" afterPath="$PROJECT_DIR$/static/js/viewsentence.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -101,21 +100,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewsentence.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="viewsentence.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="152" column="15" lean-forward="false" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="15" />
+            <state relative-caret-position="2537">
+              <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewsentence.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewsentence.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/viewsentence.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="107" column="29" lean-forward="true" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+            <state relative-caret-position="646">
+              <caret line="103" column="33" lean-forward="true" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -204,8 +203,8 @@
         <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
-        <option value="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
         <option value="$PROJECT_DIR$/static/js/viewsentence.js" />
+        <option value="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
       </list>
     </option>
   </component>
@@ -660,13 +659,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00058" summary="User office">
-      <created>1496828013183</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1496828013183</updated>
-    </task>
     <task id="LOCAL-00059" summary="User office">
       <created>1496860640725</created>
       <option name="number" value="00059" />
@@ -1003,7 +995,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516637256309</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="View sentence">
+      <created>1516641099679</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1516641099679</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1407,18 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_profile">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1494,18 +1481,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="152" column="15" lean-forward="false" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="15" />
+    <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/viewsentence.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="107" column="29" lean-forward="true" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+        <state relative-caret-position="646">
+          <caret line="103" column="33" lean-forward="true" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2537">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding />
         </state>
       </provider>
