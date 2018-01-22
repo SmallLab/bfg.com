@@ -68,7 +68,7 @@
                                 <span class="icon icon-secondary fa fa-map-marker"></span>
                                 <div class="column-wrap-map-bottom-right">
                                     <div>{{ sentence.get_region }} {{ sentence.full_adress }}</div>
-                                    <a href="#" onclick="initMap();">Показать на карте</a>
+                                    <a href="#" id="map_google">Показать на карте</a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
 {#                    </a>#}
 {#                </div>#}
 {#            </div>#}
-            <h4 class="text-gray-1" onclick="initMap();">{{ sentence.description }}</h4>
+            <h4 class="text-gray-1">{{ sentence.description }}</h4>
             <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55"
                  data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
                 {% for image in sentence.image.all %}
@@ -150,7 +150,7 @@
     var data_sentence = {
         'id_sentence': {{ sentence.id }},
         'region': '{{ sentence.get_region }}',
-        'adress': '{{ sentence.full_adress }}',
+        'adress': '{{ sentence.get_region }} {{ sentence.full_adress }}',
         'api_key': 'AIzaSyCFw0Qut9fvRqa7rScFxyInlhiDptvmEek'
     }
 </script>
@@ -165,46 +165,42 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="alert(1000);"><span class="fa fa-times" aria-hidden="true">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
                 </span></button>
             </div>
             <div id="map_div"></div>
-            <div class="modal-footer">
-                 <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
-                 <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
-
-            </div>
         </div>
     </div>
 </div>
 
-<script>
-    var map;
-    //Resize Google map
-    $(function() {
-        var $modal = $('#myModalMap'), $map = $('#map_div');
-        $modal.on('shown.bs.modal', function () {
-            google.maps.event.trigger($map[0], 'resize');
-        });
-    });
-
-    function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-          map = new google.maps.Map(document.getElementById('map_div'), {
-          zoom: 8,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-        $('#myModalMap').modal('show');
-
-      }
-    </script>
-    <script async defer
+{#<script>#}
+{#    var map;#}
+{#    //Resize Google map#}
+{#    $(function() {#}
+{#        var $modal = $('#myModalMap'), $map = $('#map_div');#}
+{#        $modal.on('shown.bs.modal', function () {#}
+{#            google.maps.event.trigger($map[0], 'resize');#}
+{#        });#}
+{#    });#}
+{##}
+{#    function initMap() {#}
+{#        var uluru = {lat: -25.363, lng: 131.044};#}
+{#          map = new google.maps.Map(document.getElementById('map_div'), {#}
+{#          zoom: 8,#}
+{#          center: uluru#}
+{#        });#}
+{#        var marker = new google.maps.Marker({#}
+{#          position: uluru,#}
+{#          map: map#}
+{#        });#}
+{#        $('#myModalMap').modal('show');#}
+{##}
+{#      }#}
+{#    </script>#}
+<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFw0Qut9fvRqa7rScFxyInlhiDptvmEek">
-    </script>
+</script>
+<script src="{% static 'js/viewsentence.js' %}"></script>
 {% include 'sections/mainfooter.html' %}
 </body>
 </html>

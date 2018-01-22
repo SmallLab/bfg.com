@@ -67,3 +67,50 @@ $('#phone_views').click(function (e) {
             }
             e.preventDefault();
   });
+
+/*
+* Show map
+* */
+$('#map_google').click(function (e) {
+    var map;
+    var geocoder;
+    //Resize Google map
+    $(function() {
+        var $modal = $('#myModalMap'), $map = $('#map_div');
+        $modal.on('shown.bs.modal', function () {
+            google.maps.event.trigger($map[0], 'resize');
+        });
+    });
+
+    function geocodeAddress(geocoder, resultsMap) {
+        var address = data_sentence.adress;
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    };
+
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+        var uluru = {lat: -25.363, lng: 131.044};
+        map = new google.maps.Map(document.getElementById('map_div'), {
+                        zoom: 16,
+                        center: uluru
+                    });
+        // var marker = new google.maps.Marker({
+        //   position: uluru,
+        //   map: map
+        // });
+        geocodeAddress(geocoder, map);
+        $('#myModalMap').modal('show');
+      };
+    initMap();
+    e.preventDefault();
+});
