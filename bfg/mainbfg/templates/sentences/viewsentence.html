@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>{{ sentence.caption }}</title>
-    <meta name="description" content="Бесплатные уроки по веб программированию" />
-    <meta name="keywords" content="HTML,CSS,JavaScript" />
-    <meta name="author" content="Андрей Штольц" />
+    <meta name="description" content="{{ sentence.description }}" />
+    <meta name="keywords" content="{{ sentence.meta_info }}" />
+    <meta name="author" content="{{ sentence.autor }}" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
@@ -127,6 +127,7 @@
             <h4 class="text-gray-1">{{ sentence.description }}</h4>
             <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55"
                  data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
+                   <div class="owl-item"><a href="#"><img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width:295px; height: 283px;" alt=""></a></div>
                 {% for image in sentence.image.all %}
                     <div class="owl-item"><a href="#"><img src="/{{ image.img_path }}" style="width:295px; height: 283px;" alt=""></a></div>
                 {% endfor %}

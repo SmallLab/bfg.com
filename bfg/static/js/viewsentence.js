@@ -92,7 +92,7 @@ $('#map_google').click(function (e) {
                     position: results[0].geometry.location
                 });
             } else {
-                alert('Geocode was not successful for the following reason: ' + status);
+                alert('Возможно не верный адрес!');
             }
         });
     };
