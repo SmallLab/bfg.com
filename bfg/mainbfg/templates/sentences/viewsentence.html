@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/owl-carousel.css" %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 </head>
 <body>
 {% include 'sections/mainheader.html' %}
@@ -32,7 +33,7 @@
             <div class="row products">
                 <div class="col-sm-6 col-md-7 col-md-inset-right-0 text-center">
                     <div class="thumbnail-wrap">
-                        <a href="#" class="thumbnail">
+                        <a href="{{MEDIA_URL}}{{ sentence.main_img }}" class="thumbnail" >
                             <img src="{{MEDIA_URL}}{{ sentence.main_img }}" width="607" height="635" alt="">
                         </a>
                         <div class="thumbnail-caption">
@@ -127,9 +128,17 @@
             <h4 class="text-gray-1">{{ sentence.description }}</h4>
             <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55"
                  data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
-                   <div class="owl-item"><a href="#"><img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width:295px; height: 283px;" alt=""></a></div>
+                   <div class="owl-item">
+                       <a href="{{MEDIA_URL}}{{ sentence.main_img }}" data-toggle="lightbox" data-gallery="example-gallery">
+                           <img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width:295px; height: 283px;" alt="">
+                       </a>
+                   </div>
                 {% for image in sentence.image.all %}
-                    <div class="owl-item"><a href="#"><img src="/{{ image.img_path }}" style="width:295px; height: 283px;" alt=""></a></div>
+                    <div class="owl-item">
+                        <a href="/{{ image.img_path }}" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="/{{ image.img_path }}" style="width:295px; height: 283px;" alt="">
+                        </a>
+                    </div>
                 {% endfor %}
 
             </div>
@@ -146,7 +155,6 @@
 </main>
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 <script type="text/javascript" src="{% static "js/owl.carousel.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/viewsentence.js" %}"></script>
 <script>
     var data_sentence = {
         'id_sentence': {{ sentence.id }},
@@ -177,6 +185,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFw0Qut9fvRqa7rScFxyInlhiDptvmEek">
 </script>
 <script src="{% static 'js/viewsentence.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 {% include 'sections/mainfooter.html' %}
 </body>
 </html>

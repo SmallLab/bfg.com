@@ -54,7 +54,6 @@ $('#phone_views').click(function (e) {
               "/sentence/showphone/",
               {
                   id_sentence: data_sentence.id_sentence,
-
               },
               onAjaxSuccess
             );
@@ -104,13 +103,14 @@ $('#map_google').click(function (e) {
                         zoom: 16,
                         center: uluru
                     });
-        // var marker = new google.maps.Marker({
-        //   position: uluru,
-        //   map: map
-        // });
         geocodeAddress(geocoder, map);
         $('#myModalMap').modal('show');
       };
     initMap();
     e.preventDefault();
 });
+
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({alwaysShowClose: true,});
+            });
