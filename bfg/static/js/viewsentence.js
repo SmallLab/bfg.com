@@ -98,9 +98,9 @@ $('#map_google').click(function (e) {
 
     function initMap() {
         geocoder = new google.maps.Geocoder();
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat: -34.397, lng: 150.644};
         map = new google.maps.Map(document.getElementById('map_div'), {
-                        zoom: 16,
+                        zoom: 18,
                         center: uluru
                     });
         geocodeAddress(geocoder, map);
@@ -112,5 +112,5 @@ $('#map_google').click(function (e) {
 
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 event.preventDefault();
-                $(this).ekkoLightbox({alwaysShowClose: true,});
+                $(this).ekkoLightbox({alwaysShowClose: true});
             });
