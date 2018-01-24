@@ -35,6 +35,11 @@ class ManadgerCategories(models.Manager):
     def get_active_categories(self):
         return self.get_queryset().filter(is_active__exact = True)
 
+#Get dict {'name':id, ...} for Categories
+    def get_dict_categories(self):
+        dictCategory = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id')
+        return {a:b for (a, b) in dictCategory}
+
 #Get categories on 5 ps.
     def get_list_categories(self):
         activecategories = self.get_active_categories()

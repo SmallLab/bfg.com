@@ -1,9 +1,9 @@
 from django.views.generic.base import TemplateView, View
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.http import JsonResponse
 
 from mainbfg.mainhelpers.modelhelpers import ModelHelpers
-from mainbfg.models import Sentence
+from mainbfg.models import Sentence, Categories
 
 """
     Class MainView  - start page
@@ -17,7 +17,20 @@ class MainView(TemplateView):
        context = super(MainView, self).get_context_data(**kwargs)
        context['data_ctr'] = ModelHelpers.get_data_ctr()
        context['sentences_list'] = ModelHelpers.get_top_sentences()
+       context['dict'] = Categories.objects.get_dict_categories()
        return context
+
+"""
+    Class CategoryPage - transition to the category
+"""
+
+class CategoryPage(ListView):
+    template_name = 'sentences/categorypage.html'
+    context_object_name = 'products_list'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Sentence.objects.all()
 
 """
     Class ViewSentence - view single sentence

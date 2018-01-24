@@ -1,0 +1,608 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Бесплатные уроки по веб программированию" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="Андрей Штольц" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+</head>
+<body>
+{% include 'sections/mainheader.html' %}
+<main class="page-wrapper">
+    <section class="header-page-bottom">
+        <div class="section section-1 bg-image bg-image-1">
+            <div class="container container-custom">
+                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section section-4 bg-primary">
+        <div class="container container-custom-2">
+            <form action="#">
+                <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
+                    <div class="col-xs-7 col-md-3-custom">
+                        <div class="form-group form-group-select">
+                            <select class="form-control form-control-select">
+                                <option>Тип предложения</option>
+                                <option>Акция</option>
+                                <option>Скидка</option>
+                                <option>Распродажа</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-3-custom">
+                        <div class="form-group form-group-select">
+                            <select class="form-control form-control-select">
+                                <option>Категория</option>
+                                <option>Категория 2</option>
+                                <option>Категория 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-3-custom">
+                        <div class="form-group form-group-select">
+                            <select class="form-control form-control-select">
+                                <option>Регион</option>
+                                <option>Регион 2</option>
+                                <option>Регион 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-3-custom">
+                        <div class="form-group form-group-select">
+                            <select class="form-control form-control-select">
+                                <option>Все</option>
+                                <option>Только интернет-предложения</option>
+                                <option>Только регионы</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-3">
+                        <button type="submit" class="btn btn-white btn-search">Поиск</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="section section-2 bg-gray">
+        <div class="container container-custom-2">
+            <h2 class="text-primary text-sbold">ТОР-Предложения</h2>
+            <div class="nav-tabs-wrap">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Вce</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Акции</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Скидки</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Распродажа</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <div class="row row-sm-center products products-list">
+                            <div class="col-xs-12">
+                                <h3 class="text-primary text-sbold products-list-title-offset-top-0">ТОР-объявления</h3>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-02-105x95.png" width="105" height="95" alt="">
+                                        </span>
+                                        <img src="images/product-07-277x205.jpg" width="277" height="205" alt="">
+                                        <span class="author">
+                                            <img src="images/author-07-105x44.jpg" width="105" height="44" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Распродажа колясок по выгодной цене</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>22.11.16 14:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                3000
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-edge"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-03-98-71.png" width="98" height="71" alt="">
+                                        </span>
+                                        <img src="images/product-16-277x205.jpg" width="277" height="205" alt="">
+                                        <span class="author">
+                                            <img src="images/author-08-158x28.jpg" width="158" height="28" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Скидки на детские вещи </a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 15:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                70
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-edge"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <h3 class="text-primary text-sbold">Обычные объявления</h3>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-01-102x75.png" width="102" height="75" alt="">
+                                        </span>
+                                        <img src="images/product-17-277x239.jpg" width="277" height="239" alt="">
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Акция купи носочки и получи игрушку в подарок </a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 12:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                60
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-02-105x95.png" width="105" height="95" alt="">
+                                        </span>
+                                        <img src="images/product-19-277x269.jpg" width="277" height="269" alt="">
+                                        <span class="author">
+                                            <img src="images/author-09-139x51.jpg" width="139" height="51" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Распродажа дестких автокресел</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>19.11.16 11:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                1160
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-edge"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-01-102x75.png" width="102" height="75" alt="">
+                                        </span>
+                                        <img src="images/product-20-274x252.jpg" width="274" height="252" alt="">
+                                        <span class="author">
+                                            <img src="images/author-10-124x97.jpg" width="124" height="97" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Акция купи две книжки и получи третью в подарок</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 12:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                120
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-edge"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-03-98-71.png" width="98" height="71" alt="">
+                                        </span>
+                                        <img src="images/product-21-277x233.jpg" width="277" height="233" alt="">
+                                        <span class="author">
+                                            <img src="images/author-09-139x51.jpg" width="139" height="51" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Скидка на подгузники</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>19.11.16 11:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                110
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <div class="row row-sm-center products products-list">
+                            <div class="col-xs-12">
+                                <h3 class="text-primary text-sbold products-list-title-offset-top-0">ТОР-объявления</h3>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                                <span class="label">
+                                                    <img src="images/label-01-102x75.png" width="102" height="75" alt="">
+                                                </span>
+                                        <img src="images/product-17-277x239.jpg" width="277" height="239" alt="">
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Акция купи носочки и получи игрушку в подарок </a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 12:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                60
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <h3 class="text-primary text-sbold">Обычные объявления</h3>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-01-102x75.png" width="102" height="75" alt="">
+                                        </span>
+                                        <img src="images/product-20-274x252.jpg" width="274" height="252" alt="">
+                                        <span class="author">
+                                            <img src="images/author-10-124x97.jpg" width="124" height="97" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Акция купи две книжки и получи третью в подарок</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 12:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                120
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li> <a href="#" class="icon fa fa-edge"></a> </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <div class="row row-sm-center products products-list">
+                            <div class="col-xs-12">
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-03-98-71.png" width="98" height="71" alt="">
+                                        </span>
+                                        <img src="images/product-16-277x205.jpg" width="277" height="205" alt="">
+                                        <span class="author">
+                                            <img src="images/author-08-158x28.jpg" width="158" height="28" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Скидки на детские вещи </a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>21.11.16 15:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                70
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li> <a href="#" class="icon fa fa-edge"></a> </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-03-98-71.png" width="98" height="71" alt="">
+                                        </span>
+                                        <img src="images/product-21-277x233.jpg" width="277" height="233" alt="">
+                                        <span class="author">
+                                            <img src="images/author-09-139x51.jpg" width="139" height="51" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Скидка на подгузники</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>19.11.16 11:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                110
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="settings">
+                        <div class="row row-sm-center products products-list">
+                            <div class="col-xs-12">
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-02-105x95.png" width="105" height="95" alt="">
+                                        </span>
+                                        <img src="images/product-07-277x205.jpg" width="277" height="205" alt="">
+                                        <span class="author">
+                                            <img src="images/author-07-105x44.jpg" width="105" height="44" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Распродажа колясок по выгодной цене</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>22.11.16 14:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                3000
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li> <a href="#" class="icon fa fa-edge"></a> </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="product product-list">
+                                    <a href="index-1.html" class="product-img-wrap">
+                                        <span class="label">
+                                            <img src="images/label-02-105x95.png" width="105" height="95" alt="">
+                                        </span>
+                                        <img src="images/product-19-277x269.jpg" width="277" height="269" alt="">
+                                        <span class="author">
+                                            <img src="images/author-09-139x51.jpg" width="139" height="51" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="product-caption">
+                                        <div class="product-left">
+                                            <div class="product-title">
+                                                <a href="index-1.html">Распродажа дестких автокресел</a>
+                                            </div>
+                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <div class="product-time">
+                                                <p>Время публикации:</p>
+                                                <p>19.11.16 11:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-right">
+                                            <div class="product-price">
+                                                1160
+                                                <span class="product-price-currency">грн</span>
+                                            </div>
+                                            <ul class="product-actions list-inline">
+                                                <li> <a href="#" class="icon fa fa-edge"></a> </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-star-o"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-inline pagination-product">
+                <li class="pagination-product-prev">
+                    <a href="#">
+                        <span class="icon fa fa-angle-double-left"></span>
+                        <span>Назад</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li><a href="#">......</a></li>
+                <li><a href="#">200</a></li>
+                <li class="pagination-product-next">
+                    <a href="#">
+                        <span>Вперед</span>
+                        <span class="icon fa fa-angle-double-right"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+{% include 'sections/mainfooter.html' %}
+</body>
+</html>
