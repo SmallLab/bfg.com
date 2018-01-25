@@ -110,6 +110,10 @@ $('#map_google').click(function (e) {
     e.preventDefault();
 });
 
+$('#close_map').on('click', function () {
+    $('#map_div').empty();
+});
+
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 event.preventDefault();
                 $(this).ekkoLightbox({alwaysShowClose: true});

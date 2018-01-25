@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
+from django.core.cache import cache
 
 from mainbfg.mainhelpers import MainImgTypeField as MI
 #------------------------- TypeSentence Model -----------------------------------------------#
@@ -37,8 +38,13 @@ class ManadgerCategories(models.Manager):
 
 #Get dict {'name':id, ...} for Categories
     def get_dict_categories(self):
-        dictCategory = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id')
-        return {a:b for (a, b) in dictCategory}
+        if cache.get('dictCategory'):
+            return cache.get('dictCategory')
+        else:
+            dictCategory = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id')
+            new_dict = {a:b for (a, b) in dictCategory}
+            cache.set('dictCategory', new_dict)
+            return new_dict
 
 #Get categories on 5 ps.
     def get_list_categories(self):

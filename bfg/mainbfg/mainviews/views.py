@@ -29,9 +29,13 @@ class CategoryPage(ListView):
     context_object_name = 'products_list'
     paginate_by = 5
 
+    def get_context_data(self, **kwargs):
+        context = super(CategoryPage, self).get_context_data(**kwargs)
+        context['dict'] = Categories.objects.get_dict_categories()[self.kwargs['link_name']]
+        return context
+
     def get_queryset(self):
         return Sentence.objects.all()
-
 """
     Class ViewSentence - view single sentence
 """
