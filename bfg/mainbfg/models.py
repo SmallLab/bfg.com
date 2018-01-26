@@ -194,7 +194,7 @@ class Sentence(models.Model):
     on_moderation = models.BooleanField(default=False)
     link_name = models.CharField(max_length=550)
     identifier = models.CharField(max_length=20)
-    price = models.IntegerField(max_length=5, default=0)
+    price = models.IntegerField(default=0)
     objects = ManagerSentences()
 
     def get_region(self):
