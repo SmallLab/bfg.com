@@ -26,61 +26,14 @@
             </div>
         </div>
     </section>
-    <section class="section section-4 bg-primary">
-        <div class="container container-custom-2">
-            <form action="#">
-                <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
-                    <div class="col-xs-7 col-md-3-custom">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Тип предложения</option>
-                                <option>Акция</option>
-                                <option>Скидка</option>
-                                <option>Распродажа</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Категория</option>
-                                <option>Категория 2</option>
-                                <option>Категория 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Регион</option>
-                                <option>Регион 2</option>
-                                <option>Регион 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3-custom">
-                        <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Все</option>
-                                <option>Только интернет-предложения</option>
-                                <option>Только регионы</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-7 col-md-3">
-                        <button type="submit" class="btn btn-white btn-search">Поиск</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+    {% include 'sections/mainfilter.html' with styles="bg-primary" %}
     <section class="section section-2 bg-gray">
         <div class="container container-custom-2">
-            <h2 class="text-primary text-sbold">ТОР-Предложения {{ dict }}</h2>
+            <h2 class="text-primary text-sbold">ТОР-Предложения {{ dict.name }}{{ dict1.id }}</h2>
             <div class="nav-tabs-wrap">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Вce</a></li>
+                    <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">Вce</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Акции</a></li>
                     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Скидки</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Распродажа</a></li>
@@ -88,7 +41,7 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="home">
+                    <div role="tabpanel" class="tab-pane active" id="all">
                         <div class="row row-sm-center products products-list">
                             <div class="col-xs-12">
                                 <h3 class="text-primary text-sbold products-list-title-offset-top-0">ТОР-объявления</h3>

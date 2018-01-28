@@ -10,9 +10,24 @@ Custom Manadger for model TypeSentence
 """
 
 class ManadgerTypeSentence(models.Manager):
+#Get single TypeCategory
+    def get_single_type(self, link_name):
+        return self.get_queryset().get(link_name=link_name)
+
 #Get active Types
     def get_active_types(self):
         return self.get_queryset().filter(is_active__exact= True)
+
+#Get dict {'name':id, ...} for TypeSentence
+    def get_dict_types(self):
+        if cache.get('dictType'):
+            return cache.get('dictType')
+        else:
+            new_dict = {'all':0}
+            dictType = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id').order_by('id')
+            new_dict.update({a: b for (a, b) in dictType})
+            cache.set('dictType', new_dict)
+            return new_dict
 
 class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
@@ -36,13 +51,21 @@ class ManadgerCategories(models.Manager):
     def get_active_categories(self):
         return self.get_queryset().filter(is_active__exact = True)
 
+#Get single Category
+    def get_single_category(self, link_name):
+        return self.get_queryset().get(link_name=link_name)
+
+#Get name Category
+    def get_name_category(self, link_name):
+        return self.get_queryset().only('name').get(link_name=link_name)
+
 #Get dict {'name':id, ...} for Categories
     def get_dict_categories(self):
         if cache.get('dictCategory'):
             return cache.get('dictCategory')
         else:
             dictCategory = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id')
-            new_dict = {a:b for (a, b) in dictCategory}
+            new_dict = {a: b for (a, b) in dictCategory}
             cache.set('dictCategory', new_dict)
             return new_dict
 
