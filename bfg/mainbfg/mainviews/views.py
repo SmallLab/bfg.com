@@ -32,34 +32,18 @@ class CategoryPage(ListView):
 
     def get(self, request, *args, **kwargs):
         return super(CategoryPage, self).get(self, request, *args, **kwargs)
-        # if request.GET['submit']:
-        #     form = FilterProducts(request.GET)
-        #     if form.is_valid():
-        #         self.object_list = self.get_queryset(form.cleaned_data)
-        #         context = self.get_context_data(object_list=self.object_list)
-        #         context['data_form'] = form.cleaned_data
-        #         copy_get = QueryDict(request.GET.copy().urlencode(), mutable=True)
-        #         copy_get['submit'] = 0
-        #         context['request_get'] = copy_get.urlencode()
-        #         return render(request, self.template_name, context)
-        #     else:
-        #         self.object_list = self.get_queryset(form.cleaned_data)
-        #         context = self.get_context_data(object_list=self.object_list)
-        #         context['form'] = form
-        #         return render(request, self.template_name, context)
-        # else:
-        #     form = FilterProducts(request.GET)
-        #     self.object_list = self.get_queryset(form.cleaned_data)
-        #     context = self.get_context_data(object_list=self.object_list)
-        #     context['data_form'] = form.cleaned_data
-        #     context['request_get'] = QueryDict(request.GET.copy().urlencode(), mutable=True)
-        #     return render(request, self.template_name, context)
+        self.object_list = self.get_queryset(form.cleaned_data)
+        context = self.get_context_data(object_list=self.object_list)
+        context['data_form'] = form.cleaned_data
+        copy_get = QueryDict(request.GET.copy().urlencode(), mutable=True)
+        context['request_get'] = copy_get.urlencode()
+        return render(request, self.template_name, context)
 
     def get_context_data(self, **kwargs):
         context = super(CategoryPage, self).get_context_data(**kwargs)
         context['data_ctr'] = ModelHelpers.get_data_ctr()
-        context['dict'] = Categories.objects.get_name_category(self.kwargs['link_name'])
-
+        context['idc'] = Categories.objects.get_dict_categories()[self.kwargs['link_name']]['id']
+        context['idt'] = context['data_ctr']['types'][0].id
         return context
 
     def get_queryset(self):

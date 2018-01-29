@@ -59,13 +59,13 @@ class ManadgerCategories(models.Manager):
     def get_name_category(self, link_name):
         return self.get_queryset().only('name').get(link_name=link_name)
 
-#Get dict {'name':id, ...} for Categories
+#Get dict {'link_name':{data object}, ...} for Categories
     def get_dict_categories(self):
         if cache.get('dictCategory'):
             return cache.get('dictCategory')
         else:
-            dictCategory = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id')
-            new_dict = {a: b for (a, b) in dictCategory}
+            dictCategory = self.get_queryset().filter(is_active__exact=True).values()
+            new_dict = {a['link_name']: a for a in dictCategory}
             cache.set('dictCategory', new_dict)
             return new_dict
 
