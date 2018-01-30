@@ -23,9 +23,9 @@ class ManadgerTypeSentence(models.Manager):
         if cache.get('dictType'):
             return cache.get('dictType')
         else:
-            new_dict = {'all':0}
-            dictType = self.get_queryset().filter(is_active__exact = True).values_list('link_name', 'id').order_by('id')
-            new_dict.update({a: b for (a, b) in dictType})
+            new_dict = {'all':{'id':0}}
+            dictType = self.get_queryset().filter(is_active__exact = True).values()
+            new_dict.update({a['link_name']: a for a in dictType})
             cache.set('dictType', new_dict)
             return new_dict
 
@@ -128,6 +128,9 @@ class ManagerSentences(models.Manager):
     """
     Work with site sentences
     """
+    def get_category_sentebces(self, category_id, type_id=0):
+        pass
+
     def get_top_sentences_start_page(self):
         index = 0
         try:
