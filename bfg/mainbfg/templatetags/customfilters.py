@@ -14,10 +14,6 @@ def strintlist(value, arg):
 def strtoint(value):
     return int(value)
 
-def hash(h, key):
-    return h[key]
-
 register.filter('strintlist', strintlist)
 register.filter('strint', strint)
 register.filter('strtoint', strtoint)
-register.filter('hash', hash)

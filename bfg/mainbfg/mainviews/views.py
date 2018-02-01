@@ -44,7 +44,6 @@ class CategoryPage(ListView):
     def get_context_data(self, **kwargs):
         context = super(CategoryPage, self).get_context_data(**kwargs)
         context['data_ctr'] = ModelHelpers.get_data_ctr()
-        context['data_types'] = TypeSentence.objects.get_dict_types()
         context['active_tab'] = TypeSentence.objects.get_dict_types()[self.kwargs['type']]['link_name']
         context['path'] = '/'.join(self.request.path.split('/')[0:4])
         return context

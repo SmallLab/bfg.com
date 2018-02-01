@@ -30,19 +30,18 @@
     {% include 'sections/mainfilter.html' with styles="bg-primary" %}
     <section class="section section-2 bg-gray">
         <div class="container container-custom-2">
-            <h2 class="text-primary text-sbold">ТОР-Предложения {{ data_types }}  {{ path }} {{ active_tab }}</h2>
+            <h2 class="text-primary text-sbold">ТОР-Предложения {{ sentences_list }}</h2>
             <div class="nav-tabs-wrap">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    {% for key, value in data_types %}
-                    <li role="presentation" class="active"><a href="{{ path }}{{ data_types.typee.name }}"
-                                                              aria-controls="{{ data_types.typee.name }}" role="tab"
-                                                              data-toggle="tab">{{ value.key }}</a>
-                    </li>
+                        <li role="presentation" {% if active_tab == 'all' %} class="active" {% endif %}>
+                            <a href="{{ path }}/all/">Все</a>
+                        </li>
+                    {% for type in data_ctr.types %}
+                        <li role="presentation" {% if active_tab == type.link_name %} class="active" {% endif %}>
+                            <a href="{{ path }}{{ type.get_absolute_url }}">{{ type.name }}</a>
+                        </li>
                     {% endfor %}
-{#                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Акции</a></li>#}
-{#                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Скидки</a></li>#}
-{#                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Распродажа</a></li>#}
                 </ul>
 
                 <!-- Tab panes -->
