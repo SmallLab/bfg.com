@@ -33,20 +33,18 @@ class CategoryPage(ListView):
     paginate_by = 5
 
     def get(self, request, *args, **kwargs):
-        # return super(CategoryPage, self).get(self, request, *args, **kwargs)
         self.object_list = self.get_queryset(Categories.objects.get_dict_categories()[self.kwargs['link_name']]['id'],
                                              TypeSentence.objects.get_dict_types()[self.kwargs['type']]['id'])
         context = self.get_context_data(object_list=self.object_list)
-        copy_get = QueryDict(request.GET.copy().urlencode(), mutable=True)
-        context['request_get'] = copy_get.urlencode()
         return render(request, self.template_name, context)
 
     def get_context_data(self, **kwargs):
         context = super(CategoryPage, self).get_context_data(**kwargs)
         context['data_ctr'] = ModelHelpers.get_data_ctr()
-        context['active_tab'] = TypeSentence.objects.get_dict_types()[self.kwargs['type']]['link_name']
+        context['active_tab'] = self.kwargs['type']
         context['path'] = '/'.join(self.request.path.split('/')[0:4])
         context['true_path'] = '/'.join(self.request.path.split('/')[0:5])
+        context['category_name'] = Categories.objects.get_dict_categories()[self.kwargs['link_name']]['name']
         return context
 
     def get_queryset(self, category_id, type_id):

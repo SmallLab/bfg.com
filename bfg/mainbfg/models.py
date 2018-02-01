@@ -137,7 +137,7 @@ class ManagerSentences(models.Manager):
     def get_top_sentences_start_page(self):
         index = 0
         try:
-            all_top = Sentence.objects.filter(status=1)[index:index+13].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+            all_top = Sentence.objects.filter(status=1)[index:index+12].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             top_sentences = [all_top[i:i+4] for i in range(0, len(all_top), 4)]
             return top_sentences
         except Sentence.DoesNotExist:
