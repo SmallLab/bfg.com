@@ -18,12 +18,12 @@ class ManadgerTypeSentence(models.Manager):
     def get_active_types(self):
         return self.get_queryset().filter(is_active__exact= True)
 
-#Get dict {'name':id, ...} for TypeSentence
+#Get dict {'link_name':{data object}, ...} for TypeSentence
     def get_dict_types(self):
         if cache.get('dictType'):
             return cache.get('dictType')
         else:
-            new_dict = {'all':{'id':0}}
+            new_dict = {'all':{'id':0, 'link_name':'all', 'name':'Все'}}
             dictType = self.get_queryset().filter(is_active__exact = True).values()
             new_dict.update({a['link_name']: a for a in dictType})
             cache.set('dictType', new_dict)
@@ -128,8 +128,11 @@ class ManagerSentences(models.Manager):
     """
     Work with site sentences
     """
-    def get_category_sentebces(self, category_id, type_id=0):
-        pass
+    def get_category_sentences(self, category_id, type_id=0):
+        if type_id:
+            return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1)
+        else:
+            return Sentence.objects.filter(category_id=category_id).filter(status=1)
 
     def get_top_sentences_start_page(self):
         index = 0
