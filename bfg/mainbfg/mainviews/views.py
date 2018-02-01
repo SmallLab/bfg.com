@@ -46,6 +46,7 @@ class CategoryPage(ListView):
         context['data_ctr'] = ModelHelpers.get_data_ctr()
         context['active_tab'] = TypeSentence.objects.get_dict_types()[self.kwargs['type']]['link_name']
         context['path'] = '/'.join(self.request.path.split('/')[0:4])
+        context['true_path'] = '/'.join(self.request.path.split('/')[0:5])
         return context
 
     def get_queryset(self, category_id, type_id):

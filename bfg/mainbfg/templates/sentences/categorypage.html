@@ -144,7 +144,7 @@
                                             <div class="product-title">
                                                 <a href="/{{ sentence.get_absolute_url }}">{{ sentence.caption }}</a>
                                             </div>
-                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <p class="product-desc">Автор: {{ sentence.autor }}</p>
                                             <div class="product-time">
                                                 <p>Время публикации:</p>
                                                 <p>{{ sentence.create_time|date:"j-m-Y" }}</p>
@@ -157,6 +157,11 @@
                                                 <span class="product-price-currency">грн</span>
                                             </div>
                                             <ul class="product-actions list-inline">
+                                                {% if sentence.web_site %}
+                                                    <li>
+                                                        <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
+                                                    </li>
+                                                {% endif %}
                                                 <li>
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
@@ -189,34 +194,28 @@
                     </div>
                 </div>
             </div>
-            <ul class="list-inline pagination-product">
-                <li class="pagination-product-prev">
-                    <a href="javascript:history.go(-1)">
-                        <span class="icon fa fa-angle-double-left"></span>
-                        <span>Назад</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><a href="#">9</a></li>
-                <li><a href="#">10</a></li>
-                <li><a href="#">11</a></li>
-                <li><a href="#">12</a></li>
-                <li><a href="#">......</a></li>
-                <li><a href="#">200</a></li>
-                <li class="pagination-product-next">
-                    <a href="#">
-                        <span>Вперед</span>
-                        <span class="icon fa fa-angle-double-right"></span>
-                    </a>
-                </li>
-            </ul>
+        <!--Pagination-->
+    {% if is_paginated %}
+    <ul class="list-inline pagination-product">
+    {% if page_obj.has_previous %}
+      <li class="pagination-product-prev"><a href="{{ true_path }}/page/{{ page_obj.previous_page_number }}/">&laquo;Назад</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;Назад</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="{{ true_path }}/page/{{ i }}/">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="pagination-product-next"><a href="{{ true_path }}/page/{{ page_obj.next_page_number }}/">Вперёд &raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>Вперёд&raquo;</span></li>
+    {% endif %}
+    </ul>
+{% endif %}
         </div>
     </section>
 </main>
