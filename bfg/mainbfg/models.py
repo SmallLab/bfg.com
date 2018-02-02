@@ -135,10 +135,27 @@ class ManagerSentences(models.Manager):
             return Sentence.objects.filter(category_id=category_id).filter(status=1)
 
     def get_top_sentences_start_page(self):
+        """
+                later add filter(type_s=1)
+        """
         index = 0
         try:
             all_top = Sentence.objects.filter(status=1)[index:index+12].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             top_sentences = [all_top[i:i+4] for i in range(0, len(all_top), 4)]
+            return top_sentences
+        except Sentence.DoesNotExist:
+            return False
+
+    def get_top_sentences_category_page(self, category_id):
+        """
+        later add filter(type_s=1)
+        """
+        count = 5
+        try:
+            import random
+            index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).count())
+            top_sentences= Sentence.objects.filter(status=1).filter(category_id=category_id)[index:index+count].\
+                                            only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             return top_sentences
         except Sentence.DoesNotExist:
             return False

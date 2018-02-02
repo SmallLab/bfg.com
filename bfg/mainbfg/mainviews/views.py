@@ -45,6 +45,7 @@ class CategoryPage(ListView):
         context['path'] = '/'.join(self.request.path.split('/')[0:4])
         context['true_path'] = '/'.join(self.request.path.split('/')[0:5])
         context['category_name'] = Categories.objects.get_dict_categories()[self.kwargs['link_name']]['name']
+        context['top_category_sent'] = Sentence.objects.get_top_sentences_category_page(Categories.objects.get_dict_categories()[self.kwargs['link_name']]['id'])
         return context
 
     def get_queryset(self, category_id, type_id):

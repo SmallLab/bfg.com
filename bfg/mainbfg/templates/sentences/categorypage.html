@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{{ category_name }}{% endblock %}</title>
     <meta name="description" content="Бесплатные уроки по веб программированию" />
     <meta name="keywords" content="HTML,CSS,JavaScript" />
     <meta name="author" content="Андрей Штольц" />
@@ -22,7 +22,7 @@
     <section class="header-page-bottom">
         <div class="section section-1 bg-image bg-image-1">
             <div class="container container-custom">
-                <h1 class="text-white">BFG -С нами выгоднее!!!{{ l }}</h1>
+                <h1 class="text-white">BFG -С нами выгоднее!!!</h1>
             </div>
         </div>
     </section>
@@ -48,37 +48,41 @@
                     <div role="tabpanel" class="tab-pane active">
                         <div class="row row-sm-center products products-list">
                             <div class="col-xs-12">
-                                <h3 class="text-primary text-sbold products-list-title-offset-top-0">ТОР-объявления</h3>
+                                <h3 class="text-primary text-sbold products-list-title-offset-top-0" style="color: #1b1a19;">ТОР-объявления</h3>
+                            {% for top_sentence in top_category_sent %}
                                 <article class="product product-list">
-                                    <a href="index-1.html" class="product-img-wrap">
+                                    <a href="/{{ top_sentence.get_absolute_url }}" class="product-img-wrap">
                                         <span class="label">
-                                            <img src="images/label-02-105x95.png" width="105" height="95" alt="">
+                                            <img src="{% static top_sentence.type_img_s %}" width="105" height="95" alt="">
                                         </span>
-                                        <img src="images/product-07-277x205.jpg" width="277" height="205" alt="">
-                                        <span class="author">
-                                            <img src="images/author-07-105x44.jpg" width="105" height="44" alt="">
-                                        </span>
+                                        <img src="{{MEDIA_URL}}{{ top_sentence.main_img }}" style="width: 277px; height: 205px" alt="">
+{#                                        <span class="author">#}
+{#                                            <img src="images/author-07-105x44.jpg" width="105" height="44" alt="">#}
+{#                                        </span>#}
                                     </a>
                                     <div class="product-caption">
                                         <div class="product-left">
                                             <div class="product-title">
-                                                <a href="index-1.html">Распродажа колясок по выгодной цене</a>
+                                                <a href="/{{ top_sentence.get_absolute_url }}">{{ top_sentence.caption }}</a>
                                             </div>
-                                            <p class="product-desc">Категория: Детские товары</p>
+                                            <p class="product-desc">Автор: {{ top_sentence.autor }}</p>
                                             <div class="product-time">
                                                 <p>Время публикации:</p>
-                                                <p>22.11.16 14:00</p>
+                                                <p>{{ top_sentence.create_time|date:"j-m-Y" }}</p>
                                             </div>
                                         </div>
-                                        <div class="product-right">
+                                        {% if top_sentence.price %}
+                                            <div class="product-right">
                                             <div class="product-price">
-                                                3000
+                                               от {{ top_sentence.price }}
                                                 <span class="product-price-currency">грн</span>
                                             </div>
                                             <ul class="product-actions list-inline">
-                                                <li>
-                                                    <a href="#" class="icon fa fa-edge"></a>
-                                                </li>
+                                                {% if top_sentence.web_site %}
+                                                    <li>
+                                                        <a href="//{{ top_sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
+                                                    </li>
+                                                {% endif %}
                                                 <li>
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
@@ -87,38 +91,13 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </article>
-                                <article class="product product-list">
-                                    <a href="index-1.html" class="product-img-wrap">
-                                        <span class="label">
-                                            <img src="images/label-03-98-71.png" width="98" height="71" alt="">
-                                        </span>
-                                        <img src="images/product-16-277x205.jpg" width="277" height="205" alt="">
-                                        <span class="author">
-                                            <img src="images/author-08-158x28.jpg" width="158" height="28" alt="">
-                                        </span>
-                                    </a>
-                                    <div class="product-caption">
-                                        <div class="product-left">
-                                            <div class="product-title">
-                                                <a href="index-1.html">Скидки на детские вещи </a>
-                                            </div>
-                                            <p class="product-desc">Категория: Детские товары</p>
-                                            <div class="product-time">
-                                                <p>Время публикации:</p>
-                                                <p>21.11.16 15:00</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-right">
+                                        {% else %}
+                                            <div class="product-right">
                                             <div class="product-price">
-                                                70
-                                                <span class="product-price-currency">грн</span>
+                                                цена не указана
+                                                <span class="product-price-currency"></span>
                                             </div>
                                             <ul class="product-actions list-inline">
-                                                <li>
-                                                    <a href="#" class="icon fa fa-edge"></a>
-                                                </li>
                                                 <li>
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
@@ -127,9 +106,12 @@
                                                 </li>
                                             </ul>
                                         </div>
+                                        {% endif %}
                                     </div>
                                 </article>
-                                <h3 class="text-primary text-sbold">Обычные объявления</h3>
+                            {% endfor %}
+
+                                <h3 class="text-primary text-sbold" style="color: #1b1a19;">Обычные объявления</h3>
                                 {% for sentence in sentences_list %}
                                     <article class="product product-list">
                                     <a href="/{{ sentence.get_absolute_url }}" class="product-img-wrap">
