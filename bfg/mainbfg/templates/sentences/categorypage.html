@@ -49,7 +49,8 @@
                         <div class="row row-sm-center products products-list">
                             <div class="col-xs-12">
                                 <h3 class="text-primary text-sbold products-list-title-offset-top-0" style="color: #1b1a19;">ТОР-объявления</h3>
-                            {% for top_sentence in top_category_sent %}
+                            {% if top_category_sent %}
+                                {% for top_sentence in top_category_sent %}
                                 <article class="product product-list">
                                     <a href="/{{ top_sentence.get_absolute_url }}" class="product-img-wrap">
                                         <span class="label">
@@ -110,7 +111,7 @@
                                     </div>
                                 </article>
                             {% endfor %}
-
+                            {% endif %}
                                 <h3 class="text-primary text-sbold" style="color: #1b1a19;">Обычные объявления</h3>
                                 {% for sentence in sentences_list %}
                                     <article class="product product-list">

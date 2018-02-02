@@ -157,7 +157,7 @@ class ManagerSentences(models.Manager):
             top_sentences= Sentence.objects.filter(status=1).filter(category_id=category_id)[index:index+count].\
                                             only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             return top_sentences
-        except Sentence.DoesNotExist:
+        except (Sentence.DoesNotExist, ValueError):
             return False
 
     def get_phone(self, pk):
