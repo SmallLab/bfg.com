@@ -1,12 +1,12 @@
 {% load staticfiles %}
 <section class="section section-4 {{ styles }}">
         <div class="container container-custom-2">
-            <form action="#">
+            <form action="{% url 'filtersent' %}" method="get">
                 <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select" name="type_id">
-                                <option value="all">Тип предложения</option>
+                                <option value="0">Тип предложения</option>
                                 {% for type in data_ctr.types %}
                                     <option value="{{ type.id }}">{{ type.name }}</option>
                                 {% endfor %}
@@ -16,7 +16,7 @@
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select" name="category_id">
-                                <option value="all">Категория</option>
+                                <option value="0">Категория</option>
                                 {% for category in data_ctr.categories %}
                                     <option value="{{ category.id }}">{{ category.name }}</option>
                                 {% endfor %}
@@ -26,7 +26,7 @@
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
                             <select class="form-control form-control-select" name="region_id">
-                                <option value="all">Регион</option>
+                                <option value="0">Регион</option>
                                 {% for region in data_ctr.regions %}
                                     <option value="{{ region.id }}">{{ region.name }}</option>
                                 {% endfor %}
