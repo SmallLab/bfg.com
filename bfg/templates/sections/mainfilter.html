@@ -5,40 +5,40 @@
                 <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
+                            <select class="form-control form-control-select" name="type_id">
                                 <option value="all">Тип предложения</option>
                                 {% for type in data_ctr.types %}
-                                    <option value="{{ type.link_name }}">{{ type.name }}</option>
+                                    <option value="{{ type.id }}">{{ type.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
+                            <select class="form-control form-control-select" name="category_id">
                                 <option value="all">Категория</option>
                                 {% for category in data_ctr.categories %}
-                                    <option value="{{ category.link_name }}">{{ category.name }}</option>
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
+                            <select class="form-control form-control-select" name="region_id">
                                 <option value="all">Регион</option>
                                 {% for region in data_ctr.regions %}
-                                    <option value="{{ region.link_name }}">{{ region.name }}</option>
+                                    <option value="{{ region.id }}">{{ region.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">
-                            <select class="form-control form-control-select">
-                                <option>Все</option>
-                                <option>Только интернет-предложения</option>
-                                <option>Только регионы</option>
+                            <select class="form-control form-control-select" name="is_webstore">
+                                <option value="0">Все</option>
+                                <option value="1">Только интернет-предложения</option>
+                                <option value="2">Только регионы</option>
                             </select>
                         </div>
                     </div>

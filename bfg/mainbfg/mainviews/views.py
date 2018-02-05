@@ -6,6 +6,7 @@ from django.http import QueryDict
 
 from mainbfg.mainhelpers.modelhelpers import ModelHelpers
 from mainbfg.models import Sentence, Categories, TypeSentence
+from mainbfg.forms import FilterSentences
 
 """
     Class MainView  - start page
@@ -19,8 +20,6 @@ class MainView(TemplateView):
        context = super(MainView, self).get_context_data(**kwargs)
        context['data_ctr'] = ModelHelpers.get_data_ctr()
        context['sentences_list'] = ModelHelpers.get_top_sentences()
-       context['dict'] = Categories.objects.get_dict_categories()
-       context['dict1'] = TypeSentence.objects.get_dict_types()
        return context
 
 """
@@ -50,6 +49,15 @@ class CategoryPage(ListView):
 
     def get_queryset(self, category_id, type_id):
         return Sentence.objects.get_category_sentences(category_id, type_id)
+
+"""
+    Class FilterSentences - Filter suggestions
+"""
+class FilterSentences(ListView):
+    template_name = 'sentences/filtersent.html'
+    context_object_name = 'sentences_list'
+    paginate_by = 5
+
 
 """
     Class ViewSentence - view single sentence
