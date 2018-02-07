@@ -130,9 +130,9 @@ class ManagerSentences(models.Manager):
     """
     def get_category_sentences(self, category_id, type_id=0):
         if type_id:
-            return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1)
+            return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1).order_by('create_time')
         else:
-            return Sentence.objects.filter(category_id=category_id).filter(status=1)
+            return Sentence.objects.filter(category_id=category_id).filter(status=1).order_by('create_time')
 
     def get_top_sentences_start_page(self):
         """
