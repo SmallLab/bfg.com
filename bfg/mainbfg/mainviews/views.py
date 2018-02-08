@@ -68,9 +68,10 @@ class FilterSentences(ListView):
                 self.object_list = self.get_queryset(form.cleaned_data)
                 context = self.get_context_data(object_list=self.object_list)
                 context['data_form'] = form.cleaned_data
-                copy_get = QueryDict(request.GET.copy().urlencode(), mutable=True)
-                copy_get['submit'] = 0
-                context['request_get'] = copy_get.urlencode()
+                """
+                   If want change QueryDict add param mutable=True like positional argument
+                """
+                context['request_get'] = QueryDict(request.GET.copy().urlencode())
                 return render(request, self.template_name, context)
             else:
                 self.object_list = self.get_queryset(form.cleaned_data)
@@ -82,14 +83,12 @@ class FilterSentences(ListView):
             self.object_list = self.get_queryset(form.cleaned_data)
             context = self.get_context_data(object_list=self.object_list)
             context['data_form'] = form.cleaned_data
-            context['request_get'] = QueryDict(request.GET.copy().urlencode(), mutable=True)
+            context['request_get'] = QueryDict(request.GET.copy().urlencode())
             return render(request, self.template_name, context)
 
     def get_context_data(self, **kwargs):
         context = super(FilterSentences, self).get_context_data(**kwargs)
         context['data_ctr'] = ModelHelpers.get_data_ctr()
-        context['path'] = '/'.join(self.request.path.split('/')[0:4])
-        context['true_path'] = '/'.join(self.request.path.split('/')[0:5])
         return context
 
     def get_queryset(self, data):
