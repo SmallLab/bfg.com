@@ -6,7 +6,7 @@ from django.http import QueryDict
 
 from mainbfg.mainhelpers.modelhelpers import ModelHelpers
 from mainbfg.models import Sentence, Categories, TypeSentence
-from mainbfg.forms import FilterSentences
+from mainbfg.forms import FilterSentencesForm
 
 """
     Class MainView  - start page
@@ -57,6 +57,43 @@ class FilterSentences(ListView):
     template_name = 'sentences/filtersent.html'
     context_object_name = 'sentences_list'
     paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        """
+        If submit search form, add more options
+        """
+        if request.method == "GET":
+            form = FilterSentencesForm(request.GET)
+            if form.is_valid():
+                self.object_list = self.get_queryset(form.cleaned_data)
+                context = self.get_context_data(object_list=self.object_list)
+                context['data_form'] = form.cleaned_data
+                copy_get = QueryDict(request.GET.copy().urlencode(), mutable=True)
+                copy_get['submit'] = 0
+                context['request_get'] = copy_get.urlencode()
+                return render(request, self.template_name, context)
+            else:
+                self.object_list = self.get_queryset(form.cleaned_data)
+                context = self.get_context_data(object_list=self.object_list)
+                context['form'] = form
+                return render(request, self.template_name, context)
+        else:
+            form = FilterSentencesForm(request.GET)
+            self.object_list = self.get_queryset(form.cleaned_data)
+            context = self.get_context_data(object_list=self.object_list)
+            context['data_form'] = form.cleaned_data
+            context['request_get'] = QueryDict(request.GET.copy().urlencode(), mutable=True)
+            return render(request, self.template_name, context)
+
+    def get_context_data(self, **kwargs):
+        context = super(FilterSentences, self).get_context_data(**kwargs)
+        context['data_ctr'] = ModelHelpers.get_data_ctr()
+        context['path'] = '/'.join(self.request.path.split('/')[0:4])
+        context['true_path'] = '/'.join(self.request.path.split('/')[0:5])
+        return context
+
+    def get_queryset(self, data):
+        return Sentence.objects.get_filter_sentences(data)
 
 
 """

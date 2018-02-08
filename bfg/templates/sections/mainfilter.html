@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <section class="section section-4 {{ styles }}">
         <div class="container container-custom-2">
-            <form action="{% url 'filtersent' %}" method="get">
+            <form action="{% url 'filtersent' %}" method="get">{% csrf_token %}
                 <div class="row select-group row-sm-center row-md-center text-center text-md-left row-md-custom">
                     <div class="col-xs-7 col-md-3-custom bfg">
                         <div class="form-group form-group-select">

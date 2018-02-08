@@ -22,8 +22,8 @@ class LoginForm(forms.Form):
                                                                             'max_length': 'Пароль должен содержать не более 20-и символов'
                                                                             })
 
-class FilterSentences(forms.Form):
-    type_id = forms.IntegerField(required=False)
-    category_id = forms.IntegerField(required=False)
-    region_id = forms.IntegerField(required=False)
-    is_webstore = forms.IntegerField(required=False)
+class FilterSentencesForm(forms.Form):
+    type_id = forms.CharField(required=False)
+    category_id = forms.CharField(required=False)
+    region_id = forms.CharField(required=False)
+    is_webstore = forms.CharField(required=False)

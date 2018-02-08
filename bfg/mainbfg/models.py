@@ -128,6 +128,9 @@ class ManagerSentences(models.Manager):
     """
     Work with site sentences
     """
+    def get_filter_sentences(self, data):
+        return Sentence.objects.all()
+
     def get_category_sentences(self, category_id, type_id=0):
         if type_id:
             return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1).order_by('create_time')
