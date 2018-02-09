@@ -65,7 +65,7 @@ class FilterSentences(ListView):
         if request.method == "GET":
             form = FilterSentencesForm(request.GET)
             if form.is_valid():
-                self.object_list = self.get_queryset(form.cleaned_data)
+                self.object_list = self.get_queryset(form.cleaned_data.copy())
                 context = self.get_context_data(object_list=self.object_list)
                 context['data_form'] = form.cleaned_data
                 """
@@ -74,13 +74,13 @@ class FilterSentences(ListView):
                 context['request_get'] = QueryDict(request.GET.copy().urlencode()).urlencode()
                 return render(request, self.template_name, context)
             else:
-                self.object_list = self.get_queryset(form.cleaned_data)
+                self.object_list = self.get_queryset(form.cleaned_data.copy())
                 context = self.get_context_data(object_list=self.object_list)
                 context['form'] = form
                 return render(request, self.template_name, context)
         else:
             form = FilterSentencesForm(request.GET)
-            self.object_list = self.get_queryset(form.cleaned_data)
+            self.object_list = self.get_queryset(form.cleaned_data.copy())
             context = self.get_context_data(object_list=self.object_list)
             context['data_form'] = form.cleaned_data
             context['request_get'] = QueryDict(request.GET.copy().urlencode()).urlencode()

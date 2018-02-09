@@ -129,7 +129,16 @@ class ManagerSentences(models.Manager):
     Work with site sentences
     """
     def get_filter_sentences(self, data):
-        return Sentence.objects.all()
+        is_webstore = data.pop('is_webstore')
+        query = Sentence.objects
+        work_dict = {}
+        for param in data:
+            if data[param]:
+                work_dict[param] = data[param]
+        try:
+            return query.filter(**work_dict)
+        except Sentence.DoesNotExist:
+            return False
 
     def get_category_sentences(self, category_id, type_id=0):
         if type_id:
