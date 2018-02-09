@@ -129,14 +129,19 @@ class ManagerSentences(models.Manager):
     Work with site sentences
     """
     def get_filter_sentences(self, data):
-        is_webstore = data.pop('is_webstore')
+        is_webstore = int(data.pop('is_webstore'))
         query = Sentence.objects
         work_dict = {}
         for param in data:
             if data[param]:
                 work_dict[param] = data[param]
+        if is_webstore == 1:
+            work_dict['is_webstore'] = 1
         try:
-            return query.filter(**work_dict)
+            if is_webstore == 2:
+                return query.filter(**work_dict).exclude(is_webstore=1).order_by('create_time')
+            else:
+                return query.filter(**work_dict).order_by('create_time')
         except Sentence.DoesNotExist:
             return False
 
@@ -148,7 +153,7 @@ class ManagerSentences(models.Manager):
 
     def get_top_sentences_start_page(self):
         """
-                later add filter(type_s=1)
+           later add filter(type_s=1) for TOP sent
         """
         index = 0
         try:
@@ -158,17 +163,21 @@ class ManagerSentences(models.Manager):
         except Sentence.DoesNotExist:
             return False
 
-    def get_top_sentences_category_page(self, category_id):
+    def get_top_sentences_category_page(self, category_id, type_id=0):
         """
-        later add filter(type_s=1)
+        later add filter(type_s=1) for TOP sent
         """
         count = 5
         try:
             import random
-            index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).count())
-            top_sentences= Sentence.objects.filter(status=1).filter(category_id=category_id)[index:index+count].\
+            if type_id:
+                index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).filter(type_id=type_id).count())
+                return Sentence.objects.filter(status=1).filter(category_id=category_id).filter(type_id=type_id)[index:index+count].\
                                             only('id', 'caption', 'type_img_s', 'autor', 'web_site')
-            return top_sentences
+            else:
+                index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).count())
+                return Sentence.objects.filter(status=1).filter(category_id=category_id)[index:index+count].\
+                                            only('id', 'caption', 'type_img_s', 'autor', 'web_site')
         except (Sentence.DoesNotExist, ValueError):
             return False
 

@@ -67,7 +67,7 @@
                                                 <span class="product-price-currency">грн</span>
                                             </div>
                                             <ul class="product-actions list-inline">
-                                                {% if top_sentence.web_site %}
+                                                {% if top_sentence.is_webstore %}
                                                     <li>
                                                         <a href="//{{ top_sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
                                                     </li>
@@ -87,6 +87,11 @@
                                                 <span class="product-price-currency"></span>
                                             </div>
                                             <ul class="product-actions list-inline">
+                                                {% if top_sentence.is_webstore %}
+                                                    <li>
+                                                        <a href="//{{ top_sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
+                                                    </li>
+                                                {% endif %}
                                                 <li>
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
@@ -127,7 +132,7 @@
                                                 <span class="product-price-currency">грн</span>
                                             </div>
                                             <ul class="product-actions list-inline">
-                                                {% if sentence.web_site %}
+                                                {% if sentence.is_webstore %}
                                                     <li>
                                                         <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
                                                     </li>
@@ -147,6 +152,11 @@
                                                 <span class="product-price-currency"></span>
                                             </div>
                                             <ul class="product-actions list-inline">
+                                                {% if sentence.is_webstore %}
+                                                    <li>
+                                                        <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
+                                                    </li>
+                                                {% endif %}
                                                 <li>
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
