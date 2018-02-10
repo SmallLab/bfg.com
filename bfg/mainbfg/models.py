@@ -181,6 +181,24 @@ class ManagerSentences(models.Manager):
         except (Sentence.DoesNotExist, ValueError):
             return False
 
+    def get_top_sent_filter_page(self, data):
+        count = 5
+        is_webstore = int(data.pop('is_webstore'))
+        query = Sentence.objects
+        work_dict = {}
+        for param in data:
+            if data[param]:
+                work_dict[param] = data[param]
+        if is_webstore == 1:
+            work_dict['is_webstore'] = 1
+        try:
+            if is_webstore == 2:
+                return query.filter(**work_dict).exclude(is_webstore=1).order_by('create_time')
+            else:
+                return query.filter(**work_dict).order_by('create_time')
+        except Sentence.DoesNotExist:
+            return False
+
     def get_phone(self, pk):
         obj = Sentence.objects.only('phone').get(pk=pk)
         if obj.phone:
