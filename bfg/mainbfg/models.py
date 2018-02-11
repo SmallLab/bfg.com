@@ -200,7 +200,7 @@ class ManagerSentences(models.Manager):
                 import random
                 index = random.randint(1, Sentence.objects.filter(status=1).filter(**work_dict).count())
                 return query.filter(**work_dict)[index:index+count].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
-        except Sentence.DoesNotExist:
+        except (Sentence.DoesNotExist, ValueError):
             return False
 
     def get_phone(self, pk):
