@@ -139,9 +139,9 @@ class ManagerSentences(models.Manager):
             work_dict['is_webstore'] = 1
         try:
             if is_webstore == 2:
-                return query.filter(**work_dict).exclude(is_webstore=1).order_by('create_time')
+                return query.filter(**work_dict).filter(status=1).exclude(is_webstore=1).order_by('create_time')
             else:
-                return query.filter(**work_dict).order_by('create_time')
+                return query.filter(**work_dict).filter(status=1).order_by('create_time')
         except Sentence.DoesNotExist:
             return False
 
@@ -193,9 +193,13 @@ class ManagerSentences(models.Manager):
             work_dict['is_webstore'] = 1
         try:
             if is_webstore == 2:
-                return query.filter(**work_dict).exclude(is_webstore=1).order_by('create_time')
+                import random
+                index = random.randint(1, Sentence.objects.filter(status=1).filter(**work_dict).exclude(is_webstore=1).count())
+                return query.filter(**work_dict).exclude(is_webstore=1)[index:index+count].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             else:
-                return query.filter(**work_dict).order_by('create_time')
+                import random
+                index = random.randint(1, Sentence.objects.filter(status=1).filter(**work_dict).count())
+                return query.filter(**work_dict)[index:index+count].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
         except Sentence.DoesNotExist:
             return False
 

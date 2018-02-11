@@ -73,7 +73,7 @@ class FilterSentences(ListView):
                If want change QueryDict add param mutable=True like positional argument
             """
             context['request_get'] = QueryDict(request.GET.copy().urlencode()).urlencode()
-            context['top_filter_sent'] = Sentence.objects.get_top_sent_filter_page(form.cleaned_data.copy())
+            context['top_category_sent'] = Sentence.objects.get_top_sent_filter_page(form.cleaned_data.copy())
             return render(request, self.template_name, context)
         else:
             self.object_list = self.get_queryset(form.cleaned_data.copy())
