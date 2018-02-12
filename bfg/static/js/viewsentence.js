@@ -94,7 +94,7 @@ $('#map_google').click(function (e) {
                 alert('Возможно не верный адрес!');
             }
         });
-    };
+    }
 
     function initMap() {
         geocoder = new google.maps.Geocoder();
@@ -105,7 +105,7 @@ $('#map_google').click(function (e) {
                     });
         geocodeAddress(geocoder, map);
         $('#myModalMap').modal('show');
-      };
+      }
     initMap();
     e.preventDefault();
 });
