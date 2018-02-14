@@ -90,7 +90,6 @@ class FilterSentences(ListView):
     def get_queryset(self, data):
         return Sentence.objects.get_filter_sentences(data)
 
-
 """
     Class ViewSentence - view single sentence
 """
@@ -119,3 +118,10 @@ class ShowPhone(View):
         if request.is_ajax():
             data = Sentence.objects.get_phone(self.request.GET['id_sentence'])
         return JsonResponse(data)
+
+"""
+    Class AllTop - view all top sentence
+"""
+
+class AllTop(ListView):
+    pass

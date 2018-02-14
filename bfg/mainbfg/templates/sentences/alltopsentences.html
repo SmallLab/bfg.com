@@ -107,72 +107,7 @@
                             {% else %}
                                 Нет предложений
                             {% endif %}
-                                <h3 class="text-primary text-sbold" style="color: #1b1a19;">Обычные объявления</h3>
-                                {% for sentence in sentences_list %}
-                                    <article class="product product-list">
-                                    <a href="/{{ sentence.get_absolute_url }}" class="product-img-wrap">
-                                        <span class="label">
-                                            <img src="{% static sentence.type_img_s %}" width="102" height="75" alt="">
-                                        </span>
-                                        <img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width: 277px; height: 239px" alt="">
-                                    </a>
-                                    <div class="product-caption">
-                                        <div class="product-left">
-                                            <div class="product-title">
-                                                <a href="/{{ sentence.get_absolute_url }}">{{ sentence.caption }}</a>
-                                            </div>
-                                            <p class="product-desc">Автор: {{ sentence.autor }}</p>
-                                            <div class="product-time">
-                                                <p>Время публикации:</p>
-                                                <p>{{ sentence.create_time|date:"j-m-Y" }}</p>
-                                            </div>
-                                        </div>
-                                        {% if sentence.price %}
-                                            <div class="product-right">
-                                            <div class="product-price">
-                                               от {{ sentence.price }}
-                                                <span class="product-price-currency">грн</span>
-                                            </div>
-                                            <ul class="product-actions list-inline">
-                                                {% if sentence.is_webstore %}
-                                                    <li>
-                                                        <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
-                                                    </li>
-                                                {% endif %}
-                                                <li>
-                                                    <a href="#" class="icon fa fa-star-o"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        {% else %}
-                                            <div class="product-right">
-                                            <div class="product-price">
-                                                цена не указана
-                                                <span class="product-price-currency"></span>
-                                            </div>
-                                            <ul class="product-actions list-inline">
-                                                {% if sentence.is_webstore %}
-                                                    <li>
-                                                        <a href="//{{ sentence.web_site }}" class="icon fa fa-edge" target="_blank"></a>
-                                                    </li>
-                                                {% endif %}
-                                                <li>
-                                                    <a href="#" class="icon fa fa-star-o"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </article>
-                                {% empty %}
-                                    Нет предложений
-                                {% endfor %}
+
                             </div>
                         </div>
                     </div>
