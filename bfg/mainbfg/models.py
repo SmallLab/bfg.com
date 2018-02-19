@@ -128,6 +128,12 @@ class ManagerSentences(models.Manager):
     """
     Work with site sentences
     """
+    def get_sent_for_view(self):
+        try:
+           return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+        except Sentence.DoesNotExist:
+            return False
+
     def get_all_top_sent(self):
         try:
            return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
@@ -289,7 +295,7 @@ class Sentence(models.Model):
     on_moderation = models.BooleanField(default=False)
     link_name = models.CharField(max_length=550)
     identifier = models.CharField(max_length=20)
-    price = models.IntegerField(default=0)
+    price = models.IntegerField(default=0, blank=True)
     objects = ManagerSentences()
 
     def get_region(self):

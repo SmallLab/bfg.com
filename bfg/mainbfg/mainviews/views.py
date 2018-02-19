@@ -109,6 +109,9 @@ class ViewSentence(DetailView):
         obj.save()
         return DetailView.get(self, request, *args, **kwargs)
 
+    def get_queryset(self):
+        return Sentence.objects.get_sent_for_view()
+
 """
     Class ShowPhone - view phone for sentence
 """

@@ -94,6 +94,8 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
         context = super(POEditSentenceView, self).get_context_data(**kwargs)
         context['types'], context['categories'], context['regions'] = modelshelper.get_tcr_data()
         context['range_img'] = range(7)
+        context['action'] = reverse('editsent',
+                                    kwargs={'pk': self.get_object().id})
 
         return context
 
@@ -116,7 +118,9 @@ class POEditSentenceView(LoginRequiredMixin, UpdateView):
 
     def form_invalid(self, form):
         context = self.get_context_data()
-        context['data'] = self.request.POST
+        #context['data'] = self.request.POST
+        context['action'] = reverse('editsent',
+                                    kwargs={'pk': self.get_object().id})
 
         return self.render_to_response(context)
 

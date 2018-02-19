@@ -110,10 +110,13 @@
                                         <td>
                                             <a href="#" class="table-products-title">{{ sentence.caption }}</a>
                                             <ul class="list-inline list-inline-products">
+                                                {% if sentence.status == 1 %}
                                                 <li><a href="/{{ sentence.get_absolute_url }}" class="view" target="_blank">
                                                     <span class="icon fa fa-sign-out"></span>
                                                     <span style="color:blue;">Просмотр</span>
-                                                </a></li>
+                                                    </a>
+                                                </li>
+                                                {% endif %}
                                                 <li><a href="{% url 'editsent' sentence.id %}" class="edit">
                                                     <span class="icon fa fa-edit"></span>
                                                     <span style="color:green;">Редактировать</span>

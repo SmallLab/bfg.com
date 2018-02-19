@@ -2,14 +2,14 @@
 * Identifier for debug mode(if true - form submited on server)
 * */
 var is_validate_js = true;
-$.validator.setDefaults( {
-			submitHandler: function () {
-			    if (is_validate_js){
-			    	$('#hellopreloader_preload').css({'display':'block', 'opacity': '0.5'});
-                    $( "#add_new_s" ).submit();
-                }
-     		}
-		} );
+// $.validator.setDefaults( {
+// 			submitHandler: function () {
+// 			    if (is_validate_js){
+// 			    	$('#hellopreloader_preload').css({'display':'block', 'opacity': '0.5'});
+//                     $( "#add_new_s" ).submit();
+//                 }
+//      		}
+// 		} );
 $(document).ready(function () {
 //Show/hide help block for input tags
     $('input').on('click', function () {
@@ -59,6 +59,11 @@ $(document).ready(function () {
 //Validations form
 
     $( "#add_new_s" ).validate( {
+    	submitHandler: function(form) {
+    	    $('#hellopreloader_preload').css({'display':'block', 'opacity': '0.5'});
+            form.submit();
+        },
+
 				rules: {
 					autor: {
 						required: true,
