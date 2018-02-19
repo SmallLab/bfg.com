@@ -124,4 +124,15 @@ class ShowPhone(View):
 """
 
 class AllTop(ListView):
-    pass
+    template_name = 'sentences/alltopsentences.html'
+    context_object_name = 'top_category_sent'
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super(AllTop, self).get_context_data(**kwargs)
+        context['data_ctr'] = ModelHelpers.get_data_ctr()
+        context['true_path'] = '/'.join(self.request.path.split('/')[0:2])
+        return context
+
+    def get_queryset(self):
+        return Sentence.objects.get_all_top_sent()

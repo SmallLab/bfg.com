@@ -128,6 +128,12 @@ class ManagerSentences(models.Manager):
     """
     Work with site sentences
     """
+    def get_all_top_sent(self):
+        try:
+           return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+        except Sentence.DoesNotExist:
+            return False
+
     def get_filter_sentences(self, data):
         is_webstore = int(data.pop('is_webstore'))
         query = Sentence.objects

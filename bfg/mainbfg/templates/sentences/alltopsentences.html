@@ -117,7 +117,7 @@
     {% if is_paginated %}
     <ul class="list-inline pagination-product">
     {% if page_obj.has_previous %}
-      <li class="pagination-product-prev"><a href="{{ true_path }}/page/{{ page_obj.previous_page_number }}/?{{ request_get }}">&laquo;Назад</a></li>
+      <li class="pagination-product-prev"><a href="{{ true_path }}/page/{{ page_obj.previous_page_number }}/">&laquo;Назад</a></li>
     {% else %}
       <li class="disabled"><span>&laquo;Назад</span></li>
     {% endif %}
@@ -125,11 +125,11 @@
       {% if page_obj.number == i %}
         <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
       {% else %}
-        <li><a href="{{ true_path }}/page/{{ i }}/?{{ request_get }}">{{ i }}</a></li>
+        <li><a href="{{ true_path }}/page/{{ i }}/">{{ i }}</a></li>
       {% endif %}
     {% endfor %}
     {% if page_obj.has_next %}
-      <li class="pagination-product-next"><a href="{{ true_path }}/page/{{ page_obj.next_page_number }}/?{{ request_get }}">Вперёд &raquo;</a></li>
+      <li class="pagination-product-next"><a href="{{ true_path }}/page/{{ page_obj.next_page_number }}/">Вперёд &raquo;</a></li>
     {% else %}
       <li class="disabled"><span>Вперёд&raquo;</span></li>
     {% endif %}
