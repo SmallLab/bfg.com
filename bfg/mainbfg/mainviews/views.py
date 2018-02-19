@@ -106,7 +106,7 @@ class ViewSentence(DetailView):
         """
         obj = self.get_object()
         obj.views += 1
-        obj.save()
+        obj.save(update_fields=['views'])
         return DetailView.get(self, request, *args, **kwargs)
 
     def get_queryset(self):

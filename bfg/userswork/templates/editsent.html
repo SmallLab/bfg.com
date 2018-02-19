@@ -13,8 +13,8 @@
     <section class="section section-2">
         <div class="container container-custom section-border section-border-mod bg-gray-light section-round">
             <h2 class="text-primary text-36 text-sbold">Редактирование предложения.</h2>
-            <form class="form form-offer" method="post" name="edit_sent" action="{{ action }}"
-                  id="edit_sent" enctype="multipart/form-data">{% csrf_token %}
+            <form class="form form-offer" method="post" name="add_new_s" action="{{ action }}"
+                  id="add_new_s" enctype="multipart/form-data">{% csrf_token %}
                 <input type="hidden" id="is_del_mainphoto" {% if data.main_img %} value="1" {% else %} value="0" {% endif %} name="is_del_mainphoto"/>
                 <input type="hidden" name="is_del_other_photo" value="0" id="is_del_other_photo"/>
                 <input type="hidden" name="list_del_other_photo" value="{}" id="list_del_other_photo"/>

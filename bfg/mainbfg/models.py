@@ -298,6 +298,28 @@ class Sentence(models.Model):
     price = models.IntegerField(default=0, blank=True)
     objects = ManagerSentences()
 
+    def save(self, update_fields=None):
+        super(Sentence, self).save()
+        from PIL import Image
+        from io import BytesIO
+        from django.core.files.uploadedfile import InMemoryUploadedFile
+        import sys
+            # Opening the uploaded image
+        im = Image.open(self.main_img)
+        output = BytesIO()
+
+            # Resize/modify the image
+        im = im.resize((277, 205))
+
+            # after modifications, save it to the output
+        im.save(output, format='PNG', quality=100)
+        output.seek(0)
+
+            # change the imagefield value to be the newley modifed image value
+        self.main_img = InMemoryUploadedFile(output, 'MI.MainImgTypeField', "%s.png" % self.main_img.name.split('.')[0], 'image/png',
+                                            sys.getsizeof(output), None)
+
+
     def get_region(self):
         return Regions.objects.get_single_region_name(self.region_id)
 

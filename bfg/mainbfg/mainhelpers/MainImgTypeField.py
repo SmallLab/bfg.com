@@ -36,18 +36,8 @@ class MainImgTypeField(FileField):
             if content_type in self.content_types:
                 if file.size > self.max_upload_size:
                     raise forms.ValidationError(('Превышен размер загружаемого файла'))
-                #self.resized_file(file)
             else:
                 raise forms.ValidationError(('Расширение файла не поддерживается.'))
         except AttributeError:
             pass
-
         return data
-
-    def resized_file(self, file):
-        from PIL import Image
-        img = Image.open(file)  # image extension *.png,*.jpg
-        new_width = 257
-        new_height = 205
-        img = img.resize((new_width, new_height), Image.ANTIALIAS)
-        img.save(file)
