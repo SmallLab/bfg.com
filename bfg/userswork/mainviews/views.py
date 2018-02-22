@@ -5,9 +5,11 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.base import TemplateView, RedirectView
 from django.core.urlresolvers import reverse
+from django.http import JsonResponse
 
 from userswork.mainhelpers import modelshelper
 from mainbfg.models import (SentenceForm, Image, Sentence, SentenceEditForm, Profile)
@@ -241,3 +243,10 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
                     #messages.info(self.request, 'Three credits remain in your account.')
                     continue
         return True
+
+"""
+   Subscription work
+"""
+
+class GetModalLogin(View):
+    pass
