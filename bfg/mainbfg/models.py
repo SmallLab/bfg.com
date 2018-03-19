@@ -278,7 +278,7 @@ class Sentence(models.Model):
     description = models.TextField(max_length=1000)
     meta_info = models.CharField(max_length=500, blank=True)
     main_img = MI.MainImgTypeField(upload_to=custom_directory_path,
-                                   content_types=['image/jpeg', 'image/jpg', 'image/png', 'image/jpeg'],
+                                   content_types=['image/jpg', 'image/png', 'image/jpeg'],
                                    max_upload_size=5000000, blank=True, default='nophoto.png')
     dirname_img = models.CharField(max_length=15, default='', blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
@@ -327,7 +327,6 @@ class Sentence(models.Model):
     def __str__(self):
         return self.link_name
 
-
 class SentenceForm(ModelForm):
     class Meta:
         model = Sentence
@@ -370,9 +369,6 @@ class SentenceEditForm(ModelForm):
             'price': {'max_length': "Не более 5 символов"},
         }
 
-
-
-
 #---------------------------------Images Model----------------------------------------------#
 
 class Image(models.Model):
@@ -388,7 +384,6 @@ class Image(models.Model):
 
 class Payment(models.Model):
     pass
-
 
 #----------------------------------Favorites Model ----------------------------------------#
 
@@ -406,7 +401,6 @@ class ManageProfile(models.Manager):
             profile.save()
             return True
 
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(blank=True, max_length=100)
@@ -423,7 +417,6 @@ class Profile(models.Model):
 
     #payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     #favorite = models.ForeignKey(Favorite, on_delete=models.CASCADE)
-
 
 #-------------------------------- Subscription Model -------------------------------------------#
 
