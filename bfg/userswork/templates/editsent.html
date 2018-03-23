@@ -227,6 +227,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group form-group-info-wrap">
+                        <div class="form-group-inner">
+                            <label for="text_message">Сообщение для подписчиков</label>
+                            <div class="form-control-wrap {% if form.errors.text_message %}has-error has-feedback{% endif %}">
+                            {% if form.errors.text_message %}<em id="text_message-error" class="error help-block">{{ form.errors.text_message.0 }}</em>{% endif %}
+                                <input id="text_message" type="text" class="form-control" name="text_message" value="{{ data.text_message }}">
+                                <span data-num="count_simbols" data-count="65">Не более 65 символов  </span><span style="display: none">  - Введено <em></em> символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group-info" style="display: none">
+                            <span class="top-wrap">
+                                <span class="icon fa fa-info-circle"></span>
+                                <span class="title-cust">Введите текст сообщения для Ваших подписчиков.</span>
+                            </span>
+                            <div class="desc-cust">Например:В нашем магазине скидки на весь товар с 10.01 по 21.01. Приходите, будем рады!!!</div>
+                        </div>
+                    </div>
                     <div class="form-photos form-group-info-wrap" id="fotos_div">
                         <div class="form-group-inner">
                             <div class="form-photos-left">

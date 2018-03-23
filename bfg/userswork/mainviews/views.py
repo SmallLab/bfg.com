@@ -203,7 +203,6 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
         return self.render_to_response(context)
 
-
     def get_context_data(self, **kwargs):
         context = super(CreateNewSentence, self).get_context_data(**kwargs)
         context['types'], context['categories'], context['regions'] = modelshelper.get_tcr_data()
@@ -211,7 +210,6 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return self.success_url
-
 
     def slugify(swlf, str):
         import re

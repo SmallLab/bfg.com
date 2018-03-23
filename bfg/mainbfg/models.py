@@ -288,7 +288,8 @@ class Sentence(models.Model):
     type_img_s = models.CharField(max_length=300, blank=True)#path to img (Stock, Discount, Sale)
     views = models.IntegerField(default=0)
     phone_views = models.IntegerField(default=0)
-    text_message = models.CharField(max_length=1000, blank=True)
+    text_message = models.CharField(max_length=65, blank=True)
+    is_send_mess = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)
     start_time_paid = models.DateTimeField(auto_now_add=True)
     end_time_paid = models.DateTimeField(auto_now_add=True)
@@ -298,6 +299,7 @@ class Sentence(models.Model):
     price = models.IntegerField(default=0, blank=True)
     objects = ManagerSentences()
 
+    # change the main_imgfield value to be the newley modifed image value - png
     def save(self, update_fields=None):
         super(Sentence, self).save()
         from PIL import Image
@@ -323,7 +325,6 @@ class Sentence(models.Model):
     def get_absolute_url(self):
         return "sentence/%s" % self.link_name
 
-
     def __str__(self):
         return self.link_name
 
@@ -331,7 +332,7 @@ class SentenceForm(ModelForm):
     class Meta:
         model = Sentence
         fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price']
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price', 'text_message']
 
         error_messages = {
                              'autor': {'required': "Пожалуйста введите автора!!!",
@@ -346,13 +347,14 @@ class SentenceForm(ModelForm):
                              'full_adress': {'max_length': "Не более 100 символов"},
                              'meta_info': {'max_length': "Не более 500 символов"},
                              'price': {'max_length': "Не более 5 символов"},
+                             'text_message': {'max_length': "Не более 65 символов"},
                         }
 
 class SentenceEditForm(ModelForm):
     class Meta:
         model = Sentence
         fields = ['autor', 'caption', 'type_id', 'category_id', 'region_id', 'full_adress',
-                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price']
+                  'phone', 'web_site', 'is_webstore', 'meta_info', 'description', 'main_img', 'price', 'text_message']
 
         error_messages = {
             'autor': {'required': "Пожалуйста введите автора!!!",
@@ -367,6 +369,7 @@ class SentenceEditForm(ModelForm):
             'full_adress': {'max_length': "Не более 100 символов"},
             'meta_info': {'max_length': "Не более 500 символов"},
             'price': {'max_length': "Не более 5 символов"},
+            'text_message': {'max_length': "Не более 65 символов"},
         }
 
 #---------------------------------Images Model----------------------------------------------#
