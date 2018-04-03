@@ -19,13 +19,7 @@
 <body>
 {% include 'sections/mainheader.html' %}
 <main class="page-wrapper">
-    <section class="header-page-bottom">
-        <div class="section section-1 bg-image bg-image-1">
-            <div class="container container-custom">
-                <h1 class="text-white">BFG -С нами выгоднее!!!</h1>
-            </div>
-        </div>
-    </section>
+    {% include 'sections/slogan.html' %}
     {% include 'sections/mainfilter.html' with styles="bg-primary" %}
     <section class="section section-2 bg-gray">
         <div class="container container-custom-2">
@@ -76,7 +70,7 @@
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                    <a href="#" class="icon fa fa-envelope-o" data-id-sent="{{ top_sentence.id }}"></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -96,7 +90,7 @@
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                    <a href="#" class="icon fa fa-envelope-o" data-id-sent="{{ top_sentence.id }}"></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -143,7 +137,7 @@
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                    <a href="#" class="icon fa fa-envelope-o" data-id-sent="{{ sentence.id }}"></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -163,7 +157,7 @@
                                                     <a href="#" class="icon fa fa-star-o"></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="icon fa fa-envelope-o"></a>
+                                                    <a href="#" class="icon fa fa-envelope-o" data-id-sent="{{ sentence.id }}"></a>
                                                 </li>
                                             </ul>
                                         </div>

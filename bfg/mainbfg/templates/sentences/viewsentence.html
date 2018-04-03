@@ -19,13 +19,7 @@
 <body>
 {% include 'sections/mainheader.html' %}
 <main class="page-wrapper">
-    <section class="header-page-bottom">
-        <div class="section section-1 bg-image bg-image-1">
-            <div class="container container-custom">
-                <h1 class="text-white">BFG -С нами выгоднее!!</h1>
-            </div>
-        </div>
-    </section>
+    {% include 'sections/slogan.html' %}
     <section class="section section-2">
         <div class="container container-custom section-border">
             <h2 class="text-primary text-bold">{{ sentence.caption }}</h2>
@@ -87,7 +81,7 @@
                             </a>
                         </div>
                         <div class="btn-wrap btn-wrap-visible-md">
-                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary">
+                            <a href="#" class="btn btn-lg btn-block btn-offer btn-icon btn-secondary" data-id-sent="{{ sentence.id }}">
                                 <span class="icon icon-offer fa fa-toggle-right"></span>
                                 <span>Оформить подписку</span>
                             </a>

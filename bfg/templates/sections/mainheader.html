@@ -17,11 +17,13 @@
                         <input type="text" class="form-control" placeholder="Please input text">
                     </div>
                     <div class="icon-collapse">
-                        <a href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="collapse" class="icon icon-collapse icon-primary fa fa-search"></a>
+                        <a href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="collapse"
+                           class="icon icon-collapse icon-primary fa fa-search"></a>
                     </div>
                     {% if user.is_authenticated and user.profile.favorite_num != 0 %}
                         <div class="icon-favorites-wrap">
-                            <a href="#" class="icon icon-favorites fa fa-star-o" data-toggle="tooltip" title="Избранное" data-placement="bottom">
+                            <a href="#" class="icon icon-favorites fa fa-star-o" data-toggle="tooltip" title="Избранное"
+                               data-placement="bottom">
                                 <sup class="icon-favorites-count">{{ user.profile.favorite_num }}</sup>
                             </a>
                         </div>
