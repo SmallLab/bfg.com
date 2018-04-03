@@ -62,7 +62,7 @@ class FilterSentences(ListView):
 
     def get(self, request, *args, **kwargs):
         """
-        If submit search form, add more options
+        If submit search form, add more options to transfer data from the form in context
         """
         form = FilterSentencesForm(request.GET)
         if form.is_valid():

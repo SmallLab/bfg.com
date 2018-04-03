@@ -16,3 +16,19 @@ window.onload = function() {
 	$('[data-toggle="tooltip"]').tooltip()
 };
 
+/*
+* Subscription design
+* */
+$(document).on('click', '[data-id-sent]', function(event) {
+               sub = new SubServise(event, $(this));
+               sub.init();
+            });
+
+function SubServise(e, obj) {
+    this.e = e;
+    this.obj = obj;
+    this.init = function () {
+        e.preventDefault();
+        alert(obj.attr('data-id-sent'));
+    };
+}
