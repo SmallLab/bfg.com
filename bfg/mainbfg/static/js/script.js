@@ -27,8 +27,11 @@ $(document).on('click', '[data-id-sent]', function(event) {
 function SubServise(e, obj) {
     this.e = e;
     this.obj = obj;
+    this.popup_is_auth = $('#myModalSub');
+    this.popup_is_login = $('#myModalSubLogin');
     this.init = function () {
-        e.preventDefault();
-        alert(obj.attr('data-id-sent'));
+        this.e.preventDefault();
+        alert(this.obj.attr('data-id-sent'));
+        this.popup_is_login.modal('show');
     };
 }

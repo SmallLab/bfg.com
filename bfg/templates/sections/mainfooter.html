@@ -39,6 +39,13 @@
     <div id="scrollup">
         <span class="icon fa fa-arrow-circle-up"></span>
     </div>
+    {% if user.is_authenticated %}
+        <script>
+            data_sub = {
+              is_auth:True,
+            };
+        </script>
+    {% endif %}
 </footer>
 <div class="modal fade" id="myModalSub" tabindex="-1" role="dialog" aria-labelledby="myModalLabelSub">
     <div class="modal-dialog" role="document">
@@ -46,7 +53,25 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
                 </span></button>
-                <h4 class="modal-title" id="myModalLabel">Добавить подписку</h4>
+                <h4 class="modal-title" id="myModalLabelSub">Добавить подписку</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Подписка добавлена</h4>
+            </div>
+            <div class="modal-footer">
+                 <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
+                 <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModalSubLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabelSubLogin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
+                </span></button>
+                <h4 class="modal-title" id="myModalLabelLogin">Добавить подписку</h4>
             </div>
             <div class="modal-body">
                 <h4>Вы действительно хотите удалить предложение?</h4>
@@ -54,7 +79,6 @@
             <div class="modal-footer">
                  <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
                  <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
-
             </div>
         </div>
     </div>
