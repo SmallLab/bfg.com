@@ -151,17 +151,23 @@ class ManagerSentences(models.Manager):
             work_dict['is_webstore'] = 1
         try:
             if is_webstore == 2:
-                return query.filter(**work_dict).filter(status=1).exclude(is_webstore=1).order_by('create_time')
+                return query.filter(**work_dict).filter(status=1).\
+                    only('id', 'caption', 'type_img_s', 'autor', 'web_site').\
+                    exclude(is_webstore=1).order_by('create_time')
             else:
-                return query.filter(**work_dict).filter(status=1).order_by('create_time')
+                return query.filter(**work_dict).filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')\
+                    .order_by('create_time')
         except Sentence.DoesNotExist:
             return False
 
     def get_category_sentences(self, category_id, type_id=0):
         if type_id:
-            return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1).order_by('create_time')
+            return Sentence.objects.filter(category_id=category_id).filter(type_id=type_id).filter(status=1).\
+                only('id', 'caption', 'type_img_s', 'autor', 'web_site').order_by('create_time')
         else:
-            return Sentence.objects.filter(category_id=category_id).filter(status=1).order_by('create_time')
+            return Sentence.objects.filter(category_id=category_id).filter(status=1).\
+                only('id', 'caption', 'type_img_s', 'autor', 'web_site').\
+                order_by('create_time')
 
     def get_top_sentences_start_page(self):
         """
@@ -207,11 +213,13 @@ class ManagerSentences(models.Manager):
             if is_webstore == 2:
                 import random
                 index = random.randint(1, Sentence.objects.filter(status=1).filter(**work_dict).exclude(is_webstore=1).count())
-                return query.filter(**work_dict).exclude(is_webstore=1)[index:index+count].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+                return query.filter(**work_dict).exclude(is_webstore=1)[index:index+count].\
+                    only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             else:
                 import random
                 index = random.randint(1, Sentence.objects.filter(status=1).filter(**work_dict).count())
-                return query.filter(**work_dict)[index:index+count].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+                return query.filter(**work_dict)[index:index+count].\
+                    only('id', 'caption', 'type_img_s', 'autor', 'web_site')
         except (Sentence.DoesNotExist, ValueError):
             return False
 
