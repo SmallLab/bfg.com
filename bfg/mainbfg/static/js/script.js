@@ -29,9 +29,11 @@ function SubServise(e, obj) {
     this.obj = obj;
     this.popup_is_auth = $('#myModalSub');
     this.popup_is_login = $('#myModalSubLogin');
+    this.is_auth_status = data_sub.is_auth;
     this.init = function () {
         this.e.preventDefault();
-        alert(this.obj.attr('data-id-sent'));
-        this.popup_is_login.modal('show');
+        //alert(this.obj.attr('data-id-sent'));
+        this.is_auth_status == 0 ? this.popup_is_login.modal('show'):this.popup_is_auth.modal('show');
+
     };
 }

@@ -42,7 +42,13 @@
     {% if user.is_authenticated %}
         <script>
             data_sub = {
-              is_auth:True,
+              is_auth:1,
+            };
+        </script>
+    {% else %}
+        <script>
+            data_sub = {
+              is_auth:0,
             };
         </script>
     {% endif %}
@@ -74,11 +80,13 @@
                 <h4 class="modal-title" id="myModalLabelLogin">Добавить подписку</h4>
             </div>
             <div class="modal-body">
-                <h4>Вы действительно хотите удалить предложение?</h4>
+                <h4>Для оформления подписки Вам необходимо войти или зарегистрироваться в системе.
+
+                </h4>
             </div>
             <div class="modal-footer">
-                 <a type="button" class="btn btn-danger" id="deletedSentence" href="">Удалить</a>
-                 <button type="button" class="btn btn-primary" id="cancelDeleted">Отменить</button>
+                 <a type="button" class="btn btn-success" id="enterSystem" href="">Войти</a>
+                 <button type="button" class="btn btn-danger" id="exitEnter">Отменить</button>
             </div>
         </div>
     </div>

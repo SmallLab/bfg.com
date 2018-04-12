@@ -101,13 +101,15 @@
             <div data-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="5" data-lg-stage-padding="48" data-lg-margin="55"
                  data-loop="false" data-margin="30" data-mouse-drag="false" data-dots="true" data-nav="true" class="owl-carousel owl-carousel-products">
                    <div class="owl-item">
-                       <a href="{{MEDIA_URL}}{{ sentence.main_img }}" data-toggle="lightbox" data-gallery="example-gallery" data-title="{{ sentence.caption }}">
+                       <a href="{{MEDIA_URL}}{{ sentence.main_img }}" data-toggle="lightbox" data-gallery="example-gallery"
+                          data-title="{{ sentence.caption }}">
                            <img src="{{MEDIA_URL}}{{ sentence.main_img }}" style="width:295px; height: 283px;" alt="">
                        </a>
                    </div>
                 {% for image in sentence.image.all %}
                     <div class="owl-item">
-                        <a href="/{{ image.img_path }}" data-toggle="lightbox" data-gallery="example-gallery" data-title="{{ sentence.caption }}">
+                        <a href="/{{ image.img_path }}" data-toggle="lightbox" data-gallery="example-gallery"
+                           data-title="{{ sentence.caption }}">
                             <img src="/{{ image.img_path }}" style="width:295px; height: 283px;" alt="">
                         </a>
                     </div>
