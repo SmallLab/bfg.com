@@ -49,6 +49,8 @@
         <script>
             data_sub = {
               is_auth:0,
+              current_url:window.location,
+
             };
         </script>
     {% endif %}
@@ -85,8 +87,8 @@
                 </h4>
             </div>
             <div class="modal-footer">
-                 <a type="button" class="btn btn-success" id="enterSystem" href="">Войти</a>
-                 <button type="button" class="btn btn-danger" id="exitEnter">Отменить</button>
+                <a type="button" class="btn btn-success" id="enterSystem" href="{% url 'login' %}?next=" >Войти</a>
+                <button type="button" class="btn btn-danger" id="exitEnter">Отменить</button>
             </div>
         </div>
     </div>

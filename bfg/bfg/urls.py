@@ -19,7 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
-from mainbfg.views import LoginUser
+from mainbfg.views import LoginUser, RegistrationUser
 
 
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^user/', include('userswork.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', LoginUser, name='login'),
+    url(r'^registrations/$', RegistrationUser, name='reristrations'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 ]
 if settings.DEBUG:

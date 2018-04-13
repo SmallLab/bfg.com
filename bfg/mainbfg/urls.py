@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^alltop/(?:page/(?P<page>\d+)/)?$', views.AllTop.as_view(), name='alltop'),
     url(r'^sentence/.+_(?P<slug>.+)/$', views.ViewSentence.as_view(), name='detail'),
     url(r'^sentence/showphone/$', views.ShowPhone.as_view(), name='showphone'),
-    url(r'^registrations/$', vv.RegistrationUser, name='reristrations'),
+    # url(r'^registrations/$', vv.RegistrationUser, name='reristrations'),
 ]

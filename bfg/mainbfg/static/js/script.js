@@ -33,7 +33,17 @@ function SubServise(e, obj) {
     this.init = function () {
         this.e.preventDefault();
         //alert(this.obj.attr('data-id-sent'));
-        this.is_auth_status == 0 ? this.popup_is_login.modal('show'):this.popup_is_auth.modal('show');
+        //alert(data_sub.current_url);
+        this.is_auth_status == 0 ? this.loginSub() : this.addSub();
 
     };
+    this.loginSub = function () {
+        var current_url = window.location;
+        $('#enterSystem').attr('href', '/login/?next='+current_url+'');
+        this.popup_is_login.modal('show');
+    };
+
+    this.addSub = function () {
+        this.popup_is_auth.modal('show');
+    }
 }
