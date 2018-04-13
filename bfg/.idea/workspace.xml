@@ -2,14 +2,12 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/templates/main.html" line="3" />
+    <bookmark url="file://$PROJECT_DIR$/mainbfg/views.py" line="76" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/static/js/script.js" afterPath="$PROJECT_DIR$/mainbfg/static/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/views.py" afterPath="$PROJECT_DIR$/mainbfg/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/registration/login.html" afterPath="$PROJECT_DIR$/templates/registration/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sections/mainfooter.html" afterPath="$PROJECT_DIR$/templates/sections/mainfooter.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,13 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainbfg/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="77" column="23" lean-forward="false" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+            <state relative-caret-position="528">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#333#1975#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -145,10 +144,9 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="74" column="75" lean-forward="false" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="75" />
+            <state relative-caret-position="80">
+              <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="33" />
               <folding>
-                <element signature="e#0#56#0" expanded="true" />
                 <element signature="e#462#745#0" expanded="false" />
                 <element signature="e#842#2347#0" expanded="false" />
                 <element signature="e#4093#4565#0" expanded="false" />
@@ -159,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainfooter.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainfooter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="90" column="82" lean-forward="false" selection-start-line="90" selection-start-column="82" selection-end-line="90" selection-end-column="82" />
+            <state relative-caret-position="259">
+              <caret line="81" column="85" lean-forward="true" selection-start-line="81" selection-start-column="85" selection-end-line="81" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -262,8 +260,8 @@
         <option value="$PROJECT_DIR$/bfg/urls.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/mainbfg/static/js/script.js" />
-        <option value="$PROJECT_DIR$/mainbfg/views.py" />
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
+        <option value="$PROJECT_DIR$/mainbfg/views.py" />
       </list>
     </option>
   </component>
@@ -306,38 +304,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -765,13 +731,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00108" summary="View sentence">
-      <created>1516641526974</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1516641526975</updated>
-    </task>
     <task id="LOCAL-00109" summary="View sentence">
       <created>1516648660400</created>
       <option name="number" value="00109" />
@@ -1108,7 +1067,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523613255331</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Subscration">
+      <created>1523623155262</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1523623155262</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1593,22 +1559,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="74" column="75" lean-forward="false" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <element signature="e#462#745#0" expanded="false" />
-            <element signature="e#842#2347#0" expanded="false" />
-            <element signature="e#4093#4565#0" expanded="false" />
-            <element signature="e#4649#4832#0" expanded="false" />
-            <element signature="e#4912#5370#0" expanded="false" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1621,13 +1572,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="77" column="23" lean-forward="false" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="259">
+          <caret line="81" column="85" lean-forward="true" selection-start-line="81" selection-start-column="85" selection-end-line="81" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1639,11 +1588,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
+    <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="90" column="82" lean-forward="false" selection-start-line="90" selection-start-column="82" selection-end-line="90" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="e#462#745#0" expanded="false" />
+            <element signature="e#842#2347#0" expanded="false" />
+            <element signature="e#4093#4565#0" expanded="false" />
+            <element signature="e#4649#4832#0" expanded="false" />
+            <element signature="e#4912#5370#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#333#1975#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

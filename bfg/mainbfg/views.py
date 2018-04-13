@@ -74,8 +74,7 @@ def LoginUser(request):
         c = {'tab':False}
         c.update(csrf(request))
         if request.GET:
-            c['next_url'] = request.GET['next']
-            c['hhh'] = request.GET.urlencode()
+            c['next_url'] = request.get_full_path()[13:]
         else:
             c['next_url'] = '/user/privateoffice/'
         return render_to_response('registration/login.html', c)
