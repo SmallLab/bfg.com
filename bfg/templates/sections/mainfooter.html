@@ -87,8 +87,8 @@
                 </h4>
             </div>
             <div class="modal-footer">
-                <a type="button" class="btn btn-success" id="enterSystem" href="{% url 'login' %}?next=" >Войти</a>
-                <button type="button" class="btn btn-danger" id="exitEnter">Отменить</button>
+                <a type="button" class="btn btn-success" id="enterSystem" href="{% url 'login' %}?next={{ request.path }}?{{ request.GET.urlencode }}" >Войти</a>
+                <button type="button" class="btn btn-danger" id="exitEnter">Отмена</button>
             </div>
         </div>
     </div>

@@ -39,7 +39,7 @@ function SubServise(e, obj) {
     };
     this.loginSub = function () {
         var current_url = window.location;
-        $('#enterSystem').attr('href', '/login/?next='+current_url+'');
+        //$('#enterSystem').attr('href', '/login/?next='+current_url+'');
         this.popup_is_login.modal('show');
     };
 

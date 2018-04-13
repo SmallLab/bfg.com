@@ -75,6 +75,7 @@ def LoginUser(request):
         c.update(csrf(request))
         if request.GET:
             c['next_url'] = request.GET['next']
+            c['hhh'] = request.GET.urlencode()
         else:
             c['next_url'] = '/user/privateoffice/'
         return render_to_response('registration/login.html', c)
