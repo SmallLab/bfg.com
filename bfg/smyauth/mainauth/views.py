@@ -36,7 +36,7 @@ class FacebookAuth(RedirectView):
             else:
                 return self.bad_status(request)
         else:
-            return self.bad_status(request)
+            return self.bad_status(request, access_token['data'])
 
     def get_access_token(self):
         code = self.request.GET.get('code', '')
@@ -46,7 +46,7 @@ class FacebookAuth(RedirectView):
                                                                   'client_secret': settings.FACEBOOK_SECRET,
                                                                   'code': code})
             if 'error' in graph_url.json():
-                return {'status':False}
+                return {'status':False, 'data':graph_url.json()}
             else:
                 return {'status':True, 'access_token':graph_url.json()['access_token']}
 
@@ -85,7 +85,7 @@ class FacebookAuth(RedirectView):
         profile.save()
         return user
 
-    def bad_status(self, request):
+    def bad_status(self, request, data=0):
         c = {'failauth': True, 'message_auth': settings.AUTH_FAILED_MESSAGESS}
         c.update(csrf(request))
         return render_to_response('registration/login.html', c)

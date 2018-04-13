@@ -38,7 +38,7 @@ def RegistrationUser(request):
     else:
         c = {'tab': True}
         if request.GET:
-            c['next_url'] = request.GET['next']
+            c['next_url'] = request.get_full_path()[13:]
         else:
             c['next_url'] = '/user/privateoffice/'
         c.update(csrf(request))
