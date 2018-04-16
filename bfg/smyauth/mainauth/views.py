@@ -1,4 +1,6 @@
 import requests
+import logging
+
 from django.shortcuts import redirect, render_to_response
 from django.conf import settings
 from django.views.generic import RedirectView
@@ -10,6 +12,14 @@ from mainbfg.models import Profile
 """
     Facebook Autentification
 """
+class DataGet():
+    next_url=''
+
+def getF(request):
+    DataGet.next_url = request.get_full_path()[30:]
+    # logfb = logging.getLogger(__name__)
+    # logfb.error(request.get_full_path()[30:])
+    return redirect(settings.FACEBOOK_URL)
 
 class FacebookAuth(RedirectView):
 
@@ -28,7 +38,7 @@ class FacebookAuth(RedirectView):
                 if user is not None:
                     if user.is_active:
                         login(request, user)
-                        return redirect(self.get_redirect_url())
+                        return redirect(DataGet.next_url)
                     else:
                         return self.bad_status(request)
                 else:
@@ -88,4 +98,6 @@ class FacebookAuth(RedirectView):
     def bad_status(self, request, data=0):
         c = {'failauth': True, 'message_auth': settings.AUTH_FAILED_MESSAGESS}
         c.update(csrf(request))
+        logfb = logging.getLogger(__name__)
+        logfb.error(data)
         return render_to_response('registration/login.html', c)

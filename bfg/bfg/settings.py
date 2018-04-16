@@ -155,12 +155,22 @@ LOGGING = {
         'console': {
             'class': 'logging.StreamHandler',
         },
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'E:/WebProjects/bfg.com/bfg/logdata/fblogs.log',
+        },
     },
     'loggers': {
         'django.db.backends': {
             'level': 'DEBUG',
             'handlers': ['console'],
-        }
+        },
+        'smyauth': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
     },
 }
 MEDIA_URL = '/media/'
@@ -173,6 +183,7 @@ LOGIN_URL = 'login'
 #Social auth
 AUTH_FAILED_MESSAGESS = 'Извините!Во время авторизации произошла ошибка попробуйте позже!'
 #Facebook
+FACEBOOK_URL = "https://www.facebook.com/v2.9/dialog/oauth?client_id=214579749046389&redirect_uri=http://localhost:8000/authcocial/lfacebook/"
 FACEBOOK_USERDATA_URL = "https://graph.facebook.com/me?fields=id,name,first_name,email"
 FACEBOOK_GRAF_URL = "https://graph.facebook.com/oauth/access_token"
 FACEBOOK_APP_ID = 214579749046389
