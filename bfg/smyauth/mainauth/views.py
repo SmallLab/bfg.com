@@ -96,7 +96,7 @@ class FacebookAuth(RedirectView):
         return user
 
     def bad_status(self, request, data=0):
-        c = {'failauth': True, 'message_auth': settings.AUTH_FAILED_MESSAGESS}
+        c = {'failauth': True, 'message_auth': settings.AUTH_FAILED_MESSAGESS+'---'+data}
         c.update(csrf(request))
         logfb = logging.getLogger(__name__)
         logfb.error(data)

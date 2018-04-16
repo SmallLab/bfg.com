@@ -13,7 +13,11 @@ window.onload = function() {
 			$('#scrollup').fadeOut("slow");;
 		}
 	};
-	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip();
+
+	$('#exitEnter').click(function () {
+        $('#myModalSubLogin').modal('hide');
+    });
 };
 
 /*
@@ -38,9 +42,7 @@ function SubServise(e, obj) {
 
     };
     this.loginSub = function () {
-        var current_url = window.location;
-        //$('#enterSystem').attr('href', '/login/?next='+current_url+'');
-        this.popup_is_login.modal('show');
+       this.popup_is_login.modal('show');
     };
 
     this.addSub = function () {
