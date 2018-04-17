@@ -31,7 +31,7 @@
                     <li><a href="#">Карта сайта</a></li>
                     <li><a href="#">Карта регионов</a></li>
                     <li><a href="#">Архив</a></li>
-                    <li><a href="#">Популярные запросы</a></li>
+                    <li><a href="#">Популярные запросы ----- {{ request.GET.sub_id }}</a></li>
                 </ul>
             </div>
         </div>
@@ -39,19 +39,20 @@
     <div id="scrollup">
         <span class="icon fa fa-arrow-circle-up"></span>
     </div>
-    {% if user.is_authenticated %}
-        <script>
+         <script>
             data_sub = {
-              is_auth:1,
+            {% if user.is_authenticated %}
+                is_auth:1,
+            {% else %}
+                is_auth:0,
+            {% endif %}
+            {% if request.GET.sub_id != '' and request.GET.sub_id %}
+                sub_id:{{ request.GET.sub_id }},
+            {% else %}
+                sub_id:0,
+            {% endif %}
             };
         </script>
-    {% else %}
-        <script>
-            data_sub = {
-              is_auth:0,
-            };
-        </script>
-    {% endif %}
 </footer>
 <div class="modal fade" id="myModalSub" tabindex="-1" role="dialog" aria-labelledby="myModalLabelSub">
     <div class="modal-dialog" role="document">

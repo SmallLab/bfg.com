@@ -42,7 +42,8 @@ function SubServise(e, obj) {
 
     };
     this.loginSub = function () {
-       this.popup_is_login.modal('show');
+        $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.obj.attr('data-id-sent'));
+        this.popup_is_login.modal('show');
     };
 
     this.addSub = function () {
