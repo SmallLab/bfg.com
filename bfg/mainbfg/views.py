@@ -21,7 +21,10 @@ def RegistrationUser(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect(request.POST['next_url'] + '&sub_id=' + request.POST['sub_id'])
+                    if request.POST['sub_id']:
+                        return redirect(request.POST['next_url']+'&sub_id='+request.POST['sub_id'])
+                    else:
+                        return redirect(request.POST['next_url'])
                 else:
                     return redirect('/login/')
             else:
@@ -66,7 +69,10 @@ def LoginUser(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect(request.POST['next_url']+'&sub_id='+request.POST['sub_id'])
+                    if request.POST['sub_id']:
+                        return redirect(request.POST['next_url']+'&sub_id='+request.POST['sub_id'])
+                    else:
+                        return redirect(request.POST['next_url'])
                 else:
                     return redirect('/login/')
             else:
