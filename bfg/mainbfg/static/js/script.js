@@ -18,6 +18,11 @@ window.onload = function() {
 	$('#exitEnter').click(function () {
         $('#myModalSubLogin').modal('hide');
     });
+
+    $('#cancelSub').click(function () {
+        $('#myModalSub').modal('hide');
+    });
+	isSubscrabers();
 };
 
 /*
@@ -27,7 +32,7 @@ $(document).on('click', '[data-id-sent]', function(event) {
                sub = new SubServise(event, $(this));
                sub.init();
             });
-
+//Add subscrabers for user
 function SubServise(e, obj) {
     this.e = e;
     this.obj = obj;
@@ -36,8 +41,6 @@ function SubServise(e, obj) {
     this.is_auth_status = data_sub.is_auth;
     this.init = function () {
         this.e.preventDefault();
-        //alert(this.obj.attr('data-id-sent'));
-        //alert(data_sub.current_url);
         this.is_auth_status == 0 ? this.loginSub() : this.addSub();
 
     };
@@ -48,5 +51,11 @@ function SubServise(e, obj) {
 
     this.addSub = function () {
         this.popup_is_auth.modal('show');
+    }
+};
+//Show modal window if user is auth
+function isSubscrabers() {
+    if (data_sub.sub_id != 0) {
+       $('#myModalSub').modal('show');
     }
 }
