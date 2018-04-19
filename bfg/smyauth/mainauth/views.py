@@ -13,12 +13,19 @@ from mainbfg.models import Profile
     Facebook Autentification
 """
 class DataGet():
-    next_url=''
+    next_url = ''
+    sub_id = ''
 
 def getF(request):
-    DataGet.next_url = request.get_full_path()[30:]
+    if request.GET.get('id_sent'):
+        next_u = request.get_full_path().split('&')[0:-1]
+        DataGet.next_url = '&'.join(next_u)[30:]
+        DataGet.sub_id = request.get_full_path().split('&').pop()[8:]
+    else:
+        DataGet.next_url = request.get_full_path()[30:]
+    #DataGet.next_url = request.get_full_path()[30:]
     # logfb = logging.getLogger(__name__)
-    # logfb.error(request.get_full_path()[30:])
+    # logfb.error(DataGet.sub_id)
     return redirect(settings.FACEBOOK_URL)
 
 class FacebookAuth(RedirectView):
@@ -38,7 +45,10 @@ class FacebookAuth(RedirectView):
                 if user is not None:
                     if user.is_active:
                         login(request, user)
-                        return redirect(DataGet.next_url)
+                        if DataGet.sub_id:
+                            return redirect(DataGet.next_url+'&sub_id='+DataGet.sub_id)
+                        else:
+                            return redirect(DataGet.next_url)
                     else:
                         return self.bad_status(request)
                 else:
@@ -73,7 +83,7 @@ class FacebookAuth(RedirectView):
             return {'status':False}
 
 
-#When created a new user automatically created a record in Profile table for user(look signals/handlers)
+#When created a new user, automatically created a record in Profile table for user(look signals/handlers)
 
     def create_new_user(self, facebook_data):
         username = facebook_data.get('first_name', 'Anonim')
