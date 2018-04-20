@@ -63,7 +63,20 @@
                 <h4 class="modal-title" id="myModalLabelSub">Добавить подписку</h4>
             </div>
             <div class="modal-body">
-                <h4>Подписка добавлена</h4>
+                <h4>Выберите способ оповещения о новом предложении:</h4>
+                <div class="form-group-inner form-checkbox">
+                    <label>
+                        <input type="radio" name="email_sms" value="0" id="sms_data">SMS
+                    </label>
+                </div>
+                <div class="form-group-inner form-checkbox">
+                    <label>
+                        <input type="radio" name="email_sms" value="1" id="email_data">EMAIL
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder=""  name="dataSub" required id="dataSub"></br>
+                </div>
             </div>
             <div class="modal-footer">
                  <a type="button" class="btn btn-success" id="addSub" href="">Добавить</a>

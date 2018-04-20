@@ -36,26 +36,26 @@ $(document).on('click', '[data-id-sent]', function(event) {
 function SubServise(e, obj) {
     this.e = e;
     this.obj = obj;
+    this.id_sub = this.obj.attr('data-id-sent');
     this.popup_is_auth = $('#myModalSub');
     this.popup_is_login = $('#myModalSubLogin');
     this.is_auth_status = data_sub.is_auth;
     this.init = function () {
         this.e.preventDefault();
         this.is_auth_status == 0 ? this.loginSub() : this.addSub();
-
     };
     this.loginSub = function () {
-        $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.obj.attr('data-id-sent'));
+        $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.id_sub);
         this.popup_is_login.modal('show');
     };
 
     this.addSub = function () {
         this.popup_is_auth.modal('show');
-    }
-};
-//Show modal window if user is auth
+    };
+}
+//Show modal window if user is auth and wath redirect
 function isSubscrabers() {
     if (data_sub.sub_id != 0) {
-       $('#myModalSub').modal('show');
+       $('[data-id-sent='+data_sub.sub_id+']').click();
     }
 }
