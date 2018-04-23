@@ -32,6 +32,7 @@ $(document).on('click', '[data-id-sent]', function(event) {
                sub = new SubServise(event, $(this));
                sub.init();
             });
+
 //Add subscrabers for user
 function SubServise(e, obj) {
     this.e = e;
@@ -44,21 +45,29 @@ function SubServise(e, obj) {
         this.e.preventDefault();
         this.is_auth_status == 0 ? this.loginSub() : this.addDataSub();
         $('[name="email_sms"]').on('click', this.enterData);
-        $('#addSub').on('click', this.addSub());
+        $('#addSub').on('click', function (event) {
+                            if ($("#sms_data").is(":checked")){
+                                alert(1000);
+                            }
+                            else if ($("#email_data").is(":checked")){
+                                alert(2000);
+                            }
+                            else {
+                                alert(4000);
+                            }
+
+                        });
     };
+//Show window for login
     this.loginSub = function () {
         $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.id_sub);
         this.popup_is_login.modal('show');
     };
-
+//Show form for enter data sub and sub
     this.addDataSub = function () {
         this.popup_is_auth.modal('show');
     };
-
-    this.addSub = function () {
-
-    };
-
+//Enter data for sub
     this.enterData = function () {
             if ($(this).attr('id') == 'sms_data'){
                 if(data_sub.phone){
@@ -89,9 +98,9 @@ function SubServise(e, obj) {
         return regex.test(phone);
     }
 }
-//Show modal window if user is auth and wath redirect
+//Show modal window for enter data sub when user is auth and wath redirect for prew page
 function isSubscrabers() {
     if (data_sub.sub_id != 0) {
        $('[data-id-sent='+data_sub.sub_id+']').click();
     }
-}
+};
