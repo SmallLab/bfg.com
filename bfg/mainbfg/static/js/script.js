@@ -44,7 +44,7 @@ function SubServise(e, obj) {
     this.init = function () {
         this.e.preventDefault();
         this.is_auth_status == 0 ? this.loginSub() : this.addDataSub();
-        $('[name="email_sms"]').on('click', this.enterData);
+        $('[name="email_sms"]').on('click', enterData);
         $('#addSub').on('click', this.sendDataSub);
     };
 
@@ -80,7 +80,7 @@ function SubServise(e, obj) {
         this.popup_is_auth.modal('show');
     };
 //Enter data for sub
-    this.enterData = function () {
+    function enterData() {
             if ($(this).attr('id') == 'sms_data'){
                 if(data_sub.phone){
                     $('#dataSub').val(data_sub.phone);
