@@ -46,6 +46,19 @@
             {% else %}
                 is_auth:0,
             {% endif %}
+
+            {% if user.is_authenticated and user.profile.phone %}
+                phone:'{{ user.profile.phone }}',
+            {% else %}
+                phone:0,
+            {% endif %}
+
+            {% if user.is_authenticated and user.profile.email %}
+                email:'{{ user.profile.email }}',
+            {% else %}
+                email:0,
+            {% endif %}
+
             {% if request.GET.sub_id != '' and request.GET.sub_id %}
                 sub_id:{{ request.GET.sub_id }},
             {% else %}
@@ -66,12 +79,12 @@
                 <h4>Выберите способ оповещения о новом предложении:</h4>
                 <div class="form-group-inner form-checkbox">
                     <label>
-                        <input type="radio" name="email_sms" value="0" id="sms_data">SMS
+                        <input type="radio" name="email_sms" value="0" id="sms_data">Смс сообщение
                     </label>
                 </div>
                 <div class="form-group-inner form-checkbox">
                     <label>
-                        <input type="radio" name="email_sms" value="1" id="email_data">EMAIL
+                        <input type="radio" name="email_sms" value="1" id="email_data">Почта
                     </label>
                 </div>
                 <div class="form-group">
@@ -79,7 +92,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                 <a type="button" class="btn btn-success" id="addSub" href="">Добавить</a>
+                 <a type="button" class="btn btn-success" id="addSub" href="">Подписаться</a>
                  <button type="button" class="btn btn-danger" id="cancelSub">Отменить</button>
             </div>
         </div>
