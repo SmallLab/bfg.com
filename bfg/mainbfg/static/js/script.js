@@ -45,25 +45,37 @@ function SubServise(e, obj) {
         this.e.preventDefault();
         this.is_auth_status == 0 ? this.loginSub() : this.addDataSub();
         $('[name="email_sms"]').on('click', this.enterData);
-        $('#addSub').on('click', function (event) {
-                            if ($("#sms_data").is(":checked")){
-                                alert(1000);
+        $('#addSub').on('click', this.sendDataSub);
+    };
+
+    this.sendDataSub = function () {
+        if ($("#sms_data").is(":checked")){
+                                if (checkPhone($('#dataSub').val())){
+                                    alert(1000);
+                                }
+                                else {
+                                    alert(2000);
+                                }
                             }
                             else if ($("#email_data").is(":checked")){
-                                alert(2000);
+                                if (checkEmail($('#dataSub').val())){
+                                    alert(3000);
+                                }
+                                else {
+                                    alert(4000);
+                                }
                             }
                             else {
-                                alert(4000);
+                                alert(5000);
                             }
 
-                        });
-    };
-//Show window for login
+    }.bind(this);
+//Show window popup for login
     this.loginSub = function () {
         $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.id_sub);
         this.popup_is_login.modal('show');
     };
-//Show form for enter data sub and sub
+//Show form for enter data sub
     this.addDataSub = function () {
         this.popup_is_auth.modal('show');
     };
@@ -88,13 +100,14 @@ function SubServise(e, obj) {
                 }
             }
         };
-    this.checkEmail = function(email) {
+
+    function checkEmail(email) {
         var regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         return regex.test(email);
     };
     
-    this.checkPhone = function (phone) {
-        var regex = /^\([\d]{2,3}\)\ [\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/;
+    function checkPhone(phone) {
+        var regex = /^\([\d]{2,3}\)[\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/;
         return regex.test(phone);
     }
 }
