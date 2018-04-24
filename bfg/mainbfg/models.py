@@ -232,8 +232,6 @@ class ManagerSentences(models.Manager):
         else:
             return {'status':False}
 
-    def set_subscrabtions(self, pk):
-        pass
     """
     Work with users office sentences
     """

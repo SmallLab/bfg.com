@@ -52,7 +52,7 @@ function SubServise(e, obj) {
         if ($("#sms_data").is(":checked")){
                                 if (checkPhone($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    this.sendId();
+                                    this.sendIdSub(0);
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
@@ -61,7 +61,7 @@ function SubServise(e, obj) {
                             else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    alert(3000);
+                                    this.sendIdSub(1);
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
@@ -74,11 +74,12 @@ function SubServise(e, obj) {
 
     }.bind(this);
 
-    this.sendId = function () {
+    this.sendIdSub = function (type_sub) {
         $.get(
               "/sentence/addsub/",
               {
                   id_sub: this.id_sub,
+                  type:type_sub,
               },
               onAjaxSuccess
             );
@@ -88,7 +89,7 @@ function SubServise(e, obj) {
                     $('#sub_data_error').text(data.mes);
                 }
                 else {
-                    return 1000;
+                    return data.mes;
                 }
             };
             return onAjaxSuccess;

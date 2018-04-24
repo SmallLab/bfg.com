@@ -146,6 +146,10 @@ class AllTop(ListView):
 
 class AddSub(View):
     def get(self, request, *args, **kwargs):
-        if request.is_ajax():
-            data = {'status':True, 'mes':self.request.GET['id_sub']}
+        if request.is_ajax() and self.request.GET['type'] == '0':
+            data = {'status':True, 'mes':'Phone'}
+        elif request.is_ajax() and self.request.GET['type'] == '1':
+            data = {'status': True, 'mes': 'Email'}
+        else:
+            data = {'status': False, 'mes': 'Fail'}
         return JsonResponse(data)
