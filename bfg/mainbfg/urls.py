@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^sentence/.+_(?P<slug>.+)/$', views.ViewSentence.as_view(), name='detail'),
     url(r'^sentence/showphone/$', views.ShowPhone.as_view(), name='showphone'),
     # url(r'^registrations/$', vv.RegistrationUser, name='reristrations'),
+    url(r'^sentence/addsub/$', views.AddSub.as_view(), name='addsub'),
 ]

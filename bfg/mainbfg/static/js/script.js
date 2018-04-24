@@ -51,25 +51,48 @@ function SubServise(e, obj) {
     this.sendDataSub = function () {
         if ($("#sms_data").is(":checked")){
                                 if (checkPhone($('#dataSub').val())){
-                                    alert(1000);
+                                    $('#sub_data_error').text('');
+                                    this.sendId();
                                 }
                                 else {
-                                    alert(2000);
+                                    $('#sub_data_error').text('Введите корректный номер телефона');
                                 }
                             }
                             else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
+                                    $('#sub_data_error').text('');
                                     alert(3000);
                                 }
                                 else {
-                                    alert(4000);
+                                    $('#sub_data_error').text('Введите корректный адрес почты');
                                 }
                             }
                             else {
+                                $('#sub_data_error').text('Введите корректные данные');
                                 alert(5000);
                             }
 
     }.bind(this);
+
+    this.sendId = function () {
+        $.get(
+              "/sentence/addsub/",
+              {
+                  id_sub: this.id_sub,
+              },
+              onAjaxSuccess
+            );
+            function onAjaxSuccess(data)
+            {
+                if (data.status){
+                    $('#sub_data_error').text(data.mes);
+                }
+                else {
+                    return 1000;
+                }
+            };
+            return onAjaxSuccess;
+    };
 //Show window popup for login
     this.loginSub = function () {
         $('#enterSystem').attr('href', $('#enterSystem').attr('href')+'&id_sent='+this.id_sub);

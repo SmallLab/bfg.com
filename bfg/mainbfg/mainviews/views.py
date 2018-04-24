@@ -139,3 +139,13 @@ class AllTop(ListView):
 
     def get_queryset(self):
         return Sentence.objects.get_all_top_sent()
+
+"""
+    Class AddSub - add subscrabtions
+"""
+
+class AddSub(View):
+    def get(self, request, *args, **kwargs):
+        if request.is_ajax():
+            data = {'status':True, 'mes':self.request.GET['id_sub']}
+        return JsonResponse(data)
