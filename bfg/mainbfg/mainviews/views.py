@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import QueryDict
 
 from mainbfg.mainhelpers.modelhelpers import ModelHelpers
-from mainbfg.models import Sentence, Categories, TypeSentence
+from mainbfg.models import Sentence, Categories, TypeSentence, Subscription
 from mainbfg.forms import FilterSentencesForm
 
 """
@@ -146,10 +146,18 @@ class AllTop(ListView):
 
 class AddSub(View):
     def get(self, request, *args, **kwargs):
-        if request.is_ajax() and self.request.GET['type'] == '0':
-            data = {'status':True, 'mes':'Phone'}
-        elif request.is_ajax() and self.request.GET['type'] == '1':
-            data = {'status': True, 'mes': 'Email'}
+        if request.is_ajax() and self.request.GET['type_sub'] == '0':
+            if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
+                                                    int(self.request.GET['type_sub']), self.request.GET['data_type']):
+                data = {'status':True, 'mes':'Phone', 'd':self.request.GET['type_sub']}
+            else:
+                data = {'status': False, 'mes': 'Fail1'}
+        elif request.is_ajax() and self.request.GET['type_sub'] == '1':
+            if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
+                                                    int(self.request.GET['type_sub']), self.request.GET['data_type']):
+                data = {'status':True, 'mes':'Phone', 'd':self.request.GET['type_sub']}
+            else:
+                data = {'status': False, 'mes': 'Fail2'}
         else:
-            data = {'status': False, 'mes': 'Fail'}
+            data = {'status': False, 'mes': 'Fail3'}
         return JsonResponse(data)

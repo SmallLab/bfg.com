@@ -52,7 +52,7 @@ function SubServise(e, obj) {
         if ($("#sms_data").is(":checked")){
                                 if (checkPhone($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    this.sendIdSub(0);
+                                    this.sendIdSub(0, $('#dataSub').val());
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
@@ -61,7 +61,7 @@ function SubServise(e, obj) {
                             else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    this.sendIdSub(1);
+                                    this.sendIdSub(1, $('#dataSub').val());
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
@@ -69,17 +69,17 @@ function SubServise(e, obj) {
                             }
                             else {
                                 $('#sub_data_error').text('Введите корректные данные');
-                                alert(5000);
                             }
 
     }.bind(this);
 
-    this.sendIdSub = function (type_sub) {
+    this.sendIdSub = function (type_sub, data_type) {
         $.get(
               "/sentence/addsub/",
               {
                   id_sub: this.id_sub,
-                  type:type_sub,
+                  type_sub:type_sub,
+                  data_type:data_type,
               },
               onAjaxSuccess
             );
@@ -89,7 +89,7 @@ function SubServise(e, obj) {
                     $('#sub_data_error').text(data.mes);
                 }
                 else {
-                    return data.mes;
+                    return data.d;
                 }
             };
             return onAjaxSuccess;
