@@ -2,6 +2,8 @@ from django.db import models, IntegrityError
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from django.core.cache import cache
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 from mainbfg.mainhelpers import MainImgTypeField as MI
 #------------------------- TypeSentence Model -----------------------------------------------#
@@ -434,15 +436,20 @@ class ManageSubscription(models.Manager):
 
     def addSubscription(self, user_id, sub_user_id, type_sub, data_send):
         try:
+            if type_sub == 1:
+                try:
+                    validate_email(data_send)
+                except ValidationError:
+                    return {'status':False, 'mes':r'Введите корректный адрес почты!!!'}
             self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send)
-            return True
-        except IntegrityErro:
+            return {'status':True, 'mes':'Ok'}
+        except IntegrityError:
             return False
 
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscription')
     sub_user_id = models.IntegerField()
-    type_sub = models.SmallIntegerField(default=0)#type subscriptions - SMS - 1, Email - 0
+    type_sub = models.SmallIntegerField(default=0)#type subscriptions - SMS - 0, Email - 1
     time_create_sub = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     data_send = models.CharField(max_length=100)#Phone number or email

@@ -89,7 +89,7 @@ function SubServise(e, obj) {
                     $('#sub_data_error').text(data.mes);
                 }
                 else {
-                    return data.d;
+                    $('#sub_data_error').text(data.mes);
                 }
             };
             return onAjaxSuccess;
@@ -127,7 +127,7 @@ function SubServise(e, obj) {
 
     function checkEmail(email) {
         var regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-        return regex.test(email);
+        return true;
     };
     
     function checkPhone(phone) {
