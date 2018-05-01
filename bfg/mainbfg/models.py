@@ -436,13 +436,8 @@ class ManageSubscription(models.Manager):
 
     def addSubscription(self, user_id, sub_user_id, type_sub, data_send):
         try:
-            if type_sub == 1:
-                try:
-                    validate_email(data_send)
-                except ValidationError:
-                    return {'status':False, 'mes':r'Введите корректный адрес почты!!!'}
             self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send)
-            return {'status':True, 'mes':'Ok'}
+            return True
         except IntegrityError:
             return False
 

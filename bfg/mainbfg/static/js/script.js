@@ -29,6 +29,7 @@ window.onload = function() {
 * Subscription design
 * */
 $(document).on('click', '[data-id-sent]', function(event) {
+               delete sub;
                sub = new SubServise(event, $(this));
                sub.init();
             });
@@ -50,26 +51,31 @@ function SubServise(e, obj) {
 
     this.sendDataSub = function () {
         if ($("#sms_data").is(":checked")){
-                                if (checkPhone($('#dataSub').val())){
-                                    $('#sub_data_error').text('');
-                                    this.sendIdSub(0, $('#dataSub').val());
-                                }
-                                else {
+                               if (checkPhone($('#dataSub').val())){
+                                   $('#sub_data_error').text('');
+                                   this.sendIdSub(0, $('#dataSub').val());
+                                   delete this;
+                               }
+                               else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
-                                }
-                            }
-                            else if ($("#email_data").is(":checked")){
+                                    delete this;
+                               }
+                           }
+        else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
                                     this.sendIdSub(1, $('#dataSub').val());
+                                    delete this;
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
+                                    delete this;
                                 }
-                            }
-                            else {
-                                $('#sub_data_error').text('Введите корректные данные');
-                            }
+        }
+        else {
+            $('#sub_data_error').text('Введите корректные данные');
+            delete this;
+        }
 
     }.bind(this);
 
@@ -127,7 +133,7 @@ function SubServise(e, obj) {
 
     function checkEmail(email) {
         var regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-        return true;
+        return regex.test(email);
     };
     
     function checkPhone(phone) {
