@@ -33,9 +33,15 @@ window.onload = function() {
 * Subscription design
 * */
 $(document).on('click', '[data-id-sent]', function(event) {
-               sub = new SubServise(event, $(this));
-               sub.init();
-               });
+               if ($.inArray(+$(this).attr('data-id-sent'), data_sub.sub_list)== -1) {
+                   sub = new SubServise(event, $(this));
+                   sub.init();
+               }
+               else {
+                   alert('Вы уже подписаны на данного пользователя!!!');
+                   return false;
+               }
+           });
 
 //Add subscrabers for user
 function SubServise(e, obj) {
@@ -57,10 +63,17 @@ function SubServise(e, obj) {
         if ($("#sms_data").is(":checked")){
                                if (checkPhone($('#dataSub').val())){
                                    $('#sub_data_error').text('');
-                                   this.sendIdSub(0, $('#dataSub').val());
-                                   this.popup_is_auth.modal('hide');
-                                   this.popup_sub_ok.modal('show');
-                                   this.destroy();
+                                   if (this.sendIdSub(0, $('#dataSub').val())){
+                                       data_sub.sub_list.push(parseInt(this.id_sub));
+                                       this.popup_is_auth.modal('hide');
+                                       this.popup_sub_ok.modal('show');
+                                       this.destroy();
+                                       console.log(data_sub.sub_list);
+                                   }
+                                   else {
+                                       alert(1000);
+                                   }
+
                                }
                                else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
@@ -70,10 +83,16 @@ function SubServise(e, obj) {
         else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    this.sendIdSub(1, $('#dataSub').val());
-                                    this.popup_is_auth.modal('hide');
-                                    this.popup_sub_ok.modal('show');
-                                    this.destroy();
+                                    if (this.sendIdSub(1, $('#dataSub').val())){
+                                        data_sub.sub_list.push(parseInt(this.id_sub));
+                                        this.popup_is_auth.modal('hide');
+                                        this.popup_sub_ok.modal('show');
+                                        this.destroy();
+                                        console.log(data_sub.sub_list);
+                                    }
+                                   else {
+                                        alert(2000);
+                                    }
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
@@ -100,10 +119,12 @@ function SubServise(e, obj) {
             function onAjaxSuccess(data)
             {
                 if (data.status){
-                    $('#sub_data_error').text(data.mes);
+                    //$('#sub_data_error').text(data.mes);
+                    return true;
                 }
                 else {
-                    $('#sub_data_error').text(data.mes);
+                    //$('#sub_data_error').text(data.mes);
+                    return false;
                 }
             }
             return onAjaxSuccess;
@@ -165,4 +186,4 @@ function isSubscrabers() {
     if (data_sub.sub_id != 0) {
        $('[data-id-sent='+data_sub.sub_id+']')[0].click();
     }
-};
+}

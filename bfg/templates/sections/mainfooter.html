@@ -64,6 +64,12 @@
             {% else %}
                 sub_id:0,
             {% endif %}
+
+            {% if user.subscription %}
+                sub_list:[{% for id in user.subscription.all %} {{ id.sub_user_id }}, {% endfor %}],
+            {% else %}
+                sub_list:[],
+            {% endif %}
             };
         </script>
 </footer>

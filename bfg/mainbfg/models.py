@@ -2,8 +2,6 @@ from django.db import models, IntegrityError
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from django.core.cache import cache
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
 
 from mainbfg.mainhelpers import MainImgTypeField as MI
 #------------------------- TypeSentence Model -----------------------------------------------#
@@ -439,6 +437,12 @@ class ManageSubscription(models.Manager):
             self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send)
             return True
         except IntegrityError:
+            return False
+
+    def getuserlist(self, user_id):
+        try:
+           return Subscription.objects.only('sub_user_id')
+        except Subscription.DoesNotExist:
             return False
 
 class Subscription(models.Model):
