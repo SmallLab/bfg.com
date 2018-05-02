@@ -29,10 +29,9 @@ window.onload = function() {
 * Subscription design
 * */
 $(document).on('click', '[data-id-sent]', function(event) {
-               delete sub;
                sub = new SubServise(event, $(this));
                sub.init();
-            });
+               });
 
 //Add subscrabers for user
 function SubServise(e, obj) {
@@ -54,38 +53,40 @@ function SubServise(e, obj) {
                                if (checkPhone($('#dataSub').val())){
                                    $('#sub_data_error').text('');
                                    this.sendIdSub(0, $('#dataSub').val());
-                                   delete this;
+                                   this.popup_is_auth.modal('hide');
+                                   this.destroy();
                                }
                                else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
-                                    delete this;
+
                                }
                            }
         else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
                                     this.sendIdSub(1, $('#dataSub').val());
-                                    delete this;
+                                    this.popup_is_auth.modal('hide');
+                                    this.destroy();
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
-                                    delete this;
+
                                 }
         }
         else {
             $('#sub_data_error').text('Введите корректные данные');
-            delete this;
+
         }
 
     }.bind(this);
 
     this.sendIdSub = function (type_sub, data_type) {
-        $.get(
+            $.get(
               "/sentence/addsub/",
               {
                   id_sub: this.id_sub,
                   type_sub:type_sub,
-                  data_type:data_type,
+                  data_type:data_type
               },
               onAjaxSuccess
             );
@@ -97,7 +98,7 @@ function SubServise(e, obj) {
                 else {
                     $('#sub_data_error').text(data.mes);
                 }
-            };
+            }
             return onAjaxSuccess;
     };
 //Show window popup for login
@@ -129,21 +130,32 @@ function SubServise(e, obj) {
                     $('#dataSub').attr('placeholder', 'Введите EMAIL');
                 }
             }
-        };
+        }
 
     function checkEmail(email) {
         var regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         return regex.test(email);
-    };
+    }
     
     function checkPhone(phone) {
         var regex = /^\([\d]{2,3}\)[\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/;
         return regex.test(phone);
     }
+
+    this.destroy = function(){
+        this.init = null;
+        this.id_sub = null;
+        this.sendDataSub = function () {
+            return null;
+        };
+        this.sendIdSub = function () {
+            return null;
+        };
+    }
 }
 //Show modal window for enter data sub when user is auth and wath redirect for prew page
 function isSubscrabers() {
     if (data_sub.sub_id != 0) {
-       $('[data-id-sent='+data_sub.sub_id+']').click();
+       $('[data-id-sent='+data_sub.sub_id+']')[0].click();
     }
 };
