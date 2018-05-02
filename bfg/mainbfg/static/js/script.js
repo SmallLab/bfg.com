@@ -10,7 +10,7 @@ window.onload = function() {
 		if ( window.pageYOffset > 0 ) {
 			$('#scrollup').fadeIn("slow");
 		} else {
-			$('#scrollup').fadeOut("slow");;
+			$('#scrollup').fadeOut("slow");
 		}
 	};
 	$('[data-toggle="tooltip"]').tooltip();
@@ -21,6 +21,10 @@ window.onload = function() {
 
     $('#cancelSub').click(function () {
         $('#myModalSub').modal('hide');
+    });
+
+    $('#myModalSubOk').click(function () {
+        $('#myModalSubOk').modal('hide');
     });
 	isSubscrabers();
 };
@@ -40,6 +44,7 @@ function SubServise(e, obj) {
     this.id_sub = this.obj.attr('data-id-sent');
     this.popup_is_auth = $('#myModalSub');
     this.popup_is_login = $('#myModalSubLogin');
+    this.popup_sub_ok = $('#myModalSubOk');
     this.is_auth_status = data_sub.is_auth;
     this.init = function () {
         this.e.preventDefault();
@@ -54,6 +59,7 @@ function SubServise(e, obj) {
                                    $('#sub_data_error').text('');
                                    this.sendIdSub(0, $('#dataSub').val());
                                    this.popup_is_auth.modal('hide');
+                                   this.popup_sub_ok.modal('show');
                                    this.destroy();
                                }
                                else {
@@ -66,6 +72,7 @@ function SubServise(e, obj) {
                                     $('#sub_data_error').text('');
                                     this.sendIdSub(1, $('#dataSub').val());
                                     this.popup_is_auth.modal('hide');
+                                    this.popup_sub_ok.modal('show');
                                     this.destroy();
                                 }
                                 else {
