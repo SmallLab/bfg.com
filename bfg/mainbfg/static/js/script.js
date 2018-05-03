@@ -63,17 +63,12 @@ function SubServise(e, obj) {
         if ($("#sms_data").is(":checked")){
                                if (checkPhone($('#dataSub').val())){
                                    $('#sub_data_error').text('');
-                                   if (this.sendIdSub(0, $('#dataSub').val())){
-                                       data_sub.sub_list.push(parseInt(this.id_sub));
-                                       this.popup_is_auth.modal('hide');
-                                       this.popup_sub_ok.modal('show');
-                                       this.destroy();
-                                       console.log(data_sub.sub_list);
-                                   }
-                                   else {
-                                       alert('Ошибка!!!Попробуйте позже!');
-                                   }
-
+                                   this.sendIdSub(0, $('#dataSub').val());
+                                   data_sub.sub_list.push(parseInt(this.id_sub));
+                                   this.popup_is_auth.modal('hide');
+                                   this.popup_sub_ok.modal('show');
+                                   this.destroy();
+                                   console.log(data_sub.sub_list);
                                }
                                else {
                                     $('#sub_data_error').text('Введите корректный номер телефона');
@@ -83,16 +78,12 @@ function SubServise(e, obj) {
         else if ($("#email_data").is(":checked")){
                                 if (checkEmail($('#dataSub').val())){
                                     $('#sub_data_error').text('');
-                                    if (this.sendIdSub(1, $('#dataSub').val())){
-                                        data_sub.sub_list.push(parseInt(this.id_sub));
-                                        this.popup_is_auth.modal('hide');
-                                        this.popup_sub_ok.modal('show');
-                                        this.destroy();
-                                        console.log(data_sub.sub_list);
-                                    }
-                                   else {
-                                        alert('Ошибка!!!Попробуйте позже!');
-                                    }
+                                    this.sendIdSub(1, $('#dataSub').val());
+                                    data_sub.sub_list.push(parseInt(this.id_sub));
+                                    this.popup_is_auth.modal('hide');
+                                    this.popup_sub_ok.modal('show');
+                                    this.destroy();
+                                    console.log(data_sub.sub_list);
                                 }
                                 else {
                                     $('#sub_data_error').text('Введите корректный адрес почты');
@@ -101,9 +92,7 @@ function SubServise(e, obj) {
         }
         else {
             $('#sub_data_error').text('Введите корректные данные');
-
         }
-
     }.bind(this);
 
     this.sendIdSub = function (type_sub, data_type) {
@@ -119,11 +108,10 @@ function SubServise(e, obj) {
             function onAjaxSuccess(data)
             {
                 if (data.status){
-                    //$('#sub_data_error').text(data.mes);
                     return true;
                 }
                 else {
-                    //$('#sub_data_error').text(data.mes);
+                    alert('Ошибка!!!Попробуйте позже!!!');
                     return false;
                 }
             }
@@ -173,12 +161,11 @@ function SubServise(e, obj) {
     this.destroy = function(){
         this.init = null;
         this.id_sub = null;
-        this.sendDataSub = function () {
-            return null;
-        };
+        this.sendDataSub = undefined;
         this.sendIdSub = function () {
-            return null;
+            return undefined;
         };
+        console.log(this);
     }
 }
 //Show modal window for enter data sub when user is auth and wath redirect for prew page
@@ -186,8 +173,11 @@ function isSubscrabers() {
     if (data_sub.sub_id != 0 && $.inArray(+data_sub.sub_id, data_sub.sub_list) == -1) {
        $('[data-id-sent='+data_sub.sub_id+']')[0].click();
     }
+    else if (data_sub.sub_id == 0){
+        return false;
+    }
     else {
-        alert('Вы уже подписаны на данного пользователя!!!!');
+        alert('Вы уже подписаны на данного пользователя!!!');
         return false;
     }
 }
