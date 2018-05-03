@@ -48,6 +48,7 @@ function SubServise(e, obj) {
     this.e = e;
     this.obj = obj;
     this.id_sub = this.obj.attr('data-id-sent');
+    this.autor = this.obj.attr('data-autor-sent');
     this.popup_is_auth = $('#myModalSub');
     this.popup_is_login = $('#myModalSubLogin');
     this.popup_sub_ok = $('#myModalSubOk');
@@ -67,11 +68,13 @@ function SubServise(e, obj) {
                                    this.sendIdSub(0, $('#dataSub').val());
                                    data_sub.sub_list.push(parseInt(this.id_sub));
                                    this.popup_is_auth.modal('hide');
+                                   $('#autor_sent_ok').text(this.autor);
                                    this.popup_sub_ok.modal('show');
                                    this.destroy();
                                    console.log(data_sub.sub_list);
                                }
                                else {
+                                    $('#hellopreloader_preload_sub').css({'display':'none'});
                                     $('#sub_data_error').text('Введите корректный номер телефона');
 
                                }
@@ -82,16 +85,19 @@ function SubServise(e, obj) {
                                     this.sendIdSub(1, $('#dataSub').val());
                                     data_sub.sub_list.push(parseInt(this.id_sub));
                                     this.popup_is_auth.modal('hide');
+                                    $('#autor_sent_ok').text(this.autor);
                                     this.popup_sub_ok.modal('show');
                                     this.destroy();
                                     console.log(data_sub.sub_list);
                                 }
                                 else {
+                                    $('#hellopreloader_preload_sub').css({'display':'none'});
                                     $('#sub_data_error').text('Введите корректный адрес почты');
 
                                 }
         }
         else {
+            $('#hellopreloader_preload_sub').css({'display':'none'});
             $('#sub_data_error').text('Введите корректные данные');
         }
     }.bind(this);
@@ -126,6 +132,7 @@ function SubServise(e, obj) {
     };
 //Show form for enter data sub
     this.addDataSub = function () {
+        $('#autor_sent').text(this.autor);
         this.popup_is_auth.modal('show');
     };
 //Enter data for sub
@@ -167,6 +174,8 @@ function SubServise(e, obj) {
         this.sendIdSub = function () {
             return undefined;
         };
+        //$('#autor_sent_ok').text('');
+        $('#autor_sent').text('');
         console.log(this);
     }
 }

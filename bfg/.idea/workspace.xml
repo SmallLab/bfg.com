@@ -7,11 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/alltopsentences.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/alltopsentences.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/categorypage.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/categorypage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/filtersent.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/filtersent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" afterPath="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/static/js/script.js" afterPath="$PROJECT_DIR$/mainbfg/static/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sections/mainfooter.html" afterPath="$PROJECT_DIR$/templates/sections/mainfooter.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -121,11 +118,10 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+            <state relative-caret-position="585">
+              <caret line="99" column="69" lean-forward="false" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
               <folding>
-                <element signature="e#4289#4435#0" expanded="false" />
-                <element signature="e#4502#4551#0" expanded="false" />
+                <element signature="e#4745#4891#0" expanded="false" />
                 <element signature="n#!!block;n#enterData#0;n#!!block;n#SubServise#0" expanded="false" />
                 <element signature="n#!!block;n#checkEmail#0;n#!!block;n#SubServise#0" expanded="false" />
                 <element signature="n#!!block;n#checkPhone#0;n#!!block;n#SubServise#0" expanded="false" />
@@ -137,12 +133,11 @@
       <file leaf-file-name="mainfooter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="146" column="70" lean-forward="false" selection-start-line="146" selection-start-column="70" selection-end-line="146" selection-end-column="70" />
+            <state relative-caret-position="516">
+              <caret line="133" column="108" lean-forward="false" selection-start-line="133" selection-start-column="108" selection-end-line="133" selection-end-column="108" />
               <folding>
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#em#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#em#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -225,14 +220,14 @@
         <option value="$PROJECT_DIR$/mainbfg/urls.py" />
         <option value="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
         <option value="$PROJECT_DIR$/userswork/templates/addsentens.html" />
-        <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
-        <option value="$PROJECT_DIR$/mainbfg/static/js/script.js" />
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/mainbfg/templates/sentences/alltopsentences.html" />
         <option value="$PROJECT_DIR$/mainbfg/templates/sentences/categorypage.html" />
         <option value="$PROJECT_DIR$/mainbfg/templates/sentences/filtersent.html" />
         <option value="$PROJECT_DIR$/mainbfg/templates/sentences/viewsentence.html" />
+        <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
+        <option value="$PROJECT_DIR$/mainbfg/static/js/script.js" />
       </list>
     </option>
   </component>
@@ -314,20 +309,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="bfg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bfg" />
@@ -688,13 +669,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00134" summary="Category page">
-      <created>1518196172392</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1518196172392</updated>
-    </task>
     <task id="LOCAL-00135" summary="Category page">
       <created>1518198756732</created>
       <option name="number" value="00135" />
@@ -1031,7 +1005,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525335172725</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="Subscration with login/register">
+      <created>1525335954328</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1525335954328</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1511,18 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="146" column="70" lean-forward="false" selection-start-line="146" selection-start-column="70" selection-end-line="146" selection-end-column="70" />
-          <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1556,13 +1525,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="133" column="108" lean-forward="false" selection-start-line="133" selection-start-column="108" selection-end-line="133" selection-end-column="108" />
+          <folding>
+            <element signature="n#style#0;n#em#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        <state relative-caret-position="585">
+          <caret line="99" column="69" lean-forward="false" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
           <folding>
-            <element signature="e#4289#4435#0" expanded="false" />
-            <element signature="e#4502#4551#0" expanded="false" />
+            <element signature="e#4745#4891#0" expanded="false" />
             <element signature="n#!!block;n#enterData#0;n#!!block;n#SubServise#0" expanded="false" />
             <element signature="n#!!block;n#checkEmail#0;n#!!block;n#SubServise#0" expanded="false" />
             <element signature="n#!!block;n#checkPhone#0;n#!!block;n#SubServise#0" expanded="false" />
