@@ -71,7 +71,7 @@ function SubServise(e, obj) {
                                        console.log(data_sub.sub_list);
                                    }
                                    else {
-                                       alert(1000);
+                                       alert('Ошибка!!!Попробуйте позже!');
                                    }
 
                                }
@@ -91,7 +91,7 @@ function SubServise(e, obj) {
                                         console.log(data_sub.sub_list);
                                     }
                                    else {
-                                        alert(2000);
+                                        alert('Ошибка!!!Попробуйте позже!');
                                     }
                                 }
                                 else {
@@ -166,7 +166,7 @@ function SubServise(e, obj) {
     }
     
     function checkPhone(phone) {
-        var regex = /^\([\d]{2,3}\)[\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/;
+        var regex = /^\([\d]{2,3}\)[\d]{2,3}-[\d]{2}-[\d]{2}$/;
         return regex.test(phone);
     }
 
@@ -183,7 +183,11 @@ function SubServise(e, obj) {
 }
 //Show modal window for enter data sub when user is auth and wath redirect for prew page
 function isSubscrabers() {
-    if (data_sub.sub_id != 0) {
+    if (data_sub.sub_id != 0 && $.inArray(+data_sub.sub_id, data_sub.sub_list) == -1) {
        $('[data-id-sent='+data_sub.sub_id+']')[0].click();
+    }
+    else {
+        alert('Вы уже подписаны на данного пользователя!!!!');
+        return false;
     }
 }
