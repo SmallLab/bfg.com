@@ -38,7 +38,7 @@ $(document).on('click', '[data-id-sent]', function(event) {
                    sub.init();
                }
                else {
-                   alert('Вы уже подписаны на данного пользователя!!!');
+                   alert('Вы уже подписаны на данного автора!!!');
                    return false;
                }
            });
@@ -60,6 +60,7 @@ function SubServise(e, obj) {
     };
 
     this.sendDataSub = function () {
+        $('#hellopreloader_preload_sub').css({'display':'block', 'opacity': '0.5'});
         if ($("#sms_data").is(":checked")){
                                if (checkPhone($('#dataSub').val())){
                                    $('#sub_data_error').text('');
@@ -108,6 +109,7 @@ function SubServise(e, obj) {
             function onAjaxSuccess(data)
             {
                 if (data.status){
+                    $('#hellopreloader_preload_sub').css({'display':'none'});
                     return true;
                 }
                 else {
@@ -177,7 +179,7 @@ function isSubscrabers() {
         return false;
     }
     else {
-        alert('Вы уже подписаны на данного пользователя!!!');
+        alert('Вы уже подписаны на данного автора!!!');
         return false;
     }
 }

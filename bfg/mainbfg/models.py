@@ -266,7 +266,8 @@ class ManagerSentences(models.Manager):
 
     def active_sentence(self, pk):
         edit_data = Sentence.objects.get(pk=pk)
-        edit_data.status = 1
+        edit_data.status = False
+        edit_data.on_moderation = False
         edit_data.save()
         return None
 
@@ -441,7 +442,7 @@ class ManageSubscription(models.Manager):
 
     def getuserlist(self, user_id):
         try:
-           return Subscription.objects.only('sub_user_id')
+            return Subscription.objects.only('sub_user_id')
         except Subscription.DoesNotExist:
             return False
 
