@@ -119,15 +119,15 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="210" column="47" lean-forward="false" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
+            <state relative-caret-position="357">
+              <caret line="150" column="42" lean-forward="false" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
               <folding>
+                <element signature="e#1768#4004#0" expanded="false" />
                 <element signature="e#4070#4721#0" expanded="false" />
                 <element signature="e#4785#4931#0" expanded="false" />
-                <element signature="e#4998#5142#0" expanded="false" />
                 <element signature="n#!!block;n#checkEmail#0;n#!!block;n#SubServise#0" expanded="false" />
                 <element signature="n#!!block;n#checkPhone#0;n#!!block;n#SubServise#0" expanded="false" />
-                <element signature="e#6380#6661#0" expanded="false" />
+                <element signature="e#6615#6896#0" expanded="false" />
                 <element signature="n#!!block;n#isSubscrabers#0" expanded="false" />
               </folding>
             </state>
@@ -137,8 +137,8 @@
       <file leaf-file-name="mainfooter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="87" column="59" lean-forward="false" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="59" />
+            <state relative-caret-position="140">
+              <caret line="96" column="84" lean-forward="false" selection-start-line="96" selection-start-column="84" selection-end-line="96" selection-end-column="84" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -672,13 +672,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00136" summary="Filter page">
-      <created>1518207703110</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1518207703110</updated>
-    </task>
     <task id="LOCAL-00137" summary="Filter page">
       <created>1518291802398</created>
       <option name="number" value="00137" />
@@ -1015,7 +1008,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525337050142</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="Subscration with login/register">
+      <created>1525425060637</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1525425060638</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1523,8 +1523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="87" column="59" lean-forward="false" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="59" />
+        <state relative-caret-position="140">
+          <caret line="96" column="84" lean-forward="false" selection-start-line="96" selection-start-column="84" selection-end-line="96" selection-end-column="84" />
           <folding>
             <element signature="n#style#0;n#input#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1533,15 +1533,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="210" column="47" lean-forward="false" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
+        <state relative-caret-position="357">
+          <caret line="150" column="42" lean-forward="false" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
           <folding>
+            <element signature="e#1768#4004#0" expanded="false" />
             <element signature="e#4070#4721#0" expanded="false" />
             <element signature="e#4785#4931#0" expanded="false" />
-            <element signature="e#4998#5142#0" expanded="false" />
             <element signature="n#!!block;n#checkEmail#0;n#!!block;n#SubServise#0" expanded="false" />
             <element signature="n#!!block;n#checkPhone#0;n#!!block;n#SubServise#0" expanded="false" />
-            <element signature="e#6380#6661#0" expanded="false" />
+            <element signature="e#6615#6896#0" expanded="false" />
             <element signature="n#!!block;n#isSubscrabers#0" expanded="false" />
           </folding>
         </state>

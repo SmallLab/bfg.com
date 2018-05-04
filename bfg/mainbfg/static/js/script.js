@@ -140,12 +140,15 @@ function SubServise(e, obj) {
     };
 //Enter data for sub
     function enterData() {
+            $('#dataSub').show();
             if ($(this).attr('id') == 'sms_data'){
                 if(data_sub.phone){
                     $('#dataSub').val(data_sub.phone);
                 }
                 else {
-                    $('#dataSub').val('(');
+                    $('#sub_data_error').text('');
+                    $('#phone_data_help').show();
+                    $('#dataSub').val('');
                     $('#dataSub').attr('placeholder', 'Введите телефон (999)123-45-67');
                     document.getElementById("dataSub").focus();
                 }
@@ -155,6 +158,8 @@ function SubServise(e, obj) {
                     $('#dataSub').val(data_sub.email);
                 }
                 else {
+                    $('#sub_data_error').text('');
+                    $('#phone_data_help').hide();
                     $('#dataSub').val('');
                     $('#dataSub').attr('placeholder', 'Введите EMAIL');
                     document.getElementById("dataSub").focus();
@@ -198,20 +203,27 @@ function isSubscrabers() {
     }
 }
 
-$('[name="email_sms"]').click(function () {
-    $('#dataSub').show();
-})
-
 //enter phone for sub
 $('#dataSub').keydown(function (e) {
     if ($("#sms_data").is(":checked")){
         if ($(this).val().length == 0){
            $(this).val('(');
         }
-        if ($.inArray(e.keyCode, keyboardMap) == -1){
+        if ($.inArray(e.keyCode, keyboardMap) == -1 || $(this).val().length == 14 && e.keyCode != 46 && e.keyCode != 8){
             return false;
+        }
+        else {
+            if ($(this).val().length == 4 && e.keyCode != 8 && e.keyCode != 46){
+                $(this).val($(this).val()+')');
+            }
+            else if ($(this).val().length == 8 && e.keyCode != 8 && e.keyCode != 46){
+                $(this).val($(this).val()+'-');
+            }
+            else if ($(this).val().length == 11 && e.keyCode != 8 && e.keyCode != 46){
+                $(this).val($(this).val()+'-');
+            }
         }
     }
 });
 
-var keyboardMap = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+var keyboardMap = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 8, 46];
