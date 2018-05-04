@@ -21,12 +21,14 @@ window.onload = function() {
 
     $('#cancelSub').click(function () {
         $('#myModalSub').modal('hide');
+        $('#sub_data_error').text('');
     });
 
     $('#myModalSubOk').click(function () {
         $('#myModalSubOk').modal('hide');
     });
 	isSubscrabers();
+
 };
 
 /*
@@ -134,6 +136,7 @@ function SubServise(e, obj) {
     this.addDataSub = function () {
         $('#autor_sent').text(this.autor);
         this.popup_is_auth.modal('show');
+        document.getElementById("dataSub").focus();
     };
 //Enter data for sub
     function enterData() {
@@ -142,8 +145,9 @@ function SubServise(e, obj) {
                     $('#dataSub').val(data_sub.phone);
                 }
                 else {
-                    $('#dataSub').val('');
+                    $('#dataSub').val('(');
                     $('#dataSub').attr('placeholder', 'Введите телефон (999)123-45-67');
+                    document.getElementById("dataSub").focus();
                 }
             }
             else{
@@ -153,6 +157,7 @@ function SubServise(e, obj) {
                 else {
                     $('#dataSub').val('');
                     $('#dataSub').attr('placeholder', 'Введите EMAIL');
+                    document.getElementById("dataSub").focus();
                 }
             }
         }
@@ -192,3 +197,21 @@ function isSubscrabers() {
         return false;
     }
 }
+
+$('[name="email_sms"]').click(function () {
+    $('#dataSub').show();
+})
+
+//enter phone for sub
+$('#dataSub').keydown(function (e) {
+    if ($("#sms_data").is(":checked")){
+        if ($(this).val().length == 0){
+           $(this).val('(');
+        }
+        if ($.inArray(e.keyCode, keyboardMap) == -1){
+            return false;
+        }
+    }
+});
+
+var keyboardMap = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
