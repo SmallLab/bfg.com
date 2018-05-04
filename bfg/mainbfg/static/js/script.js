@@ -203,7 +203,7 @@ function isSubscrabers() {
     }
 }
 
-//enter phone for sub
+//enter phone for sub(helper for users)
 $('#dataSub').keydown(function (e) {
     if ($("#sms_data").is(":checked")){
         if ($(this).val().length == 0){
