@@ -520,11 +520,110 @@
                     <div role="tabpanel" class="tab-pane {% if active_tab == 'subscribers' %} active {% endif %}" id="settings">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs nav-tabs-sub" role="tablist">
-                            <li role="presentation" class="active"><a href="#home-sub-3" aria-controls="home" role="tab" data-toggle="tab">Подписчики</a></li>
-                            <li role="presentation"><a href="#profile-sub-2" aria-controls="profile" role="tab" data-toggle="tab">Подписки</a></li>
+                            <li role="presentation" class="active"><a href="#profile-sub-2" aria-controls="profile" role="tab" data-toggle="tab">Подписки</a></li>
+                            <li role="presentation"><a href="#home-sub-3" aria-controls="home" role="tab" data-toggle="tab">Подписчики</a></li>
                         </ul>
                         <div class="tab-content tab-content-sub">
-                            <div role="tabpanel" class="tab-pane tab-pane-gray-lighten active" id="home-sub-3">
+                            <div role="tabpanel" class="tab-pane tab-pane-gray-lighten active" id="profile-sub-2">
+                                <div class="top-toolbar-custom">
+                                    <label for="type-sub-2">Тип подписки:</label>
+                                    <select class="form-control" id="type-sub-2">
+                                        <option>Все</option>
+                                        <option>Все 2</option>
+                                        <option>Все 3<option>
+                                    </select>
+                                </div>
+                                <table class="table table-responsive table-products table-subs table-subs-mod">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="checkbox checkbox-left">
+                                                <label>
+                                                    <input type="checkbox">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>Автор</th>
+                                        <th>Тип подписки</th>
+                                        <th></th>
+                                        <th>
+                                            <a href="#">
+                                                <span>Дата</span>
+                                                <span class="icon fa fa-chevron-down"></span>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for sub in user.subscription.all %}
+                                        <tr>
+                                        <th scope="row">
+                                            <div class="checkbox checkbox-left">
+                                                <label>
+                                                    <input type="checkbox">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <div class="table-subs-title">магазин</div>
+                                            <a href="#">
+                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
+                                            </a>
+                                        </td>
+                                        <td>SMS</td>
+                                        <td>
+                                            <ul class="list-inline list-inline-products">
+                                                <li><a href="#" class="edit">
+                                                    <span class="icon fa fa-sign-out"></span>
+                                                    <span>Просмотр профиля</span>
+                                                </a></li>
+                                                <li><a href="#" class="deactivate">
+                                                    <span class="icon fa fa-remove"></span>
+                                                    <span>Деактивировать</span>
+                                                </a></li>
+                                                <li><a href="#" class="delete">
+                                                    <span class="icon fa fa-remove"></span>
+                                                    <span>Удалить</span>
+                                                </a></li>
+                                            </ul>
+                                        </td>
+                                        <td>29.12.16</td>
+                                    </tr>
+                                    {% empty %}
+                                        11111111111111111
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <ul class="list-inline pagination-product">
+                                    <li class="pagination-product-prev">
+                                        <a href="#">
+                                            <span class="icon fa fa-angle-double-left"></span>
+                                            <span>Назад</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">11</a></li>
+                                    <li><a href="#">12</a></li>
+                                    <li><a href="#">......</a></li>
+                                    <li><a href="#">200</a></li>
+                                    <li class="pagination-product-next">
+                                        <a href="#">
+                                            <span>Вперед</span>
+                                            <span class="icon fa fa-angle-double-right"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane tab-pane-gray-lighten" id="home-sub-3">
                                 <div class="top-toolbar-custom">
                                     <label for="type-sub">Тип подписки:</label>
                                     <select class="form-control" id="type-sub">
@@ -657,134 +756,6 @@
                                         </td>
                                         <td>groovy-12</td>
                                         <td>E-MAIL</td>
-                                        <td>29.12.16</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <ul class="list-inline pagination-product">
-                                    <li class="pagination-product-prev">
-                                        <a href="#">
-                                            <span class="icon fa fa-angle-double-left"></span>
-                                            <span>Назад</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                    <li><a href="#">7</a></li>
-                                    <li><a href="#">8</a></li>
-                                    <li><a href="#">9</a></li>
-                                    <li><a href="#">10</a></li>
-                                    <li><a href="#">11</a></li>
-                                    <li><a href="#">12</a></li>
-                                    <li><a href="#">......</a></li>
-                                    <li><a href="#">200</a></li>
-                                    <li class="pagination-product-next">
-                                        <a href="#">
-                                            <span>Вперед</span>
-                                            <span class="icon fa fa-angle-double-right"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div role="tabpanel" class="tab-pane tab-pane-gray-lighten" id="profile-sub-2">
-                                <div class="top-toolbar-custom">
-                                    <label for="type-sub-2">Тип подписки:</label>
-                                    <select class="form-control" id="type-sub-2">
-                                        <option>Все</option>
-                                        <option>Все 2</option>
-                                        <option>Все 3<option>
-                                    </select>
-                                </div>
-                                <table class="table table-responsive table-products table-subs table-subs-mod">
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <th>Клиент</th>
-                                        <th>Тип подписки</th>
-                                        <th></th>
-                                        <th>
-                                            <a href="#">
-                                                <span>Дата</span>
-                                                <span class="icon fa fa-chevron-down"></span>
-                                            </a>
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="table-subs-title">магазин</div>
-                                            <a href="#">
-                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
-                                            </a>
-                                        </td>
-                                        <td>SMS</td>
-                                        <td>
-                                            <ul class="list-inline list-inline-products">
-                                                <li><a href="#" class="edit">
-                                                    <span class="icon fa fa-sign-out"></span>
-                                                    <span>Просмотр профиля</span>
-                                                </a></li>
-                                                <li><a href="#" class="deactivate">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Деактивировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="delete">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Удалить</span>
-                                                </a></li>
-                                            </ul>
-                                        </td>
-                                        <td>29.12.16</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="table-subs-title">магазин</div>
-                                            <a href="#">
-                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
-                                            </a>
-                                        </td>
-                                        <td>E-MAIL</td>
-                                        <td>
-                                            <ul class="list-inline list-inline-products">
-                                                <li><a href="#" class="edit">
-                                                    <span class="icon fa fa-sign-out"></span>
-                                                    <span>Просмотр профиля</span>
-                                                </a></li>
-                                                <li><a href="#" class="deactivate">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Деактивировать</span>
-                                                </a></li>
-                                                <li><a href="#" class="delete">
-                                                    <span class="icon fa fa-remove"></span>
-                                                    <span>Удалить</span>
-                                                </a></li>
-                                            </ul>
-                                        </td>
                                         <td>29.12.16</td>
                                     </tr>
                                     </tbody>
