@@ -110,7 +110,8 @@ function SubServise(e, obj) {
               {
                   id_sub: this.id_sub,
                   type_sub:type_sub,
-                  data_type:data_type
+                  data_type:data_type,
+                  autor:this.autor
               },
               onAjaxSuccess
             );

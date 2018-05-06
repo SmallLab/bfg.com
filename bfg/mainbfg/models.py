@@ -433,9 +433,9 @@ class Profile(models.Model):
 #-------------------------------- Subscription Model -------------------------------------------#
 class ManageSubscription(models.Manager):
 
-    def addSubscription(self, user_id, sub_user_id, type_sub, data_send):
+    def addSubscription(self, user_id, sub_user_id, type_sub, data_send, autor):
         try:
-            self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send)
+            self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send, autor=autor)
             return True
         except IntegrityError:
             return False
@@ -453,6 +453,7 @@ class Subscription(models.Model):
     time_create_sub = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     data_send = models.CharField(max_length=100)#Phone number or email
+    autor = models.CharField(max_length=100)
     objects = ManageSubscription()
 
 #-------------------------------- Subscriber Model -------------------------------------------#

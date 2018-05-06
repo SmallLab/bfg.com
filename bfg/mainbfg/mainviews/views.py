@@ -148,13 +148,13 @@ class AddSub(View):
     def get(self, request, *args, **kwargs):
         if request.is_ajax() and self.request.GET['type_sub'] == '0':
             if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
-                                                    int(self.request.GET['type_sub']), self.request.GET['data_type']):
+                                                    int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
                 data = {'status':True, 'mes':'Phone', 'd':self.request.GET['type_sub']}
             else:
                 data = {'status': False, 'mes': 'Fail1'}
         elif request.is_ajax() and self.request.GET['type_sub'] == '1':
             if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
-                                                    int(self.request.GET['type_sub']), self.request.GET['data_type']):
+                                                    int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
                 data = {'status':True, 'mes':'Email', 'd':self.request.GET['type_sub']}
             else:
                 data = {'status': False, 'mes': 'Fail2'}

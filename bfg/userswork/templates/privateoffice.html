@@ -17,8 +17,8 @@
                 <ul class="nav nav-tabs nav-tabs-mod" role="tablist">
                     <li role="presentation" {% if active_tab == 'sent' %}class="active" {% endif %}><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Мои предложения</a></li>
                     <li role="presentation" {% if active_tab == 'payment' %}class="active" {% endif %}><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Платежи</a></li>
-                    <li role="presentation" {% if active_tab == 'settings' %}class="active" {% endif %}><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Настройки</a></li>
-                    <li role="presentation" {% if active_tab == 'subscribers' %}class="active" {% endif %}><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Подписки</a></li>
+                    <li role="presentation" {% if active_tab == 'settings' %}class="active" {% endif %}><a href="#settings" aria-controls="messages" role="tab" data-toggle="tab">Настройки</a></li>
+                    <li role="presentation" {% if active_tab == 'subscribers' %}class="active" {% endif %}><a href="#subscribers" aria-controls="settings" role="tab" data-toggle="tab">Подписки</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -351,7 +351,7 @@
                             </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane tab-pane-gray {% if active_tab == 'settings' %} active {% endif %}" id="messages">
+                    <div role="tabpanel" class="tab-pane tab-pane-gray {% if active_tab == 'settings' %} active {% endif %}" id="settings">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
@@ -517,7 +517,7 @@
                             </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane {% if active_tab == 'subscribers' %} active {% endif %}" id="settings">
+                    <div role="tabpanel" class="tab-pane {% if active_tab == 'subscribers' %} active {% endif %}" id="subscribers">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs nav-tabs-sub" role="tablist">
                             <li role="presentation" class="active"><a href="#profile-sub-2" aria-controls="profile" role="tab" data-toggle="tab">Подписки</a></li>
@@ -565,12 +565,14 @@
                                             </div>
                                         </th>
                                         <td>
-                                            <div class="table-subs-title">магазин</div>
-                                            <a href="#">
-                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
-                                            </a>
+                                            <div class="table-subs-title">{{ sub.autor }}</div>
+{#                                            <a href="#">#}
+{#                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">#}
+{#                                            </a>#}
                                         </td>
-                                        <td>SMS</td>
+                                        <td>
+                                            {% if sub.type_sub == 0 %} SMS {% else %} EMAIL {% endif %}
+                                        </td>
                                         <td>
                                             <ul class="list-inline list-inline-products">
                                                 <li><a href="#" class="edit">
@@ -587,7 +589,7 @@
                                                 </a></li>
                                             </ul>
                                         </td>
-                                        <td>29.12.16</td>
+                                        <td>{{ sub.time_create_sub|date:"d m Y" }}</td>
                                     </tr>
                                     {% empty %}
                                         11111111111111111
