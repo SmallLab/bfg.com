@@ -264,6 +264,3 @@ class DeactiveActiveSub(LoginRequiredMixin, View):
             return JsonResponse(data)
         else:
             return JsonResponse({'status':False})
-
-class GetModalLogin(View):
-    pass

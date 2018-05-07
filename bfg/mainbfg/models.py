@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models, IntegrityError
 from django.contrib.auth.models import User
 from django.forms import ModelForm
@@ -453,9 +455,11 @@ class ManageSubscription(models.Manager):
         se = Subscription.objects.get(pk=pk)
         if se.is_active:
             se.is_active = False
+            se.time_create_sub = datetime.now()
             data = {"status": False}
         else:
             se.is_active = True
+            se.time_create_sub = datetime.now()
             data = {"status": True}
         se.save()
         return data
@@ -469,11 +473,6 @@ class Subscription(models.Model):
     data_send = models.CharField(max_length=100)#Phone number or email
     autor = models.CharField(max_length=100)
     objects = ManageSubscription()
-
-#-------------------------------- Subscriber Model -------------------------------------------#
-
-class Subscriber(models.Model):
-    pass
 
 #-------------------------------SentenceMessage------------------------------------------------#
 
