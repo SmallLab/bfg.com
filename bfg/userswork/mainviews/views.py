@@ -257,5 +257,13 @@ class DeleteSub(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('privateoffice', kwargs={'tab': 'subscribers'})
 
+class DeactiveActiveSub(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        if request.is_ajax():
+            data = Subscription.objects.change_active_status(kwargs['pk'])
+            return JsonResponse(data)
+        else:
+            return JsonResponse({'status':False})
+
 class GetModalLogin(View):
     pass

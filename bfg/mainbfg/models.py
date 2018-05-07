@@ -449,6 +449,17 @@ class ManageSubscription(models.Manager):
     def deleteSub(self, sub_id):
         Subscription.objects.filter(id=sub_id).delete()
 
+    def change_active_status(self, pk):
+        se = Subscription.objects.get(pk=pk)
+        if se.is_active:
+            se.is_active = False
+            data = {"status": False}
+        else:
+            se.is_active = True
+            data = {"status": True}
+        se.save()
+        return data
+
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscription')
     sub_user_id = models.IntegerField()

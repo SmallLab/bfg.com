@@ -9,5 +9,6 @@ urlpatterns = [
    url(r'^privateoffice/deactive/(?P<pk>\d+)/$', views.PODeactiveSentenceView.as_view(), name='deactivesent'),
    url(r'^privateoffice/activete/(?P<pk>\d+)/$', views.POActiveSentenceView.as_view(), name='activatesent'),
    url(r'^privateoffice/edit/(?P<pk>\d+)/$', views.POEditSentenceView.as_view(), name='editsent'),
-   url(r'^privateoffice/deletesub/(?P<pk>\d+)/$', views.DeleteSub.as_view(), name='deletesub')
+   url(r'^privateoffice/deletesub/(?P<pk>\d+)/$', views.DeleteSub.as_view(), name='deletesub'),
+   url(r'^privateoffice/deactivesub/(?P<pk>\d+)/$', views.DeactiveActiveSub.as_view(), name='deactivesub')
 ]

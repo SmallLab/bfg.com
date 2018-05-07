@@ -575,7 +575,7 @@
                                         <td>
                                             {% if sub.type_sub == 0 %} SMS {% else %} EMAIL {% endif %}
                                         </td>
-                                        <td>
+                                        <td data-is-active-info="{{ sub.id }}">
                                             {% if sub.is_active %} Активна {% else %} Не активна {% endif %}
                                         </td>
                                         <td>
@@ -584,9 +584,11 @@
                                                     <span class="icon fa fa-sign-out"></span>
                                                     <span>Редактировать</span>
                                                 </a></li>
-                                                <li><a href="#" class="deactivate">
+                                                <li><a href="#" class="deactivate" data-id-subs="{{ sub.id }}">
                                                     <span class="icon fa fa-remove"></span>
-                                                    <span>Деактивировать</span>
+                                                    <span data-is-active-action="{{ sub.id }}" >
+                                                    {% if sub.is_active %} Деактивировать{% else %} Активировать {% endif %}
+                                                    </span>
                                                 </a></li>
                                                 <li><a href="{% url 'deletesub' pk=sub.id %}" class="delete">
                                                     <span class="icon fa fa-remove"></span>
