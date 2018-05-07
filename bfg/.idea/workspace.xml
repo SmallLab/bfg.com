@@ -6,11 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08de0f40-fde9-4887-8d7c-dae0b2c4b52b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userswork/templates/userfooter.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/mainviews/views.py" afterPath="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/models.py" afterPath="$PROJECT_DIR$/mainbfg/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainbfg/static/js/script.js" afterPath="$PROJECT_DIR$/mainbfg/static/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/mainviews/views.py" afterPath="$PROJECT_DIR$/userswork/mainviews/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/static/js/userwork.js" afterPath="$PROJECT_DIR$/userswork/static/js/userwork.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/mainuser.html" afterPath="$PROJECT_DIR$/userswork/templates/mainuser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/templates/privateoffice.html" afterPath="$PROJECT_DIR$/userswork/templates/privateoffice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userswork/urls.py" afterPath="$PROJECT_DIR$/userswork/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,7 +78,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bfg/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="503">
               <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding>
                 <element signature="e#636#677#0" expanded="true" />
@@ -87,8 +90,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="437" column="114" lean-forward="false" selection-start-line="437" selection-start-column="114" selection-end-line="437" selection-end-column="114" />
+            <state relative-caret-position="380">
+              <caret line="449" column="55" lean-forward="false" selection-start-line="449" selection-start-column="55" selection-end-line="449" selection-end-column="55" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
                 <element signature="e#403#1122#0" expanded="false" />
@@ -107,18 +110,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainbfg/mainviews/views.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userswork/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="156" column="143" lean-forward="false" selection-start-line="156" selection-start-column="143" selection-end-line="156" selection-end-column="143" />
+            <state relative-caret-position="200">
+              <caret line="11" column="92" lean-forward="false" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="254" column="30" lean-forward="false" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
               <folding>
-                <element signature="e#476#759#0" expanded="false" />
-                <element signature="e#856#2361#0" expanded="false" />
-                <element signature="e#2455#4014#0" expanded="false" />
-                <element signature="e#4107#4579#0" expanded="false" />
-                <element signature="e#4663#4846#0" expanded="false" />
-                <element signature="e#4926#5384#0" expanded="false" />
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#707#1345#0" expanded="false" />
+                <element signature="e#2014#2337#0" expanded="false" />
+                <element signature="e#2436#2755#0" expanded="false" />
+                <element signature="e#2846#6569#0" expanded="false" />
+                <element signature="e#6665#9592#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userwork.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userswork/static/js/userwork.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="privateoffice.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/userswork/templates/privateoffice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="814" column="76" lean-forward="false" selection-start-line="814" selection-start-column="76" selection-end-line="814" selection-end-column="76" />
+              <folding>
+                <element signature="e#18417#22456#0#HTML" expanded="false" />
+                <element signature="e#22477#35212#0#HTML" expanded="false" />
+                <element signature="e#42924#54354#0#HTML" expanded="false" />
+                <element signature="e#54945#54964#0#HTML" expanded="true" />
+                <marker date="1525703724498" expanded="true" signature="38042:38449" ph="..." />
+                <marker date="1525703724498" expanded="false" signature="41033:42858" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,53 +167,14 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+            <state relative-caret-position="540">
+              <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#SubServise#0" expanded="false" />
+                <element signature="n#!!block;n#isSubscrabers#0" expanded="false" />
+                <element signature="e#7441#8191#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="84" column="57" lean-forward="false" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
-              <folding>
-                <element signature="e#693#1331#0" expanded="false" />
-                <element signature="e#1428#1897#0" expanded="false" />
-                <element signature="e#2000#2323#0" expanded="false" />
-                <element signature="e#2422#2741#0" expanded="false" />
-                <element signature="e#2832#6555#0" expanded="false" />
-                <element signature="e#6651#9578#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="privateoffice.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/userswork/templates/privateoffice.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="570" column="50" lean-forward="false" selection-start-line="568" selection-start-column="46" selection-end-line="570" selection-end-column="50" />
-              <folding>
-                <element signature="e#1588#18396#0#HTML" expanded="false" />
-                <element signature="e#18417#22456#0#HTML" expanded="false" />
-                <element signature="e#22477#35212#0#HTML" expanded="false" />
-                <element signature="e#42236#53666#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainfooter.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="96" column="84" lean-forward="false" selection-start-line="96" selection-start-column="84" selection-end-line="96" selection-end-column="84" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -212,14 +213,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/userswork/templates/formadd.html" />
-        <option value="$PROJECT_DIR$/userswork/templates/mainuser.html" />
         <option value="dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_sentence" />
         <option value="$PROJECT_DIR$/userswork/forms.py" />
         <option value="$PROJECT_DIR$/mainbfg/templatetags/__init__.py" />
-        <option value="$PROJECT_DIR$/userswork/static/js/userwork.js" />
         <option value="$PROJECT_DIR$/mainbfg/mainhelpers/trytoclose.py" />
-        <option value="$PROJECT_DIR$/userswork/urls.py" />
         <option value="$PROJECT_DIR$/userswork/static/js/fileupload.js" />
         <option value="$PROJECT_DIR$/userswork/static/js/phonemask/inputplagin.js" />
         <option value="$PROJECT_DIR$/userswork/mainhelpers/modelshelper.py" />
@@ -238,7 +235,6 @@
         <option value="$PROJECT_DIR$/mainbfg/mainhelpers/MainImgTypeField.py" />
         <option value="$PROJECT_DIR$/templates/sections/mainfilter.html" />
         <option value="$PROJECT_DIR$/static/js/viewsentence.js" />
-        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/userswork/templates/editsent.html" />
         <option value="$PROJECT_DIR$/static/js/script.js" />
         <option value="$PROJECT_DIR$/templates/sections/mainheader.html" />
@@ -261,6 +257,11 @@
         <option value="$PROJECT_DIR$/templates/sections/mainfooter.html" />
         <option value="$PROJECT_DIR$/mainbfg/static/js/script.js" />
         <option value="$PROJECT_DIR$/mainbfg/mainviews/views.py" />
+        <option value="$PROJECT_DIR$/userswork/templates/mainuser.html" />
+        <option value="$PROJECT_DIR$/userswork/static/js/userwork.js" />
+        <option value="$PROJECT_DIR$/userswork/templates/userfooter.html" />
+        <option value="$PROJECT_DIR$/userswork/urls.py" />
+        <option value="$PROJECT_DIR$/userswork/mainviews/views.py" />
         <option value="$PROJECT_DIR$/mainbfg/models.py" />
         <option value="$PROJECT_DIR$/userswork/templates/privateoffice.html" />
       </list>
@@ -275,7 +276,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1932" />
     <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -336,7 +337,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mainbfg" />
+              <option name="myItemId" value="userswork" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,11 +351,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mainbfg" />
+              <option name="myItemId" value="userswork" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mainviews" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -736,13 +741,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490710457116</updated>
     </task>
-    <task id="LOCAL-00140" summary="Filter page">
-      <created>1518467068749</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1518467068749</updated>
-    </task>
     <task id="LOCAL-00141" summary="Filter page">
       <created>1518640819470</created>
       <option name="number" value="00141" />
@@ -1079,7 +1077,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525534511015</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="Subscration with login/register">
+      <created>1525598110508</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1525598110508</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1092,17 +1097,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1932" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1337953" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13514957" sideWeight="0.48768473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27422908" sideWeight="0.53038377" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12313433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12339743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27422908" sideWeight="0.4696162" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25110132" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13436124" sideWeight="0.4664179" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19493392" sideWeight="0.4664179" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16471216" sideWeight="0.5123153" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1191,13 +1196,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Python3/Lib/site-packages/django/core/files/uploadedfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/static/js/socialauth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1209,13 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/templates/mainuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1334,13 +1325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/static/js/userwork.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/static/js/fileupload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2220">
@@ -1385,14 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1470,16 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bfg/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="e#636#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bfg/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3700">
@@ -1507,14 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="96" column="84" lean-forward="false" selection-start-line="96" selection-start-column="84" selection-end-line="96" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_profile">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1524,32 +1482,30 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/mainfooter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="96" column="84" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="150" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
+    <entry file="file://$PROJECT_DIR$/userswork/templates/mainuser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="440">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+    <entry file="file://$PROJECT_DIR$/userswork/templates/userfooter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="84" column="57" lean-forward="false" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
-          <folding>
-            <element signature="e#693#1331#0" expanded="false" />
-            <element signature="e#1428#1897#0" expanded="false" />
-            <element signature="e#2000#2323#0" expanded="false" />
-            <element signature="e#2422#2741#0" expanded="false" />
-            <element signature="e#2832#6555#0" expanded="false" />
-            <element signature="e#6651#9578#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="940">
+          <caret line="47" column="76" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1568,10 +1524,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bfg/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#636#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="92" lean-forward="false" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/mainviews/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="254" column="30" lean-forward="false" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#707#1345#0" expanded="false" />
+            <element signature="e#2014#2337#0" expanded="false" />
+            <element signature="e#2436#2755#0" expanded="false" />
+            <element signature="e#2846#6569#0" expanded="false" />
+            <element signature="e#6665#9592#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mainbfg/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="437" column="114" lean-forward="false" selection-start-line="437" selection-start-column="114" selection-end-line="437" selection-end-column="114" />
+        <state relative-caret-position="380">
+          <caret line="449" column="55" lean-forward="false" selection-start-line="449" selection-start-column="55" selection-end-line="449" selection-end-column="55" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
             <element signature="e#403#1122#0" expanded="false" />
@@ -1589,6 +1578,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mainbfg/static/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#SubServise#0" expanded="false" />
+            <element signature="n#!!block;n#isSubscrabers#0" expanded="false" />
+            <element signature="e#7441#8191#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/984f1828/e3e34346-d6b2-4730-94c2-677e8f22c9ab/djbfg.mainbfg_subscription">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1602,15 +1604,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userswork/static/js/userwork.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/userswork/templates/privateoffice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="570" column="50" lean-forward="false" selection-start-line="568" selection-start-column="46" selection-end-line="570" selection-end-column="50" />
+        <state relative-caret-position="397">
+          <caret line="814" column="76" lean-forward="false" selection-start-line="814" selection-start-column="76" selection-end-line="814" selection-end-column="76" />
           <folding>
-            <element signature="e#1588#18396#0#HTML" expanded="false" />
             <element signature="e#18417#22456#0#HTML" expanded="false" />
             <element signature="e#22477#35212#0#HTML" expanded="false" />
-            <element signature="e#42236#53666#0#HTML" expanded="false" />
+            <element signature="e#42924#54354#0#HTML" expanded="false" />
+            <element signature="e#54945#54964#0#HTML" expanded="true" />
+            <marker date="1525703724498" expanded="true" signature="38042:38449" ph="..." />
+            <marker date="1525703724498" expanded="false" signature="41033:42858" ph="..." />
           </folding>
         </state>
       </provider>

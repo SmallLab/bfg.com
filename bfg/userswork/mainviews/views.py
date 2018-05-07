@@ -12,7 +12,7 @@ from django.core.urlresolvers import reverse
 from django.http import JsonResponse
 
 from userswork.mainhelpers import modelshelper
-from mainbfg.models import (SentenceForm, Image, Sentence, SentenceEditForm, Profile)
+from mainbfg.models import (SentenceForm, Image, Sentence, SentenceEditForm, Profile, Subscription)
 
 """
     Main page user office
@@ -245,6 +245,17 @@ class CreateNewSentence(LoginRequiredMixin, CreateView):
 """
    Subscription work
 """
+
+class DeleteSub(LoginRequiredMixin, RedirectView):
+    login_url = 'login'
+
+    def get(self, request, *args, **kwargs):
+        Subscription.objects.deleteSub(kwargs['pk'])
+
+        return super(DeleteSub, self).get(self, request, *args, **kwargs)
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('privateoffice', kwargs={'tab': 'subscribers'})
 
 class GetModalLogin(View):
     pass

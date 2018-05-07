@@ -446,6 +446,9 @@ class ManageSubscription(models.Manager):
         except Subscription.DoesNotExist:
             return False
 
+    def deleteSub(self, sub_id):
+        Subscription.objects.filter(id=sub_id).delete()
+
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscription')
     sub_user_id = models.IntegerField()
