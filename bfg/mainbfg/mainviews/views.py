@@ -121,6 +121,7 @@ class ViewSentence(DetailView):
     Class ShowPhone - view phone for sentence
 """
 
+
 class ShowPhone(View):
     def get(self, request, *args, **kwargs):
         if request.is_ajax():
@@ -130,6 +131,7 @@ class ShowPhone(View):
 """
     Class AllTop - view all top sentence
 """
+
 
 class AllTop(ListView):
     template_name = 'sentences/alltopsentences.html'
@@ -149,20 +151,21 @@ class AllTop(ListView):
     Class AddSub - add subscrabtions
 """
 
+
 class AddSub(View):
     def get(self, request, *args, **kwargs):
         if request.is_ajax() and self.request.GET['type_sub'] == '0':
             if Subscription.objects.addsubscription(self.request.user, int(self.request.GET['id_sub']),
                                                     int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
-                data = {'status':True, 'mes':'Phone', 'd':self.request.GET['type_sub']}
+                data = {'status': True}
             else:
-                data = {'status': False, 'mes': 'Fail1'}
+                data = {'status': False}
         elif request.is_ajax() and self.request.GET['type_sub'] == '1':
-            if Subscription.objects.addsSubscription(self.request.user, int(self.request.GET['id_sub']),
+            if Subscription.objects.addsubscription(self.request.user, int(self.request.GET['id_sub']),
                                                     int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
-                data = {'status':True, 'mes':'Email', 'd':self.request.GET['type_sub']}
+                data = {'status': True}
             else:
-                data = {'status': False, 'mes': 'Fail2'}
+                data = {'status': False}
         else:
-            data = {'status': False, 'mes': 'Fail3'}
+            data = {'status': False}
         return JsonResponse(data)

@@ -455,9 +455,15 @@ class Profile(models.Model):
 #-------------------------------- Subscription Model -------------------------------------------#
 class ManageSubscription(models.Manager):
 
-    def addsubscription(self, user_id, sub_user_id, type_sub, data_send, autor):
+    def addsubscription(self, user, sub_user_id, type_sub, data_send, autor):
         try:
-            self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send, autor=autor)
+            self.create(user=user, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send, autor=autor)
+            if type_sub == 0 and not user.profile.phone:
+                user.profile.phone = data_send
+                user.profile.save()
+            elif type_sub == 1 and not user.profile.email:
+                user.profile.email = data_send
+                user.profile.save()
             return True
         except IntegrityError:
             return False
