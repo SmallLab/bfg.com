@@ -580,10 +580,10 @@
                                         </td>
                                         <td>
                                             <ul class="list-inline list-inline-products">
-                                                <li><a href="#" class="edit">
-                                                    <span class="icon fa fa-sign-out"></span>
-                                                    <span>Редактировать</span>
-                                                </a></li>
+{#                                                <li><a href="#" class="edit">#}
+{#                                                    <span class="icon fa fa-sign-out"></span>#}
+{#                                                    <span>Редактировать</span>#}
+{#                                                </a></li>#}
                                                 <li><a href="#" class="deactivate" data-id-subs="{{ sub.id }}">
                                                     <span class="icon fa fa-remove"></span>
                                                     <span data-is-active-action="{{ sub.id }}" >
@@ -637,170 +637,153 @@
 {#                                </ul>#}
                             </div>
                             <div role="tabpanel" class="tab-pane tab-pane-gray-lighten" id="home-sub-3">
-                                <div class="top-toolbar-custom">
-                                    <label for="type-sub">Тип подписки:</label>
-                                    <select class="form-control" id="type-sub">
-                                        <option>Все</option>
-                                        <option>Все 2</option>
-                                        <option>Все 3<option>
-                                    </select>
-                                    <div class="btn-modal-wrap btn-modal-wrap-1">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-                                            Рассылка SMS
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
-                                                        </span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Отправка EMAIL</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="#">
-                                                            <div class="form-group form-group-justify">
-                                                                <label for="modal-email">Email</label>
-                                                                <input type="email" class="form-control" id="modal-email">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="modal-message">Введите сообщения</label>
-                                                                <textarea class="form-control" id="modal-message"></textarea>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary">Отправить Email</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-modal-wrap btn-modal-wrap-2">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal-2">
-                                            Рассылка E-mail
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModal-2Label">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">
-                                                        </span></button>
-                                                        <h4 class="modal-title" id="myModal-2Label">Отправка SMS</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="#">
-                                                            <div class="form-group form-group-justify">
-                                                                <label for="modal-email-2">Номер телефона</label>
-                                                                <input type="number" class="form-control" id="modal-email-2">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="modal-message-2">Введите сообщения</label>
-                                                                <textarea class="form-control" id="modal-message-2"></textarea>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary">Отправить SMS</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <table class="table table-responsive table-products table-subs">
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <th>Пользователь</th>
-                                        <th>Логин</th>
-                                        <th>Тип подписки</th>
-                                        <th>
-                                            <a href="#">
-                                                <span>Дата</span>
-                                                <span class="icon fa fa-chevron-down"></span>
-                                            </a>
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="table-subs-title">магазин</div>
-                                            <a href="#">
-                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
-                                            </a>
-                                        </td>
-                                        <td>groovy-12</td>
-                                        <td>SMS</td>
-                                        <td>29.12.16</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="checkbox checkbox-left">
-                                                <label>
-                                                    <input type="checkbox">
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="table-subs-title">магазин</div>
-                                            <a href="#">
-                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">
-                                            </a>
-                                        </td>
-                                        <td>groovy-12</td>
-                                        <td>E-MAIL</td>
-                                        <td>29.12.16</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <ul class="list-inline pagination-product">
-                                    <li class="pagination-product-prev">
-                                        <a href="#">
-                                            <span class="icon fa fa-angle-double-left"></span>
-                                            <span>Назад</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                    <li><a href="#">7</a></li>
-                                    <li><a href="#">8</a></li>
-                                    <li><a href="#">9</a></li>
-                                    <li><a href="#">10</a></li>
-                                    <li><a href="#">11</a></li>
-                                    <li><a href="#">12</a></li>
-                                    <li><a href="#">......</a></li>
-                                    <li><a href="#">200</a></li>
-                                    <li class="pagination-product-next">
-                                        <a href="#">
-                                            <span>Вперед</span>
-                                            <span class="icon fa fa-angle-double-right"></span>
-                                        </a>
-                                    </li>
-                                </ul>
+{#                                <div class="top-toolbar-custom">#}
+{#                                    <label for="type-sub">Тип подписки:</label>#}
+{#                                    <select class="form-control" id="type-sub">#}
+{#                                        <option>Все</option>#}
+{#                                        <option>Все 2</option>#}
+{#                                        <option>Все 3<option>#}
+{#                                    </select>#}
+{#                                    <div class="btn-modal-wrap btn-modal-wrap-1">#}
+{#                                        <!-- Button trigger modal -->#}
+{#                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">#}
+{#                                            Рассылка SMS#}
+{#                                        </button>#}
+{##}
+{#                                        <!-- Modal -->#}
+{#                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">#}
+{#                                            <div class="modal-dialog" role="document">#}
+{#                                                <div class="modal-content">#}
+{#                                                    <div class="modal-header">#}
+{#                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">#}
+{#                                                        </span></button>#}
+{#                                                        <h4 class="modal-title" id="myModalLabel">Отправка EMAIL</h4>#}
+{#                                                    </div>#}
+{#                                                    <div class="modal-body">#}
+{#                                                        <form action="#">#}
+{#                                                            <div class="form-group form-group-justify">#}
+{#                                                                <label for="modal-email">Email</label>#}
+{#                                                                <input type="email" class="form-control" id="modal-email">#}
+{#                                                            </div>#}
+{#                                                            <div class="form-group">#}
+{#                                                                <label for="modal-message">Введите сообщения</label>#}
+{#                                                                <textarea class="form-control" id="modal-message"></textarea>#}
+{#                                                            </div>#}
+{#                                                        </form>#}
+{#                                                    </div>#}
+{#                                                    <div class="modal-footer">#}
+{#                                                        <button type="button" class="btn btn-primary">Отправить Email</button>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="btn-modal-wrap btn-modal-wrap-2">#}
+{#                                        <!-- Button trigger modal -->#}
+{#                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal-2">#}
+{#                                            Рассылка E-mail#}
+{#                                        </button>#}
+{##}
+{#                                        <!-- Modal -->#}
+{#                                        <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModal-2Label">#}
+{#                                            <div class="modal-dialog" role="document">#}
+{#                                                <div class="modal-content">#}
+{#                                                    <div class="modal-header">#}
+{#                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-times" aria-hidden="true">#}
+{#                                                        </span></button>#}
+{#                                                        <h4 class="modal-title" id="myModal-2Label">Отправка SMS</h4>#}
+{#                                                    </div>#}
+{#                                                    <div class="modal-body">#}
+{#                                                        <form action="#">#}
+{#                                                            <div class="form-group form-group-justify">#}
+{#                                                                <label for="modal-email-2">Номер телефона</label>#}
+{#                                                                <input type="number" class="form-control" id="modal-email-2">#}
+{#                                                            </div>#}
+{#                                                            <div class="form-group">#}
+{#                                                                <label for="modal-message-2">Введите сообщения</label>#}
+{#                                                                <textarea class="form-control" id="modal-message-2"></textarea>#}
+{#                                                            </div>#}
+{#                                                        </form>#}
+{#                                                    </div>#}
+{#                                                    <div class="modal-footer">#}
+{#                                                        <button type="button" class="btn btn-primary">Отправить SMS</button>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <table class="table table-responsive table-products table-subs">#}
+{#                                    <thead>#}
+{#                                    <tr>#}
+{#                                        <th>#}
+{#                                            <div class="checkbox checkbox-left">#}
+{#                                                <label>#}
+{#                                                    <input type="checkbox">#}
+{#                                                </label>#}
+{#                                            </div>#}
+{#                                        </th>#}
+{#                                        <th>Пользователь</th>#}
+{#                                        <th>Логин</th>#}
+{#                                        <th>Тип подписки</th>#}
+{#                                        <th>#}
+{#                                            <a href="#">#}
+{#                                                <span>Дата</span>#}
+{#                                                <span class="icon fa fa-chevron-down"></span>#}
+{#                                            </a>#}
+{#                                        </th>#}
+{#                                    </tr>#}
+{#                                    </thead>#}
+{#                                    <tbody>#}
+{#                                    <tr>#}
+{#                                        <th scope="row">#}
+{#                                            <div class="checkbox checkbox-left">#}
+{#                                                <label>#}
+{#                                                    <input type="checkbox">#}
+{#                                                </label>#}
+{#                                            </div>#}
+{#                                        </th>#}
+{#                                        <td>#}
+{#                                            <div class="table-subs-title">магазин</div>#}
+{#                                            <a href="#">#}
+{#                                                <img src="{% static 'images/subs-01.jpg' %}" alt="">#}
+{#                                            </a>#}
+{#                                        </td>#}
+{#                                        <td>groovy-12</td>#}
+{#                                        <td>E-MAIL</td>#}
+{#                                        <td>29.12.16</td>#}
+{#                                    </tr>#}
+{#                                    </tbody>#}
+{#                                </table>#}
+                                <p>Количество подписчиков - {{ sub_count }}</p>
+{#                                <ul class="list-inline pagination-product">#}
+{#                                    <li class="pagination-product-prev">#}
+{#                                        <a href="#">#}
+{#                                            <span class="icon fa fa-angle-double-left"></span>#}
+{#                                            <span>Назад</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li><a href="#">1</a></li>#}
+{#                                    <li><a href="#">2</a></li>#}
+{#                                    <li><a href="#">3</a></li>#}
+{#                                    <li><a href="#">4</a></li>#}
+{#                                    <li><a href="#">5</a></li>#}
+{#                                    <li><a href="#">6</a></li>#}
+{#                                    <li><a href="#">7</a></li>#}
+{#                                    <li><a href="#">8</a></li>#}
+{#                                    <li><a href="#">9</a></li>#}
+{#                                    <li><a href="#">10</a></li>#}
+{#                                    <li><a href="#">11</a></li>#}
+{#                                    <li><a href="#">12</a></li>#}
+{#                                    <li><a href="#">......</a></li>#}
+{#                                    <li><a href="#">200</a></li>#}
+{#                                    <li class="pagination-product-next">#}
+{#                                        <a href="#">#}
+{#                                            <span>Вперед</span>#}
+{#                                            <span class="icon fa fa-angle-double-right"></span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
                             </div>
                         </div>
                     </div>

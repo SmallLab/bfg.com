@@ -12,6 +12,7 @@ from mainbfg.forms import FilterSentencesForm
     Class MainView  - start page
 """
 
+
 class MainView(TemplateView):
 
    template_name = 'index.html'
@@ -25,6 +26,7 @@ class MainView(TemplateView):
 """
     Class CategoryPage - transition to the category
 """
+
 
 class CategoryPage(ListView):
     template_name = 'sentences/categorypage.html'
@@ -55,6 +57,8 @@ class CategoryPage(ListView):
 """
     Class FilterSentences - Filter suggestions
 """
+
+
 class FilterSentences(ListView):
     template_name = 'sentences/filtersent.html'
     context_object_name = 'sentences_list'
@@ -93,6 +97,7 @@ class FilterSentences(ListView):
 """
     Class ViewSentence - view single sentence
 """
+
 
 class ViewSentence(DetailView):
     template_name = 'sentences/viewsentence.html'
@@ -147,13 +152,13 @@ class AllTop(ListView):
 class AddSub(View):
     def get(self, request, *args, **kwargs):
         if request.is_ajax() and self.request.GET['type_sub'] == '0':
-            if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
+            if Subscription.objects.addsubscription(self.request.user, int(self.request.GET['id_sub']),
                                                     int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
                 data = {'status':True, 'mes':'Phone', 'd':self.request.GET['type_sub']}
             else:
                 data = {'status': False, 'mes': 'Fail1'}
         elif request.is_ajax() and self.request.GET['type_sub'] == '1':
-            if Subscription.objects.addSubscription(self.request.user, int(self.request.GET['id_sub']),
+            if Subscription.objects.addsSubscription(self.request.user, int(self.request.GET['id_sub']),
                                                     int(self.request.GET['type_sub']), self.request.GET['data_type'], self.request.GET['autor']):
                 data = {'status':True, 'mes':'Email', 'd':self.request.GET['type_sub']}
             else:

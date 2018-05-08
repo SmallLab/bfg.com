@@ -30,6 +30,7 @@ class PrivateOfficeView(LoginRequiredMixin, TemplateView):
         context['status_ss'] = {0:'На модерации', 1:'Опубликовано', 2:'На редактировании', 3:'Не активно'}
         context['type_ss'] = {0:'Обычное', 1:'TOP', 2:'VIP'}
         context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
+        context['sub_count'] = Subscription.objects.getcountsub(self.request.user.id)
 
         return context
 
@@ -250,7 +251,7 @@ class DeleteSub(LoginRequiredMixin, RedirectView):
     login_url = 'login'
 
     def get(self, request, *args, **kwargs):
-        Subscription.objects.deleteSub(kwargs['pk'])
+        Subscription.objects.deletesub(kwargs['pk'])
 
         return super(DeleteSub, self).get(self, request, *args, **kwargs)
 

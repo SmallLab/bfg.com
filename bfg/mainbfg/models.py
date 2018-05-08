@@ -11,25 +11,27 @@ from mainbfg.mainhelpers import MainImgTypeField as MI
 Custom Manadger for model TypeSentence
 """
 
+
 class ManadgerTypeSentence(models.Manager):
-#Get single TypeCategory
+    #Get single TypeCategory
     def get_single_type(self, link_name):
         return self.get_queryset().get(link_name=link_name)
 
-#Get active Types
+    #Get active Types
     def get_active_types(self):
-        return self.get_queryset().filter(is_active__exact= True)
+        return self.get_queryset().filter(is_active__exact=True)
 
-#Get dict {'link_name':{data object}, ...} for TypeSentence
+    #Get dict {'link_name':{data object}, ...} for TypeSentence
     def get_dict_types(self):
         if cache.get('dictType'):
             return cache.get('dictType')
         else:
-            new_dict = {'all':{'id':0, 'link_name':'all', 'name':'Все'}}
-            dictType = self.get_queryset().filter(is_active__exact = True).values()
+            new_dict = {'all': {'id': 0, 'link_name': 'all', 'name': 'Все'}}
+            dictType = self.get_queryset().filter(is_active__exact=True).values()
             new_dict.update({a['link_name']: a for a in dictType})
             cache.set('dictType', new_dict)
             return new_dict
+
 
 class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
@@ -48,10 +50,11 @@ class TypeSentence(models.Model):
 Custom Manadger for model Categories
 """
 
+
 class ManadgerCategories(models.Manager):
-#Get active Categories
+    #Get active Categories
     def get_active_categories(self):
-        return self.get_queryset().filter(is_active__exact = True)
+        return self.get_queryset().filter(is_active__exact=True)
 
 #Get single Category
     def get_single_category(self, link_name):
@@ -76,6 +79,7 @@ class ManadgerCategories(models.Manager):
         activecategories = self.get_active_categories()
         return [activecategories[i:i+5] for i in range(0, len(activecategories), 5)]
 
+
 class Categories(models.Model):
     name = models.CharField(max_length=50)
     link_name = models.CharField(max_length=50)
@@ -93,6 +97,8 @@ class Categories(models.Model):
         return self.name
 
 #-------------------------------- Regions Model -------------------------------------------
+
+
 class ManageRegions(models.Manager):
 
     def get_all_regions(self):
@@ -100,6 +106,7 @@ class ManageRegions(models.Manager):
 
     def get_single_region_name(self, pk):
         return Regions.objects.only('name').get(pk=pk)
+
 
 class Regions(models.Model):
     name = models.CharField(max_length=100)
@@ -122,8 +129,10 @@ class Regions(models.Model):
 #     image_type = filename.split('.')[-1]
 #     return 'imgs/{}.{}'.format(image_name, image_type)
 
+
 def custom_directory_path(instance, filename):
     return 'images/{0}/{1}'.format(instance.dirname_img, filename)
+
 
 class ManagerSentences(models.Manager):
 
@@ -132,13 +141,13 @@ class ManagerSentences(models.Manager):
     """
     def get_sent_for_view(self):
         try:
-           return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+            return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
         except Sentence.DoesNotExist:
             return False
 
     def get_all_top_sent(self):
         try:
-           return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+            return Sentence.objects.filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')
         except Sentence.DoesNotExist:
             return False
 
@@ -157,8 +166,9 @@ class ManagerSentences(models.Manager):
                     only('id', 'caption', 'type_img_s', 'autor', 'web_site').\
                     exclude(is_webstore=1).order_by('create_time')
             else:
-                return query.filter(**work_dict).filter(status=1).only('id', 'caption', 'type_img_s', 'autor', 'web_site')\
-                    .order_by('create_time')
+                return query.filter(**work_dict).filter(status=1).only('id', 'caption', 'type_img_s',
+                                                                       'autor', 'web_site')\
+                                                                       .order_by('create_time')
         except Sentence.DoesNotExist:
             return False
 
@@ -177,7 +187,8 @@ class ManagerSentences(models.Manager):
         """
         index = 0
         try:
-            all_top = Sentence.objects.filter(status=1)[index:index+12].only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+            all_top = Sentence.objects.filter(status=1)[index:index+12].only('id', 'caption', 'type_img_s',
+                                                                             'autor', 'web_site')
             top_sentences = [all_top[i:i+4] for i in range(0, len(all_top), 4)]
             return top_sentences
         except Sentence.DoesNotExist:
@@ -191,9 +202,10 @@ class ManagerSentences(models.Manager):
         try:
             import random
             if type_id:
-                index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).filter(type_id=type_id).count())
+                index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).
+                                       filter(type_id=type_id).count())
                 return Sentence.objects.filter(status=1).filter(category_id=category_id).filter(type_id=type_id)[index:index+count].\
-                                            only('id', 'caption', 'type_img_s', 'autor', 'web_site')
+                                        only('id', 'caption', 'type_img_s', 'autor', 'web_site')
             else:
                 index = random.randint(1, Sentence.objects.filter(status=1).filter(category_id=category_id).count())
                 return Sentence.objects.filter(status=1).filter(category_id=category_id)[index:index+count].\
@@ -237,7 +249,7 @@ class ManagerSentences(models.Manager):
     """
     Work with users office sentences
     """
-    def get_active_sentences(self, user_id, status_list = [0, 1, 2]):
+    def get_active_sentences(self, user_id, status_list=[0, 1, 2]):
         try:
             return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status', 'views', 'phone_views', 'create_time').\
                                     filter(user_id=user_id).\
@@ -248,7 +260,7 @@ class ManagerSentences(models.Manager):
     def get_deactive_sentences(self, user_id, status=3):
         try:
             return Sentence.objects.only('id', 'caption', 'main_img', 'type_s', 'status',
-                                     'views', 'phone_views', 'create_time'). \
+                                         'views', 'phone_views', 'create_time'). \
                                     filter(user_id=user_id). \
                                     filter(status=status)
         except Sentence.DoesNotExist:
@@ -273,13 +285,14 @@ class ManagerSentences(models.Manager):
         edit_data.save()
         return None
 
+
 class Sentence(models.Model):
 
     type_id = models.SmallIntegerField()
     category_id = models.SmallIntegerField()
     sub_id = models.SmallIntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sentences')
-    autor = models.CharField(max_length=30, error_messages={'max_length' : 'Required error'})
+    autor = models.CharField(max_length=30, error_messages={'max_length': 'Required error'})
     caption = models.CharField(max_length=50)
     region_id = models.SmallIntegerField()
     full_adress = models.CharField(max_length=100, blank=True)
@@ -329,7 +342,6 @@ class Sentence(models.Model):
         self.main_img = InMemoryUploadedFile(output, 'MI.MainImgTypeField', "%s.png" % self.main_img.name.split('.')[0], 'image/png',
                                             sys.getsizeof(output), None)
 
-
     def get_region(self):
         return Regions.objects.get_single_region_name(self.region_id)
 
@@ -338,6 +350,7 @@ class Sentence(models.Model):
 
     def __str__(self):
         return self.link_name
+
 
 class SentenceForm(ModelForm):
     class Meta:
@@ -360,6 +373,7 @@ class SentenceForm(ModelForm):
                              'price': {'max_length': "Не более 5 символов"},
                              'text_message': {'max_length': "Не более 65 символов"},
                         }
+
 
 class SentenceEditForm(ModelForm):
     class Meta:
@@ -385,6 +399,7 @@ class SentenceEditForm(ModelForm):
 
 #---------------------------------Images Model----------------------------------------------#
 
+
 class Image(models.Model):
 
     sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE, related_name='image')
@@ -396,13 +411,16 @@ class Image(models.Model):
 
 #-------------------------------- Payments Model -------------------------------------------#
 
+
 class Payment(models.Model):
     pass
 
 #----------------------------------Favorites Model ----------------------------------------#
 
+
 class Favorite(models.Model):
     pass
+
 
 #-------------------------------- Profile Model -------------------------------------------#
 class ManageProfile(models.Manager):
@@ -414,6 +432,7 @@ class ManageProfile(models.Manager):
             profile.autor = autor
             profile.save()
             return True
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -432,15 +451,19 @@ class Profile(models.Model):
     #payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     #favorite = models.ForeignKey(Favorite, on_delete=models.CASCADE)
 
+
 #-------------------------------- Subscription Model -------------------------------------------#
 class ManageSubscription(models.Manager):
 
-    def addSubscription(self, user_id, sub_user_id, type_sub, data_send, autor):
+    def addsubscription(self, user_id, sub_user_id, type_sub, data_send, autor):
         try:
             self.create(user=user_id, sub_user_id=sub_user_id, type_sub=type_sub, data_send=data_send, autor=autor)
             return True
         except IntegrityError:
             return False
+
+    def getcountsub(self, sub_user_id):
+        return Subscription.objects.filter(sub_user_id=sub_user_id).count()
 
     def getuserlist(self, user_id):
         try:
@@ -448,7 +471,7 @@ class ManageSubscription(models.Manager):
         except Subscription.DoesNotExist:
             return False
 
-    def deleteSub(self, sub_id):
+    def deletesub(self, sub_id):
         Subscription.objects.filter(id=sub_id).delete()
 
     def change_active_status(self, pk):
@@ -464,6 +487,7 @@ class ManageSubscription(models.Manager):
         se.save()
         return data
 
+
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscription')
     sub_user_id = models.IntegerField()
@@ -475,6 +499,7 @@ class Subscription(models.Model):
     objects = ManageSubscription()
 
 #-------------------------------SentenceMessage------------------------------------------------#
+
 
 class SentensceMessage(models.Model):
     sentence_id = models.IntegerField()
