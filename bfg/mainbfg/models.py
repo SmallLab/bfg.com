@@ -12,7 +12,7 @@ Custom Manadger for model TypeSentence
 """
 
 
-class ManadgerTypeSentence(models.Manager):
+class ManagerTypeSentence(models.Manager):
     #Get single TypeCategory
     def get_single_type(self, link_name):
         return self.get_queryset().get(link_name=link_name)
@@ -37,7 +37,7 @@ class TypeSentence(models.Model):
     name = models.CharField(max_length=50)
     link_name = models.CharField(max_length=50, default='')
     is_active = models.BooleanField(default=True)
-    objects = ManadgerTypeSentence()
+    objects = ManagerTypeSentence()
 
     def get_absolute_url(self):
         return "/%s/" % self.link_name
@@ -51,7 +51,7 @@ Custom Manadger for model Categories
 """
 
 
-class ManadgerCategories(models.Manager):
+class ManagerCategories(models.Manager):
     #Get active Categories
     def get_active_categories(self):
         return self.get_queryset().filter(is_active__exact=True)
@@ -88,7 +88,7 @@ class Categories(models.Model):
     is_icon_img = models.BooleanField(default=False)
     max_num = models.SmallIntegerField(default=1)
     paid_num = models.SmallIntegerField(default=5)
-    objects = ManadgerCategories()
+    objects = ManagerCategories()
 
     def get_absolute_url(self):
         return "/categories/%s/" % self.link_name
