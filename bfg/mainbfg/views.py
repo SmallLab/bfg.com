@@ -10,6 +10,7 @@ from mainbfg.forms import RegistrationsForm, LoginForm
     Registrations new user
 """
 
+
 def RegistrationUser(request):
     if request.method == 'POST':
         form = RegistrationsForm(request.POST)

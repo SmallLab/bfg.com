@@ -36,7 +36,7 @@ window.onload = function() {
 * */
 $(document).on('click', '[data-id-sent]', function(event) {
                if ($.inArray(+$(this).attr('data-id-sent'), data_sub.sub_list)== -1) {
-                   sub = new SubServise(event, $(this));
+                   var sub = new SubServise(event, $(this));
                    sub.init();
                }
                else {

@@ -12,9 +12,12 @@ from mainbfg.models import Profile
 """
     Facebook Autentification
 """
+
+
 class DataGet():
     next_url = ''
     sub_id = ''
+
 
 def getF(request):
     if request.GET.get('id_sent'):
@@ -27,6 +30,7 @@ def getF(request):
     # logfb = logging.getLogger(__name__)
     # logfb.error(DataGet.sub_id)
     return redirect(settings.FACEBOOK_URL)
+
 
 class FacebookAuth(RedirectView):
 
@@ -72,7 +76,6 @@ class FacebookAuth(RedirectView):
 
         except (requests.RequestException, requests.ConnectionError, requests.HTTPError):
             return {'status':False}
-
 
     def get_facebook_data(self, access_token):
         try:

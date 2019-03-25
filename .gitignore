@@ -90,3 +90,5 @@ ENV/
 .idea
 bfg/media/
 media/
+bfg/static
+static
