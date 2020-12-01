@@ -37,13 +37,13 @@ def RegistrationUser(request):
       c['next_url'] = request.POST['next_url']
       c['sub_id'] = request.POST['sub_id']
       c.update(csrf(request))
-      return render('registration/login.html', c)
+      return render(request, 'registration/login.html', c)
     else:
       c = {"rerrors": form.errors, 'tab': True, }
       c['next_url'] = request.POST['next_url']
       c['sub_id'] = request.POST['sub_id']
       c.update(csrf(request))
-      return render('registration/login.html', c)
+      return render(request, 'registration/login.html', c)
   else:
     c = {'tab': True}
     if request.GET:

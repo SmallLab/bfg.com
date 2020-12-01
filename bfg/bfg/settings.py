@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,16 +84,6 @@ POSTGRES_USER = os.getenv('POSSTGRES_USER', 'postgres')
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     #'ENGINE': 'django.db.backends.sqlite3',
-    #     #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'djbfg',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root',
-    #     #'HOST': '127.0.0.1',
-    #     #'PORT': '5432',
-    # }
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': POSTGRES_DB,

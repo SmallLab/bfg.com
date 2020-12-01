@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd0ab974-4bdf-4ab6-afdc-2fcc5eef3b8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bfg.com.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bfg.com.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dd0ab974-4bdf-4ab6-afdc-2fcc5eef3b8d" name="Default" comment="Add Static, Templates directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bfg/bfg/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/bfg/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bfg/bfg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/bfg/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/bfg/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/bfg/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/mainhelpers/MainImgTypeField.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/mainhelpers/MainImgTypeField.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0002_typesentence_link_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0003_auto_20170419_2030.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0004_auto_20170420_1129.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0005_payment_profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0006_remove_profile_payment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0007_auto_20170511_2132.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0008_auto_20170513_1557.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0009_auto_20170513_1654.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0010_auto_20170514_1916.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0011_remove_typesentence_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0012_typesentence_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0013_regions_is_active.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0014_auto_20170522_1954.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0015_auto_20170522_2218.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0016_auto_20170526_1411.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/migrations/0017_auto_20170527_2014.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/alltopsentences.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/alltopsentences.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/categorypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/categorypage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/filtersent.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/filtersent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/viewsentence.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/templates/sentences/viewsentence.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bfg/mainbfg/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/mainbfg/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/smyauth/mainauth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/smyauth/mainauth/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/templates/sections/mainfilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/templates/sections/mainfilter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/templates/sections/mainfooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/templates/sections/mainfooter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/templates/sections/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/templates/sections/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bfg/userswork/mainviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/mainviews/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/userswork/templates/addsentens.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/templates/addsentens.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/userswork/templates/editsent.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/templates/editsent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/userswork/templates/mainuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/templates/mainuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/userswork/templates/privateoffice.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/templates/privateoffice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bfg/userswork/templates/userfooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/bfg/userswork/templates/userfooter.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +88,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bfg-admin.com" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -110,7 +146,8 @@
       <updated>1490711421007</updated>
       <workItem from="1606472623013" duration="6140000" />
       <workItem from="1606718972721" duration="107000" />
-      <workItem from="1606809971729" duration="2672000" />
+      <workItem from="1606809971729" duration="7451000" />
+      <workItem from="1606817792910" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="MyFirst">
       <created>1490711488951</created>
@@ -175,11 +212,30 @@
       <option name="project" value="LOCAL" />
       <updated>1491076213655</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add Static, Templates directory">
+      <created>1606812781998</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606812781998</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MyFirst" />
@@ -194,17 +250,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add Static, Templates directory" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="874" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606473210142">
+    <state x="874" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606817817470">
       <screen x="0" y="0" width="1920" height="1028" />
     </state>
-    <state x="874" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1028@0.0.1920.1028" timestamp="1606473210142" />
-    <state width="235" height="500" key="HiddenNamespacesPopup" timestamp="1606473098551">
+    <state x="874" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1028@0.0.1920.1028" timestamp="1606817817470" />
+    <state x="748" y="266" key="FileChooserDialogImpl" timestamp="1606813050767">
       <screen x="0" y="0" width="1920" height="1028" />
     </state>
-    <state width="235" height="500" key="HiddenNamespacesPopup/0.0.1920.1028@0.0.1920.1028" timestamp="1606473098551" />
-    <state x="461" y="143" key="SettingsEditor" timestamp="1606812332609">
+    <state x="748" y="266" key="FileChooserDialogImpl/0.0.1920.1028@0.0.1920.1028" timestamp="1606813050767" />
+    <state width="235" height="500" key="HiddenNamespacesPopup" timestamp="1606817669218">
       <screen x="0" y="0" width="1920" height="1028" />
     </state>
-    <state x="461" y="143" key="SettingsEditor/0.0.1920.1028@0.0.1920.1028" timestamp="1606812332609" />
+    <state width="235" height="500" key="HiddenNamespacesPopup/0.0.1920.1028@0.0.1920.1028" timestamp="1606817669218" />
+    <state x="461" y="143" key="SettingsEditor" timestamp="1606813296841">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="461" y="143" key="SettingsEditor/0.0.1920.1028@0.0.1920.1028" timestamp="1606813296841" />
+    <state x="560" y="244" key="Vcs.Push.Dialog.v2" timestamp="1606812783510">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="560" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1028@0.0.1920.1028" timestamp="1606812783510" />
+    <state x="698" y="0" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog" timestamp="1606817276876">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="698" y="0" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/0.0.1920.1028@0.0.1920.1028" timestamp="1606817276876" />
+    <state x="266" y="169" width="1232" height="590" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606815869658">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="266" y="169" width="1232" height="590" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1028@0.0.1920.1028" timestamp="1606815869658" />
   </component>
 </project>
