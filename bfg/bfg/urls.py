@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', LoginUser, name='login'),
     url(r'^registrations/$', RegistrationUser, name='reristrations'),
-    url(r'^logout/$', LogoutView, {'next_page': '/'}, name='logout'),
+    url(r'^logout/$', LogoutView.as_view(), name='logout'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

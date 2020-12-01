@@ -179,6 +179,7 @@ TEST_MEDIA_IMAGES = 'media/images/'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'index'
 
 #Social auth
 AUTH_FAILED_MESSAGESS = 'Извините!Во время авторизации произошла ошибка попробуйте позже!'
