@@ -33,9 +33,7 @@ def RegistrationUser(request):
         return redirect('/login/')
     elif form.is_valid() and isset_user_login:
       form.errors.username = 'Пользователь с таким логином уже существует, выберите другой логин'
-      c = {"rerrors": form.errors, 'tab': True, }
-      c['next_url'] = request.POST['next_url']
-      c['sub_id'] = request.POST['sub_id']
+      c = {"rerrors": form.errors, 'tab': True, 'next_url': request.POST['next_url'], 'sub_id': request.POST['sub_id']}
       c.update(csrf(request))
       return render(request, 'registration/login.html', c)
     else:
@@ -84,12 +82,12 @@ def LoginUser(request):
         c = {"none_user": none_user, 'tab': False, 'next_url': request.POST['next_url'],
              'sub_id': request.POST['sub_id']}
         c.update(csrf(request))
-        return render('registration/login.html', c)
+        return render(request, 'registration/login.html', c)
     else:
       c = {"lerrors": login_form.errors, 'tab': False, 'next_url': request.POST['next_url'],
            'sub_id': request.POST['sub_id']}
       c.update(csrf(request))
-      return render('registration/login.html', c)
+      return render(request, 'registration/login.html', c)
   else:
     c = {'tab': False}
     c.update(csrf(request))

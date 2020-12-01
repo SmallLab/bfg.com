@@ -162,10 +162,10 @@ LOGGING = {
         },
     },
     'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-        },
+        # 'django.db.backends': {
+        #     'level': 'DEBUG',
+        #     'handlers': ['console'],
+        # },
         'smyauth': {
             'handlers': ['file'],
             'level': 'ERROR',
@@ -188,7 +188,7 @@ FACEBOOK_URL = "https://www.facebook.com/v2.9/dialog/oauth?client_id=21457974904
 FACEBOOK_USERDATA_URL = "https://graph.facebook.com/me?fields=id,name,first_name,email"
 FACEBOOK_GRAF_URL = "https://graph.facebook.com/oauth/access_token"
 FACEBOOK_APP_ID = 214579749046389
-FACEBOOK_REDIRECT_URL = 'http://localhost:8000/authcocial/lfacebook/'
+FACEBOOK_REDIRECT_URL = 'http://localhost:8080/authcocial/lfacebook/'
 FACEBOOK_SECRET = '9ca00ab6530e97258381bc734d3cebed'
 
 #Type for upload files
