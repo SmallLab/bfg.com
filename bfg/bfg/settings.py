@@ -42,13 +42,14 @@ INSTALLED_APPS = [
     'userswork'
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'mainbfg.mainhelpers.trytoclose.CheckUsers',
@@ -75,22 +76,32 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bfg.wsgi.application'
-
+POSTGRES_HOST = os.getenv('POSTGRES_HOST', 'localhost')
+POSTGRES_DB = os.getenv('POSSTGRES_DB', 'bfgmain')
+POSTGRES_PASSWORD = os.getenv('POSSTGRES_PASSWORD', '1234567')
+POSTGRES_USER = os.getenv('POSSTGRES_USER', 'postgres')
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     #'ENGINE': 'django.db.backends.sqlite3',
+    #     #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'djbfg',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     #'HOST': '127.0.0.1',
+    #     #'PORT': '5432',
+    # }
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djbfg',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        #'HOST': '127.0.0.1',
-        #'PORT': '5432',
-    }
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': POSTGRES_DB,
+            'USER': POSTGRES_USER,
+            'PASSWORD': POSTGRES_PASSWORD,
+            'HOST': POSTGRES_HOST,
+        },
 }
 
 
@@ -137,7 +148,7 @@ STATIC_URL = '/static/'
 #     ('', 'E:/WebProjects/bfg.com/bfg/static')
 # ]
 #For fire server
-STATIC_ROOT = 'E:/WebProjects/bfg.com/bfg/static'
+STATIC_ROOT = '/static/'
 
 #SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
@@ -158,7 +169,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': 'E:/WebProjects/bfg.com/bfg/logdata/fblogs.log',
+            'filename': 'fblogs.log',
         },
     },
     'loggers': {

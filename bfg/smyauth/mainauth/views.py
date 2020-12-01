@@ -1,7 +1,7 @@
 import requests
 import logging
 
-from django.shortcuts import redirect, render_to_response
+from django.shortcuts import redirect, render
 from django.conf import settings
 from django.views.generic import RedirectView
 from django.contrib.auth.models import User
@@ -113,4 +113,4 @@ class FacebookAuth(RedirectView):
         c.update(csrf(request))
         logfb = logging.getLogger(__name__)
         logfb.error(data)
-        return render_to_response('registration/login.html', c)
+        return render('registration/login.html', c)
