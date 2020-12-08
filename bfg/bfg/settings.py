@@ -25,12 +25,13 @@ SECRET_KEY = '^4f-jig7)=wvws2g94bw(82k@r4+4wapz9z30i(@giu_^_%p(z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bfgs.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'clearcache',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +49,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'mainbfg.mainhelpers.trytoclose.CheckUsers',
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'bfg.wsgi.application'
 POSTGRES_HOST = os.getenv('POSTGRES_HOST', 'localhost')
 POSTGRES_DB = os.getenv('POSSTGRES_DB', 'bfgmain')
 POSTGRES_PASSWORD = os.getenv('POSSTGRES_PASSWORD', '1234567')
-POSTGRES_USER = os.getenv('POSSTGRES_USER', 'postgres')
+POSTGRES_USER = os.getenv('POSSTGRES_USER', 'bfg_user')
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -120,9 +120,9 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = False
+USE_I18N = True
 
-USE_L10N = False
+USE_L10N = True
 
 USE_TZ = True
 
@@ -139,12 +139,25 @@ STATIC_URL = '/static/'
 #For fire server
 STATIC_ROOT = '/static/'
 
-#SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+#CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_HTTPONLY = True
+#SESSION_COOKIE_SECURE = True
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+REDIS_HOST = os.getenv('REDIS', 'localhost')
+REDIS_PORT = int(os.getenv('REDIS_PORT', '6379'))
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
+    },
+    "redis": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://"+REDIS_HOST+":"+str(REDIS_PORT),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
     }
 }
 

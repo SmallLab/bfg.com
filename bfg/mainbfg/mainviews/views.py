@@ -20,6 +20,8 @@ class MainView(TemplateView):
     context = super(MainView, self).get_context_data(**kwargs)
     context['data_ctr'] = ModelHelpers.get_data_ctr()
     context['sentences_list'] = ModelHelpers.get_top_sentences()
+    print(context)
+
     return context
 
 

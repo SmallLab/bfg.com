@@ -28,10 +28,12 @@ urlpatterns = [
     url(r'^', include('mainbfg.urls')),
     url(r'^authcocial/', include('smyauth.urls')),
     url(r'^user/', include('userswork.urls')),
-    url(r'^admin/', admin.site.urls),
     url(r'^login/$', LoginUser, name='login'),
     url(r'^registrations/$', RegistrationUser, name='reristrations'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
+
+    url(r'^admin/clearcache/', include('clearcache.urls')),
+    url(r'^admin/', admin.site.urls),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

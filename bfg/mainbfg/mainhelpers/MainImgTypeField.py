@@ -23,8 +23,14 @@ class MainImgTypeField(FileField):
             500MB - 429916160
     """
     def __init__(self, *args, **kwargs):
-        self.content_types = kwargs.pop("content_types")
-        self.max_upload_size = kwargs.pop("max_upload_size")
+        try:
+            self.content_types = kwargs.pop("content_types")
+        except:
+            self.content_types = []
+        try:
+            self.max_upload_size = kwargs.pop("max_upload_size")
+        except:
+            self.max_upload_size = 500000
 
         super(MainImgTypeField, self).__init__(*args, **kwargs)
 

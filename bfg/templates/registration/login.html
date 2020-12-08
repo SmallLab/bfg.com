@@ -1,6 +1,5 @@
 {% load static %}
 {% load cache %}
-{% cache 31536000 login %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
@@ -128,9 +127,11 @@
                                         <span>Регистрация через Facebook</span>
                                     </a>
                                 </div>
-                                <p class="desc text-center">или</p>
-                                <form action="/registrations/" class="form" method="post">
-                                    {% csrf_token %}
+                                <p class="desc text-center">
+                                    или
+                                </p>
+                            <br/>
+                                <form action="/registrations/" class="form" method="post">{% csrf_token %}
                                     <div class="form-group {% if rerrors.username %}has-warning{% endif %}">
                                         <input type="text" class="form-control" placeholder="Логин"  name="username" required></br>
                                         {% if rerrors.username %}
@@ -174,4 +175,3 @@
 <script type="text/javascript" src="{% static "js/socialauth.js" %}"></script>
 {% include 'sections/mainfooter.html' %}
 </body>
-{% endcache %}

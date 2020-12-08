@@ -5,10 +5,11 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
 from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.base import TemplateView, RedirectView
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.http import JsonResponse
 
 from userswork.mainhelpers import modelshelper
@@ -20,20 +21,31 @@ from mainbfg.models import (SentenceForm, Image, Sentence, SentenceEditForm, Pro
 
 
 class PrivateOfficeView(LoginRequiredMixin, TemplateView):
-  login_url = 'login'
+  login_url = reverse_lazy('login')
   template_name = 'privateoffice.html'
+
+  def dispatch(self, *args, **kwargs):
+    return super(PrivateOfficeView, self).dispatch(*args, **kwargs)
 
   def get_context_data(self, **kwargs):
     context = super(PrivateOfficeView, self).get_context_data()
-    context['active_tab'] = kwargs['tab'] if kwargs['tab'] else 'sent'
+    try:
+      context['active_tab'] = kwargs['tab']
+    except:
+      context['active_tab'] = 'sent'
     context['active_sentences'] = Sentence.objects.get_active_sentences(self.request.user.id)
     context['status_ss'] = {0: 'На модерации', 1: 'Опубликовано', 2: 'На редактировании', 3: 'Не активно'}
     context['type_ss'] = {0: 'Обычное', 1: 'TOP', 2: 'VIP'}
     context['deactive_sentences'] = Sentence.objects.get_deactive_sentences(self.request.user.id)
     context['sub_count'] = Subscription.objects.getcountsub(self.request.user.id)
 
+    print(context)
     return context
 
+  def get(self, request, *args, **kwargs):
+    print(request.user)
+    context = self.get_context_data()
+    return render(request, self.template_name, context)
 
 """
     Delete sentence

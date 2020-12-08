@@ -1,5 +1,4 @@
 from datetime import datetime
-from django.utils.timezone import now
 from django.db import models, IntegrityError
 from django.contrib.auth.models import User
 from django.forms import ModelForm
