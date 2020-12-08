@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+    postdb:
+        image: postgres:12
+        restart: always
+        # save you data
+        #volumes: # Volume binding
+        #    - '/tmp/postdb:/usr/src/app'
+        ports:
+            - '127.0.0.1:5432:5432'
+        environment:
+            POSTGRES_DB: bfgmain
+            POSTGRES_USER: bfg_user
+            POSTGRES_PASSWORD: 1234567
+
+    memcache:
+        image: memcached
+        restart: always
+        ports:
+            - '127.0.0.1:11211:11211'
